@@ -1,0 +1,13 @@
+# BaseReportLongestGapInsights
+
+Largest number of days between sequential transactions per calendar month
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `additional_properties`                                                                           | Dict[str, *Any*]                                                                                  | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `days`                                                                                            | *Optional[int]*                                                                                   | :heavy_minus_sign:                                                                                | Largest number of days between sequential transactions for this time period.                      |
+| `end_date`                                                                                        | *Optional[str]*                                                                                   | :heavy_minus_sign:                                                                                | The end date of this time period.<br/>The date will be returned in an ISO 8601 format (YYYY-MM-DD). |
+| `start_date`                                                                                      | *Optional[str]*                                                                                   | :heavy_minus_sign:                                                                                | The start date of this time period.<br/>The date will be returned in an ISO 8601 format (YYYY-MM-DD). |

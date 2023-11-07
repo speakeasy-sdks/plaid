@@ -1,0 +1,12 @@
+# IdentityVerificationResponseUserName
+
+The full name provided by the user. If the user has not submitted their name, this field will be null. Otherwise, both fields are guaranteed to be filled.
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               | Example                                                                                   |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `additional_properties`                                                                   | Dict[str, *Any*]                                                                          | :heavy_minus_sign:                                                                        | N/A                                                                                       |                                                                                           |
+| `family_name`                                                                             | *str*                                                                                     | :heavy_check_mark:                                                                        | A string with at least one non-whitespace character, with a max length of 100 characters. | Knope                                                                                     |
+| `given_name`                                                                              | *str*                                                                                     | :heavy_check_mark:                                                                        | A string with at least one non-whitespace character, with a max length of 100 characters. | Leslie                                                                                    |

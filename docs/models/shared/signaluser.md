@@ -1,0 +1,13 @@
+# SignalUser
+
+Details about the end user initiating the transaction (i.e., the account holder).
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `address`                                                                                     | [Optional[components.SignalAddressData]](../../models/shared/signaladdressdata.md)            | :heavy_minus_sign:                                                                            | Data about the components comprising an address.                                              |
+| `email_address`                                                                               | *Optional[str]*                                                                               | :heavy_minus_sign:                                                                            | The user's email address.                                                                     |
+| `name`                                                                                        | [Optional[components.SignalPersonName]](../../models/shared/signalpersonname.md)              | :heavy_minus_sign:                                                                            | The user's legal name                                                                         |
+| `phone_number`                                                                                | *Optional[str]*                                                                               | :heavy_minus_sign:                                                                            | The user's phone number, in E.164 format: +{countrycode}{number}. For example: "+14151234567" |

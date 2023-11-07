@@ -1,0 +1,14 @@
+# SignalPersonName
+
+The user's legal name
+
+
+## Fields
+
+| Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `family_name`                                                                                | *Optional[str]*                                                                              | :heavy_minus_sign:                                                                           | The user's family name / surname                                                             |
+| `given_name`                                                                                 | *Optional[str]*                                                                              | :heavy_minus_sign:                                                                           | The user's given name. If the user has a one-word name, it should be provided in this field. |
+| `middle_name`                                                                                | *Optional[str]*                                                                              | :heavy_minus_sign:                                                                           | The user's middle name                                                                       |
+| `prefix`                                                                                     | *Optional[str]*                                                                              | :heavy_minus_sign:                                                                           | The user's name prefix (e.g. "Mr.")                                                          |
+| `suffix`                                                                                     | *Optional[str]*                                                                              | :heavy_minus_sign:                                                                           | The user's name suffix (e.g. "II")                                                           |

@@ -1,0 +1,13 @@
+# BaseReportNumberFlowInsights
+
+The number of credits or debits out of the account. This field will only added for depository accounts
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `additional_properties`                                                                           | Dict[str, *Any*]                                                                                  | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `count`                                                                                           | *Optional[int]*                                                                                   | :heavy_minus_sign:                                                                                | The number of credits or debits out of the account for this time period.                          |
+| `end_date`                                                                                        | *Optional[str]*                                                                                   | :heavy_minus_sign:                                                                                | The end date of this time period.<br/>The date will be returned in an ISO 8601 format (YYYY-MM-DD). |
+| `start_date`                                                                                      | *Optional[str]*                                                                                   | :heavy_minus_sign:                                                                                | The start date of this time period.<br/>The date will be returned in an ISO 8601 format (YYYY-MM-DD). |

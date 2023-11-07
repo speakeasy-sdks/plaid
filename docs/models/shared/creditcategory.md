@@ -1,0 +1,14 @@
+# CreditCategory
+
+Information describing the intent of the transaction. Most relevant for credit use cases, but not limited to such use cases.
+
+See the [`taxonomy csv file`](https://plaid.com/documents/credit-category-taxonomy.csv) for a full list of credit categories.
+
+
+## Fields
+
+| Field                                                                                                                        | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `additional_properties`                                                                                                      | Dict[str, *Any*]                                                                                                             | :heavy_minus_sign:                                                                                                           | N/A                                                                                                                          |
+| `detailed`                                                                                                                   | *str*                                                                                                                        | :heavy_check_mark:                                                                                                           | A granular category conveying the transaction's intent. This field can also be used as a unique identifier for the category. |
+| `primary`                                                                                                                    | *str*                                                                                                                        | :heavy_check_mark:                                                                                                           | A high level category that communicates the broad category of the transaction.                                               |

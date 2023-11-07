@@ -1,0 +1,12 @@
+# TransferLedgerBalance
+
+Information about the balance of the ledger held with Plaid.
+
+
+## Fields
+
+| Field                                                                                                          | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `additional_properties`                                                                                        | Dict[str, *Any*]                                                                                               | :heavy_minus_sign:                                                                                             | N/A                                                                                                            |
+| `available`                                                                                                    | *str*                                                                                                          | :heavy_check_mark:                                                                                             | The amount of this balance available for use (decimal string with two digits of precision e.g. "10.00").       |
+| `pending`                                                                                                      | *str*                                                                                                          | :heavy_check_mark:                                                                                             | The amount of pending funds that are in processing (decimal string with two digits of precision e.g. "10.00"). |

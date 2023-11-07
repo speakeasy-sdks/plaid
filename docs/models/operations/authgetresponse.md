@@ -1,0 +1,12 @@
+# AuthGetResponse
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `auth_get_response`                                                                   | [Optional[components.AuthGetResponse]](../../models/shared/authgetresponse.md)        | :heavy_minus_sign:                                                                    | success                                                                               |
+| `content_type`                                                                        | *str*                                                                                 | :heavy_check_mark:                                                                    | HTTP response content type for this operation                                         |
+| `plaid_error`                                                                         | [Optional[components.PlaidError]](../../models/shared/plaiderror.md)                  | :heavy_minus_sign:                                                                    | Default error                                                                         |
+| `status_code`                                                                         | *int*                                                                                 | :heavy_check_mark:                                                                    | HTTP response status code for this operation                                          |
+| `raw_response`                                                                        | [requests.Response](https://requests.readthedocs.io/en/latest/api/#requests.Response) | :heavy_minus_sign:                                                                    | Raw HTTP response; suitable for custom response parsing                               |

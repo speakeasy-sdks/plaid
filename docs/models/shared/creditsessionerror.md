@@ -1,0 +1,13 @@
+# CreditSessionError
+
+The details of a Link error.
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `display_message`                                                                                    | *Optional[str]*                                                                                      | :heavy_minus_sign:                                                                                   | A user-friendly representation of the error code. `null` if the error is not related to user action. |
+| `error_code`                                                                                         | *Optional[str]*                                                                                      | :heavy_minus_sign:                                                                                   | The particular error code.                                                                           |
+| `error_message`                                                                                      | *Optional[str]*                                                                                      | :heavy_minus_sign:                                                                                   | A developer-friendly representation of the error code.                                               |
+| `error_type`                                                                                         | *Optional[str]*                                                                                      | :heavy_minus_sign:                                                                                   | A broad categorization of the error.                                                                 |

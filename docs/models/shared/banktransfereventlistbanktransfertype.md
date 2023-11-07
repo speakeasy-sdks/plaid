@@ -1,0 +1,12 @@
+# BankTransferEventListBankTransferType
+
+The type of bank transfer. This will be either `debit` or `credit`.  A `debit` indicates a transfer of money into your origination account; a `credit` indicates a transfer of money out of your origination account.
+
+
+## Values
+
+| Name                          | Value                         |
+| ----------------------------- | ----------------------------- |
+| `DEBIT`                       | debit                         |
+| `CREDIT`                      | credit                        |
+| `LESS_THAN_NIL_GREATER_THAN_` | <nil>                         |
