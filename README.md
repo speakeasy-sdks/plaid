@@ -15,7 +15,7 @@ It has been generated successfully based on your OpenAPI spec. However, it is no
 - [ ] 🎁 Publish your SDK to package managers by [configuring automatic publishing](https://www.speakeasyapi.dev/docs/productionize-sdks/publish-sdks)
 - [ ] ✨ When ready to productionize, delete this section from the README
 <!-- Start SDK Installation -->
-# SDK Installation
+## SDK Installation
 
 ```bash
 pip install git+https://github.com/speakeasy-sdks/plaid.git
@@ -24,8 +24,6 @@ pip install git+https://github.com/speakeasy-sdks/plaid.git
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```python
 import dateutil.parser
 import plaid
@@ -57,10 +55,10 @@ if res.accounts_get_response is not None:
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-# Available Resources and Operations
+## Available Resources and Operations
 
 
-## [.plaid](docs/sdks/plaidsdk/README.md)
+### [plaid](docs/sdks/plaidsdk/README.md)
 
 * [accounts_balance_get](docs/sdks/plaidsdk/README.md#accounts_balance_get) - Retrieve real-time balance data
 * [accounts_get](docs/sdks/plaidsdk/README.md#accounts_get) - Retrieve accounts
@@ -294,16 +292,54 @@ if res.accounts_get_response is not None:
 
 <!-- Start Dev Containers -->
 
-
-
 <!-- End Dev Containers -->
 
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 
+## Example
+
+```python
+import dateutil.parser
+import plaid
+from plaid.models import components
+
+s = plaid.Plaid(
+    security=components.Security1(
+        client_id="",
+        plaid_version="",
+        secret="",
+    ),
+)
+
+req = components.AccountsBalanceGetRequest(
+    access_token='string',
+    options=components.AccountsBalanceGetRequestOptions(
+        account_ids=[
+            'string',
+        ],
+    ),
+)
+
+res = None
+try:
+    res = s.plaid.accounts_balance_get(req)
+
+except (errors.SDKError) as e:
+    print(e) # handle exception
+
+
+if res.accounts_get_response is not None:
+    # handle response
+    pass
+```
 <!-- End Error Handling -->
 
 <!-- Start Server Selection -->
@@ -393,7 +429,7 @@ if res.accounts_get_response is not None:
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
 
-For example, you could specify a header for every request that your sdk makes as follows:
+For example, you could specify a header for every request that this sdk makes as follows:
 
 ```python
 import plaid
@@ -403,17 +439,14 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = plaid.Plaid(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security schemes globally:
+This SDK supports the following security schemes globally:
 
 | Name            | Type            | Scheme          |
 | --------------- | --------------- | --------------- |

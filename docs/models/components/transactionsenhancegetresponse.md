@@ -1,0 +1,11 @@
+# TransactionsEnhanceGetResponse
+
+TransactionsEnhanceGetResponse defines the response schema for `/beta/transactions/v1/enhance`.
+
+
+## Fields
+
+| Field                                                                                                              | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `additional_properties`                                                                                            | Dict[str, *Any*]                                                                                                   | :heavy_minus_sign:                                                                                                 | N/A                                                                                                                |
+| `enhanced_transactions`                                                                                            | List[[components.ClientProvidedEnhancedTransaction](../../models/components/clientprovidedenhancedtransaction.md)] | :heavy_check_mark:                                                                                                 | An array of enhanced transactions.                                                                                 |

@@ -1,0 +1,13 @@
+# DocumentRiskSignalsObject
+
+Object containing fraud risk data for a set of income documents.
+
+
+## Fields
+
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `additional_properties`                                                                                | Dict[str, *Any*]                                                                                       | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
+| `account_id`                                                                                           | *Optional[str]*                                                                                        | :heavy_check_mark:                                                                                     | ID of the payroll provider account.                                                                    |
+| `multi_document_risk_signals`                                                                          | List[[components.MultiDocumentRiskSignal](../../models/components/multidocumentrisksignal.md)]         | :heavy_check_mark:                                                                                     | Array of risk signals computed from a set of uploaded documents and the associated documents' metadata |
+| `single_document_risk_signals`                                                                         | List[[components.SingleDocumentRiskSignal](../../models/components/singledocumentrisksignal.md)]       | :heavy_check_mark:                                                                                     | Array of document metadata and associated risk signals per document                                    |

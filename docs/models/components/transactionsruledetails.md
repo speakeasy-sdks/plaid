@@ -1,0 +1,12 @@
+# TransactionsRuleDetails
+
+A representation of transactions rule details.
+
+
+## Fields
+
+| Field                                                                                                           | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `field`                                                                                                         | [components.TransactionsRuleField](../../models/components/transactionsrulefield.md)                            | :heavy_check_mark:                                                                                              | Transaction field for which the rule is defined.                                                                |
+| `query`                                                                                                         | *str*                                                                                                           | :heavy_check_mark:                                                                                              | For TRANSACTION_ID field, provide transaction_id. For NAME field, provide a string pattern.<br/>                |
+| `type`                                                                                                          | [components.TransactionsRuleType](../../models/components/transactionsruletype.md)                              | :heavy_check_mark:                                                                                              | Transaction rule's match type. For TRANSACTION_ID field, EXACT_MATCH is available.<br/>Matches are case sensitive.<br/> |

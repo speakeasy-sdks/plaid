@@ -1,0 +1,14 @@
+# StatementsAccount
+
+Account associated with the item.
+
+
+## Fields
+
+| Field                                                                                            | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `additional_properties`                                                                          | Dict[str, *Any*]                                                                                 | :heavy_minus_sign:                                                                               | N/A                                                                                              |
+| `account_id`                                                                                     | *str*                                                                                            | :heavy_check_mark:                                                                               | Plaid's unique identifier for the account.                                                       |
+| `account_name`                                                                                   | *str*                                                                                            | :heavy_check_mark:                                                                               | The name of the account, either assigned by the user or by the financial institution itself.     |
+| `account_type`                                                                                   | *str*                                                                                            | :heavy_check_mark:                                                                               | The type of account. Possible values are investment, credit, depository, loan, brokerage, other. |
+| `statements`                                                                                     | List[[components.StatementsStatement](../../models/components/statementsstatement.md)]           | :heavy_check_mark:                                                                               | The list of statements' metadata associated with this account.                                   |

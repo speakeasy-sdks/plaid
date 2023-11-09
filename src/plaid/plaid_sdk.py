@@ -13,6 +13,7 @@ class PlaidSDK:
         self.sdk_configuration = sdk_config
         
     
+    
     def accounts_balance_get(self, request: components.AccountsBalanceGetRequest) -> operations.AccountsBalanceGetResponse:
         r"""Retrieve real-time balance data
         The `/accounts/balance/get` endpoint returns the real-time balance for each of an Item's accounts. While other endpoints may return a balance object, only `/accounts/balance/get` forces the available and current balance fields to be refreshed rather than cached. This endpoint can be used for existing Items that were added via any of Plaid’s other products. This endpoint can be used as long as Link has been initialized with any other product, `balance` itself is not a product that can be used to initialize Link. As this endpoint triggers a synchronous request for fresh data, latency may be higher than for other Plaid endpoints; if you encounter errors, you may find it necessary to adjust your timeout period when making requests.
@@ -30,7 +31,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -48,6 +52,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def accounts_get(self, request: components.AccountsGetRequest) -> operations.AccountsGetResponse:
         r"""Retrieve accounts
@@ -69,7 +74,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -94,6 +102,7 @@ class PlaidSDK:
         return res
 
     
+    
     def application_get(self, request: components.ApplicationGetRequest) -> operations.ApplicationGetResponse:
         r"""Retrieve information about a Plaid application
         Allows financial institutions to retrieve information about Plaid clients for the purpose of building control-tower experiences
@@ -110,7 +119,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -135,6 +147,7 @@ class PlaidSDK:
         return res
 
     
+    
     def asset_report_audit_copy_create(self, request: components.AssetReportAuditCopyCreateRequest) -> operations.AssetReportAuditCopyCreateResponse:
         r"""Create Asset Report Audit Copy
         Plaid can provide an Audit Copy of any Asset Report directly to a participating third party on your behalf. For example, Plaid can supply an Audit Copy directly to Fannie Mae on your behalf if you participate in the Day 1 Certainty™ program. An Audit Copy contains the same underlying data as the Asset Report.
@@ -154,7 +167,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -173,6 +189,7 @@ class PlaidSDK:
         return res
 
     
+    
     def asset_report_audit_copy_get(self, request: components.AssetReportAuditCopyGetRequest) -> operations.AssetReportAuditCopyGetResponse:
         r"""Retrieve an Asset Report Audit Copy
         `/asset_report/audit_copy/get` allows auditors to get a copy of an Asset Report that was previously shared via the `/asset_report/audit_copy/create` endpoint.  The caller of `/asset_report/audit_copy/create` must provide the `audit_copy_token` to the auditor.  This token can then be used to call `/asset_report/audit_copy/create`.
@@ -190,7 +207,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -209,6 +229,7 @@ class PlaidSDK:
         return res
 
     
+    
     def asset_report_audit_copy_remove(self, request: components.AssetReportAuditCopyRemoveRequest) -> operations.AssetReportAuditCopyRemoveResponse:
         r"""Remove Asset Report Audit Copy
         The `/asset_report/audit_copy/remove` endpoint allows you to remove an Audit Copy. Removing an Audit Copy invalidates the `audit_copy_token` associated with it, meaning both you and any third parties holding the token will no longer be able to use it to access Report data. Items associated with the Asset Report, the Asset Report itself and other Audit Copies of it are not affected and will remain accessible after removing the given Audit Copy.
@@ -226,7 +247,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -244,6 +268,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def asset_report_create(self, request: components.AssetReportCreateRequest) -> operations.AssetReportCreateResponse:
         r"""Create an Asset Report
@@ -266,7 +291,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -284,6 +312,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def asset_report_filter(self, request: components.AssetReportFilterRequest) -> operations.AssetReportFilterResponse:
         r"""Filter Asset Report
@@ -308,7 +337,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -326,6 +358,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def asset_report_get(self, request: components.AssetReportGetRequest) -> operations.AssetReportGetResponse:
         r"""Retrieve an Asset Report
@@ -350,7 +383,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -368,6 +404,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def asset_report_pdf_get(self, request: components.AssetReportPDFGetRequest) -> operations.AssetReportPdfGetResponse:
         r"""Retrieve a PDF Asset Report
@@ -392,7 +429,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/pdf'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -409,6 +449,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def asset_report_refresh(self, request: components.AssetReportRefreshRequest) -> operations.AssetReportRefreshResponse:
         r"""Refresh an Asset Report
@@ -429,7 +470,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -447,6 +491,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def asset_report_remove(self, request: components.AssetReportRemoveRequest) -> operations.AssetReportRemoveResponse:
         r"""Delete an Asset Report
@@ -467,7 +512,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -485,6 +533,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def auth_get(self, request: components.AuthGetRequest) -> operations.AuthGetResponse:
         r"""Retrieve auth data
@@ -507,7 +556,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -532,6 +584,7 @@ class PlaidSDK:
         return res
 
     
+    
     def bank_transfer_balance_get(self, request: components.BankTransferBalanceGetRequest) -> operations.BankTransferBalanceGetResponse:
         r"""Get balance of your Bank Transfer account
         Use the `/bank_transfer/balance/get` endpoint to see the available balance in your bank transfer account. Debit transfers increase this balance once their status is posted. Credit transfers decrease this balance when they are created.
@@ -553,7 +606,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -578,6 +634,7 @@ class PlaidSDK:
         return res
 
     
+    
     def bank_transfer_cancel(self, request: components.BankTransferCancelRequest) -> operations.BankTransferCancelResponse:
         r"""Cancel a bank transfer
         Use the `/bank_transfer/cancel` endpoint to cancel a bank transfer.  A transfer is eligible for cancelation if the `cancellable` property returned by `/bank_transfer/get` is `true`.
@@ -595,7 +652,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -620,6 +680,7 @@ class PlaidSDK:
         return res
 
     
+    
     def bank_transfer_create(self, request: components.BankTransferCreateRequest) -> operations.BankTransferCreateResponse:
         r"""Create a bank transfer
         Use the `/bank_transfer/create` endpoint to initiate a new bank transfer.
@@ -637,7 +698,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -662,6 +726,7 @@ class PlaidSDK:
         return res
 
     
+    
     def bank_transfer_event_list(self, request: components.BankTransferEventListRequest) -> operations.BankTransferEventListResponse:
         r"""List bank transfer events
         Use the `/bank_transfer/event/list` endpoint to get a list of Plaid-initiated ACH or bank transfer events based on specified filter criteria. When using Auth with micro-deposit verification enabled, this endpoint can be used to fetch status updates on ACH micro-deposits. For more details, see [micro-deposit events](https://plaid.com/docs/auth/coverage/microdeposit-events/).
@@ -679,7 +744,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -704,6 +772,7 @@ class PlaidSDK:
         return res
 
     
+    
     def bank_transfer_event_sync(self, request: components.BankTransferEventSyncRequest) -> operations.BankTransferEventSyncResponse:
         r"""Sync bank transfer events
         `/bank_transfer/event/sync` allows you to request up to the next 25 Plaid-initiated bank transfer events that happened after a specific `event_id`. When using Auth with micro-deposit verification enabled, this endpoint can be used to fetch status updates on ACH micro-deposits. For more details, see [micro-deposit events](https://www.plaid.com/docs/auth/coverage/microdeposit-events/).
@@ -721,7 +790,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -746,6 +818,7 @@ class PlaidSDK:
         return res
 
     
+    
     def bank_transfer_get(self, request: components.BankTransferGetRequest) -> operations.BankTransferGetResponse:
         r"""Retrieve a bank transfer
         The `/bank_transfer/get` fetches information about the bank transfer corresponding to the given `bank_transfer_id`.
@@ -763,7 +836,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -788,6 +864,7 @@ class PlaidSDK:
         return res
 
     
+    
     def bank_transfer_list(self, request: components.BankTransferListRequest) -> operations.BankTransferListResponse:
         r"""List bank transfers
         Use the `/bank_transfer/list` endpoint to see a list of all your bank transfers and their statuses. Results are paginated; use the `count` and `offset` query parameters to retrieve the desired bank transfers.
@@ -805,7 +882,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -830,6 +910,7 @@ class PlaidSDK:
         return res
 
     
+    
     def bank_transfer_migrate_account(self, request: components.BankTransferMigrateAccountRequest) -> operations.BankTransferMigrateAccountResponse:
         r"""Migrate account into Bank Transfers
         As an alternative to adding Items via Link, you can also use the `/bank_transfer/migrate_account` endpoint to migrate known account and routing numbers to Plaid Items.  Note that Items created in this way are not compatible with endpoints for other products, such as `/accounts/balance/get`, and can only be used with Bank Transfer endpoints.  If you require access to other endpoints, create the Item through Link instead.  Access to `/bank_transfer/migrate_account` is not enabled by default; to obtain access, contact your Plaid Account Manager.
@@ -847,7 +928,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -872,6 +956,7 @@ class PlaidSDK:
         return res
 
     
+    
     def bank_transfer_sweep_get(self, request: components.BankTransferSweepGetRequest) -> operations.BankTransferSweepGetResponse:
         r"""Retrieve a sweep
         The `/bank_transfer/sweep/get` endpoint fetches information about the sweep corresponding to the given `sweep_id`.
@@ -889,7 +974,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -914,6 +1002,7 @@ class PlaidSDK:
         return res
 
     
+    
     def bank_transfer_sweep_list(self, request: components.BankTransferSweepListRequest) -> operations.BankTransferSweepListResponse:
         r"""List sweeps
         The `/bank_transfer/sweep/list` endpoint fetches information about the sweeps matching the given filters.
@@ -931,7 +1020,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -956,6 +1048,7 @@ class PlaidSDK:
         return res
 
     
+    
     def base_report_get(self, request: components.BaseReportGetRequest) -> operations.BaseReportGetResponse:
         r"""Retrieve a Base Report
         This endpoint allows the customer to retrieve a Base Report. Customers should pass in the `user_token` created in `/link/token/create`.
@@ -973,7 +1066,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -991,6 +1087,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def beacon_report_create(self, request: components.BeaconReportCreateRequest) -> operations.BeaconReportCreateResponse:
         r"""Create a Beacon Report
@@ -1011,7 +1108,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1029,6 +1129,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def beacon_user_create(self, request: components.BeaconUserCreateRequest) -> operations.BeaconUserCreateResponse:
         r"""Create a Beacon User
@@ -1055,7 +1156,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1073,6 +1177,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def beacon_user_get(self, request: components.BeaconUserGetRequest) -> operations.BeaconUserGetResponse:
         r"""Get a Beacon User
@@ -1093,7 +1198,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1111,6 +1219,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def categories_get(self, request: components.CategoriesGetRequest) -> operations.CategoriesGetResponse:
         r"""Get categories
@@ -1131,7 +1240,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1156,6 +1268,7 @@ class PlaidSDK:
         return res
 
     
+    
     def cra_bank_income_get(self, request: components.CraBankIncomeGetRequest) -> operations.CraBankIncomeGetResponse:
         r"""Retrieve information from the bank accounts used for income verification
         `/cra/bank_income/get` returns the bank income report(s) for a specified user.
@@ -1173,7 +1286,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1191,6 +1307,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def create_payment_token(self, request: components.PaymentInitiationPaymentTokenCreateRequest) -> operations.CreatePaymentTokenResponse:
         r"""Create payment token
@@ -1213,7 +1330,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1232,6 +1352,7 @@ class PlaidSDK:
         return res
 
     
+    
     def credit_asset_report_freddie_mac_get(self, request: components.AssetReportFreddieGetRequest) -> operations.CreditAssetReportFreddieMacGetResponse:
         r"""Retrieve an Asset Report with Freddie Mac format. Only Freddie Mac can use this endpoint.
         The `credit/asset_report/freddie_mac/get` endpoint retrieves the Asset Report in Freddie Mac's JSON format.
@@ -1249,7 +1370,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1267,6 +1391,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def credit_audit_copy_token_create(self, request: components.CreditAuditCopyTokenCreateRequest) -> operations.CreditAuditCopyTokenCreateResponse:
         r"""Create Asset or Income Report Audit Copy Token
@@ -1287,7 +1412,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1306,6 +1434,7 @@ class PlaidSDK:
         return res
 
     
+    
     def credit_audit_copy_token_update(self, request: components.CreditAuditCopyTokenUpdateRequest) -> operations.CreditAuditCopyTokenUpdateResponse:
         r"""Update an Audit Copy Token
         The `/credit/audit_copy_token/update` endpoint updates an existing  Audit Copy Token by adding the report tokens in the `report_tokens` field to the `audit_copy_token`. If the Audit Copy Token already contains a report of a certain type, it will be replaced with the token provided in the `report_tokens` field.
@@ -1323,7 +1452,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1342,6 +1474,7 @@ class PlaidSDK:
         return res
 
     
+    
     def credit_bank_employment_get(self, request: components.CreditBankEmploymentGetRequest) -> operations.CreditBankEmploymentGetResponse:
         r"""Retrieve information from the bank accounts used for employment verification
         `/credit/bank_employment/get` returns the employment report(s) derived from bank transaction data for a specified user.
@@ -1359,7 +1492,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1378,6 +1514,7 @@ class PlaidSDK:
         return res
 
     
+    
     def credit_bank_income_get(self, request: components.CreditBankIncomeGetRequest) -> operations.CreditBankIncomeGetResponse:
         r"""Retrieve information from the bank accounts used for income verification
         `/credit/bank_income/get` returns the bank income report(s) for a specified user.
@@ -1395,7 +1532,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1414,6 +1554,7 @@ class PlaidSDK:
         return res
 
     
+    
     def credit_bank_income_pdf_get(self, request: components.CreditBankIncomePDFGetRequest) -> operations.CreditBankIncomePdfGetResponse:
         r"""Retrieve information from the bank accounts used for income verification in PDF format
         `/credit/bank_income/pdf/get` returns the most recent bank income report for a specified user in PDF format.
@@ -1431,7 +1572,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/pdf'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1448,6 +1592,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def credit_bank_income_refresh(self, request: components.CreditBankIncomeRefreshRequest) -> operations.CreditBankIncomeRefreshResponse:
         r"""Refresh a user's bank income information
@@ -1466,7 +1611,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1484,6 +1632,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def credit_bank_income_webhook_update(self, request: components.CreditBankIncomeWebhookUpdateRequest) -> operations.CreditBankIncomeWebhookUpdateResponse:
         r"""Subscribe and unsubscribe to proactive notifications for a user's income profile
@@ -1504,7 +1653,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1523,6 +1675,7 @@ class PlaidSDK:
         return res
 
     
+    
     def credit_bank_statements_uploads_get(self, request: components.CreditBankStatementsUploadsGetRequest) -> operations.CreditBankStatementsUploadsGetResponse:
         r"""Retrieve data for a user's uploaded bank statements
         `/credit/bank_statements/uploads/get` returns data from user-uploaded bank statements.
@@ -1540,7 +1693,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1565,6 +1721,7 @@ class PlaidSDK:
         return res
 
     
+    
     def credit_employment_get(self, request: components.CreditEmploymentGetRequest) -> operations.CreditEmploymentGetResponse:
         r"""Retrieve a summary of an individual's employment information
         `/credit/employment/get` returns a list of items with employment information from a user's payroll provider that was verified by an end user.
@@ -1582,7 +1739,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1601,6 +1761,7 @@ class PlaidSDK:
         return res
 
     
+    
     def credit_freddie_mac_reports_get(self, request: components.CreditFreddieMacReportsGetRequest) -> operations.CreditFreddieMacReportsGetResponse:
         r"""Retrieve an Asset Report with Freddie Mac format (aka VOA - Verification Of Assets), and a Verification Of Employment (VOE) report if this one is available. Only Freddie Mac can use this endpoint.
         The `credit/asset_report/freddie_mac/get` endpoint retrieves the Verification of Assets and Verification of Employment reports.
@@ -1618,7 +1779,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1637,6 +1801,7 @@ class PlaidSDK:
         return res
 
     
+    
     def credit_payroll_income_get(self, request: components.CreditPayrollIncomeGetRequest) -> operations.CreditPayrollIncomeGetResponse:
         r"""Retrieve a user's payroll information
         This endpoint gets payroll income information for a specific user, either as a result of the user connecting to their payroll provider or uploading a pay related document.
@@ -1654,7 +1819,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1672,6 +1840,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def credit_payroll_income_precheck(self, request: components.CreditPayrollIncomePrecheckRequest) -> operations.CreditPayrollIncomePrecheckResponse:
         r"""Check income verification eligibility and optimize conversion
@@ -1694,7 +1863,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1713,6 +1885,7 @@ class PlaidSDK:
         return res
 
     
+    
     def credit_payroll_income_refresh(self, request: components.CreditPayrollIncomeRefreshRequest) -> operations.CreditPayrollIncomeRefreshResponse:
         r"""Refresh a digital payroll income verification
         `/credit/payroll_income/refresh` refreshes a given digital payroll income verification.
@@ -1730,7 +1903,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1755,6 +1931,7 @@ class PlaidSDK:
         return res
 
     
+    
     def credit_payroll_income_risk_signals_get(self, request: components.CreditPayrollIncomeRiskSignalsGetRequest) -> operations.CreditPayrollIncomeRiskSignalsGetResponse:
         r"""Retrieve fraud insights for a user's manually uploaded document(s).
         `/credit/payroll_income/risk_signals/get` can be used as part of the Document Income flow to assess a user-uploaded document for signs of potential fraud or tampering. It returns a risk score for each uploaded document that indicates the likelihood of the document being fraudulent, in addition to details on the individual risk signals contributing to the score. `/credit/payroll_income/risk_signals/get` can be called at any time after the `INCOME_VERIFICATION_RISK_SIGNALS` webhook has been fired.
@@ -1774,7 +1951,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1792,6 +1972,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def credit_relay_create(self, request: components.CreditRelayCreateRequest) -> operations.CreditRelayCreateResponse:
         r"""Create a relay token to share an Asset Report with a partner client (beta)
@@ -1812,7 +1993,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1831,6 +2015,7 @@ class PlaidSDK:
         return res
 
     
+    
     def credit_relay_get(self, request: components.CreditRelayGetRequest) -> operations.CreditRelayGetResponse:
         r"""Retrieve the reports associated with a relay token that was shared with you (beta)
         `/credit/relay/get` allows third parties to receive a report that was shared with them, using a `relay_token` that was created by the report owner.
@@ -1848,7 +2033,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1866,6 +2054,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def credit_relay_pdf_get(self, request: components.CreditRelayPDFGetRequest) -> operations.CreditRelayPdfGetResponse:
         r"""Retrieve the pdf reports associated with a relay token that was shared with you (beta)
@@ -1890,7 +2079,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/pdf'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1907,6 +2099,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def credit_relay_refresh(self, request: components.CreditRelayRefreshRequest) -> operations.CreditRelayRefreshResponse:
         r"""Refresh a report of a relay token (beta)
@@ -1925,7 +2118,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1944,6 +2140,7 @@ class PlaidSDK:
         return res
 
     
+    
     def credit_relay_remove(self, request: components.CreditRelayRemoveRequest) -> operations.CreditRelayRemoveResponse:
         r"""Remove relay token (beta)
         The `/credit/relay/remove` endpoint allows you to invalidate a `relay_token`. The third party holding the token will no longer be able to access or refresh the reports which the `relay_token` gives access to. The original report, associated Items, and other relay tokens that provide access to the same report are not affected and will remain accessible after removing the given `relay_token`.
@@ -1961,7 +2158,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1980,6 +2180,7 @@ class PlaidSDK:
         return res
 
     
+    
     def credit_report_audit_copy_remove(self, request: components.CreditAuditCopyTokenRemoveRequest) -> operations.CreditReportAuditCopyRemoveResponse:
         r"""Remove an Audit Copy token
         The `/credit/audit_copy_token/remove` endpoint allows you to remove an Audit Copy. Removing an Audit Copy invalidates the `audit_copy_token` associated with it, meaning both you and any third parties holding the token will no longer be able to use it to access Report data. Items associated with the Report data and other Audit Copies of it are not affected and will remain accessible after removing the given Audit Copy.
@@ -1997,7 +2198,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2015,6 +2219,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def credit_sessions_get(self, request: components.CreditSessionsGetRequest) -> operations.CreditSessionsGetResponse:
         r"""Retrieve Link sessions for your user
@@ -2035,7 +2240,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2054,6 +2262,7 @@ class PlaidSDK:
         return res
 
     
+    
     def dashboard_user_get(self, request: components.DashboardUserGetRequest) -> operations.DashboardUserGetResponse:
         r"""Retrieve a dashboard user
         Retrieve information about a dashboard user.
@@ -2071,7 +2280,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2090,6 +2302,7 @@ class PlaidSDK:
         return res
 
     
+    
     def dashboard_user_list(self, request: components.DashboardUserListRequest) -> operations.DashboardUserListResponse:
         r"""List dashboard users
         List all dashboard users associated with your account.
@@ -2107,7 +2320,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2126,6 +2342,7 @@ class PlaidSDK:
         return res
 
     
+    
     def deposit_switch_alt_create(self, request: components.DepositSwitchAltCreateRequest) -> operations.DepositSwitchAltCreateResponse:
         r"""Create a deposit switch without using Plaid Exchange
         This endpoint provides an alternative to `/deposit_switch/create` for customers who have not yet fully integrated with Plaid Exchange. Like `/deposit_switch/create`, it creates a deposit switch entity that will be persisted throughout the lifecycle of the switch.
@@ -2143,7 +2360,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2162,6 +2382,7 @@ class PlaidSDK:
         return res
 
     
+    
     def deposit_switch_create(self, request: components.DepositSwitchCreateRequest) -> operations.DepositSwitchCreateResponse:
         r"""Create a deposit switch
         This endpoint creates a deposit switch entity that will be persisted throughout the lifecycle of the switch.
@@ -2179,7 +2400,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2198,6 +2422,7 @@ class PlaidSDK:
         return res
 
     
+    
     def deposit_switch_get(self, request: components.DepositSwitchGetRequest) -> operations.DepositSwitchGetResponse:
         r"""Retrieve a deposit switch
         This endpoint returns information related to how the user has configured their payroll allocation and the state of the switch. You can use this information to build logic related to the user's direct deposit allocation preferences.
@@ -2215,7 +2440,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2234,6 +2462,7 @@ class PlaidSDK:
         return res
 
     
+    
     def deposit_switch_token_create(self, request: components.DepositSwitchTokenCreateRequest) -> operations.DepositSwitchTokenCreateResponse:
         r"""Create a deposit switch token
         In order for the end user to take action, you will need to create a public token representing the deposit switch. This token is used to initialize Link. It can be used one time and expires after 30 minutes.
@@ -2251,7 +2480,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2269,6 +2501,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def employers_search(self, request: components.EmployersSearchRequest) -> operations.EmployersSearchResponse:
         r"""Search employer database
@@ -2289,7 +2522,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2307,6 +2543,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def employment_verification_get(self, request: components.EmploymentVerificationGetRequest) -> operations.EmploymentVerificationGetResponse:
         r"""(Deprecated) Retrieve a summary of an individual's employment information
@@ -2329,7 +2566,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2348,6 +2588,7 @@ class PlaidSDK:
         return res
 
     
+    
     def fdx_notifications(self, request: components.FDXNotification) -> operations.FdxNotificationsResponse:
         r"""Webhook receiver for fdx notifications
         A generic webhook receiver endpoint for FDX Event Notifications
@@ -2365,7 +2606,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2385,6 +2629,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def identity_get(self, request: components.IdentityGetRequest) -> operations.IdentityGetResponse:
         r"""Retrieve identity data
@@ -2407,7 +2652,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2425,6 +2673,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def identity_match(self, request: components.IdentityMatchRequest) -> operations.IdentityMatchResponse:
         r"""Retrieve identity match score
@@ -2445,7 +2694,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2463,6 +2715,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def identity_refresh(self, request: components.IdentityRefreshRequest) -> operations.IdentityRefreshResponse:
         r"""Refresh identity data
@@ -2482,7 +2735,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2507,6 +2763,7 @@ class PlaidSDK:
         return res
 
     
+    
     def identity_verification_create(self, request: components.IdentityVerificationCreateRequest) -> operations.IdentityVerificationCreateResponse:
         r"""Create a new identity verification
         Create a new Identity Verification for the user specified by the `client_user_id` field. The requirements and behavior of the verification are determined by the `template_id` provided.
@@ -2527,7 +2784,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2546,6 +2806,7 @@ class PlaidSDK:
         return res
 
     
+    
     def identity_verification_get(self, request: components.IdentityVerificationGetRequest) -> operations.IdentityVerificationGetResponse:
         r"""Retrieve Identity Verification
         Retrieve a previously created identity verification.
@@ -2563,7 +2824,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2582,6 +2846,7 @@ class PlaidSDK:
         return res
 
     
+    
     def identity_verification_list(self, request: components.IdentityVerificationListRequest) -> operations.IdentityVerificationListResponse:
         r"""List Identity Verifications
         Filter and list Identity Verifications created by your account
@@ -2599,7 +2864,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2618,6 +2886,7 @@ class PlaidSDK:
         return res
 
     
+    
     def identity_verification_retry(self, request: components.IdentityVerificationRetryRequest) -> operations.IdentityVerificationRetryResponse:
         r"""Retry an Identity Verification
         Allow a customer to retry their identity verification
@@ -2635,7 +2904,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2653,6 +2925,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def income_verification_create(self, request: components.IncomeVerificationCreateRequest) -> operations.IncomeVerificationCreateResponse:
         r"""(Deprecated) Create an income verification instance
@@ -2673,7 +2946,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2691,6 +2967,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def income_verification_documents_download(self, request: components.IncomeVerificationDocumentsDownloadRequest) -> operations.IncomeVerificationDocumentsDownloadResponse:
         r"""(Deprecated) Download the original documents used for income verification
@@ -2719,7 +2996,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/zip'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2736,6 +3016,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def income_verification_paystubs_get(self, request: components.IncomeVerificationPaystubsGetRequest) -> operations.IncomeVerificationPaystubsGetResponse:
         r"""(Deprecated) Retrieve information from the paystubs used for income verification
@@ -2758,7 +3039,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2776,6 +3060,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def income_verification_precheck(self, request: components.IncomeVerificationPrecheckRequest) -> operations.IncomeVerificationPrecheckResponse:
         r"""(Deprecated) Check digital income verification eligibility and optimize conversion
@@ -2800,7 +3085,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2818,6 +3106,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def income_verification_taxforms_get(self, request: components.IncomeVerificationTaxformsGetRequest) -> operations.IncomeVerificationTaxformsGetResponse:
         r"""(Deprecated) Retrieve information from the tax documents used for income verification
@@ -2840,7 +3129,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2865,6 +3157,7 @@ class PlaidSDK:
         return res
 
     
+    
     def institutions_get(self, request: components.InstitutionsGetRequest) -> operations.InstitutionsGetResponse:
         r"""Get details of all supported institutions
         Returns a JSON response containing details on all financial institutions currently supported by Plaid. Because Plaid supports thousands of institutions, results are paginated.
@@ -2884,7 +3177,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2909,6 +3205,7 @@ class PlaidSDK:
         return res
 
     
+    
     def institutions_get_by_id(self, request: components.InstitutionsGetByIDRequest) -> operations.InstitutionsGetByIDResponse:
         r"""Get details of an institution
         Returns a JSON response containing details on a specified financial institution currently supported by Plaid.
@@ -2928,7 +3225,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2953,6 +3253,7 @@ class PlaidSDK:
         return res
 
     
+    
     def institutions_search(self, request: components.InstitutionsSearchRequest) -> operations.InstitutionsSearchResponse:
         r"""Search institutions
         Returns a JSON response containing details for institutions that match the query parameters, up to a maximum of ten institutions per query.
@@ -2972,7 +3273,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2997,6 +3301,7 @@ class PlaidSDK:
         return res
 
     
+    
     def investments_auth_get(self, request: components.InvestmentsAuthGetRequest) -> operations.InvestmentsAuthGetResponse:
         r"""Get data needed to authorize an investments transfer
         The `/investments/auth/get` endpoint allows developers to receive user-authorized data to facilitate the transfer of holdings
@@ -3014,7 +3319,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3033,6 +3341,7 @@ class PlaidSDK:
         return res
 
     
+    
     def investments_holdings_get(self, request: components.InvestmentsHoldingsGetRequest) -> operations.InvestmentsHoldingsGetResponse:
         r"""Get Investment holdings
         The `/investments/holdings/get` endpoint allows developers to receive user-authorized stock position data for `investment`-type accounts.
@@ -3050,7 +3359,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3068,6 +3380,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def investments_refresh(self, request: components.InvestmentsRefreshRequest) -> operations.InvestmentsRefreshResponse:
         r"""Refresh investment data
@@ -3087,7 +3400,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3111,6 +3427,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def investments_transactions_get(self, request: components.InvestmentsTransactionsGetRequest) -> operations.InvestmentsTransactionsGetResponse:
         r"""Get investment transactions
@@ -3137,7 +3454,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3155,6 +3475,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def item_access_token_invalidate(self, request: components.ItemAccessTokenInvalidateRequest) -> operations.ItemAccessTokenInvalidateResponse:
         r"""Invalidate access_token
@@ -3175,7 +3496,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3194,6 +3518,7 @@ class PlaidSDK:
         return res
 
     
+    
     def item_activity_list(self, request: components.ItemActivityListRequest) -> operations.ItemActivityListResponse:
         r"""List a historical log of user consent events
         List a historical log of user consent events
@@ -3210,7 +3535,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3235,6 +3563,7 @@ class PlaidSDK:
         return res
 
     
+    
     def item_application_list(self, request: components.ItemApplicationListRequest) -> operations.ItemApplicationListResponse:
         r"""List a user’s connected applications
         List a user’s connected applications
@@ -3251,7 +3580,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3276,6 +3608,7 @@ class PlaidSDK:
         return res
 
     
+    
     def item_application_scopes_update(self, request: components.ItemApplicationScopesUpdateRequest) -> operations.ItemApplicationScopesUpdateResponse:
         r"""Update the scopes of access for a particular application
         Enable consumers to update product access on selected accounts for an application.
@@ -3292,7 +3625,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3317,6 +3653,7 @@ class PlaidSDK:
         return res
 
     
+    
     def item_create_public_token(self, request: components.ItemPublicTokenCreateRequest) -> operations.ItemCreatePublicTokenResponse:
         r"""Create public token
         Note: As of July 2020, the `/item/public_token/create` endpoint is deprecated. Instead, use `/link/token/create` with an `access_token` to create a Link token for use with [update mode](https://plaid.com/docs/link/update-mode).
@@ -3340,7 +3677,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3359,6 +3699,7 @@ class PlaidSDK:
         return res
 
     
+    
     def item_get(self, request: components.ItemGetRequest) -> operations.ItemGetResponse:
         r"""Retrieve an Item
         Returns information about the status of an Item.
@@ -3376,7 +3717,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3401,6 +3745,7 @@ class PlaidSDK:
         return res
 
     
+    
     def item_import(self, request: components.ItemImportRequest) -> operations.ItemImportResponse:
         r"""Import Item
         `/item/import` creates an Item via your Plaid Exchange Integration and returns an `access_token`. As part of an `/item/import` request, you will include a User ID (`user_auth.user_id`) and Authentication Token (`user_auth.auth_token`) that enable data aggregation through your Plaid Exchange API endpoints. These authentication principals are to be chosen by you.
@@ -3419,7 +3764,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3437,6 +3785,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def item_public_token_exchange(self, request: components.ItemPublicTokenExchangeRequest) -> operations.ItemPublicTokenExchangeResponse:
         r"""Exchange public token for an access token
@@ -3457,7 +3806,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3475,6 +3827,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def item_remove(self, request: components.ItemRemoveRequest) -> operations.ItemRemoveResponse:
         r"""Remove an Item
@@ -3499,7 +3852,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3524,6 +3880,7 @@ class PlaidSDK:
         return res
 
     
+    
     def item_webhook_update(self, request: components.ItemWebhookUpdateRequest) -> operations.ItemWebhookUpdateResponse:
         r"""Update Webhook URL
         The POST `/item/webhook/update` allows you to update the webhook URL associated with an Item. This request triggers a [`WEBHOOK_UPDATE_ACKNOWLEDGED`](https://plaid.com/docs/api/items/#webhook_update_acknowledged) webhook to the newly specified webhook URL.
@@ -3541,7 +3898,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3559,6 +3919,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def liabilities_get(self, request: components.LiabilitiesGetRequest) -> operations.LiabilitiesGetResponse:
         r"""Retrieve Liabilities data
@@ -3581,7 +3942,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3600,6 +3964,7 @@ class PlaidSDK:
         return res
 
     
+    
     def link_delivery_create(self, request: components.LinkDeliveryCreateRequest) -> operations.LinkDeliveryCreateResponse:
         r"""Create Hosted Link session
         Use the `/link_delivery/create` endpoint to create a Hosted Link session.
@@ -3617,7 +3982,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3642,6 +4010,7 @@ class PlaidSDK:
         return res
 
     
+    
     def link_delivery_get(self, request: components.LinkDeliveryGetRequest) -> operations.LinkDeliveryGetResponse:
         r"""Get Hosted Link session
         Use the `/link_delivery/get` endpoint to get the status of a Hosted Link session.
@@ -3659,7 +4028,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3684,6 +4056,7 @@ class PlaidSDK:
         return res
 
     
+    
     def link_oauth_correlation_id_exchange(self, request: components.LinkOAuthCorrelationIDExchangeRequest) -> operations.LinkOauthCorrelationIDExchangeResponse:
         r"""Exchange the Link Correlation Id for a Link Token
         Exchange an OAuth `link_correlation_id` for the corresponding `link_token`. The `link_correlation_id` is only available for 'payment_initiation' products and is provided to the client via the OAuth `redirect_uri` as a query parameter.
@@ -3702,7 +4075,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3720,6 +4096,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def link_token_create(self, request: components.LinkTokenCreateRequest) -> operations.LinkTokenCreateResponse:
         r"""Create Link Token
@@ -3740,7 +4117,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3758,6 +4138,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def link_token_get(self, request: components.LinkTokenGetRequest) -> operations.LinkTokenGetResponse:
         r"""Get Link Token
@@ -3777,7 +4158,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3796,6 +4180,7 @@ class PlaidSDK:
         return res
 
     
+    
     def partner_customer_create(self, request: components.PartnerCustomerCreateRequest) -> operations.PartnerCustomerCreateResponse:
         r"""Creates a new end customer for a Plaid reseller.
         The `/partner/customer/create` endpoint is used by reseller partners to create end customers.
@@ -3813,7 +4198,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3838,6 +4226,7 @@ class PlaidSDK:
         return res
 
     
+    
     def partner_customer_enable(self, request: components.PartnerCustomerEnableRequest) -> operations.PartnerCustomerEnableResponse:
         r"""Enables a Plaid reseller's end customer in the Production environment.
         The `/partner/customer/enable` endpoint is used by reseller partners to enable an end customer in the Production environment.
@@ -3855,7 +4244,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3880,6 +4272,7 @@ class PlaidSDK:
         return res
 
     
+    
     def partner_customer_get(self, request: components.PartnerCustomerGetRequest) -> operations.PartnerCustomerGetResponse:
         r"""Returns a Plaid reseller's end customer.
         The `/partner/customer/get` endpoint is used by reseller partners to retrieve data about a single end customer.
@@ -3897,7 +4290,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3922,6 +4318,7 @@ class PlaidSDK:
         return res
 
     
+    
     def partner_customer_oauth_institutions_get(self, request: components.PartnerCustomerOAuthInstitutionsGetRequest) -> operations.PartnerCustomerOauthInstitutionsGetResponse:
         r"""Returns OAuth-institution registration information for a given end customer.
         The `/partner/customer/oauth_institutions/get` endpoint is used by reseller partners to retrieve OAuth-institution registration information about a single end customer. To learn how to set up a webhook to listen to status update events, visit the [reseller documentation](https://plaid.com/docs/account/resellers/#enabling-end-customers).
@@ -3939,7 +4336,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -3964,6 +4364,7 @@ class PlaidSDK:
         return res
 
     
+    
     def partner_customer_remove(self, request: components.PartnerCustomerRemoveRequest) -> operations.PartnerCustomerRemoveResponse:
         r"""Removes a Plaid reseller's end customer.
         The `/partner/customer/remove` endpoint is used by reseller partners to remove an end customer. Removing an end customer will remove it from view in the Plaid Dashboard and deactivate its API keys. This endpoint can only be used to remove an end customer that has not yet been enabled in Production.
@@ -3981,7 +4382,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4006,6 +4410,7 @@ class PlaidSDK:
         return res
 
     
+    
     def payment_initiation_consent_create(self, request: components.PaymentInitiationConsentCreateRequest) -> operations.PaymentInitiationConsentCreateResponse:
         r"""Create payment consent
         The `/payment_initiation/consent/create` endpoint is used to create a payment consent, which can be used to initiate payments on behalf of the user. Payment consents are created with `UNAUTHORISED` status by default and must be authorised by the user before payments can be initiated.
@@ -4025,7 +4430,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4044,6 +4452,7 @@ class PlaidSDK:
         return res
 
     
+    
     def payment_initiation_consent_get(self, request: components.PaymentInitiationConsentGetRequest) -> operations.PaymentInitiationConsentGetResponse:
         r"""Get payment consent
         The `/payment_initiation/consent/get` endpoint can be used to check the status of a payment consent, as well as to receive basic information such as recipient and constraints.
@@ -4061,7 +4470,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4080,6 +4492,7 @@ class PlaidSDK:
         return res
 
     
+    
     def payment_initiation_consent_payment_execute(self, request: components.PaymentInitiationConsentPaymentExecuteRequest) -> operations.PaymentInitiationConsentPaymentExecuteResponse:
         r"""Execute a single payment using consent
         The `/payment_initiation/consent/payment/execute` endpoint can be used to execute payments using payment consent.
@@ -4097,7 +4510,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4116,6 +4532,7 @@ class PlaidSDK:
         return res
 
     
+    
     def payment_initiation_consent_revoke(self, request: components.PaymentInitiationConsentRevokeRequest) -> operations.PaymentInitiationConsentRevokeResponse:
         r"""Revoke payment consent
         The `/payment_initiation/consent/revoke` endpoint can be used to revoke the payment consent. Once the consent is revoked, it is not possible to initiate payments using it.
@@ -4133,7 +4550,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4151,6 +4571,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def payment_initiation_payment_create(self, request: components.PaymentInitiationPaymentCreateRequest) -> operations.PaymentInitiationPaymentCreateResponse:
         r"""Create a payment
@@ -4173,7 +4594,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4192,6 +4616,7 @@ class PlaidSDK:
         return res
 
     
+    
     def payment_initiation_payment_get(self, request: components.PaymentInitiationPaymentGetRequest) -> operations.PaymentInitiationPaymentGetResponse:
         r"""Get payment details
         The `/payment_initiation/payment/get` endpoint can be used to check the status of a payment, as well as to receive basic information such as recipient and payment amount. In the case of standing orders, the `/payment_initiation/payment/get` endpoint will provide information about the status of the overall standing order itself; the API cannot be used to retrieve payment status for individual payments within a standing order.
@@ -4209,7 +4634,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4228,6 +4656,7 @@ class PlaidSDK:
         return res
 
     
+    
     def payment_initiation_payment_list(self, request: components.PaymentInitiationPaymentListRequest) -> operations.PaymentInitiationPaymentListResponse:
         r"""List payments
         The `/payment_initiation/payment/list` endpoint can be used to retrieve all created payments. By default, the 10 most recent payments are returned. You can request more payments and paginate through the results using the optional `count` and `cursor` parameters.
@@ -4245,7 +4674,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4263,6 +4695,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def payment_initiation_payment_reverse(self, request: components.PaymentInitiationPaymentReverseRequest) -> operations.PaymentInitiationPaymentReverseResponse:
         r"""Reverse an existing payment
@@ -4290,7 +4723,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4308,6 +4744,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def payment_initiation_recipient_create(self, request: components.PaymentInitiationRecipientCreateRequest) -> operations.PaymentInitiationRecipientCreateResponse:
         r"""Create payment recipient
@@ -4330,7 +4767,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4349,6 +4789,7 @@ class PlaidSDK:
         return res
 
     
+    
     def payment_initiation_recipient_get(self, request: components.PaymentInitiationRecipientGetRequest) -> operations.PaymentInitiationRecipientGetResponse:
         r"""Get payment recipient
         Get details about a payment recipient you have previously created.
@@ -4366,7 +4807,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4385,6 +4829,7 @@ class PlaidSDK:
         return res
 
     
+    
     def payment_initiation_recipient_list(self, request: components.PaymentInitiationRecipientListRequest) -> operations.PaymentInitiationRecipientListResponse:
         r"""List payment recipients
         The `/payment_initiation/recipient/list` endpoint list the payment recipients that you have previously created.
@@ -4402,7 +4847,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4420,6 +4868,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def payment_profile_create(self, request: components.PaymentProfileCreateRequest) -> operations.PaymentProfileCreateResponse:
         r"""Create payment profile
@@ -4440,7 +4889,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4465,6 +4917,7 @@ class PlaidSDK:
         return res
 
     
+    
     def payment_profile_get(self, request: components.PaymentProfileGetRequest) -> operations.PaymentProfileGetResponse:
         r"""Get payment profile
         Use `/payment_profile/get` endpoint to get the status of a given Payment Profile.
@@ -4482,7 +4935,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4507,6 +4963,7 @@ class PlaidSDK:
         return res
 
     
+    
     def payment_profile_remove(self, request: components.PaymentProfileRemoveRequest) -> operations.PaymentProfileRemoveResponse:
         r"""Remove payment profile
         Use the `/payment_profile/remove` endpoint to remove a given Payment Profile. Once it’s removed, it can no longer be used to create transfers.
@@ -4524,7 +4981,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4549,6 +5009,7 @@ class PlaidSDK:
         return res
 
     
+    
     def processor_apex_processor_token_create(self, request: components.ProcessorApexProcessorTokenCreateRequest) -> operations.ProcessorApexProcessorTokenCreateResponse:
         r"""Create Apex bank account token
         Used to create a token suitable for sending to Apex to enable Plaid-Apex integrations.
@@ -4566,7 +5027,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4584,6 +5048,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def processor_auth_get(self, request: components.ProcessorAuthGetRequest) -> operations.ProcessorAuthGetResponse:
         r"""Retrieve Auth data
@@ -4604,7 +5069,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4623,6 +5091,7 @@ class PlaidSDK:
         return res
 
     
+    
     def processor_balance_get(self, request: components.ProcessorBalanceGetRequest) -> operations.ProcessorBalanceGetResponse:
         r"""Retrieve Balance data
         The `/processor/balance/get` endpoint returns the real-time balance for each of an Item's accounts. While other endpoints may return a balance object, only `/processor/balance/get` forces the available and current balance fields to be refreshed rather than cached.
@@ -4640,7 +5109,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4659,6 +5131,7 @@ class PlaidSDK:
         return res
 
     
+    
     def processor_bank_transfer_create(self, request: components.ProcessorBankTransferCreateRequest) -> operations.ProcessorBankTransferCreateResponse:
         r"""Create a bank transfer as a processor
         Use the `/processor/bank_transfer/create` endpoint to initiate a new bank transfer as a processor
@@ -4676,7 +5149,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4701,6 +5177,7 @@ class PlaidSDK:
         return res
 
     
+    
     def processor_identity_get(self, request: components.ProcessorIdentityGetRequest) -> operations.ProcessorIdentityGetResponse:
         r"""Retrieve Identity data
         The `/processor/identity/get` endpoint allows you to retrieve various account holder information on file with the financial institution, including names, emails, phone numbers, and addresses.
@@ -4718,7 +5195,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4736,6 +5216,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def processor_identity_match(self, request: components.ProcessorIdentityMatchRequest) -> operations.ProcessorIdentityMatchResponse:
         r"""Retrieve identity match score
@@ -4756,7 +5237,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4775,6 +5259,7 @@ class PlaidSDK:
         return res
 
     
+    
     def processor_signal_decision_report(self, request: components.ProcessorSignalDecisionReportRequest) -> operations.ProcessorSignalDecisionReportResponse:
         r"""Report whether you initiated an ACH transaction
         After calling `/processor/signal/evaluate`, call `/processor/signal/decision/report` to report whether the transaction was initiated.
@@ -4792,7 +5277,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4817,6 +5305,7 @@ class PlaidSDK:
         return res
 
     
+    
     def processor_signal_evaluate(self, request: components.ProcessorSignalEvaluateRequest) -> operations.ProcessorSignalEvaluateResponse:
         r"""Evaluate a planned ACH transaction
         Use `/processor/signal/evaluate` to evaluate a planned ACH transaction as a processor to get a return risk assessment (such as a risk score and risk tier) and additional risk signals.
@@ -4838,7 +5327,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4863,6 +5355,7 @@ class PlaidSDK:
         return res
 
     
+    
     def processor_signal_return_report(self, request: components.ProcessorSignalReturnReportRequest) -> operations.ProcessorSignalReturnReportResponse:
         r"""Report a return for an ACH transaction
         Call the `/processor/signal/return/report` endpoint to report a returned transaction that was previously sent to the `/processor/signal/evaluate` endpoint. Your feedback will be used by the model to incorporate the latest risk trend in your portfolio.
@@ -4880,7 +5373,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4905,6 +5401,7 @@ class PlaidSDK:
         return res
 
     
+    
     def processor_stripe_bank_account_token_create(self, request: components.ProcessorStripeBankAccountTokenCreateRequest) -> operations.ProcessorStripeBankAccountTokenCreateResponse:
         r"""Create Stripe bank account token
         Used to create a token suitable for sending to Stripe to enable Plaid-Stripe integrations. For a detailed guide on integrating Stripe, see [Add Stripe to your app](https://plaid.com/docs/auth/partnerships/stripe/).
@@ -4926,7 +5423,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4945,6 +5445,7 @@ class PlaidSDK:
         return res
 
     
+    
     def processor_token_create(self, request: components.ProcessorTokenCreateRequest) -> operations.ProcessorTokenCreateResponse:
         r"""Create processor token
         Used to create a token suitable for sending to one of Plaid's partners to enable integrations. Note that Stripe partnerships use bank account tokens instead; see `/processor/stripe/bank_account_token/create` for creating tokens for use with Stripe integrations. Once created, a processor token for a given Item cannot be modified or updated. If the account must be linked to a new or different partner resource, create a new Item by having the user go through the Link flow again; a new processor token can then be created from the new `access_token`. Processor tokens can also be revoked, using `/item/remove`.
@@ -4962,7 +5463,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -4981,6 +5485,7 @@ class PlaidSDK:
         return res
 
     
+    
     def processor_token_permissions_get(self, request: components.ProcessorTokenPermissionsGetRequest) -> operations.ProcessorTokenPermissionsGetResponse:
         r"""Get a processor token's product permissions
         Used to get a processor token's product permissions. The `products` field will be an empty list if the processor can access all available products.
@@ -4998,7 +5503,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -5017,6 +5525,7 @@ class PlaidSDK:
         return res
 
     
+    
     def processor_token_permissions_set(self, request: components.ProcessorTokenPermissionsSetRequest) -> operations.ProcessorTokenPermissionsSetResponse:
         r"""Control a processor's access to products
         Used to control a processor's access to products on the given processor token. By default, a processor will have access to all available products on the corresponding item. To restrict access to a particular set of products, call this endpoint with the desired products. To restore access to all available products, call this endpoint with an empty list. This endpoint can be called multiple times as your needs and your processor's needs change.
@@ -5034,7 +5543,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -5053,6 +5565,7 @@ class PlaidSDK:
         return res
 
     
+    
     def processor_token_webhook_update(self, request: components.ProcessorTokenWebhookUpdateRequest) -> operations.ProcessorTokenWebhookUpdateResponse:
         r"""Update a processor token's webhook URL
         This endpoint allows you to update the webhook URL associated with a processor token. This request triggers a `WEBHOOK_UPDATE_ACKNOWLEDGED` webhook to the newly specified webhook URL.
@@ -5070,7 +5583,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -5088,6 +5604,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def processor_transactions_get(self, request: components.ProcessorTransactionsGetRequest) -> operations.ProcessorTransactionsGetResponse:
         r"""Get transaction data
@@ -5116,7 +5633,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -5140,6 +5660,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def processor_transactions_recurring_get(self, request: components.ProcessorTransactionsRecurringGetRequest) -> operations.ProcessorTransactionsRecurringGetResponse:
         r"""Fetch recurring transaction streams
@@ -5166,7 +5687,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -5191,6 +5715,7 @@ class PlaidSDK:
         return res
 
     
+    
     def processor_transactions_refresh(self, request: components.ProcessorTransactionsRefreshRequest) -> operations.ProcessorTransactionsRefreshResponse:
         r"""Refresh transaction data
         `/processor/transactions/refresh` is an optional endpoint for users of the Transactions product. It initiates an on-demand extraction to fetch the newest transactions for a processor token. This on-demand extraction takes place in addition to the periodic extractions that automatically occur multiple times a day for any Transactions-enabled processor token. If changes to transactions are discovered after calling `/processor/transactions/refresh`, Plaid will fire a webhook: for `/transactions/sync` users, [`SYNC_UPDATES_AVAILABLE`](https://plaid.com/docs/api/products/transactions/#sync_updates_available) will be fired if there are any transactions updated, added, or removed. For users of both `/processor/transactions/sync` and `/processor/transactions/get`, [`TRANSACTIONS_REMOVED`](https://plaid.com/docs/api/products/transactions/#transactions_removed) will be fired if any removed transactions are detected, and [`DEFAULT_UPDATE`](https://plaid.com/docs/api/products/transactions/#default_update) will be fired if any new transactions are detected. New transactions can be fetched by calling `/processor/transactions/get` or `/processor/transactions/sync`. Note that the `/processor/transactions/refresh` endpoint is not supported for Capital One (`ins_128026`) and will result in a `PRODUCT_NOT_SUPPORTED` error if called on a processor token from that institution.
@@ -5210,7 +5735,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -5234,6 +5762,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def processor_transactions_sync(self, request: components.ProcessorTransactionsSyncRequest) -> operations.ProcessorTransactionsSyncResponse:
         r"""Get incremental transaction updates on a processor token
@@ -5270,7 +5799,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -5295,6 +5827,7 @@ class PlaidSDK:
         return res
 
     
+    
     def sandbox_bank_income_fire_webhook(self, request: components.SandboxBankIncomeFireWebhookRequest) -> operations.SandboxBankIncomeFireWebhookResponse:
         r"""Manually fire a bank income webhook in sandbox
         Use the `/sandbox/bank_income/fire_webhook` endpoint to manually trigger a Bank Income webhook in the Sandbox environment.
@@ -5312,7 +5845,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -5337,6 +5873,7 @@ class PlaidSDK:
         return res
 
     
+    
     def sandbox_bank_transfer_fire_webhook(self, request: components.SandboxBankTransferFireWebhookRequest) -> operations.SandboxBankTransferFireWebhookResponse:
         r"""Manually fire a Bank Transfer webhook
         Use the `/sandbox/bank_transfer/fire_webhook` endpoint to manually trigger a Bank Transfers webhook in the Sandbox environment.
@@ -5354,7 +5891,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -5379,6 +5919,7 @@ class PlaidSDK:
         return res
 
     
+    
     def sandbox_bank_transfer_simulate(self, request: components.SandboxBankTransferSimulateRequest) -> operations.SandboxBankTransferSimulateResponse:
         r"""Simulate a bank transfer event in Sandbox
         Use the `/sandbox/bank_transfer/simulate` endpoint to simulate a bank transfer event in the Sandbox environment.  Note that while an event will be simulated and will appear when using endpoints such as `/bank_transfer/event/sync` or `/bank_transfer/event/list`, no transactions will actually take place and funds will not move between accounts, even within the Sandbox.
@@ -5396,7 +5937,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -5421,6 +5965,7 @@ class PlaidSDK:
         return res
 
     
+    
     def sandbox_income_fire_webhook(self, request: components.SandboxIncomeFireWebhookRequest) -> operations.SandboxIncomeFireWebhookResponse:
         r"""Manually fire an Income webhook
         Use the `/sandbox/income/fire_webhook` endpoint to manually trigger a Payroll Income webhook in the Sandbox environment.
@@ -5438,7 +5983,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -5462,6 +6010,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def sandbox_item_fire_webhook(self, request: components.SandboxItemFireWebhookRequest) -> operations.SandboxItemFireWebhookResponse:
         r"""Fire a test webhook
@@ -5496,7 +6045,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -5521,6 +6073,7 @@ class PlaidSDK:
         return res
 
     
+    
     def sandbox_item_reset_login(self, request: components.SandboxItemResetLoginRequest) -> operations.SandboxItemResetLoginResponse:
         r"""Force a Sandbox Item into an error state
         `/sandbox/item/reset_login/` forces an Item into an `ITEM_LOGIN_REQUIRED` state in order to simulate an Item whose login is no longer valid. This makes it easy to test Link's [update mode](https://plaid.com/docs/link/update-mode) flow in the Sandbox environment.  After calling `/sandbox/item/reset_login`, You can then use Plaid Link update mode to restore the Item to a good state. An `ITEM_LOGIN_REQUIRED` webhook will also be fired after a call to this endpoint, if one is associated with the Item.
@@ -5541,7 +6094,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -5559,6 +6115,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def sandbox_item_set_verification_status(self, request: components.SandboxItemSetVerificationStatusRequest) -> operations.SandboxItemSetVerificationStatusResponse:
         r"""Set verification status for Sandbox account
@@ -5581,7 +6138,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -5600,6 +6160,7 @@ class PlaidSDK:
         return res
 
     
+    
     def sandbox_oauth_select_accounts(self, request: components.SandboxOauthSelectAccountsRequest) -> operations.SandboxOauthSelectAccountsResponse:
         r"""Save the selected accounts when connecting to the Platypus Oauth institution
         Save the selected accounts when connecting to the Platypus Oauth institution
@@ -5616,7 +6177,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -5641,6 +6205,7 @@ class PlaidSDK:
         return res
 
     
+    
     def sandbox_payment_profile_reset_login(self, request: components.SandboxPaymentProfileResetLoginRequest) -> operations.SandboxPaymentProfileResetLoginResponse:
         r"""Reset the login of a Payment Profile
         `/sandbox/payment_profile/reset_login/` forces a Payment Profile into a state where the login is no longer valid. This makes it easy to test update mode for Payment Profile in the Sandbox environment.
@@ -5662,7 +6227,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -5681,6 +6249,7 @@ class PlaidSDK:
         return res
 
     
+    
     def sandbox_processor_token_create(self, request: components.SandboxProcessorTokenCreateRequest) -> operations.SandboxProcessorTokenCreateResponse:
         r"""Create a test Item and processor token
         Use the `/sandbox/processor_token/create` endpoint to create a valid `processor_token` for an arbitrary institution ID and test credentials. The created `processor_token` corresponds to a new Sandbox Item. You can then use this `processor_token` with the `/processor/` API endpoints in Sandbox. You can also use `/sandbox/processor_token/create` with the [`user_custom` test username](https://plaid.com/docs/sandbox/user-custom) to generate a test account with custom data.
@@ -5698,7 +6267,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -5723,6 +6295,7 @@ class PlaidSDK:
         return res
 
     
+    
     def sandbox_public_token_create(self, request: components.SandboxPublicTokenCreateRequest) -> operations.SandboxPublicTokenCreateResponse:
         r"""Create a test Item
         Use the `/sandbox/public_token/create` endpoint to create a valid `public_token`  for an arbitrary institution ID, initial products, and test credentials. The created `public_token` maps to a new Sandbox Item. You can then call `/item/public_token/exchange` to exchange the `public_token` for an `access_token` and perform all API actions. `/sandbox/public_token/create` can also be used with the [`user_custom` test username](https://plaid.com/docs/sandbox/user-custom) to generate a test account with custom data. `/sandbox/public_token/create` cannot be used with OAuth institutions.
@@ -5740,7 +6313,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -5765,6 +6341,7 @@ class PlaidSDK:
         return res
 
     
+    
     def sandbox_transfer_fire_webhook(self, request: components.SandboxTransferFireWebhookRequest) -> operations.SandboxTransferFireWebhookResponse:
         r"""Manually fire a Transfer webhook
         Use the `/sandbox/transfer/fire_webhook` endpoint to manually trigger a Transfer webhook in the Sandbox environment.
@@ -5782,7 +6359,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -5807,6 +6387,7 @@ class PlaidSDK:
         return res
 
     
+    
     def sandbox_transfer_repayment_simulate(self, request: components.SandboxTransferRepaymentSimulateRequest) -> operations.SandboxTransferRepaymentSimulateResponse:
         r"""Trigger the creation of a repayment
         Use the `/sandbox/transfer/repayment/simulate` endpoint to trigger the creation of a repayment. As a side effect of calling this route, a repayment is created that includes all unreimbursed returns of guaranteed transfers. If there are no such returns, an 400 error is returned.
@@ -5824,7 +6405,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -5849,6 +6433,7 @@ class PlaidSDK:
         return res
 
     
+    
     def sandbox_transfer_simulate(self, request: components.SandboxTransferSimulateRequest) -> operations.SandboxTransferSimulateResponse:
         r"""Simulate a transfer event in Sandbox
         Use the `/sandbox/transfer/simulate` endpoint to simulate a transfer event in the Sandbox environment.  Note that while an event will be simulated and will appear when using endpoints such as `/transfer/event/sync` or `/transfer/event/list`, no transactions will actually take place and funds will not move between accounts, even within the Sandbox.
@@ -5866,7 +6451,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -5891,6 +6479,7 @@ class PlaidSDK:
         return res
 
     
+    
     def sandbox_transfer_sweep_simulate(self, request: components.SandboxTransferSweepSimulateRequest) -> operations.SandboxTransferSweepSimulateResponse:
         r"""Simulate creating a sweep
         Use the `/sandbox/transfer/sweep/simulate` endpoint to create a sweep and associated events in the Sandbox environment. Upon calling this endpoint, all `posted` or `pending` transfers with a sweep status of `unswept` will become `swept`, and all `returned` transfers with a sweep status of `swept` will become `return_swept`.
@@ -5908,7 +6497,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -5932,6 +6524,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def sandbox_transfer_test_clock_advance(self, request: components.SandboxTransferTestClockAdvanceRequest) -> operations.SandboxTransferTestClockAdvanceResponse:
         r"""Advance a test clock
@@ -5958,7 +6551,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -5983,6 +6579,7 @@ class PlaidSDK:
         return res
 
     
+    
     def sandbox_transfer_test_clock_create(self, request: components.SandboxTransferTestClockCreateRequest) -> operations.SandboxTransferTestClockCreateResponse:
         r"""Create a test clock
         Use the `/sandbox/transfer/test_clock/create` endpoint to create a `test_clock` in the Sandbox environment.
@@ -6004,7 +6601,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -6029,6 +6629,7 @@ class PlaidSDK:
         return res
 
     
+    
     def sandbox_transfer_test_clock_get(self, request: components.SandboxTransferTestClockGetRequest) -> operations.SandboxTransferTestClockGetResponse:
         r"""Get a test clock
         Use the `/sandbox/transfer/test_clock/get` endpoint to get a `test_clock` in the Sandbox environment.
@@ -6046,7 +6647,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -6071,6 +6675,7 @@ class PlaidSDK:
         return res
 
     
+    
     def sandbox_transfer_test_clock_list(self, request: components.SandboxTransferTestClockListRequest) -> operations.SandboxTransferTestClockListResponse:
         r"""List test clocks
         Use the `/sandbox/transfer/test_clock/list` endpoint to see a list of all your test clocks in the Sandbox environment, by ascending `virtual_time`. Results are paginated; use the `count` and `offset` query parameters to retrieve the desired test clocks.
@@ -6088,7 +6693,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -6113,6 +6721,7 @@ class PlaidSDK:
         return res
 
     
+    
     def signal_decision_report(self, request: components.SignalDecisionReportRequest) -> operations.SignalDecisionReportResponse:
         r"""Report whether you initiated an ACH transaction
         After calling `/signal/evaluate`, call `/signal/decision/report` to report whether the transaction was initiated. This endpoint will return an [`INVALID_FIELD`](/docs/errors/invalid-request/#invalid_field) error if called a second time with a different value for `initiated`.
@@ -6130,7 +6739,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -6155,6 +6767,7 @@ class PlaidSDK:
         return res
 
     
+    
     def signal_evaluate(self, request: components.SignalEvaluateRequest) -> operations.SignalEvaluateResponse:
         r"""Evaluate a planned ACH transaction
         Use `/signal/evaluate` to evaluate a planned ACH transaction to get a return risk assessment (such as a risk score and risk tier) and additional risk signals.
@@ -6176,7 +6789,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -6201,6 +6817,7 @@ class PlaidSDK:
         return res
 
     
+    
     def signal_prepare(self, request: components.SignalPrepareRequest) -> operations.SignalPrepareResponse:
         r"""Opt-in an Item to Signal
         When Link is not initialized with Signal, call `/signal/prepare` to opt-in that Item to the Signal data collection process, developing a Signal score.
@@ -6222,7 +6839,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -6247,6 +6867,7 @@ class PlaidSDK:
         return res
 
     
+    
     def signal_return_report(self, request: components.SignalReturnReportRequest) -> operations.SignalReturnReportResponse:
         r"""Report a return for an ACH transaction
         Call the `/signal/return/report` endpoint to report a returned transaction that was previously sent to the `/signal/evaluate` endpoint. Your feedback will be used by the model to incorporate the latest risk trend in your portfolio.
@@ -6264,7 +6885,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -6289,6 +6913,7 @@ class PlaidSDK:
         return res
 
     
+    
     def statements_download(self, request: components.StatementsDownloadRequest) -> operations.StatementsDownloadResponse:
         r"""Retrieve a single statement.
         The `/statements/download` endpoint retrieves a single statement.
@@ -6306,7 +6931,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -6323,6 +6951,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def statements_list(self, request: components.StatementsListRequest) -> operations.StatementsListResponse:
         r"""Retrieve a list of all statements associated with the provided item.
@@ -6341,7 +6970,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -6359,6 +6991,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def transactions_enhance(self, request: components.TransactionsEnhanceGetRequest) -> operations.TransactionsEnhanceResponse:
         r"""enhance locally-held transaction data
@@ -6378,7 +7011,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -6403,6 +7039,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transactions_enrich(self, request: components.TransactionsEnrichGetRequest) -> operations.TransactionsEnrichResponse:
         r"""Enrich locally-held transaction data
         The `/transactions/enrich` endpoint enriches raw transaction data generated by your own banking products or retrieved from other non-Plaid sources.
@@ -6420,7 +7057,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -6444,6 +7084,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def transactions_get(self, request: components.TransactionsGetRequest) -> operations.TransactionsGetResponse:
         r"""Get transaction data
@@ -6472,7 +7113,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -6497,6 +7141,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transactions_recurring_get(self, request: components.TransactionsRecurringGetRequest) -> operations.TransactionsRecurringGetResponse:
         r"""Fetch recurring transaction streams
         The `/transactions/recurring/get` endpoint allows developers to receive a summary of the recurring outflow and inflow streams (expenses and deposits) from a user’s checking, savings or credit card accounts. Additionally, Plaid provides key insights about each recurring stream including the category, merchant, last amount, and more. Developers can use these insights to build tools and experiences that help their users better manage cash flow, monitor subscriptions, reduce spend, and stay on track with bill payments.
@@ -6520,7 +7165,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -6545,6 +7193,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transactions_refresh(self, request: components.TransactionsRefreshRequest) -> operations.TransactionsRefreshResponse:
         r"""Refresh transaction data
         `/transactions/refresh` is an optional endpoint for users of the Transactions product. It initiates an on-demand extraction to fetch the newest transactions for an Item. This on-demand extraction takes place in addition to the periodic extractions that automatically occur multiple times a day for any Transactions-enabled Item. If changes to transactions are discovered after calling `/transactions/refresh`, Plaid will fire a webhook: for `/transactions/sync` users, [`SYNC_UPDATES_AVAILABLE`](https://plaid.com/docs/api/products/transactions/#sync_updates_available) will be fired if there are any transactions updated, added, or removed. For users of both `/transactions/sync` and `/transactions/get`, [`TRANSACTIONS_REMOVED`](https://plaid.com/docs/api/products/transactions/#transactions_removed) will be fired if any removed transactions are detected, and [`DEFAULT_UPDATE`](https://plaid.com/docs/api/products/transactions/#default_update) will be fired if any new transactions are detected. New transactions can be fetched by calling `/transactions/get` or `/transactions/sync`. Note that the `/transactions/refresh` endpoint is not supported for Capital One (`ins_128026`) and will result in a `PRODUCT_NOT_SUPPORTED` error if called on an Item from that institution.
@@ -6564,7 +7213,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -6589,6 +7241,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transactions_rules_create(self, request: components.TransactionsRulesCreateRequest) -> operations.TransactionsRulesCreateResponse:
         r"""Create transaction category rule
         The `/transactions/rules/v1/create` endpoint creates transaction categorization rules.
@@ -6609,7 +7262,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -6634,6 +7290,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transactions_rules_list(self, request: components.TransactionsRulesListRequest) -> operations.TransactionsRulesListResponse:
         r"""Return a list of rules created for the Item associated with the access token.
         The `/transactions/rules/v1/list` returns a list of transaction rules created for the Item associated with the access token.
@@ -6650,7 +7307,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -6675,6 +7335,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transactions_rules_remove(self, request: components.TransactionsRulesRemoveRequest) -> operations.TransactionsRulesRemoveResponse:
         r"""Remove transaction rule
         The `/transactions/rules/v1/remove` endpoint is used to remove a transaction rule.
@@ -6691,7 +7352,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -6715,6 +7379,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def transactions_sync(self, request: components.TransactionsSyncRequest) -> operations.TransactionsSyncResponse:
         r"""Get incremental transaction updates on an Item
@@ -6751,7 +7416,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -6775,6 +7443,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def transfer_authorization_create(self, request: components.TransferAuthorizationCreateRequest) -> operations.TransferAuthorizationCreateResponse:
         r"""Create a transfer authorization
@@ -6807,7 +7476,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -6832,6 +7504,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_balance_get(self, request: components.TransferBalanceGetRequest) -> operations.TransferBalanceGetResponse:
         r"""Retrieve a balance held with Plaid
         Use the `/transfer/balance/get` endpoint to view a balance held with Plaid.
@@ -6849,7 +7522,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -6874,6 +7550,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_cancel(self, request: components.TransferCancelRequest) -> operations.TransferCancelResponse:
         r"""Cancel a transfer
         Use the `/transfer/cancel` endpoint to cancel a transfer.  A transfer is eligible for cancellation if the `cancellable` property returned by `/transfer/get` is `true`.
@@ -6891,7 +7568,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -6916,6 +7596,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_capabilities_get(self, request: components.TransferCapabilitiesGetRequest) -> operations.TransferCapabilitiesGetResponse:
         r"""Get RTP eligibility information of a transfer
         Use the `/transfer/capabilities/get` endpoint to determine the RTP eligibility information of a transfer.
@@ -6933,7 +7614,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -6958,6 +7642,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_configuration_get(self, request: components.TransferConfigurationGetRequest) -> operations.TransferConfigurationGetResponse:
         r"""Get transfer product configuration
         Use the `/transfer/configuration/get` endpoint to view your transfer product configurations.
@@ -6975,7 +7660,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7000,6 +7688,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_create(self, request: components.TransferCreateRequest) -> operations.TransferCreateResponse:
         r"""Create a transfer
         Use the `/transfer/create` endpoint to initiate a new transfer.
@@ -7017,7 +7706,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7042,6 +7734,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_diligence_document_upload(self, request: components.TransferDiligenceDocumentUploadRequest) -> operations.TransferDiligenceDocumentUploadResponse:
         r"""This endpoint allows third-party sender customers to upload a document on behalf of its end customer (i.e. originator) to Plaid. You’ll need to send a request of type multipart/form-data.
         Third-party sender customers can use `/transfer/diligence/document/upload` endpoint to upload a document on behalf of its end customer (i.e. originator) to Plaid. You’ll need to send a request of type multipart/form-data.
@@ -7060,7 +7753,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7085,6 +7781,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_diligence_submit(self, request: components.TransferDiligenceSubmitRequest) -> operations.TransferDiligenceSubmitResponse:
         r"""Submit transfer diligence on behalf of the end customer (i.e. the originator).
         Use the `/transfer/diligence/submit` endpoint to submit transfer diligence on behalf of the originator.
@@ -7102,7 +7799,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7127,6 +7827,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_event_list(self, request: components.TransferEventListRequest) -> operations.TransferEventListResponse:
         r"""List transfer events
         Use the `/transfer/event/list` endpoint to get a list of transfer events based on specified filter criteria.
@@ -7144,7 +7845,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7169,6 +7873,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_event_sync(self, request: components.TransferEventSyncRequest) -> operations.TransferEventSyncResponse:
         r"""Sync transfer events
         `/transfer/event/sync` allows you to request up to the next 25 transfer events that happened after a specific `event_id`. Use the `/transfer/event/sync` endpoint to guarantee you have seen all transfer events.
@@ -7186,7 +7891,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7211,6 +7919,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_get(self, request: components.TransferGetRequest) -> operations.TransferGetResponse:
         r"""Retrieve a transfer
         The `/transfer/get` endpoint fetches information about the transfer corresponding to the given `transfer_id`.
@@ -7228,7 +7937,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7253,6 +7965,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_intent_create(self, request: components.TransferIntentCreateRequest) -> operations.TransferIntentCreateResponse:
         r"""Create a transfer intent object to invoke the Transfer UI
         Use the `/transfer/intent/create` endpoint to generate a transfer intent object and invoke the Transfer UI.
@@ -7270,7 +7983,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7295,6 +8011,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_intent_get(self, request: components.TransferIntentGetRequest) -> operations.TransferIntentGetResponse:
         r"""Retrieve more information about a transfer intent
         Use the `/transfer/intent/get` endpoint to retrieve more information about a transfer intent.
@@ -7312,7 +8029,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7337,6 +8057,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_ledger_get(self, request: components.TransferLedgerGetRequest) -> operations.TransferLedgerGetResponse:
         r"""Retrieve Plaid Ledger balance
         Use the `/transfer/ledger/get` endpoint to view a balance on the ledger held with Plaid.
@@ -7354,7 +8075,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7379,6 +8103,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_list(self, request: components.TransferListRequest) -> operations.TransferListResponse:
         r"""List transfers
         Use the `/transfer/list` endpoint to see a list of all your transfers and their statuses. Results are paginated; use the `count` and `offset` query parameters to retrieve the desired transfers.
@@ -7396,7 +8121,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7421,6 +8149,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_metrics_get(self, request: components.TransferMetricsGetRequest) -> operations.TransferMetricsGetResponse:
         r"""Get transfer product usage metrics
         Use the `/transfer/metrics/get` endpoint to view your transfer product usage metrics.
@@ -7438,7 +8167,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7463,6 +8195,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_migrate_account(self, request: components.TransferMigrateAccountRequest) -> operations.TransferMigrateAccountResponse:
         r"""Migrate account into Transfers
         As an alternative to adding Items via Link, you can also use the `/transfer/migrate_account` endpoint to migrate known account and routing numbers to Plaid Items.  Note that Items created in this way are not compatible with endpoints for other products, such as `/accounts/balance/get`, and can only be used with Transfer endpoints.  If you require access to other endpoints, create the Item through Link instead.  Access to `/transfer/migrate_account` is not enabled by default; to obtain access, contact your Plaid Account Manager.
@@ -7480,7 +8213,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7505,6 +8241,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_originator_create(self, request: components.TransferOriginatorCreateRequest) -> operations.TransferOriginatorCreateResponse:
         r"""Create a new originator
         Use the `/transfer/originator/create` endpoint to create a new originator and return an `originator_client_id`.
@@ -7522,7 +8259,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7547,6 +8287,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_originator_get_json(self, request: components.TransferOriginatorGetRequest) -> operations.TransferOriginatorGetJSONResponse:
         r"""Get status of an originator's onboarding
         The `/transfer/originator/get` endpoint gets status updates for an originator's onboarding process. This information is also available via the Transfer page on the Plaid dashboard.
@@ -7564,7 +8305,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7589,6 +8333,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_originator_get_raw(self, request: bytes) -> operations.TransferOriginatorGetRawResponse:
         r"""Get status of an originator's onboarding
         The `/transfer/originator/get` endpoint gets status updates for an originator's onboarding process. This information is also available via the Transfer page on the Plaid dashboard.
@@ -7606,7 +8351,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7631,6 +8379,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_originator_list(self, request: components.TransferOriginatorListRequest) -> operations.TransferOriginatorListResponse:
         r"""Get status of all originators' onboarding
         The `/transfer/originator/list` endpoint gets status updates for all of your originators' onboarding. This information is also available via the Plaid dashboard.
@@ -7648,7 +8397,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7673,6 +8425,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_questionnaire_create(self, request: components.TransferQuestionnaireCreateRequest) -> operations.TransferQuestionnaireCreateResponse:
         r"""Generate a Plaid-hosted onboarding UI URL.
         The `/transfer/questionnaire/create` endpoint generates a Plaid-hosted onboarding UI URL. Redirect the originator to this URL to provide their due diligence information and agree to Plaid’s terms for ACH money movement.
@@ -7690,7 +8443,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7715,6 +8471,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_recurring_cancel(self, request: components.TransferRecurringCancelRequest) -> operations.TransferRecurringCancelResponse:
         r"""Cancel a recurring transfer.
         Use the `/transfer/recurring/cancel` endpoint to cancel a recurring transfer.  Scheduled transfer that hasn't been submitted to bank will be cancelled.
@@ -7732,7 +8489,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7757,6 +8517,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_recurring_create(self, request: components.TransferRecurringCreateRequest) -> operations.TransferRecurringCreateResponse:
         r"""Create a recurring transfer
         Use the `/transfer/recurring/create` endpoint to initiate a new recurring transfer.
@@ -7774,7 +8535,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7799,6 +8563,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_recurring_get(self, request: components.TransferRecurringGetRequest) -> operations.TransferRecurringGetResponse:
         r"""Retrieve a recurring transfer
         The `/transfer/recurring/get` fetches information about the recurring transfer corresponding to the given `recurring_transfer_id`.
@@ -7816,7 +8581,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7841,6 +8609,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_recurring_list(self, request: components.TransferRecurringListRequest) -> operations.TransferRecurringListResponse:
         r"""List recurring transfers
         Use the `/transfer/recurring/list` endpoint to see a list of all your recurring transfers and their statuses. Results are paginated; use the `count` and `offset` query parameters to retrieve the desired recurring transfers.
@@ -7858,7 +8627,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7883,6 +8655,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_refund_cancel(self, request: components.TransferRefundCancelRequest) -> operations.TransferRefundCancelResponse:
         r"""Cancel a refund
         Use the `/transfer/refund/cancel` endpoint to cancel a refund.  A refund is eligible for cancellation if it has not yet been submitted to the payment network.
@@ -7900,7 +8673,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7925,6 +8701,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_refund_create(self, request: components.TransferRefundCreateRequest) -> operations.TransferRefundCreateResponse:
         r"""Create a refund
         Use the `/transfer/refund/create` endpoint to create a refund for a transfer. A transfer can be refunded if the transfer was initiated in the past 180 days.
@@ -7944,7 +8721,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -7969,6 +8749,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_refund_get(self, request: components.TransferRefundGetRequest) -> operations.TransferRefundGetResponse:
         r"""Retrieve a refund
         The `/transfer/refund/get` endpoint fetches information about the refund corresponding to the given `refund_id`.
@@ -7986,7 +8767,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8011,6 +8795,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_repayment_list(self, request: components.TransferRepaymentListRequest) -> operations.TransferRepaymentListResponse:
         r"""Lists historical repayments
         The `/transfer/repayment/list` endpoint fetches repayments matching the given filters. Repayments are returned in reverse-chronological order (most recent first) starting at the given `start_time`.
@@ -8028,7 +8813,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8053,6 +8841,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_repayment_return_list(self, request: components.TransferRepaymentReturnListRequest) -> operations.TransferRepaymentReturnListResponse:
         r"""List the returns included in a repayment
         The `/transfer/repayment/return/list` endpoint retrieves the set of returns that were batched together into the specified repayment. The sum of amounts of returns retrieved by this request equals the amount of the repayment.
@@ -8070,7 +8859,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8095,6 +8887,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_sweep_get(self, request: components.TransferSweepGetRequest) -> operations.TransferSweepGetResponse:
         r"""Retrieve a sweep
         The `/transfer/sweep/get` endpoint fetches a sweep corresponding to the given `sweep_id`.
@@ -8112,7 +8905,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8137,6 +8933,7 @@ class PlaidSDK:
         return res
 
     
+    
     def transfer_sweep_list(self, request: components.TransferSweepListRequest) -> operations.TransferSweepListResponse:
         r"""List sweeps
         The `/transfer/sweep/list` endpoint fetches sweeps matching the given filters.
@@ -8154,7 +8951,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8179,6 +8979,7 @@ class PlaidSDK:
         return res
 
     
+    
     def user_create(self, request: components.UserCreateRequest) -> operations.UserCreateResponse:
         r"""Create user
         This endpoint should be called for each of your end users before they begin a Plaid income flow. This provides you a single token to access all income data associated with the user. You should only create one per end user.
@@ -8200,7 +9001,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8219,6 +9023,7 @@ class PlaidSDK:
         return res
 
     
+    
     def wallet_create(self, request: components.WalletCreateRequest) -> operations.WalletCreateResponse:
         r"""Create an e-wallet
         Create an e-wallet. The response is the newly created e-wallet object.
@@ -8236,7 +9041,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8255,6 +9063,7 @@ class PlaidSDK:
         return res
 
     
+    
     def wallet_get(self, request: components.WalletGetRequest) -> operations.WalletGetResponse:
         r"""Fetch an e-wallet
         Fetch an e-wallet. The response includes the current balance.
@@ -8272,7 +9081,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8291,6 +9103,7 @@ class PlaidSDK:
         return res
 
     
+    
     def wallet_list(self, request: components.WalletListRequest) -> operations.WalletListResponse:
         r"""Fetch a list of e-wallets
         This endpoint lists all e-wallets in descending order of creation.
@@ -8308,7 +9121,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8326,6 +9142,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def wallet_transaction_execute(self, request: components.WalletTransactionExecuteRequest) -> operations.WalletTransactionExecuteResponse:
         r"""Execute a transaction using an e-wallet
@@ -8346,7 +9163,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8365,6 +9185,7 @@ class PlaidSDK:
         return res
 
     
+    
     def wallet_transaction_get(self, request: components.WalletTransactionGetRequest) -> operations.WalletTransactionGetResponse:
         r"""Fetch an e-wallet transaction
         Fetch a specific e-wallet transaction
@@ -8382,7 +9203,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8401,6 +9225,7 @@ class PlaidSDK:
         return res
 
     
+    
     def wallet_transaction_list(self, request: components.WalletTransactionListRequest) -> operations.WalletTransactionListResponse:
         r"""List e-wallet transactions
         This endpoint lists the latest transactions of the specified e-wallet. Transactions are returned in descending order by the `created_at` time.
@@ -8418,7 +9243,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8437,6 +9265,7 @@ class PlaidSDK:
         return res
 
     
+    
     def watchlist_screening_entity_create(self, request: components.WatchlistScreeningEntityCreateRequest) -> operations.WatchlistScreeningEntityCreateResponse:
         r"""Create a watchlist screening for an entity
         Create a new entity watchlist screening to check your customer against watchlists defined in the associated entity watchlist program. If your associated program has ongoing screening enabled, this is the profile information that will be used to monitor your customer over time.
@@ -8454,7 +9283,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8473,6 +9305,7 @@ class PlaidSDK:
         return res
 
     
+    
     def watchlist_screening_entity_get(self, request: components.WatchlistScreeningEntityGetRequest) -> operations.WatchlistScreeningEntityGetResponse:
         r"""Get an entity screening
         Retrieve an entity watchlist screening.
@@ -8490,7 +9323,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8509,6 +9345,7 @@ class PlaidSDK:
         return res
 
     
+    
     def watchlist_screening_entity_history_list(self, request: components.WatchlistScreeningEntityHistoryListRequest) -> operations.WatchlistScreeningEntityHistoryListResponse:
         r"""List history for entity watchlist screenings
         List all changes to the entity watchlist screening in reverse-chronological order. If the watchlist screening has not been edited, no history will be returned.
@@ -8526,7 +9363,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8545,6 +9385,7 @@ class PlaidSDK:
         return res
 
     
+    
     def watchlist_screening_entity_hit_list(self, request: components.WatchlistScreeningEntityHitListRequest) -> operations.WatchlistScreeningEntityHitListResponse:
         r"""List hits for entity watchlist screenings
         List all hits for the entity watchlist screening.
@@ -8562,7 +9403,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8581,6 +9425,7 @@ class PlaidSDK:
         return res
 
     
+    
     def watchlist_screening_entity_list(self, request: components.WatchlistScreeningEntityListRequest) -> operations.WatchlistScreeningEntityListResponse:
         r"""List entity watchlist screenings
         List all entity screenings.
@@ -8598,7 +9443,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8617,6 +9465,7 @@ class PlaidSDK:
         return res
 
     
+    
     def watchlist_screening_entity_program_get(self, request: components.WatchlistScreeningEntityProgramGetRequest) -> operations.WatchlistScreeningEntityProgramGetResponse:
         r"""Get entity watchlist screening program
         Get an entity watchlist screening program
@@ -8634,7 +9483,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8653,6 +9505,7 @@ class PlaidSDK:
         return res
 
     
+    
     def watchlist_screening_entity_program_list(self, request: components.WatchlistScreeningEntityProgramListRequest) -> operations.WatchlistScreeningEntityProgramListResponse:
         r"""List entity watchlist screening programs
         List all entity watchlist screening programs
@@ -8670,7 +9523,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8689,6 +9545,7 @@ class PlaidSDK:
         return res
 
     
+    
     def watchlist_screening_entity_review_create(self, request: components.WatchlistScreeningEntityReviewCreateRequest) -> operations.WatchlistScreeningEntityReviewCreateResponse:
         r"""Create a review for an entity watchlist screening
         Create a review for an entity watchlist screening. Reviews are compliance reports created by users in your organization regarding the relevance of potential hits found by Plaid.
@@ -8706,7 +9563,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8725,6 +9585,7 @@ class PlaidSDK:
         return res
 
     
+    
     def watchlist_screening_entity_review_list(self, request: components.WatchlistScreeningEntityReviewListRequest) -> operations.WatchlistScreeningEntityReviewListResponse:
         r"""List reviews for entity watchlist screenings
         List all reviews for a particular entity watchlist screening. Reviews are compliance reports created by users in your organization regarding the relevance of potential hits found by Plaid.
@@ -8742,7 +9603,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8761,6 +9625,7 @@ class PlaidSDK:
         return res
 
     
+    
     def watchlist_screening_entity_update(self, request: components.WatchlistScreeningEntityUpdateRequest) -> operations.WatchlistScreeningEntityUpdateResponse:
         r"""Update an entity screening
         Update an entity watchlist screening.
@@ -8778,7 +9643,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8797,6 +9665,7 @@ class PlaidSDK:
         return res
 
     
+    
     def watchlist_screening_individual_create(self, request: components.WatchlistScreeningIndividualCreateRequest) -> operations.WatchlistScreeningIndividualCreateResponse:
         r"""Create a watchlist screening for a person
         Create a new Watchlist Screening to check your customer against watchlists defined in the associated Watchlist Program. If your associated program has ongoing screening enabled, this is the profile information that will be used to monitor your customer over time.
@@ -8814,7 +9683,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8833,6 +9705,7 @@ class PlaidSDK:
         return res
 
     
+    
     def watchlist_screening_individual_get(self, request: components.WatchlistScreeningIndividualGetRequest) -> operations.WatchlistScreeningIndividualGetResponse:
         r"""Retrieve an individual watchlist screening
         Retrieve a previously created individual watchlist screening
@@ -8850,7 +9723,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8869,6 +9745,7 @@ class PlaidSDK:
         return res
 
     
+    
     def watchlist_screening_individual_history_list(self, request: components.WatchlistScreeningIndividualHistoryListRequest) -> operations.WatchlistScreeningIndividualHistoryListResponse:
         r"""List history for individual watchlist screenings
         List all changes to the individual watchlist screening in reverse-chronological order. If the watchlist screening has not been edited, no history will be returned.
@@ -8886,7 +9763,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8905,6 +9785,7 @@ class PlaidSDK:
         return res
 
     
+    
     def watchlist_screening_individual_hit_list(self, request: components.WatchlistScreeningIndividualHitListRequest) -> operations.WatchlistScreeningIndividualHitListResponse:
         r"""List hits for individual watchlist screening
         List all hits found by Plaid for a particular individual watchlist screening.
@@ -8922,7 +9803,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8941,6 +9825,7 @@ class PlaidSDK:
         return res
 
     
+    
     def watchlist_screening_individual_list(self, request: components.WatchlistScreeningIndividualListRequest) -> operations.WatchlistScreeningIndividualListResponse:
         r"""List Individual Watchlist Screenings
         List previously created watchlist screenings for individuals
@@ -8958,7 +9843,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -8977,6 +9865,7 @@ class PlaidSDK:
         return res
 
     
+    
     def watchlist_screening_individual_program_get(self, request: components.WatchlistScreeningIndividualProgramGetRequest) -> operations.WatchlistScreeningIndividualProgramGetResponse:
         r"""Get individual watchlist screening program
         Get an individual watchlist screening program
@@ -8994,7 +9883,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -9013,6 +9905,7 @@ class PlaidSDK:
         return res
 
     
+    
     def watchlist_screening_individual_program_list(self, request: components.WatchlistScreeningIndividualProgramListRequest) -> operations.WatchlistScreeningIndividualProgramListResponse:
         r"""List individual watchlist screening programs
         List all individual watchlist screening programs
@@ -9030,7 +9923,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -9049,6 +9945,7 @@ class PlaidSDK:
         return res
 
     
+    
     def watchlist_screening_individual_review_create(self, request: components.WatchlistScreeningIndividualReviewCreateRequest) -> operations.WatchlistScreeningIndividualReviewCreateResponse:
         r"""Create a review for an individual watchlist screening
         Create a review for the individual watchlist screening. Reviews are compliance reports created by users in your organization regarding the relevance of potential hits found by Plaid.
@@ -9066,7 +9963,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -9085,6 +9985,7 @@ class PlaidSDK:
         return res
 
     
+    
     def watchlist_screening_individual_review_list(self, request: components.WatchlistScreeningIndividualReviewListRequest) -> operations.WatchlistScreeningIndividualReviewListResponse:
         r"""List reviews for individual watchlist screenings
         List all reviews for the individual watchlist screening.
@@ -9102,7 +10003,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -9121,6 +10025,7 @@ class PlaidSDK:
         return res
 
     
+    
     def watchlist_screening_individual_update(self, request: components.WatchlistScreeningIndividualUpdateRequest) -> operations.WatchlistScreeningIndividualUpdateResponse:
         r"""Update individual watchlist screening
         Update a specific individual watchlist screening. This endpoint can be used to add additional customer information, correct outdated information, add a reference id, assign the individual to a reviewer, and update which program it is associated with. Please note that you may not update `search_terms` and `status` at the same time since editing `search_terms` may trigger an automatic `status` change.
@@ -9138,7 +10043,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -9156,6 +10064,7 @@ class PlaidSDK:
 
         return res
 
+    
     
     def webhook_verification_key_get(self, request: components.WebhookVerificationKeyGetRequest) -> operations.WebhookVerificationKeyGetResponse:
         r"""Get webhook verification key
@@ -9176,7 +10085,10 @@ class PlaidSDK:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

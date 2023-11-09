@@ -5,7 +5,7 @@ import dataclasses
 from .achclass import ACHClass
 from .banktransfernetwork import BankTransferNetwork
 from .banktransfertype import BankTransferType
-from .banktransferuser import BankTransferUserInput
+from .banktransferuser_input import BankTransferUserInput
 from dataclasses_json import Undefined, dataclass_json
 from plaid import utils
 from typing import Dict, Optional

@@ -1,0 +1,14 @@
+# CreditBankEmployment
+
+Detailed information for the bank employment.
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `account_id`                                                                                      | *str*                                                                                             | :heavy_check_mark:                                                                                | Plaid's unique identifier for the account.                                                        |
+| `bank_employment_id`                                                                              | *str*                                                                                             | :heavy_check_mark:                                                                                | A unique identifier for the bank employment.                                                      |
+| `earliest_deposit_date`                                                                           | [datetime](https://docs.python.org/3/library/datetime.html#datetime-objects)                      | :heavy_check_mark:                                                                                | The date of the earliest deposit from this employer from within the period of the days requested. |
+| `employer`                                                                                        | [components.CreditBankEmployer](../../models/components/creditbankemployer.md)                    | :heavy_check_mark:                                                                                | Object containing employer data.                                                                  |
+| `latest_deposit_date`                                                                             | [datetime](https://docs.python.org/3/library/datetime.html#datetime-objects)                      | :heavy_check_mark:                                                                                | The date of the most recent deposit from this employer.                                           |

@@ -1,0 +1,13 @@
+# CreditEmploymentItem
+
+The object containing employment items.
+
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `additional_properties`                                                                                  | Dict[str, *Any*]                                                                                         | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
+| `employment_report_token`                                                                                | *Optional[str]*                                                                                          | :heavy_minus_sign:                                                                                       | Token to represent the underlying Employment data                                                        |
+| `employments`                                                                                            | List[[components.CreditEmploymentVerification](../../models/components/creditemploymentverification.md)] | :heavy_check_mark:                                                                                       | N/A                                                                                                      |
+| `item_id`                                                                                                | *str*                                                                                                    | :heavy_check_mark:                                                                                       | The `item_id` of the Item associated with this webhook, warning, or error                                |
