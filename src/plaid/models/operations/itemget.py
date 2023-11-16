@@ -12,13 +12,13 @@ from typing import Optional
 class ItemGetResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     item_get_response: Optional[components_itemgetresponse.ItemGetResponse] = dataclasses.field(default=None)
     r"""success"""
     plaid_error: Optional[components_plaiderror.PlaidError] = dataclasses.field(default=None)
     r"""Error response."""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

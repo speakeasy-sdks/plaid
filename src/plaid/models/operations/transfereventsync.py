@@ -12,12 +12,12 @@ from typing import Optional
 class TransferEventSyncResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     plaid_error: Optional[components_plaiderror.PlaidError] = dataclasses.field(default=None)
     r"""Error response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     transfer_event_sync_response: Optional[components_transfereventsyncresponse.TransferEventSyncResponse] = dataclasses.field(default=None)
     r"""OK"""
     
