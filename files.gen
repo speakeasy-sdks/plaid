@@ -8,6 +8,7 @@ src/plaid/utils/__init__.py
 src/plaid/utils/retries.py
 src/plaid/utils/utils.py
 src/plaid/models/errors/sdkerror.py
+tests/helpers.py
 src/plaid/models/operations/accountsbalanceget.py
 src/plaid/models/operations/accountsget.py
 src/plaid/models/operations/applicationget.py
