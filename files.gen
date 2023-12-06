@@ -1409,7 +1409,6 @@ src/plaid/models/__init__.py
 src/plaid/models/errors/__init__.py
 src/plaid/models/operations/__init__.py
 src/plaid/models/components/__init__.py
-USAGE.md
 docs/models/operations/accountsbalancegetresponse.md
 docs/models/operations/accountsgetresponse.md
 docs/models/operations/applicationgetresponse.md
@@ -2841,4 +2840,5 @@ docs/models/components/webhookverificationkeygetrequest.md
 docs/models/components/security1.md
 docs/sdks/plaid/README.md
 docs/sdks/plaidsdk/README.md
+USAGE.md
 .gitattributes

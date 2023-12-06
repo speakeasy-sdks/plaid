@@ -572,7 +572,7 @@ req = components.AssetReportCreateRequest(
         ],
         user=components.AssetReportUser(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
         ),
     ),
@@ -791,7 +791,7 @@ req = components.AssetReportRefreshRequest(
     options=components.AssetReportRefreshRequestOptions(
         user=components.AssetReportUser(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
         ),
     ),
@@ -1049,13 +1049,13 @@ req = components.BankTransferCreateRequest(
     idempotency_key='string',
     iso_currency_code='string',
     metadata={
-        "key": 'string',
+        'key': 'string',
     },
     network=components.BankTransferNetwork.ACH,
     type=components.BankTransferType.DEBIT,
     user=components.BankTransferUserInput(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         legal_name='string',
     ),
@@ -1491,7 +1491,7 @@ req = components.BeaconReportCreateRequest(
     beacon_user_id='becusr_11111111111111',
     fraud_amount=components.FraudAmount(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         iso_currency_code=components.ISOCurrencyCode.USD,
         value=100,
@@ -1557,11 +1557,11 @@ req = components.BeaconUserCreateRequest(
     program_id='becprg_11111111111111',
     report=components.BeaconUserCreateEmbeddedReport(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         fraud_amount=components.FraudAmountNullable(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             iso_currency_code=components.ISOCurrencyCode.USD,
             value=100,
@@ -1571,11 +1571,11 @@ req = components.BeaconUserCreateRequest(
     ),
     user=components.BeaconUserRequestData(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         address=components.BeaconUserRequestAddress(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             city='Pawnee',
             country='US',
@@ -1588,7 +1588,7 @@ req = components.BeaconUserCreateRequest(
         email_address='user@example.com',
         id_number=components.BeaconUserIDNumber(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             type=components.IDNumberType.US_SSN,
             value='123456789',
@@ -1596,7 +1596,7 @@ req = components.BeaconUserCreateRequest(
         ip_address='192.0.2.42',
         name=components.BeaconUserName(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             family_name='Knope',
             given_name='Leslie',
@@ -1843,7 +1843,7 @@ s = plaid.Plaid(
 
 req = components.AssetReportFreddieGetRequest(
     additional_properties={
-        "key": 'string',
+        'key': 'string',
     },
     audit_copy_token='string',
 )
@@ -2428,7 +2428,7 @@ req = components.CreditPayrollIncomePrecheckRequest(
     employer=components.IncomeVerificationPrecheckEmployer(
         address=components.IncomeVerificationPrecheckEmployerAddress(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
         ),
     ),
@@ -3025,7 +3025,7 @@ req = components.DepositSwitchAltCreateRequest(
     ),
     target_account=components.DepositSwitchTargetAccount(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         account_name='string',
         account_number='string',
@@ -3034,11 +3034,11 @@ req = components.DepositSwitchAltCreateRequest(
     ),
     target_user=components.DepositSwitchTargetUser(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         address=components.DepositSwitchAddressData(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             city='Lake Phyllis',
             country='Palestinian Territory',
@@ -3487,11 +3487,11 @@ req = components.IdentityMatchRequest(
     ),
     user=components.IdentityMatchUser(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         address=components.AddressDataNullableNoRequiredFields(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
         ),
     ),
@@ -3602,7 +3602,7 @@ req = components.IdentityVerificationCreateRequest(
     user=components.IdentityVerificationCreateRequestUser(
         address=components.UserAddress(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             city='Pawnee',
             country='US',
@@ -3616,7 +3616,7 @@ req = components.IdentityVerificationCreateRequest(
         email_address='user@example.com',
         id_number=components.UserIDNumber(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             type=components.IDNumberType.US_SSN,
             value='123456789',
@@ -3781,11 +3781,11 @@ req = components.IdentityVerificationRetryRequest(
     template_id='idvtmp_4FrXJvfQU3zGUR',
     user=components.IdentityVerificationRequestUser(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         address=components.UserAddress(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             city='Pawnee',
             country='US',
@@ -3798,7 +3798,7 @@ req = components.IdentityVerificationRetryRequest(
         email_address='user@example.com',
         id_number=components.UserIDNumber(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             type=components.IDNumberType.US_SSN,
             value='123456789',
@@ -4022,7 +4022,7 @@ req = components.IncomeVerificationPrecheckRequest(
     employer=components.IncomeVerificationPrecheckEmployer(
         address=components.IncomeVerificationPrecheckEmployerAddress(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
         ),
     ),
@@ -4034,7 +4034,7 @@ req = components.IncomeVerificationPrecheckRequest(
     user=components.IncomeVerificationPrecheckUser(
         home_address=components.SignalAddressData(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
         ),
     ),
@@ -4664,7 +4664,7 @@ req = components.ItemApplicationScopesUpdateRequest(
             components.AccountAccess(
                 account_product_access=components.AccountProductAccessNullable(
                     additional_properties={
-                        "key": 'string',
+                        'key': 'string',
                     },
                 ),
                 unique_id='string',
@@ -4672,7 +4672,7 @@ req = components.ItemApplicationScopesUpdateRequest(
         ],
         product_access=components.ProductAccess(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
         ),
     ),
@@ -5235,11 +5235,11 @@ s = plaid.Plaid(
 req = components.LinkTokenCreateRequest(
     account_filters=components.LinkTokenAccountFilters(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         credit=components.CreditFilter(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             account_subtypes=[
                 components.CreditAccountSubtype.PAYPAL,
@@ -5247,7 +5247,7 @@ req = components.LinkTokenCreateRequest(
         ),
         depository=components.DepositoryFilter(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             account_subtypes=[
                 components.DepositoryAccountSubtype.PREPAID,
@@ -5255,7 +5255,7 @@ req = components.LinkTokenCreateRequest(
         ),
         investment=components.InvestmentFilter(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             account_subtypes=[
                 components.InvestmentAccountSubtype.LRSP,
@@ -5263,7 +5263,7 @@ req = components.LinkTokenCreateRequest(
         ),
         loan=components.LoanFilter(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             account_subtypes=[
                 components.LoanAccountSubtype.LOAN,
@@ -5293,7 +5293,7 @@ req = components.LinkTokenCreateRequest(
     eu_config=components.LinkTokenEUConfig(),
     hosted_link=components.LinkTokenCreateHostedLink(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
     ),
     identity_verification=components.LinkTokenCreateRequestIdentityVerification(
@@ -5340,7 +5340,7 @@ req = components.LinkTokenCreateRequest(
     user=components.LinkTokenCreateRequestUser(
         address=components.UserAddress(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             city='Pawnee',
             country='US',
@@ -5352,7 +5352,7 @@ req = components.LinkTokenCreateRequest(
         client_user_id='string',
         id_number=components.UserIDNumber(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             type=components.IDNumberType.US_SSN,
             value='123456789',
@@ -5458,26 +5458,26 @@ s = plaid.Plaid(
 req = components.PartnerCustomerCreateRequest(
     address=components.PartnerEndCustomerAddress(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
     ),
     application_name='string',
     assets_under_management=components.PartnerEndCustomerAssetsUnderManagement(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         amount=4878.61,
         iso_currency_code='string',
     ),
     billing_contact=components.PartnerEndCustomerBillingContact(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
     ),
     company_name='Hyatt, Bartell and Kub',
     customer_support_info=components.PartnerEndCustomerCustomerSupportInfo(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
     ),
     is_bank_addendum_completed=False,
@@ -5491,7 +5491,7 @@ req = components.PartnerCustomerCreateRequest(
     ],
     technical_contact=components.PartnerEndCustomerTechnicalContact(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
     ),
     website='string',
@@ -5752,7 +5752,7 @@ req = components.PaymentInitiationConsentCreateRequest(
     options=components.ExternalPaymentInitiationConsentOptions(
         bacs=components.PaymentInitiationOptionalRestrictionBacs(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
         ),
     ),
@@ -5965,7 +5965,7 @@ req = components.PaymentInitiationPaymentCreateRequest(
     options=components.ExternalPaymentOptions(
         bacs=components.PaymentInitiationOptionalRestrictionBacs(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
         ),
     ),
@@ -5973,7 +5973,7 @@ req = components.PaymentInitiationPaymentCreateRequest(
     reference='string',
     schedule=components.ExternalPaymentScheduleRequest(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         interval=components.PaymentScheduleInterval.MONTHLY,
         interval_execution_day=136559,
@@ -6130,7 +6130,7 @@ s = plaid.Plaid(
 req = components.PaymentInitiationPaymentReverseRequest(
     amount=components.PaymentAmountToRefund(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         currency=components.PaymentAmountCurrency.DKK,
         value=9546.44,
@@ -6191,7 +6191,7 @@ s = plaid.Plaid(
 req = components.PaymentInitiationRecipientCreateRequest(
     address=components.PaymentInitiationAddress(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         city='Port Kendallfort',
         country='Pakistan',
@@ -6202,7 +6202,7 @@ req = components.PaymentInitiationRecipientCreateRequest(
     ),
     bacs=components.RecipientBACSNullable(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
     ),
     name='string',
@@ -6637,14 +6637,14 @@ req = components.ProcessorBankTransferCreateRequest(
     idempotency_key='string',
     iso_currency_code='string',
     metadata={
-        "key": 'string',
+        'key': 'string',
     },
     network=components.BankTransferNetwork.WIRE,
     processor_token='string',
     type=components.BankTransferType.DEBIT,
     user=components.BankTransferUserInput(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         legal_name='string',
     ),
@@ -6746,11 +6746,11 @@ req = components.ProcessorIdentityMatchRequest(
     processor_token='string',
     user=components.IdentityMatchUser(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         address=components.AddressDataNullableNoRequiredFields(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
         ),
     ),
@@ -6860,7 +6860,7 @@ req = components.ProcessorSignalEvaluateRequest(
     user=components.SignalUser(
         address=components.SignalAddressData(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
         ),
         name=components.SignalPersonName(),
@@ -7548,7 +7548,7 @@ req = components.SandboxBankTransferSimulateRequest(
     event_type='string',
     failure_reason=components.BankTransferFailure(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
     ),
 )
@@ -8115,7 +8115,7 @@ req = components.SandboxTransferSimulateRequest(
     event_type='string',
     failure_reason=components.TransferFailure(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
     ),
     transfer_id='string',
@@ -8470,7 +8470,7 @@ req = components.SignalEvaluateRequest(
     user=components.SignalUser(
         address=components.SignalAddressData(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
         ),
         name=components.SignalPersonName(),
@@ -8720,7 +8720,7 @@ req = components.TransactionsEnhanceGetRequest(
     transactions=[
         components.ClientProvidedRawTransaction(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             amount=8716.21,
             description='Integrated user-facing model',
@@ -8780,7 +8780,7 @@ req = components.TransactionsEnrichGetRequest(
     transactions=[
         components.ClientProvidedTransaction(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             amount=9570.07,
             description='Multi-lateral secondary customer loyalty',
@@ -8789,7 +8789,7 @@ req = components.TransactionsEnrichGetRequest(
             iso_currency_code='string',
             location=components.ClientProvidedTransactionLocation(
                 additional_properties={
-                    "key": 'string',
+                    'key': 'string',
                 },
             ),
         ),
@@ -9240,7 +9240,7 @@ req = components.TransferAuthorizationCreateRequest(
     amount='237.18',
     device=components.TransferAuthorizationDevice(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
     ),
     network=components.TransferNetwork.SAME_DAY_ACH,
@@ -9480,7 +9480,7 @@ req = components.TransferCreateRequest(
     authorization_id='string',
     description='Horizontal incremental throughput',
     metadata={
-        "key": 'string',
+        'key': 'string',
     },
 )
 
@@ -9803,7 +9803,7 @@ req = components.TransferIntentCreateRequest(
     amount='610.36',
     description='Distributed systemic data-warehouse',
     metadata={
-        "key": 'string',
+        'key': 'string',
     },
     mode=components.TransferIntentCreateMode.PAYMENT,
     user=components.TransferUserInRequest(
@@ -9857,7 +9857,7 @@ s = plaid.Plaid(
 
 req = components.TransferIntentGetRequest(
     additional_properties={
-        "key": 'string',
+        'key': 'string',
     },
     transfer_intent_id='string',
 )
@@ -10378,7 +10378,7 @@ req = components.TransferRecurringCreateRequest(
     description='Centralized tertiary model',
     device=components.TransferDevice(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         ip_address='20.163.92.142',
         user_agent='string',
@@ -10875,7 +10875,7 @@ req = components.UserCreateRequest(
     client_user_id='string',
     consumer_report_user_identity=components.ConsumerReportUserIdentity(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         emails=[
             'string',
@@ -10887,7 +10887,7 @@ req = components.UserCreateRequest(
         ],
         primary_address=components.AddressData(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             city='Schmidtburgh',
             country='El Salvador',
@@ -11086,18 +11086,18 @@ s = plaid.Plaid(
 req = components.WalletTransactionExecuteRequest(
     amount=components.WalletTransactionAmount(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         iso_currency_code=components.WalletISOCurrencyCode.GBP,
         value=6174.29,
     ),
     counterparty=components.WalletTransactionCounterparty(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         address=components.PaymentInitiationAddress(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             city='Lake Demetrius',
             country='Niger',
@@ -11109,16 +11109,16 @@ req = components.WalletTransactionExecuteRequest(
         name='string',
         numbers=components.WalletTransactionCounterpartyNumbers(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             bacs=components.WalletTransactionCounterpartyBACS(
                 additional_properties={
-                    "key": 'string',
+                    'key': 'string',
                 },
             ),
             international=components.WalletTransactionCounterpartyInternational(
                 additional_properties={
-                    "key": 'string',
+                    'key': 'string',
                 },
             ),
         ),
