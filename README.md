@@ -34,9 +34,9 @@ from plaid.models import components
 
 s = plaid.Plaid(
     security=components.Security1(
-        client_id="",
-        plaid_version="",
-        secret="",
+        client_id="<YOUR_API_KEY_HERE>",
+        plaid_version="<YOUR_API_KEY_HERE>",
+        secret="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -310,9 +310,9 @@ from plaid.models import components
 
 s = plaid.Plaid(
     security=components.Security1(
-        client_id="",
-        plaid_version="",
-        secret="",
+        client_id="<YOUR_API_KEY_HERE>",
+        plaid_version="<YOUR_API_KEY_HERE>",
+        secret="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -361,9 +361,9 @@ from plaid.models import components
 s = plaid.Plaid(
     server_idx=2,
     security=components.Security1(
-        client_id="",
-        plaid_version="",
-        secret="",
+        client_id="<YOUR_API_KEY_HERE>",
+        plaid_version="<YOUR_API_KEY_HERE>",
+        secret="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -395,9 +395,9 @@ from plaid.models import components
 s = plaid.Plaid(
     server_url="https://production.plaid.com",
     security=components.Security1(
-        client_id="",
-        plaid_version="",
-        secret="",
+        client_id="<YOUR_API_KEY_HERE>",
+        plaid_version="<YOUR_API_KEY_HERE>",
+        secret="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -455,9 +455,9 @@ from plaid.models import components
 
 s = plaid.Plaid(
     security=components.Security1(
-        client_id="",
-        plaid_version="",
-        secret="",
+        client_id="<YOUR_API_KEY_HERE>",
+        plaid_version="<YOUR_API_KEY_HERE>",
+        secret="<YOUR_API_KEY_HERE>",
     ),
 )
 
