@@ -1,6 +1,6 @@
 # PaymentInitiationOptionalRestrictionBacs
 
-An object containing a BACS account number and sort code. If an IBAN is not provided or if you need to accept domestic GBP-denominated payments, BACS data is required.
+An optional object used to restrict the accounts used for payments. If provided, the end user will be able to send payments only from the specified bank account.
 
 
 ## Fields

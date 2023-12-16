@@ -1,6 +1,6 @@
 # WalletCreateResponse
 
-An object representing the e-wallet
+WalletCreateResponse defines the response schema for `/wallet/create`
 
 
 ## Fields

@@ -12,7 +12,7 @@ from typing import Any, Dict, Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class PaymentInitiationRecipientGetResponse:
-    r"""PaymentInitiationRecipient defines a payment initiation recipient"""
+    r"""PaymentInitiationRecipientGetResponse defines the response schema for `/payment_initiation/recipient/get`"""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The name of the recipient."""
     recipient_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('recipient_id') }})

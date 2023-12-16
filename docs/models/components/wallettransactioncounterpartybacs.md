@@ -1,6 +1,6 @@
 # WalletTransactionCounterpartyBACS
 
-An object containing a BACS account number and sort code. If an IBAN is not provided or if you need to accept domestic GBP-denominated payments, BACS data is required.
+The account number and sort code of the counterparty's account
 
 
 ## Fields

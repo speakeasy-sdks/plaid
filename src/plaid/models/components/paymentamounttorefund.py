@@ -11,7 +11,7 @@ from typing import Any, Dict, Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class PaymentAmountToRefund:
-    r"""An amount to refund the payment partially. If this amount is not specified, the payment is refunded fully for the remaining amount."""
+    r"""The amount and currency of a payment"""
     currency: PaymentAmountCurrency = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('currency') }})
     r"""The ISO-4217 currency code of the payment. For standing orders and payment consents, `\\"GBP\\"` must be used. For Poland, Denmark, Sweden and Norway, only the local currency is currently supported."""
     value: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})

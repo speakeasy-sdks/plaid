@@ -1,6 +1,6 @@
 # IncomeVerificationPrecheckEmployerAddress
 
-Data about the components comprising an address.
+The address of the employer
 
 
 ## Fields

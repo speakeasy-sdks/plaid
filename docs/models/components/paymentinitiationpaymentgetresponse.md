@@ -1,6 +1,6 @@
 # PaymentInitiationPaymentGetResponse
 
-PaymentInitiationPayment defines a payment initiation payment
+PaymentInitiationPaymentGetResponse defines the response schema for `/payment_initation/payment/get`
 
 
 ## Fields

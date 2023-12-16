@@ -1,6 +1,6 @@
 # AccountIdentityMatchScore
 
-A single account at a financial institution.
+Identity match scores for an account
 
 
 ## Fields

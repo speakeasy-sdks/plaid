@@ -1,6 +1,6 @@
 # WalletGetResponse
 
-An object representing the e-wallet
+WalletGetResponse defines the response schema for `/wallet/get`
 
 
 ## Fields

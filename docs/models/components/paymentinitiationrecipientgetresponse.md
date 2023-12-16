@@ -1,6 +1,6 @@
 # PaymentInitiationRecipientGetResponse
 
-PaymentInitiationRecipient defines a payment initiation recipient
+PaymentInitiationRecipientGetResponse defines the response schema for `/payment_initiation/recipient/get`
 
 
 ## Fields

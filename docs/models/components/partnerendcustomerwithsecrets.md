@@ -1,6 +1,6 @@
 # PartnerEndCustomerWithSecrets
 
-The details for an end customer.
+The details for the newly created end customer, including secrets for non-Production environments.
 
 
 ## Fields

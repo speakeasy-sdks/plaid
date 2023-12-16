@@ -36,7 +36,7 @@ class WalletTransactionGetResponseType(str, Enum):
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class WalletTransactionGetResponse:
-    r"""The transaction details"""
+    r"""WalletTransactionGetResponse defines the response schema for `/wallet/transaction/get`"""
     amount: WalletTransactionAmount = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
     r"""The amount and currency of a transaction"""
     counterparty: WalletTransactionCounterparty = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('counterparty') }})

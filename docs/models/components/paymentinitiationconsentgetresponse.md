@@ -1,6 +1,6 @@
 # PaymentInitiationConsentGetResponse
 
-PaymentInitiationConsent defines a payment initiation consent.
+PaymentInitiationConsentGetResponse defines the response schema for `/payment_initation/consent/get`
 
 
 ## Fields

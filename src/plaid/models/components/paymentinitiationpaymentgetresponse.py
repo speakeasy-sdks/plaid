@@ -19,7 +19,7 @@ from typing import Any, Dict, List, Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class PaymentInitiationPaymentGetResponse:
-    r"""PaymentInitiationPayment defines a payment initiation payment"""
+    r"""PaymentInitiationPaymentGetResponse defines the response schema for `/payment_initation/payment/get`"""
     amount: PaymentAmount = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
     r"""The amount and currency of a payment"""
     bacs: Optional[SenderBACSNullable] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bacs') }})

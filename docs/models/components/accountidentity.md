@@ -1,6 +1,6 @@
 # AccountIdentity
 
-A single account at a financial institution.
+Identity information about an account
 
 
 ## Fields

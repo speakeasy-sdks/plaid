@@ -13,7 +13,7 @@ from typing import Any, Dict, Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class WalletGetResponse:
-    r"""An object representing the e-wallet"""
+    r"""WalletGetResponse defines the response schema for `/wallet/get`"""
     balance: WalletBalance = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('balance') }})
     r"""An object representing the e-wallet balance"""
     numbers: WalletNumbers = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numbers') }})

@@ -1,6 +1,6 @@
 # RecipientBACSNullable
 
-The account number and sort code of the recipient's account.
+An object containing a BACS account number and sort code. If an IBAN is not provided or if this recipient needs to accept domestic GBP-denominated payments, BACS data is required.
 
 
 ## Fields

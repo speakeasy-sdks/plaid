@@ -1,6 +1,6 @@
 # PaymentAmountRefunded
 
-The amount that has been refunded already. Subtract this from the payment amount to calculate the amount still available to refund.
+The amount and currency of a payment
 
 
 ## Fields

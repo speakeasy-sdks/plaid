@@ -1,6 +1,6 @@
 # ItemStatusNullable
 
-An object with information about the status of the Item.
+Information about the last successful and failed transactions update for the Item.
 
 
 ## Fields

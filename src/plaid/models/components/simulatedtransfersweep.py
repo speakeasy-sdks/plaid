@@ -13,13 +13,8 @@ from typing import Any, Dict, Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class SimulatedTransferSweep:
-    r"""Describes a sweep of funds to / from the sweep account.
-
-    A sweep is associated with many sweep events (events of type `swept` or `return_swept`) which can be retrieved by invoking the `/transfer/event/list` endpoint with the corresponding `sweep_id`.
-
-    `swept` events occur when the transfer amount is credited or debited from your sweep account, depending on the `type` of the transfer. `return_swept` events occur when a transfer is returned and Plaid undoes the credit or debit.
-
-    The total sum of the `swept` and `return_swept` events is equal to the `amount` of the sweep Plaid creates and matches the amount of the entry on your sweep account ledger.
+    r"""A sweep returned from the `/sandbox/transfer/sweep/simulate` endpoint.
+    Can be null if there are no transfers to include in a sweep.
     """
     amount: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
     r"""Signed decimal amount of the sweep as it appears on your sweep account ledger (e.g. \\"-10.00\\")

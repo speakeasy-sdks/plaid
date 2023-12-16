@@ -1,6 +1,6 @@
 # WalletTransactionGetResponse
 
-The transaction details
+WalletTransactionGetResponse defines the response schema for `/wallet/transaction/get`
 
 
 ## Fields

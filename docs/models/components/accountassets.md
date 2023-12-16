@@ -1,6 +1,6 @@
 # AccountAssets
 
-A single account at a financial institution.
+Asset information about an account
 
 
 ## Fields
