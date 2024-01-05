@@ -287,7 +287,7 @@ if res.accounts_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## accounts_get
 
@@ -342,7 +342,7 @@ if res.accounts_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## application_get
 
@@ -389,7 +389,7 @@ if res.application_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## asset_report_audit_copy_create
 
@@ -438,7 +438,7 @@ if res.asset_report_audit_copy_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## asset_report_audit_copy_get
 
@@ -485,7 +485,7 @@ if res.asset_report_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## asset_report_audit_copy_remove
 
@@ -532,7 +532,7 @@ if res.asset_report_audit_copy_remove_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## asset_report_create
 
@@ -599,7 +599,7 @@ if res.asset_report_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## asset_report_filter
 
@@ -655,7 +655,7 @@ if res.asset_report_filter_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## asset_report_get
 
@@ -708,7 +708,7 @@ if res.asset_report_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## asset_report_pdf_get
 
@@ -762,7 +762,7 @@ if res.asset_report_pdf_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## asset_report_refresh
 
@@ -818,7 +818,7 @@ if res.asset_report_refresh_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## asset_report_remove
 
@@ -867,7 +867,7 @@ if res.asset_report_remove_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## auth_get
 
@@ -923,7 +923,7 @@ if res.auth_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## bank_transfer_balance_get
 
@@ -972,7 +972,7 @@ if res.bank_transfer_balance_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## bank_transfer_cancel
 
@@ -1019,7 +1019,7 @@ if res.bank_transfer_cancel_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## bank_transfer_create
 
@@ -1082,7 +1082,7 @@ if res.bank_transfer_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## bank_transfer_event_list
 
@@ -1132,7 +1132,7 @@ if res.bank_transfer_event_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## bank_transfer_event_sync
 
@@ -1179,7 +1179,7 @@ if res.bank_transfer_event_sync_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## bank_transfer_get
 
@@ -1226,7 +1226,7 @@ if res.bank_transfer_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## bank_transfer_list
 
@@ -1273,7 +1273,7 @@ if res.bank_transfer_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## bank_transfer_migrate_account
 
@@ -1322,7 +1322,7 @@ if res.bank_transfer_migrate_account_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## bank_transfer_sweep_get
 
@@ -1369,7 +1369,7 @@ if res.bank_transfer_sweep_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## bank_transfer_sweep_list
 
@@ -1415,7 +1415,7 @@ if res.bank_transfer_sweep_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## base_report_get
 
@@ -1462,7 +1462,7 @@ if res.base_report_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## beacon_report_create
 
@@ -1521,7 +1521,7 @@ if res.beacon_report_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## beacon_user_create
 
@@ -1626,7 +1626,7 @@ if res.beacon_user_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## beacon_user_get
 
@@ -1676,7 +1676,7 @@ if res.beacon_user_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## categories_get
 
@@ -1723,7 +1723,7 @@ if res.categories_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## cra_bank_income_get
 
@@ -1768,7 +1768,7 @@ if res.cra_bank_income_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## ~~create_payment_token~~
 
@@ -1819,7 +1819,7 @@ if res.payment_initiation_payment_token_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## credit_asset_report_freddie_mac_get
 
@@ -1869,7 +1869,7 @@ if res.asset_report_freddie_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## credit_audit_copy_token_create
 
@@ -1920,7 +1920,7 @@ if res.credit_audit_copy_token_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## credit_audit_copy_token_update
 
@@ -1970,7 +1970,7 @@ if res.credit_audit_copy_token_update_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## credit_bank_employment_get
 
@@ -2017,7 +2017,7 @@ if res.credit_bank_employment_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## credit_bank_income_get
 
@@ -2064,7 +2064,7 @@ if res.credit_bank_income_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## credit_bank_income_pdf_get
 
@@ -2111,7 +2111,7 @@ if res.credit_bank_income_pdf_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## credit_bank_income_refresh
 
@@ -2159,7 +2159,7 @@ if res.credit_bank_income_refresh_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## credit_bank_income_webhook_update
 
@@ -2209,7 +2209,7 @@ if res.credit_bank_income_webhook_update_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## credit_bank_statements_uploads_get
 
@@ -2256,7 +2256,7 @@ if res.credit_bank_statements_uploads_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## credit_employment_get
 
@@ -2303,7 +2303,7 @@ if res.credit_employment_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## credit_freddie_mac_reports_get
 
@@ -2350,7 +2350,7 @@ if res.credit_freddie_mac_reports_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## credit_payroll_income_get
 
@@ -2395,7 +2395,7 @@ if res.credit_payroll_income_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## credit_payroll_income_precheck
 
@@ -2457,7 +2457,7 @@ if res.credit_payroll_income_precheck_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## credit_payroll_income_refresh
 
@@ -2509,7 +2509,7 @@ if res.credit_payroll_income_refresh_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## credit_payroll_income_risk_signals_get
 
@@ -2556,7 +2556,7 @@ if res.credit_payroll_income_risk_signals_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## credit_relay_create
 
@@ -2608,7 +2608,7 @@ if res.credit_relay_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## credit_relay_get
 
@@ -2656,7 +2656,7 @@ if res.asset_report_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## credit_relay_pdf_get
 
@@ -2710,7 +2710,7 @@ if res.credit_relay_pdf_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## credit_relay_refresh
 
@@ -2758,7 +2758,7 @@ if res.credit_relay_refresh_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## credit_relay_remove
 
@@ -2805,7 +2805,7 @@ if res.credit_relay_remove_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## credit_report_audit_copy_remove
 
@@ -2852,7 +2852,7 @@ if res.credit_audit_copy_token_remove_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## credit_sessions_get
 
@@ -2901,7 +2901,7 @@ if res.credit_sessions_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## dashboard_user_get
 
@@ -2948,7 +2948,7 @@ if res.dashboard_user_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## dashboard_user_list
 
@@ -2995,7 +2995,7 @@ if res.dashboard_user_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## deposit_switch_alt_create
 
@@ -3074,7 +3074,7 @@ if res.deposit_switch_alt_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## deposit_switch_create
 
@@ -3127,7 +3127,7 @@ if res.deposit_switch_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## deposit_switch_get
 
@@ -3174,7 +3174,7 @@ if res.deposit_switch_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## deposit_switch_token_create
 
@@ -3222,7 +3222,7 @@ if res.deposit_switch_token_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## employers_search
 
@@ -3274,7 +3274,7 @@ if res.employers_search_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## ~~employment_verification_get~~
 
@@ -3325,7 +3325,7 @@ if res.employment_verification_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## fdx_notifications
 
@@ -3398,7 +3398,7 @@ if res.status_code == 200:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## identity_get
 
@@ -3454,7 +3454,7 @@ if res.identity_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## identity_match
 
@@ -3518,7 +3518,7 @@ if res.identity_match_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## identity_refresh
 
@@ -3566,7 +3566,7 @@ if res.identity_refresh_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## identity_verification_create
 
@@ -3650,7 +3650,7 @@ if res.identity_verification_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## identity_verification_get
 
@@ -3697,7 +3697,7 @@ if res.identity_verification_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## identity_verification_list
 
@@ -3746,7 +3746,7 @@ if res.identity_verification_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## identity_verification_retry
 
@@ -3832,7 +3832,7 @@ if res.identity_verification_retry_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## ~~income_verification_create~~
 
@@ -3886,7 +3886,7 @@ if res.income_verification_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## ~~income_verification_documents_download~~
 
@@ -3941,7 +3941,7 @@ if res.stream is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## ~~income_verification_paystubs_get~~
 
@@ -3990,7 +3990,7 @@ if res.income_verification_paystubs_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## ~~income_verification_precheck~~
 
@@ -4061,7 +4061,7 @@ if res.income_verification_precheck_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## ~~income_verification_taxforms_get~~
 
@@ -4110,7 +4110,7 @@ if res.income_verification_taxforms_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## institutions_get
 
@@ -4171,7 +4171,7 @@ if res.institutions_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## institutions_get_by_id
 
@@ -4225,7 +4225,7 @@ if res.institutions_get_by_id_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## institutions_search
 
@@ -4284,7 +4284,7 @@ if res.institutions_search_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## investments_auth_get
 
@@ -4336,7 +4336,7 @@ if res.investments_auth_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## investments_holdings_get
 
@@ -4388,7 +4388,7 @@ if res.investments_holdings_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## investments_refresh
 
@@ -4436,7 +4436,7 @@ if res.investments_refresh_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## investments_transactions_get
 
@@ -4469,13 +4469,13 @@ s = plaid.Plaid(
 
 req = components.InvestmentsTransactionsGetRequest(
     access_token='string',
-    end_date=dateutil.parser.parse('2023-08-24').date(),
+    end_date=dateutil.parser.parse('2024-08-24').date(),
     options=components.InvestmentsTransactionsGetRequestOptions(
         account_ids=[
             'string',
         ],
     ),
-    start_date=dateutil.parser.parse('2023-03-18').date(),
+    start_date=dateutil.parser.parse('2024-03-17').date(),
 )
 
 res = s.plaid.investments_transactions_get(req)
@@ -4499,7 +4499,7 @@ if res.investments_transactions_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## item_access_token_invalidate
 
@@ -4549,7 +4549,7 @@ if res.item_access_token_invalidate_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## item_activity_list
 
@@ -4592,7 +4592,7 @@ if res.item_activity_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## item_application_list
 
@@ -4635,7 +4635,7 @@ if res.item_application_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## item_application_scopes_update
 
@@ -4699,7 +4699,7 @@ if res.item_application_scopes_update_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## item_create_public_token
 
@@ -4752,7 +4752,7 @@ if res.item_public_token_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## item_get
 
@@ -4799,7 +4799,7 @@ if res.item_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## item_import
 
@@ -4853,7 +4853,7 @@ if res.item_import_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## item_public_token_exchange
 
@@ -4902,7 +4902,7 @@ if res.item_public_token_exchange_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## item_remove
 
@@ -4955,7 +4955,7 @@ if res.item_remove_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## item_webhook_update
 
@@ -5002,7 +5002,7 @@ if res.item_webhook_update_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## liabilities_get
 
@@ -5058,7 +5058,7 @@ if res.liabilities_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## link_delivery_create
 
@@ -5112,7 +5112,7 @@ if res.link_delivery_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## link_delivery_get
 
@@ -5159,7 +5159,7 @@ if res.link_delivery_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## link_oauth_correlation_id_exchange
 
@@ -5207,7 +5207,7 @@ if res.link_o_auth_correlation_id_exchange_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## link_token_create
 
@@ -5385,7 +5385,7 @@ if res.link_token_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## link_token_get
 
@@ -5433,7 +5433,7 @@ if res.link_token_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## partner_customer_create
 
@@ -5518,7 +5518,7 @@ if res.partner_customer_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## partner_customer_enable
 
@@ -5565,7 +5565,7 @@ if res.partner_customer_enable_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## partner_customer_get
 
@@ -5612,7 +5612,7 @@ if res.partner_customer_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## partner_customer_oauth_institutions_get
 
@@ -5659,7 +5659,7 @@ if res.partner_customer_o_auth_institutions_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## partner_customer_remove
 
@@ -5706,7 +5706,7 @@ if res.partner_customer_remove_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## payment_initiation_consent_create
 
@@ -5784,7 +5784,7 @@ if res.payment_initiation_consent_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## payment_initiation_consent_get
 
@@ -5831,7 +5831,7 @@ if res.payment_initiation_consent_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## payment_initiation_consent_payment_execute
 
@@ -5883,7 +5883,7 @@ if res.payment_initiation_consent_payment_execute_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## payment_initiation_consent_revoke
 
@@ -5930,7 +5930,7 @@ if res.payment_initiation_consent_revoke_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## payment_initiation_payment_create
 
@@ -5977,7 +5977,7 @@ req = components.PaymentInitiationPaymentCreateRequest(
         },
         interval=components.PaymentScheduleInterval.MONTHLY,
         interval_execution_day=136559,
-        start_date=dateutil.parser.parse('2022-02-17').date(),
+        start_date=dateutil.parser.parse('2023-02-18').date(),
     ),
 )
 
@@ -6002,7 +6002,7 @@ if res.payment_initiation_payment_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## payment_initiation_payment_get
 
@@ -6049,7 +6049,7 @@ if res.payment_initiation_payment_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## payment_initiation_payment_list
 
@@ -6095,7 +6095,7 @@ if res.payment_initiation_payment_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## payment_initiation_payment_reverse
 
@@ -6161,7 +6161,7 @@ if res.payment_initiation_payment_reverse_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## payment_initiation_recipient_create
 
@@ -6229,7 +6229,7 @@ if res.payment_initiation_recipient_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## payment_initiation_recipient_get
 
@@ -6276,7 +6276,7 @@ if res.payment_initiation_recipient_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## payment_initiation_recipient_list
 
@@ -6321,7 +6321,7 @@ if res.payment_initiation_recipient_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## payment_profile_create
 
@@ -6368,7 +6368,7 @@ if res.payment_profile_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## payment_profile_get
 
@@ -6415,7 +6415,7 @@ if res.payment_profile_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## payment_profile_remove
 
@@ -6462,7 +6462,7 @@ if res.payment_profile_remove_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## processor_apex_processor_token_create
 
@@ -6510,7 +6510,7 @@ if res.processor_token_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## processor_auth_get
 
@@ -6560,7 +6560,7 @@ if res.processor_auth_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## processor_balance_get
 
@@ -6609,7 +6609,7 @@ if res.processor_balance_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## processor_bank_transfer_create
 
@@ -6671,7 +6671,7 @@ if res.processor_bank_transfer_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## processor_identity_get
 
@@ -6718,7 +6718,7 @@ if res.processor_identity_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## processor_identity_match
 
@@ -6777,7 +6777,7 @@ if res.processor_identity_match_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## processor_signal_decision_report
 
@@ -6826,7 +6826,7 @@ if res.processor_signal_decision_report_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## processor_signal_evaluate
 
@@ -6888,7 +6888,7 @@ if res.processor_signal_evaluate_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## processor_signal_return_report
 
@@ -6938,7 +6938,7 @@ if res.processor_signal_return_report_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## processor_stripe_bank_account_token_create
 
@@ -6991,7 +6991,7 @@ if res.processor_stripe_bank_account_token_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## processor_token_create
 
@@ -7040,7 +7040,7 @@ if res.processor_token_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## processor_token_permissions_get
 
@@ -7087,7 +7087,7 @@ if res.processor_token_permissions_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## processor_token_permissions_set
 
@@ -7137,7 +7137,7 @@ if res.processor_token_permissions_set_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## processor_token_webhook_update
 
@@ -7185,7 +7185,7 @@ if res.processor_token_webhook_update_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## processor_transactions_get
 
@@ -7219,14 +7219,14 @@ s = plaid.Plaid(
 )
 
 req = components.ProcessorTransactionsGetRequest(
-    end_date=dateutil.parser.parse('2021-04-08').date(),
+    end_date=dateutil.parser.parse('2022-04-08').date(),
     options=components.TransactionsGetRequestOptions(
         account_ids=[
             'string',
         ],
     ),
     processor_token='string',
-    start_date=dateutil.parser.parse('2022-03-31').date(),
+    start_date=dateutil.parser.parse('2023-04-01').date(),
 )
 
 res = s.plaid.processor_transactions_get(req)
@@ -7250,7 +7250,7 @@ if res.processor_transactions_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## processor_transactions_recurring_get
 
@@ -7309,7 +7309,7 @@ if res.processor_transactions_recurring_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## processor_transactions_refresh
 
@@ -7358,7 +7358,7 @@ if res.processor_transactions_refresh_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## processor_transactions_sync
 
@@ -7424,7 +7424,7 @@ if res.processor_transactions_sync_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## sandbox_bank_income_fire_webhook
 
@@ -7474,7 +7474,7 @@ if res.sandbox_bank_income_fire_webhook_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## sandbox_bank_transfer_fire_webhook
 
@@ -7521,7 +7521,7 @@ if res.sandbox_bank_transfer_fire_webhook_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## sandbox_bank_transfer_simulate
 
@@ -7574,7 +7574,7 @@ if res.sandbox_bank_transfer_simulate_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## sandbox_income_fire_webhook
 
@@ -7623,7 +7623,7 @@ if res.sandbox_income_fire_webhook_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## sandbox_item_fire_webhook
 
@@ -7687,7 +7687,7 @@ if res.sandbox_item_fire_webhook_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## sandbox_item_reset_login
 
@@ -7737,7 +7737,7 @@ if res.sandbox_item_reset_login_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## sandbox_item_set_verification_status
 
@@ -7790,7 +7790,7 @@ if res.sandbox_item_set_verification_status_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## sandbox_oauth_select_accounts
 
@@ -7838,7 +7838,7 @@ if res.sandbox_oauth_select_accounts_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## sandbox_payment_profile_reset_login
 
@@ -7889,7 +7889,7 @@ if res.sandbox_payment_profile_reset_login_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## sandbox_processor_token_create
 
@@ -7937,7 +7937,7 @@ if res.sandbox_processor_token_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## sandbox_public_token_create
 
@@ -7997,7 +7997,7 @@ if res.sandbox_public_token_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## sandbox_transfer_fire_webhook
 
@@ -8044,7 +8044,7 @@ if res.sandbox_transfer_fire_webhook_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## sandbox_transfer_repayment_simulate
 
@@ -8089,7 +8089,7 @@ if res.sandbox_transfer_repayment_simulate_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## sandbox_transfer_simulate
 
@@ -8142,7 +8142,7 @@ if res.sandbox_transfer_simulate_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## sandbox_transfer_sweep_simulate
 
@@ -8187,7 +8187,7 @@ if res.sandbox_transfer_sweep_simulate_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## sandbox_transfer_test_clock_advance
 
@@ -8219,7 +8219,7 @@ s = plaid.Plaid(
 )
 
 req = components.SandboxTransferTestClockAdvanceRequest(
-    new_virtual_time=dateutil.parser.isoparse('2021-11-02T16:09:41.486Z'),
+    new_virtual_time=dateutil.parser.isoparse('2022-11-02T22:51:40.374Z'),
     test_clock_id='string',
 )
 
@@ -8244,7 +8244,7 @@ if res.sandbox_transfer_test_clock_advance_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## sandbox_transfer_test_clock_create
 
@@ -8294,7 +8294,7 @@ if res.sandbox_transfer_test_clock_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## sandbox_transfer_test_clock_get
 
@@ -8341,7 +8341,7 @@ if res.sandbox_transfer_test_clock_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## sandbox_transfer_test_clock_list
 
@@ -8387,7 +8387,7 @@ if res.sandbox_transfer_test_clock_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## signal_decision_report
 
@@ -8435,7 +8435,7 @@ if res.signal_decision_report_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## signal_evaluate
 
@@ -8498,7 +8498,7 @@ if res.signal_evaluate_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## signal_prepare
 
@@ -8549,7 +8549,7 @@ if res.signal_prepare_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## signal_return_report
 
@@ -8598,7 +8598,7 @@ if res.signal_return_report_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## statements_download
 
@@ -8646,7 +8646,7 @@ if res.statements_download_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## statements_list
 
@@ -8693,7 +8693,7 @@ if res.statements_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transactions_enhance
 
@@ -8751,7 +8751,7 @@ if res.transactions_enhance_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transactions_enrich
 
@@ -8817,7 +8817,7 @@ if res.transactions_enrich_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transactions_get
 
@@ -8852,13 +8852,13 @@ s = plaid.Plaid(
 
 req = components.TransactionsGetRequest(
     access_token='string',
-    end_date=dateutil.parser.parse('2021-06-26').date(),
+    end_date=dateutil.parser.parse('2022-06-27').date(),
     options=components.TransactionsGetRequestOptions(
         account_ids=[
             'string',
         ],
     ),
-    start_date=dateutil.parser.parse('2022-07-17').date(),
+    start_date=dateutil.parser.parse('2023-07-17').date(),
 )
 
 res = s.plaid.transactions_get(req)
@@ -8882,7 +8882,7 @@ if res.transactions_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transactions_recurring_get
 
@@ -8939,7 +8939,7 @@ if res.transactions_recurring_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transactions_refresh
 
@@ -8988,7 +8988,7 @@ if res.transactions_refresh_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transactions_rules_create
 
@@ -9043,7 +9043,7 @@ if res.transactions_rules_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transactions_rules_list
 
@@ -9088,7 +9088,7 @@ if res.transactions_rules_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transactions_rules_remove
 
@@ -9134,7 +9134,7 @@ if res.transactions_rules_remove_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transactions_sync
 
@@ -9200,7 +9200,7 @@ if res.transactions_sync_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_authorization_create
 
@@ -9272,7 +9272,7 @@ if res.transfer_authorization_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_balance_get
 
@@ -9317,7 +9317,7 @@ if res.transfer_balance_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_cancel
 
@@ -9364,7 +9364,7 @@ if res.transfer_cancel_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_capabilities_get
 
@@ -9409,7 +9409,7 @@ if res.transfer_capabilities_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_configuration_get
 
@@ -9454,7 +9454,7 @@ if res.transfer_configuration_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_create
 
@@ -9505,7 +9505,7 @@ if res.transfer_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_diligence_document_upload
 
@@ -9555,7 +9555,7 @@ if res.transfer_diligence_document_upload_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_diligence_submit
 
@@ -9633,7 +9633,7 @@ if res.transfer_diligence_submit_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_event_list
 
@@ -9683,7 +9683,7 @@ if res.transfer_event_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_event_sync
 
@@ -9730,7 +9730,7 @@ if res.transfer_event_sync_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_get
 
@@ -9777,7 +9777,7 @@ if res.transfer_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_intent_create
 
@@ -9833,7 +9833,7 @@ if res.transfer_intent_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_intent_get
 
@@ -9883,7 +9883,7 @@ if res.transfer_intent_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_ledger_get
 
@@ -9928,7 +9928,7 @@ if res.transfer_ledger_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_list
 
@@ -9975,7 +9975,7 @@ if res.transfer_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_metrics_get
 
@@ -10020,7 +10020,7 @@ if res.transfer_metrics_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_migrate_account
 
@@ -10069,7 +10069,7 @@ if res.transfer_migrate_account_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_originator_create
 
@@ -10116,7 +10116,7 @@ if res.transfer_originator_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_originator_get_json
 
@@ -10163,7 +10163,7 @@ if res.transfer_originator_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_originator_get_raw
 
@@ -10208,7 +10208,7 @@ if res.transfer_originator_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_originator_list
 
@@ -10253,7 +10253,7 @@ if res.transfer_originator_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_questionnaire_create
 
@@ -10301,7 +10301,7 @@ if res.transfer_questionnaire_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_recurring_cancel
 
@@ -10348,7 +10348,7 @@ if res.transfer_recurring_cancel_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_recurring_create
 
@@ -10389,7 +10389,7 @@ req = components.TransferRecurringCreateRequest(
         interval_count=647040,
         interval_execution_day=56555,
         interval_unit=components.TransferScheduleIntervalUnit.MONTH,
-        start_date=dateutil.parser.parse('2022-06-24').date(),
+        start_date=dateutil.parser.parse('2023-06-24').date(),
     ),
     type=components.TransferType.CREDIT,
     user=components.TransferUserInRequest(
@@ -10420,7 +10420,7 @@ if res.transfer_recurring_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_recurring_get
 
@@ -10467,7 +10467,7 @@ if res.transfer_recurring_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_recurring_list
 
@@ -10514,7 +10514,7 @@ if res.transfer_recurring_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_refund_cancel
 
@@ -10561,7 +10561,7 @@ if res.transfer_refund_cancel_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_refund_create
 
@@ -10612,7 +10612,7 @@ if res.transfer_refund_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_refund_get
 
@@ -10659,7 +10659,7 @@ if res.transfer_refund_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_repayment_list
 
@@ -10705,7 +10705,7 @@ if res.transfer_repayment_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_repayment_return_list
 
@@ -10752,7 +10752,7 @@ if res.transfer_repayment_return_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_sweep_get
 
@@ -10799,7 +10799,7 @@ if res.transfer_sweep_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## transfer_sweep_list
 
@@ -10845,7 +10845,7 @@ if res.transfer_sweep_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## user_create
 
@@ -10919,7 +10919,7 @@ if res.user_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## wallet_create
 
@@ -10966,7 +10966,7 @@ if res.wallet_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## wallet_get
 
@@ -11013,7 +11013,7 @@ if res.wallet_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## wallet_list
 
@@ -11058,7 +11058,7 @@ if res.wallet_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## wallet_transaction_execute
 
@@ -11149,7 +11149,7 @@ if res.wallet_transaction_execute_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## wallet_transaction_get
 
@@ -11196,7 +11196,7 @@ if res.wallet_transaction_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## wallet_transaction_list
 
@@ -11245,7 +11245,7 @@ if res.wallet_transaction_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## watchlist_screening_entity_create
 
@@ -11301,7 +11301,7 @@ if res.watchlist_screening_entity_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## watchlist_screening_entity_get
 
@@ -11348,7 +11348,7 @@ if res.watchlist_screening_entity_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## watchlist_screening_entity_history_list
 
@@ -11396,7 +11396,7 @@ if res.watchlist_screening_entity_history_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## watchlist_screening_entity_hit_list
 
@@ -11444,7 +11444,7 @@ if res.watchlist_screening_entity_hit_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## watchlist_screening_entity_list
 
@@ -11495,7 +11495,7 @@ if res.watchlist_screening_entity_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## watchlist_screening_entity_program_get
 
@@ -11542,7 +11542,7 @@ if res.watchlist_screening_entity_program_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## watchlist_screening_entity_program_list
 
@@ -11589,7 +11589,7 @@ if res.watchlist_screening_entity_program_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## watchlist_screening_entity_review_create
 
@@ -11643,7 +11643,7 @@ if res.watchlist_screening_entity_review_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## watchlist_screening_entity_review_list
 
@@ -11691,7 +11691,7 @@ if res.watchlist_screening_entity_review_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## watchlist_screening_entity_update
 
@@ -11753,7 +11753,7 @@ if res.watchlist_screening_entity_update_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## watchlist_screening_individual_create
 
@@ -11808,7 +11808,7 @@ if res.watchlist_screening_individual_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## watchlist_screening_individual_get
 
@@ -11855,7 +11855,7 @@ if res.watchlist_screening_individual_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## watchlist_screening_individual_history_list
 
@@ -11903,7 +11903,7 @@ if res.watchlist_screening_individual_history_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## watchlist_screening_individual_hit_list
 
@@ -11951,7 +11951,7 @@ if res.watchlist_screening_individual_hit_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## watchlist_screening_individual_list
 
@@ -12002,7 +12002,7 @@ if res.watchlist_screening_individual_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## watchlist_screening_individual_program_get
 
@@ -12049,7 +12049,7 @@ if res.watchlist_screening_individual_program_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## watchlist_screening_individual_program_list
 
@@ -12096,7 +12096,7 @@ if res.watchlist_screening_individual_program_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## watchlist_screening_individual_review_create
 
@@ -12150,7 +12150,7 @@ if res.watchlist_screening_individual_review_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## watchlist_screening_individual_review_list
 
@@ -12198,7 +12198,7 @@ if res.watchlist_screening_individual_review_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## watchlist_screening_individual_update
 
@@ -12259,7 +12259,7 @@ if res.watchlist_screening_individual_update_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## webhook_verification_key_get
 
@@ -12308,4 +12308,4 @@ if res.webhook_verification_key_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
