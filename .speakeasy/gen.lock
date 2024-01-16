@@ -4,7 +4,7 @@ management:
   docChecksum: d62b45f8252bcb7b88b01760791f410e
   docVersion: 2020-09-14_1.421.0
   speakeasyVersion: internal
-  generationVersion: 2.228.1
+  generationVersion: 2.233.2
   releaseVersion: 0.4.1
   configChecksum: 6e985ec821f1849f316100079533a36a
   repoURL: https://github.com/speakeasy-sdks/plaid.git
