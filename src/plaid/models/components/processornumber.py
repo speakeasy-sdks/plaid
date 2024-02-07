@@ -15,9 +15,9 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class ProcessorNumber:
     r"""An object containing identifying numbers used for making electronic transfers to and from the `account`. The identifying number type (ACH, EFT, IBAN, or BACS) used will depend on the country of the account. An account may have more than one number type. If a particular identifying number type is not used by the `account` for which auth data has been requested, a null value will be returned."""
+    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     ach: Optional[NumbersACHNullable] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ach') }})
     r"""Identifying information for transferring money to or from a US account via ACH or wire transfer."""
-    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     bacs: Optional[NumbersBACSNullable] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bacs') }})
     r"""Identifying information for transferring money to or from a UK bank account via BACS."""
     eft: Optional[NumbersEFTNullable] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('eft') }})

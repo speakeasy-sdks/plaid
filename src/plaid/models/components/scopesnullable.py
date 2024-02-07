@@ -13,8 +13,8 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class ScopesNullable:
     r"""The scopes object"""
-    accounts: Optional[List[AccountAccess]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts'), 'exclude': lambda f: f is None }})
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
+    accounts: Optional[List[AccountAccess]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts'), 'exclude': lambda f: f is None }})
     new_accounts: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('new_accounts') }})
     r"""Allow access to newly opened accounts as they are opened. If unset, defaults to `true`."""
     product_access: Optional[ProductAccess] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('product_access'), 'exclude': lambda f: f is None }})

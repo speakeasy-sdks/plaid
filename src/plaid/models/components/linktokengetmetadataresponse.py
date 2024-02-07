@@ -27,9 +27,9 @@ class LinkTokenGetMetadataResponse:
     r"""The `redirect_uri` specified in the `/link/token/create` call."""
     webhook: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('webhook') }})
     r"""The `webhook` specified in the `/link/token/create` call."""
+    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     account_filters: Optional[AccountFiltersResponse] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_filters'), 'exclude': lambda f: f is None }})
     r"""The `account_filters` specified in the original call to `/link/token/create`."""
-    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     institution_data: Optional[LinkTokenCreateInstitutionData] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('institution_data'), 'exclude': lambda f: f is None }})
     r"""A map containing data used to highlight institutions in Link."""
     

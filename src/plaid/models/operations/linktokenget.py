@@ -11,10 +11,10 @@ from typing import Optional
 class LinkTokenGetResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     link_token_get_response: Optional[components_linktokengetresponse.LinkTokenGetResponse] = dataclasses.field(default=None)
     r"""OK"""
     

@@ -11,10 +11,10 @@ from typing import Optional
 class LinkOauthCorrelationIDExchangeResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     link_o_auth_correlation_id_exchange_response: Optional[components_linkoauthcorrelationidexchangeresponse.LinkOAuthCorrelationIDExchangeResponse] = dataclasses.field(default=None)
     r"""OK"""
     

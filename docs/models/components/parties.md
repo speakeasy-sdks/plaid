@@ -7,5 +7,5 @@ A collection of objects that define specific parties to a deal. This includes th
 
 | Field                                                      | Type                                                       | Required                                                   | Description                                                |
 | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| `additional_properties`                                    | Dict[str, *Any*]                                           | :heavy_minus_sign:                                         | N/A                                                        |
 | `party`                                                    | List[[components.Party](../../models/components/party.md)] | :heavy_check_mark:                                         | N/A                                                        |
+| `additional_properties`                                    | Dict[str, *Any*]                                           | :heavy_minus_sign:                                         | N/A                                                        |

@@ -11,10 +11,10 @@ from typing import Optional
 class ProcessorApexProcessorTokenCreateResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     processor_token_create_response: Optional[components_processortokencreateresponse.ProcessorTokenCreateResponse] = dataclasses.field(default=None)
     r"""OK"""
     

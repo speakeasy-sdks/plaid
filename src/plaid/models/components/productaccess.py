@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class ProductAccess:
     r"""The product access being requested. Used to or disallow product access across all accounts. If unset, defaults to all products allowed."""
+    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     accounts_details_transactions: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts_details_transactions') }})
     r"""Allow access to \\"accounts_details_transactions\\". Only used by certain partners. If relevant to the partner and unset, defaults to `true`."""
     accounts_routing_number: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts_routing_number') }})
@@ -19,7 +20,6 @@ class ProductAccess:
     r"""Allow access to \\"accounts_statements\\". Only used by certain partners. If relevant to the partner and unset, defaults to `true`."""
     accounts_tax_statements: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts_tax_statements') }})
     r"""Allow access to \\"accounts_tax_statements\\". Only used by certain partners. If relevant to the partner and unset, defaults to `true`."""
-    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     auth: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('auth') }})
     r"""Allow access to account number details. Only used by certain partners. If relevant to the partner and unset, defaults to `true`."""
     customers_profiles: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('customers_profiles') }})

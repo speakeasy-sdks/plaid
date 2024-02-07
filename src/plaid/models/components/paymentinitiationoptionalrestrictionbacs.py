@@ -11,9 +11,9 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class PaymentInitiationOptionalRestrictionBacs:
     r"""An optional object used to restrict the accounts used for payments. If provided, the end user will be able to send payments only from the specified bank account."""
+    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     account: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account'), 'exclude': lambda f: f is None }})
     r"""The account number of the account. Maximum of 10 characters."""
-    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     sort_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sort_code'), 'exclude': lambda f: f is None }})
     r"""The 6-character sort code of the account."""
     

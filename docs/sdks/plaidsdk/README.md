@@ -559,10 +559,10 @@ s = plaid.Plaid(
 )
 
 req = components.AssetReportCreateRequest(
+    days_requested=35362,
     access_tokens=[
         'string',
     ],
-    days_requested=35362,
     options=components.AssetReportCreateRequestOptions(
         add_ons=[
             components.AssetReportAddOns.FAST_ASSETS,
@@ -1048,17 +1048,17 @@ req = components.BankTransferCreateRequest(
     description='Polarised modular artificial intelligence',
     idempotency_key='string',
     iso_currency_code='string',
-    metadata={
-        'key': 'string',
-    },
     network=components.BankTransferNetwork.ACH,
     type=components.BankTransferType.DEBIT,
     user=components.BankTransferUserInput(
+        legal_name='string',
         additional_properties={
             'key': 'string',
         },
-        legal_name='string',
     ),
+    metadata={
+        'key': 'string',
+    },
 )
 
 res = s.plaid.bank_transfer_create(req)
@@ -1489,15 +1489,15 @@ s = plaid.Plaid(
 
 req = components.BeaconReportCreateRequest(
     beacon_user_id='becusr_11111111111111',
+    fraud_date=dateutil.parser.parse('1990-05-29').date(),
+    type=components.BeaconReportType.UNKNOWN,
     fraud_amount=components.FraudAmount(
+        iso_currency_code=components.ISOCurrencyCode.USD,
+        value=100,
         additional_properties={
             'key': 'string',
         },
-        iso_currency_code=components.ISOCurrencyCode.USD,
-        value=100,
     ),
-    fraud_date=dateutil.parser.parse('1990-05-29').date(),
-    type=components.BeaconReportType.UNKNOWN,
 )
 
 res = s.plaid.beacon_report_create(req)
@@ -1555,53 +1555,53 @@ s = plaid.Plaid(
 req = components.BeaconUserCreateRequest(
     client_user_id='your-db-id-3b24110',
     program_id='becprg_11111111111111',
+    user=components.BeaconUserRequestData(
+        address=components.BeaconUserRequestAddress(
+            city='Pawnee',
+            country='US',
+            street='123 Main St.',
+            additional_properties={
+                'key': 'string',
+            },
+            postal_code='46001',
+            region='IN',
+            street2='Unit 42',
+        ),
+        date_of_birth=dateutil.parser.parse('1990-05-29').date(),
+        name=components.BeaconUserName(
+            family_name='Knope',
+            given_name='Leslie',
+            additional_properties={
+                'key': 'string',
+            },
+        ),
+        additional_properties={
+            'key': 'string',
+        },
+        email_address='user@example.com',
+        id_number=components.BeaconUserIDNumber(
+            type=components.IDNumberType.US_SSN,
+            value='123456789',
+            additional_properties={
+                'key': 'string',
+            },
+        ),
+        ip_address='192.0.2.42',
+        phone_number='+19876543212',
+    ),
     report=components.BeaconUserCreateEmbeddedReport(
+        fraud_date=dateutil.parser.parse('1990-05-29').date(),
+        type=components.BeaconReportType.SYNTHETIC,
         additional_properties={
             'key': 'string',
         },
         fraud_amount=components.FraudAmountNullable(
-            additional_properties={
-                'key': 'string',
-            },
             iso_currency_code=components.ISOCurrencyCode.USD,
             value=100,
-        ),
-        fraud_date=dateutil.parser.parse('1990-05-29').date(),
-        type=components.BeaconReportType.SYNTHETIC,
-    ),
-    user=components.BeaconUserRequestData(
-        additional_properties={
-            'key': 'string',
-        },
-        address=components.BeaconUserRequestAddress(
             additional_properties={
                 'key': 'string',
             },
-            city='Pawnee',
-            country='US',
-            postal_code='46001',
-            region='IN',
-            street='123 Main St.',
-            street2='Unit 42',
         ),
-        date_of_birth=dateutil.parser.parse('1990-05-29').date(),
-        email_address='user@example.com',
-        id_number=components.BeaconUserIDNumber(
-            additional_properties={
-                'key': 'string',
-            },
-            type=components.IDNumberType.US_SSN,
-            value='123456789',
-        ),
-        ip_address='192.0.2.42',
-        name=components.BeaconUserName(
-            additional_properties={
-                'key': 'string',
-            },
-            family_name='Knope',
-            given_name='Leslie',
-        ),
-        phone_number='+19876543212',
     ),
 )
 
@@ -1842,10 +1842,10 @@ s = plaid.Plaid(
 )
 
 req = components.AssetReportFreddieGetRequest(
+    audit_copy_token='string',
     additional_properties={
         'key': 'string',
     },
-    audit_copy_token='string',
 )
 
 res = s.plaid.credit_asset_report_freddie_mac_get(req)
@@ -2134,8 +2134,8 @@ s = plaid.Plaid(
 )
 
 req = components.CreditBankIncomeRefreshRequest(
-    options=components.CreditBankIncomeRefreshRequestOptions(),
     user_token='string',
+    options=components.CreditBankIncomeRefreshRequestOptions(),
 )
 
 res = s.plaid.credit_bank_income_refresh(req)
@@ -2480,12 +2480,12 @@ s = plaid.Plaid(
 )
 
 req = components.CreditPayrollIncomeRefreshRequest(
+    user_token='string',
     options=components.CreditPayrollIncomeRefreshRequestOptions(
         item_ids=[
             'string',
         ],
     ),
-    user_token='string',
 )
 
 res = s.plaid.credit_payroll_income_refresh(req)
@@ -3018,38 +3018,38 @@ s = plaid.Plaid(
 )
 
 req = components.DepositSwitchAltCreateRequest(
-    options=components.DepositSwitchCreateRequestOptions(
-        transaction_item_access_tokens=[
-            'string',
-        ],
-    ),
     target_account=components.DepositSwitchTargetAccount(
-        additional_properties={
-            'key': 'string',
-        },
         account_name='string',
         account_number='string',
         account_subtype=components.DepositSwitchTargetAccountAccountSubtype.CHECKING,
         routing_number='string',
+        additional_properties={
+            'key': 'string',
+        },
     ),
     target_user=components.DepositSwitchTargetUser(
+        email='Melody_Schmeler51@gmail.com',
+        family_name='string',
+        given_name='string',
+        phone='(748) 725-9375 x62825',
         additional_properties={
             'key': 'string',
         },
         address=components.DepositSwitchAddressData(
+            city='Port Stanley',
+            country='Slovenia',
+            postal_code='82345',
+            region='string',
+            street='Turcotte Extensions',
             additional_properties={
                 'key': 'string',
             },
-            city='Lake Phyllis',
-            country='Palestinian Territory',
-            postal_code='58748-6259',
-            region='string',
-            street='Ottis Meadows',
         ),
-        email='Dante59@yahoo.com',
-        family_name='string',
-        given_name='string',
-        phone='888.382.3457',
+    ),
+    options=components.DepositSwitchCreateRequestOptions(
+        transaction_item_access_tokens=[
+            'string',
+        ],
     ),
 )
 
@@ -3097,13 +3097,13 @@ s = plaid.Plaid(
 )
 
 req = components.DepositSwitchCreateRequest(
+    target_access_token='string',
+    target_account_id='string',
     options=components.DepositSwitchCreateRequestOptions(
         transaction_item_access_tokens=[
             'string',
         ],
     ),
-    target_access_token='string',
-    target_account_id='string',
 )
 
 res = s.plaid.deposit_switch_create(req)
@@ -3364,11 +3364,11 @@ req = components.FDXNotification(
         type=components.FDXPartyType.MERCHANT,
     ),
     sent_on=dateutil.parser.isoparse('2021-07-15T14:46:41.375Z'),
+    type=components.FDXNotificationType.CONSENT_REVOKED,
     subscriber=components.FDXParty(
         name='string',
-        type=components.FDXPartyType.DATA_ACCESS_PLATFORM,
+        type=components.FDXPartyType.INDIVIDUAL,
     ),
-    type=components.FDXNotificationType.SERVICE,
     url=components.FDXHateoasLink(
         href='https://api.fi.com/fdx/v4/accounts/12345',
         types=[
@@ -3594,32 +3594,32 @@ s = plaid.Plaid(
 )
 
 req = components.IdentityVerificationCreateRequest(
+    is_shareable=True,
+    template_id='idvtmp_4FrXJvfQU3zGUR',
     client_user_id='your-db-id-3b24110',
     gave_consent=True,
     is_idempotent=True,
-    is_shareable=True,
-    template_id='idvtmp_4FrXJvfQU3zGUR',
     user=components.IdentityVerificationCreateRequestUser(
         address=components.UserAddress(
+            city='Pawnee',
+            country='US',
+            street='123 Main St.',
             additional_properties={
                 'key': 'string',
             },
-            city='Pawnee',
-            country='US',
             postal_code='46001',
             region='IN',
-            street='123 Main St.',
             street2='Unit 42',
         ),
         client_user_id='your-db-id-3b24110',
         date_of_birth=dateutil.parser.parse('1990-05-29').date(),
         email_address='user@example.com',
         id_number=components.UserIDNumber(
+            type=components.IDNumberType.US_SSN,
+            value='123456789',
             additional_properties={
                 'key': 'string',
             },
-            type=components.IDNumberType.US_SSN,
-            value='123456789',
         ),
         name=components.IdentityVerificationRequestUserName(
             family_name='Knope',
@@ -3721,8 +3721,8 @@ s = plaid.Plaid(
 
 req = components.IdentityVerificationListRequest(
     client_user_id='your-db-id-3b24110',
-    cursor='eyJkaXJlY3Rpb24iOiJuZXh0Iiwib2Zmc2V0IjoiMTU5NDM',
     template_id='idvtmp_4FrXJvfQU3zGUR',
+    cursor='eyJkaXJlY3Rpb24iOiJuZXh0Iiwib2Zmc2V0IjoiMTU5NDM',
 )
 
 res = s.plaid.identity_verification_list(req)
@@ -3771,37 +3771,37 @@ s = plaid.Plaid(
 
 req = components.IdentityVerificationRetryRequest(
     client_user_id='your-db-id-3b24110',
+    strategy=components.Strategy.INCOMPLETE,
+    template_id='idvtmp_4FrXJvfQU3zGUR',
     steps=components.IdentityVerificationRetryRequestStepsObject(
         documentary_verification=False,
         kyc_check=False,
         selfie_check=False,
         verify_sms=False,
     ),
-    strategy=components.Strategy.INCOMPLETE,
-    template_id='idvtmp_4FrXJvfQU3zGUR',
     user=components.IdentityVerificationRequestUser(
         additional_properties={
             'key': 'string',
         },
         address=components.UserAddress(
+            city='Pawnee',
+            country='US',
+            street='123 Main St.',
             additional_properties={
                 'key': 'string',
             },
-            city='Pawnee',
-            country='US',
             postal_code='46001',
             region='IN',
-            street='123 Main St.',
             street2='Unit 42',
         ),
         date_of_birth=dateutil.parser.parse('1990-05-29').date(),
         email_address='user@example.com',
         id_number=components.UserIDNumber(
+            type=components.IDNumberType.US_SSN,
+            value='123456789',
             additional_properties={
                 'key': 'string',
             },
-            type=components.IDNumberType.US_SSN,
-            value='123456789',
         ),
         name=components.IdentityVerificationRequestUserName(
             family_name='Knope',
@@ -3857,12 +3857,12 @@ s = plaid.Plaid(
 )
 
 req = components.IncomeVerificationCreateRequest(
+    webhook='string',
     options=components.IncomeVerificationCreateRequestOptions(
         access_tokens=[
             'string',
         ],
     ),
-    webhook='string',
 )
 
 res = s.plaid.income_verification_create(req)
@@ -4254,13 +4254,13 @@ req = components.InstitutionsSearchRequest(
     country_codes=[
         components.CountryCode.NO,
     ],
-    options=components.InstitutionsSearchRequestOptions(
-        payment_initiation=components.InstitutionsSearchPaymentInitiationOptions(),
-    ),
     products=[
         components.Products.DEPOSIT_SWITCH,
     ],
     query='string',
+    options=components.InstitutionsSearchRequestOptions(
+        payment_initiation=components.InstitutionsSearchPaymentInitiationOptions(),
+    ),
 )
 
 res = s.plaid.institutions_search(req)
@@ -4470,12 +4470,12 @@ s = plaid.Plaid(
 req = components.InvestmentsTransactionsGetRequest(
     access_token='string',
     end_date=dateutil.parser.parse('2024-08-24').date(),
+    start_date=dateutil.parser.parse('2024-03-17').date(),
     options=components.InvestmentsTransactionsGetRequestOptions(
         account_ids=[
             'string',
         ],
     ),
-    start_date=dateutil.parser.parse('2024-03-17').date(),
 )
 
 res = s.plaid.investments_transactions_get(req)
@@ -4662,12 +4662,12 @@ req = components.ItemApplicationScopesUpdateRequest(
     scopes=components.Scopes(
         accounts=[
             components.AccountAccess(
+                unique_id='string',
                 account_product_access=components.AccountProductAccessNullable(
                     additional_properties={
                         'key': 'string',
                     },
                 ),
-                unique_id='string',
             ),
         ],
         product_access=components.ProductAccess(
@@ -4822,7 +4822,6 @@ s = plaid.Plaid(
 )
 
 req = components.ItemImportRequest(
-    options=components.ItemImportRequestOptions(),
     products=[
         components.Products.PAYMENT_INITIATION,
     ],
@@ -4830,6 +4829,7 @@ req = components.ItemImportRequest(
         auth_token='string',
         user_id='string',
     ),
+    options=components.ItemImportRequestOptions(),
 )
 
 res = s.plaid.item_import(req)
@@ -5233,52 +5233,78 @@ s = plaid.Plaid(
 )
 
 req = components.LinkTokenCreateRequest(
+    client_name='string',
+    country_codes=[
+        components.CountryCode.IT,
+    ],
+    language='string',
+    user=components.LinkTokenCreateRequestUser(
+        client_user_id='string',
+        address=components.UserAddress(
+            city='Pawnee',
+            country='US',
+            street='123 Main St.',
+            additional_properties={
+                'key': 'string',
+            },
+            postal_code='46001',
+            region='IN',
+            street2='Unit 42',
+        ),
+        id_number=components.UserIDNumber(
+            type=components.IDNumberType.US_SSN,
+            value='123456789',
+            additional_properties={
+                'key': 'string',
+            },
+        ),
+        name=components.IdentityVerificationRequestUserName(
+            family_name='Knope',
+            given_name='Leslie',
+        ),
+    ),
     account_filters=components.LinkTokenAccountFilters(
         additional_properties={
             'key': 'string',
         },
         credit=components.CreditFilter(
-            additional_properties={
-                'key': 'string',
-            },
             account_subtypes=[
                 components.CreditAccountSubtype.PAYPAL,
             ],
+            additional_properties={
+                'key': 'string',
+            },
         ),
         depository=components.DepositoryFilter(
+            account_subtypes=[
+                components.DepositoryAccountSubtype.MONEY_MARKET,
+            ],
             additional_properties={
                 'key': 'string',
             },
-            account_subtypes=[
-                components.DepositoryAccountSubtype.PREPAID,
-            ],
         ),
         investment=components.InvestmentFilter(
+            account_subtypes=[
+                components.InvestmentAccountSubtype.OTHER_INSURANCE,
+            ],
             additional_properties={
                 'key': 'string',
             },
-            account_subtypes=[
-                components.InvestmentAccountSubtype.LRSP,
-            ],
         ),
         loan=components.LoanFilter(
+            account_subtypes=[
+                components.LoanAccountSubtype.OTHER,
+            ],
             additional_properties={
                 'key': 'string',
             },
-            account_subtypes=[
-                components.LoanAccountSubtype.LOAN,
-            ],
         ),
     ),
     additional_consented_products=[
-        components.Products.EMPLOYMENT,
+        components.Products.INVESTMENTS_AUTH,
     ],
     auth=components.LinkTokenCreateRequestAuth(),
     base_report=components.LinkTokenCreateRequestBaseReport(),
-    client_name='string',
-    country_codes=[
-        components.CountryCode.FR,
-    ],
     deposit_switch=components.LinkTokenCreateRequestDepositSwitch(
         deposit_switch_id='string',
     ),
@@ -5297,9 +5323,9 @@ req = components.LinkTokenCreateRequest(
         },
     ),
     identity_verification=components.LinkTokenCreateRequestIdentityVerification(
+        template_id='idvtmp_4FrXJvfQU3zGUR',
         consent=True,
         gave_consent=True,
-        template_id='idvtmp_4FrXJvfQU3zGUR',
     ),
     income_verification=components.LinkTokenCreateRequestIncomeVerification(
         access_tokens=[
@@ -5326,7 +5352,6 @@ req = components.LinkTokenCreateRequest(
     institution_data=components.LinkTokenCreateInstitutionData(),
     investments=components.LinkTokenInvestments(),
     investments_auth=components.LinkTokenInvestmentsAuth(),
-    language='string',
     payment_initiation=components.LinkTokenCreateRequestPaymentInitiation(),
     products=[
         components.Products.SIGNAL,
@@ -5337,31 +5362,6 @@ req = components.LinkTokenCreateRequest(
     statements=components.LinkTokenCreateRequestStatements(),
     transfer=components.LinkTokenCreateRequestTransfer(),
     update=components.LinkTokenCreateRequestUpdate(),
-    user=components.LinkTokenCreateRequestUser(
-        address=components.UserAddress(
-            additional_properties={
-                'key': 'string',
-            },
-            city='Pawnee',
-            country='US',
-            postal_code='46001',
-            region='IN',
-            street='123 Main St.',
-            street2='Unit 42',
-        ),
-        client_user_id='string',
-        id_number=components.UserIDNumber(
-            additional_properties={
-                'key': 'string',
-            },
-            type=components.IDNumberType.US_SSN,
-            value='123456789',
-        ),
-        name=components.IdentityVerificationRequestUserName(
-            family_name='Knope',
-            given_name='Leslie',
-        ),
-    ),
 )
 
 res = s.plaid.link_token_create(req)
@@ -5462,30 +5462,31 @@ req = components.PartnerCustomerCreateRequest(
         },
     ),
     application_name='string',
+    company_name='Padberg - Hyatt',
+    is_bank_addendum_completed=False,
+    is_diligence_attested=False,
+    legal_entity_name='string',
+    products=[
+        components.Products.ASSETS,
+    ],
+    website='string',
     assets_under_management=components.PartnerEndCustomerAssetsUnderManagement(
+        amount=4837.4,
+        iso_currency_code='string',
         additional_properties={
             'key': 'string',
         },
-        amount=4878.61,
-        iso_currency_code='string',
     ),
     billing_contact=components.PartnerEndCustomerBillingContact(
         additional_properties={
             'key': 'string',
         },
     ),
-    company_name='Hyatt, Bartell and Kub',
     customer_support_info=components.PartnerEndCustomerCustomerSupportInfo(
         additional_properties={
             'key': 'string',
         },
     ),
-    is_bank_addendum_completed=False,
-    is_diligence_attested=False,
-    legal_entity_name='string',
-    products=[
-        components.Products.PAYMENT_INITIATION,
-    ],
     redirect_uris=[
         'string',
     ],
@@ -5494,7 +5495,6 @@ req = components.PartnerCustomerCreateRequest(
             'key': 'string',
         },
     ),
-    website='string',
 )
 
 res = s.plaid.partner_customer_create(req)
@@ -5749,6 +5749,11 @@ req = components.PaymentInitiationConsentCreateRequest(
         ],
         valid_date_time=components.PaymentConsentValidDateTime(),
     ),
+    recipient_id='string',
+    reference='string',
+    scopes=[
+        components.PaymentInitiationConsentScope.ME_TO_ME,
+    ],
     options=components.ExternalPaymentInitiationConsentOptions(
         bacs=components.PaymentInitiationOptionalRestrictionBacs(
             additional_properties={
@@ -5756,11 +5761,6 @@ req = components.PaymentInitiationConsentCreateRequest(
             },
         ),
     ),
-    recipient_id='string',
-    reference='string',
-    scopes=[
-        components.PaymentInitiationConsentScope.ME_TO_ME,
-    ],
 )
 
 res = s.plaid.payment_initiation_consent_create(req)
@@ -5962,6 +5962,8 @@ req = components.PaymentInitiationPaymentCreateRequest(
         currency=components.PaymentAmountCurrency.PLN,
         value=676.57,
     ),
+    recipient_id='string',
+    reference='string',
     options=components.ExternalPaymentOptions(
         bacs=components.PaymentInitiationOptionalRestrictionBacs(
             additional_properties={
@@ -5969,15 +5971,13 @@ req = components.PaymentInitiationPaymentCreateRequest(
             },
         ),
     ),
-    recipient_id='string',
-    reference='string',
     schedule=components.ExternalPaymentScheduleRequest(
-        additional_properties={
-            'key': 'string',
-        },
         interval=components.PaymentScheduleInterval.MONTHLY,
         interval_execution_day=136559,
         start_date=dateutil.parser.parse('2023-02-18').date(),
+        additional_properties={
+            'key': 'string',
+        },
     ),
 )
 
@@ -6128,16 +6128,16 @@ s = plaid.Plaid(
 )
 
 req = components.PaymentInitiationPaymentReverseRequest(
-    amount=components.PaymentAmountToRefund(
-        additional_properties={
-            'key': 'string',
-        },
-        currency=components.PaymentAmountCurrency.DKK,
-        value=9546.44,
-    ),
     idempotency_key='string',
     payment_id='string',
     reference='string',
+    amount=components.PaymentAmountToRefund(
+        currency=components.PaymentAmountCurrency.DKK,
+        value=9546.44,
+        additional_properties={
+            'key': 'string',
+        },
+    ),
 )
 
 res = s.plaid.payment_initiation_payment_reverse(req)
@@ -6189,23 +6189,23 @@ s = plaid.Plaid(
 )
 
 req = components.PaymentInitiationRecipientCreateRequest(
+    name='string',
     address=components.PaymentInitiationAddress(
-        additional_properties={
-            'key': 'string',
-        },
         city='Port Kendallfort',
         country='Pakistan',
         postal_code='20520',
         street=[
             'string',
         ],
+        additional_properties={
+            'key': 'string',
+        },
     ),
     bacs=components.RecipientBACSNullable(
         additional_properties={
             'key': 'string',
         },
     ),
-    name='string',
 )
 
 res = s.plaid.payment_initiation_recipient_create(req)
@@ -6584,8 +6584,8 @@ s = plaid.Plaid(
 )
 
 req = components.ProcessorBalanceGetRequest(
-    options=components.ProcessorBalanceGetRequestOptions(),
     processor_token='string',
+    options=components.ProcessorBalanceGetRequestOptions(),
 )
 
 res = s.plaid.processor_balance_get(req)
@@ -6636,18 +6636,18 @@ req = components.ProcessorBankTransferCreateRequest(
     description='Open-source grid-enabled customer loyalty',
     idempotency_key='string',
     iso_currency_code='string',
-    metadata={
-        'key': 'string',
-    },
     network=components.BankTransferNetwork.WIRE,
     processor_token='string',
     type=components.BankTransferType.DEBIT,
     user=components.BankTransferUserInput(
+        legal_name='string',
         additional_properties={
             'key': 'string',
         },
-        legal_name='string',
     ),
+    metadata={
+        'key': 'string',
+    },
 )
 
 res = s.plaid.processor_bank_transfer_create(req)
@@ -6855,8 +6855,8 @@ s = plaid.Plaid(
 req = components.ProcessorSignalEvaluateRequest(
     amount=2186.98,
     client_transaction_id='string',
-    device=components.SignalDevice(),
     processor_token='string',
+    device=components.SignalDevice(),
     user=components.SignalUser(
         address=components.SignalAddressData(
             additional_properties={
@@ -7220,13 +7220,13 @@ s = plaid.Plaid(
 
 req = components.ProcessorTransactionsGetRequest(
     end_date=dateutil.parser.parse('2022-04-08').date(),
+    processor_token='string',
+    start_date=dateutil.parser.parse('2023-04-01').date(),
     options=components.TransactionsGetRequestOptions(
         account_ids=[
             'string',
         ],
     ),
-    processor_token='string',
-    start_date=dateutil.parser.parse('2023-04-01').date(),
 )
 
 res = s.plaid.processor_transactions_get(req)
@@ -7284,8 +7284,8 @@ req = components.ProcessorTransactionsRecurringGetRequest(
     account_ids=[
         'string',
     ],
-    options=components.TransactionsRecurringGetRequestOptions(),
     processor_token='string',
+    options=components.TransactionsRecurringGetRequestOptions(),
 )
 
 res = s.plaid.processor_transactions_recurring_get(req)
@@ -7399,8 +7399,8 @@ s = plaid.Plaid(
 )
 
 req = components.ProcessorTransactionsSyncRequest(
-    options=components.TransactionsSyncRequestOptions(),
     processor_token='string',
+    options=components.TransactionsSyncRequestOptions(),
 )
 
 res = s.plaid.processor_transactions_sync(req)
@@ -8113,12 +8113,12 @@ s = plaid.Plaid(
 
 req = components.SandboxTransferSimulateRequest(
     event_type='string',
+    transfer_id='string',
     failure_reason=components.TransferFailure(
         additional_properties={
             'key': 'string',
         },
     ),
-    transfer_id='string',
 )
 
 res = s.plaid.sandbox_transfer_simulate(req)
@@ -8719,13 +8719,13 @@ req = components.TransactionsEnhanceGetRequest(
     account_type='string',
     transactions=[
         components.ClientProvidedRawTransaction(
-            additional_properties={
-                'key': 'string',
-            },
             amount=8716.21,
             description='Integrated user-facing model',
             id='<ID>',
             iso_currency_code='string',
+            additional_properties={
+                'key': 'string',
+            },
         ),
     ],
 )
@@ -8776,17 +8776,16 @@ s = plaid.Plaid(
 
 req = components.TransactionsEnrichGetRequest(
     account_type='string',
-    options=components.TransactionsEnrichRequestOptions(),
     transactions=[
         components.ClientProvidedTransaction(
-            additional_properties={
-                'key': 'string',
-            },
             amount=9570.07,
             description='Multi-lateral secondary customer loyalty',
             direction=components.EnrichTransactionDirection.INFLOW,
             id='<ID>',
             iso_currency_code='string',
+            additional_properties={
+                'key': 'string',
+            },
             location=components.ClientProvidedTransactionLocation(
                 additional_properties={
                     'key': 'string',
@@ -8794,6 +8793,7 @@ req = components.TransactionsEnrichGetRequest(
             ),
         ),
     ],
+    options=components.TransactionsEnrichRequestOptions(),
 )
 
 res = s.plaid.transactions_enrich(req)
@@ -8853,12 +8853,12 @@ s = plaid.Plaid(
 req = components.TransactionsGetRequest(
     access_token='string',
     end_date=dateutil.parser.parse('2022-06-27').date(),
+    start_date=dateutil.parser.parse('2023-07-17').date(),
     options=components.TransactionsGetRequestOptions(
         account_ids=[
             'string',
         ],
     ),
-    start_date=dateutil.parser.parse('2023-07-17').date(),
 )
 
 res = s.plaid.transactions_get(req)
@@ -9238,16 +9238,16 @@ s = plaid.Plaid(
 
 req = components.TransferAuthorizationCreateRequest(
     amount='237.18',
+    network=components.TransferNetwork.SAME_DAY_ACH,
+    type=components.TransferType.CREDIT,
+    user=components.TransferAuthorizationUserInRequest(
+        legal_name='string',
+        address=components.TransferUserAddressInRequest(),
+    ),
     device=components.TransferAuthorizationDevice(
         additional_properties={
             'key': 'string',
         },
-    ),
-    network=components.TransferNetwork.SAME_DAY_ACH,
-    type=components.TransferType.CREDIT,
-    user=components.TransferAuthorizationUserInRequest(
-        address=components.TransferUserAddressInRequest(),
-        legal_name='string',
     ),
 )
 
@@ -9587,6 +9587,10 @@ req = components.TransferDiligenceSubmitRequest(
             region='string',
             street='Jeramie Forge',
         ),
+        dba='string',
+        naics_code='string',
+        tax_id='string',
+        website='string',
         credit_usage_configuration=components.TransferCreditUsageConfiguration(
             expected_average_amount='string',
             expected_frequency=components.OriginatorExpectedTransferFrequency.ONCE_PER_WEEK,
@@ -9596,7 +9600,6 @@ req = components.TransferDiligenceSubmitRequest(
                 components.CreditACHClass.CCD,
             ],
         ),
-        dba='string',
         debit_usage_configuration=components.TransferDebitUsageConfiguration(
             expected_average_amount='string',
             expected_frequency=components.OriginatorExpectedTransferFrequency.DAILY,
@@ -9606,9 +9609,6 @@ req = components.TransferDiligenceSubmitRequest(
                 components.ACHClass.PPD,
             ],
         ),
-        naics_code='string',
-        tax_id='string',
-        website='string',
     ),
 )
 
@@ -9802,14 +9802,14 @@ s = plaid.Plaid(
 req = components.TransferIntentCreateRequest(
     amount='610.36',
     description='Distributed systemic data-warehouse',
+    mode=components.TransferIntentCreateMode.PAYMENT,
+    user=components.TransferUserInRequest(
+        legal_name='string',
+        address=components.TransferUserAddressInRequest(),
+    ),
     metadata={
         'key': 'string',
     },
-    mode=components.TransferIntentCreateMode.PAYMENT,
-    user=components.TransferUserInRequest(
-        address=components.TransferUserAddressInRequest(),
-        legal_name='string',
-    ),
 )
 
 res = s.plaid.transfer_intent_create(req)
@@ -9856,10 +9856,10 @@ s = plaid.Plaid(
 )
 
 req = components.TransferIntentGetRequest(
+    transfer_intent_id='string',
     additional_properties={
         'key': 'string',
     },
-    transfer_intent_id='string',
 )
 
 res = s.plaid.transfer_intent_get(req)
@@ -10377,11 +10377,11 @@ req = components.TransferRecurringCreateRequest(
     amount='793.56',
     description='Centralized tertiary model',
     device=components.TransferDevice(
+        ip_address='20.163.92.142',
+        user_agent='string',
         additional_properties={
             'key': 'string',
         },
-        ip_address='20.163.92.142',
-        user_agent='string',
     ),
     idempotency_key='string',
     network=components.TransferNetwork.SAME_DAY_ACH,
@@ -10393,8 +10393,8 @@ req = components.TransferRecurringCreateRequest(
     ),
     type=components.TransferType.CREDIT,
     user=components.TransferUserInRequest(
-        address=components.TransferUserAddressInRequest(),
         legal_name='string',
+        address=components.TransferUserAddressInRequest(),
     ),
     user_present=False,
 )
@@ -10874,9 +10874,6 @@ s = plaid.Plaid(
 req = components.UserCreateRequest(
     client_user_id='string',
     consumer_report_user_identity=components.ConsumerReportUserIdentity(
-        additional_properties={
-            'key': 'string',
-        },
         emails=[
             'string',
         ],
@@ -10886,15 +10883,18 @@ req = components.UserCreateRequest(
             'string',
         ],
         primary_address=components.AddressData(
-            additional_properties={
-                'key': 'string',
-            },
             city='Schmidtburgh',
             country='El Salvador',
             postal_code='29690-0155',
             region='string',
             street='Flo Overpass',
+            additional_properties={
+                'key': 'string',
+            },
         ),
+        additional_properties={
+            'key': 'string',
+        },
     ),
 )
 
@@ -11085,27 +11085,13 @@ s = plaid.Plaid(
 
 req = components.WalletTransactionExecuteRequest(
     amount=components.WalletTransactionAmount(
-        additional_properties={
-            'key': 'string',
-        },
         iso_currency_code=components.WalletISOCurrencyCode.GBP,
         value=6174.29,
-    ),
-    counterparty=components.WalletTransactionCounterparty(
         additional_properties={
             'key': 'string',
         },
-        address=components.PaymentInitiationAddress(
-            additional_properties={
-                'key': 'string',
-            },
-            city='Lake Demetrius',
-            country='Niger',
-            postal_code='68618',
-            street=[
-                'string',
-            ],
-        ),
+    ),
+    counterparty=components.WalletTransactionCounterparty(
         name='string',
         numbers=components.WalletTransactionCounterpartyNumbers(
             additional_properties={
@@ -11121,6 +11107,20 @@ req = components.WalletTransactionExecuteRequest(
                     'key': 'string',
                 },
             ),
+        ),
+        additional_properties={
+            'key': 'string',
+        },
+        address=components.PaymentInitiationAddress(
+            city='Lake Demetrius',
+            country='Niger',
+            postal_code='68618',
+            street=[
+                'string',
+            ],
+            additional_properties={
+                'key': 'string',
+            },
         ),
     ),
     idempotency_key='string',
@@ -11220,8 +11220,8 @@ s = plaid.Plaid(
 )
 
 req = components.WalletTransactionListRequest(
-    options=components.WalletTransactionListRequestOptions(),
     wallet_id='string',
+    options=components.WalletTransactionListRequestOptions(),
 )
 
 res = s.plaid.wallet_transaction_list(req)
@@ -11268,16 +11268,16 @@ s = plaid.Plaid(
 )
 
 req = components.WatchlistScreeningEntityCreateRequest(
-    client_user_id='your-db-id-3b24110',
     search_terms=components.EntityWatchlistSearchTerms(
+        entity_watchlist_program_id='entprg_2eRPsDnL66rZ7H',
+        legal_name='Al-Qaida',
         country='US',
         document_number='C31195855',
         email_address='user@example.com',
-        entity_watchlist_program_id='entprg_2eRPsDnL66rZ7H',
-        legal_name='Al-Qaida',
         phone_number='+14025671234',
         url='https://example.com',
     ),
+    client_user_id='your-db-id-3b24110',
 )
 
 res = s.plaid.watchlist_screening_entity_create(req)
@@ -11371,8 +11371,8 @@ s = plaid.Plaid(
 )
 
 req = components.WatchlistScreeningEntityHistoryListRequest(
-    cursor='eyJkaXJlY3Rpb24iOiJuZXh0Iiwib2Zmc2V0IjoiMTU5NDM',
     entity_watchlist_screening_id='entscr_52xR9LKo77r1Np',
+    cursor='eyJkaXJlY3Rpb24iOiJuZXh0Iiwib2Zmc2V0IjoiMTU5NDM',
 )
 
 res = s.plaid.watchlist_screening_entity_history_list(req)
@@ -11419,8 +11419,8 @@ s = plaid.Plaid(
 )
 
 req = components.WatchlistScreeningEntityHitListRequest(
-    cursor='eyJkaXJlY3Rpb24iOiJuZXh0Iiwib2Zmc2V0IjoiMTU5NDM',
     entity_watchlist_screening_id='entscr_52xR9LKo77r1Np',
+    cursor='eyJkaXJlY3Rpb24iOiJuZXh0Iiwib2Zmc2V0IjoiMTU5NDM',
 )
 
 res = s.plaid.watchlist_screening_entity_hit_list(req)
@@ -11467,10 +11467,10 @@ s = plaid.Plaid(
 )
 
 req = components.WatchlistScreeningEntityListRequest(
+    entity_watchlist_program_id='entprg_2eRPsDnL66rZ7H',
     assignee='54350110fedcbaf01234ffee',
     client_user_id='your-db-id-3b24110',
     cursor='eyJkaXJlY3Rpb24iOiJuZXh0Iiwib2Zmc2V0IjoiMTU5NDM',
-    entity_watchlist_program_id='entprg_2eRPsDnL66rZ7H',
     status=components.WatchlistScreeningStatus.CLEARED,
 )
 
@@ -11612,7 +11612,6 @@ s = plaid.Plaid(
 )
 
 req = components.WatchlistScreeningEntityReviewCreateRequest(
-    comment='These look like legitimate matches, rejecting the customer.',
     confirmed_hits=[
         'enthit_52xR9LKo77r1Np',
     ],
@@ -11620,6 +11619,7 @@ req = components.WatchlistScreeningEntityReviewCreateRequest(
         'enthit_52xR9LKo77r1Np',
     ],
     entity_watchlist_screening_id='entscr_52xR9LKo77r1Np',
+    comment='These look like legitimate matches, rejecting the customer.',
 )
 
 res = s.plaid.watchlist_screening_entity_review_create(req)
@@ -11666,8 +11666,8 @@ s = plaid.Plaid(
 )
 
 req = components.WatchlistScreeningEntityReviewListRequest(
-    cursor='eyJkaXJlY3Rpb24iOiJuZXh0Iiwib2Zmc2V0IjoiMTU5NDM',
     entity_watchlist_screening_id='entscr_52xR9LKo77r1Np',
+    cursor='eyJkaXJlY3Rpb24iOiJuZXh0Iiwib2Zmc2V0IjoiMTU5NDM',
 )
 
 res = s.plaid.watchlist_screening_entity_review_list(req)
@@ -11714,17 +11714,17 @@ s = plaid.Plaid(
 )
 
 req = components.WatchlistScreeningEntityUpdateRequest(
+    entity_watchlist_screening_id='entscr_52xR9LKo77r1Np',
     assignee='54350110fedcbaf01234ffee',
     client_user_id='your-db-id-3b24110',
-    entity_watchlist_screening_id='entscr_52xR9LKo77r1Np',
     reset_fields=[
         components.WatchlistScreeningEntityUpdateRequestResettableField.ASSIGNEE,
     ],
     search_terms=components.UpdateEntityScreeningRequestSearchTerms(
+        entity_watchlist_program_id='entprg_2eRPsDnL66rZ7H',
         country='US',
         document_number='C31195855',
         email_address='user@example.com',
-        entity_watchlist_program_id='entprg_2eRPsDnL66rZ7H',
         legal_name='Al-Qaida',
         phone_number='+14025671234',
         url='https://example.com',
@@ -11777,14 +11777,14 @@ s = plaid.Plaid(
 )
 
 req = components.WatchlistScreeningIndividualCreateRequest(
-    client_user_id='your-db-id-3b24110',
     search_terms=components.WatchlistScreeningRequestSearchTerms(
+        legal_name='Aleksey Potemkin',
+        watchlist_program_id='prg_2eRPsDnL66rZ7H',
         country='US',
         date_of_birth=dateutil.parser.parse('1990-05-29').date(),
         document_number='C31195855',
-        legal_name='Aleksey Potemkin',
-        watchlist_program_id='prg_2eRPsDnL66rZ7H',
     ),
+    client_user_id='your-db-id-3b24110',
 )
 
 res = s.plaid.watchlist_screening_individual_create(req)
@@ -11878,8 +11878,8 @@ s = plaid.Plaid(
 )
 
 req = components.WatchlistScreeningIndividualHistoryListRequest(
-    cursor='eyJkaXJlY3Rpb24iOiJuZXh0Iiwib2Zmc2V0IjoiMTU5NDM',
     watchlist_screening_id='scr_52xR9LKo77r1Np',
+    cursor='eyJkaXJlY3Rpb24iOiJuZXh0Iiwib2Zmc2V0IjoiMTU5NDM',
 )
 
 res = s.plaid.watchlist_screening_individual_history_list(req)
@@ -11926,8 +11926,8 @@ s = plaid.Plaid(
 )
 
 req = components.WatchlistScreeningIndividualHitListRequest(
-    cursor='eyJkaXJlY3Rpb24iOiJuZXh0Iiwib2Zmc2V0IjoiMTU5NDM',
     watchlist_screening_id='scr_52xR9LKo77r1Np',
+    cursor='eyJkaXJlY3Rpb24iOiJuZXh0Iiwib2Zmc2V0IjoiMTU5NDM',
 )
 
 res = s.plaid.watchlist_screening_individual_hit_list(req)
@@ -11974,11 +11974,11 @@ s = plaid.Plaid(
 )
 
 req = components.WatchlistScreeningIndividualListRequest(
+    watchlist_program_id='prg_2eRPsDnL66rZ7H',
     assignee='54350110fedcbaf01234ffee',
     client_user_id='your-db-id-3b24110',
     cursor='eyJkaXJlY3Rpb24iOiJuZXh0Iiwib2Zmc2V0IjoiMTU5NDM',
     status=components.WatchlistScreeningStatus.CLEARED,
-    watchlist_program_id='prg_2eRPsDnL66rZ7H',
 )
 
 res = s.plaid.watchlist_screening_individual_list(req)
@@ -12119,7 +12119,6 @@ s = plaid.Plaid(
 )
 
 req = components.WatchlistScreeningIndividualReviewCreateRequest(
-    comment='These look like legitimate matches, rejecting the customer.',
     confirmed_hits=[
         'scrhit_52xR9LKo77r1Np',
     ],
@@ -12127,6 +12126,7 @@ req = components.WatchlistScreeningIndividualReviewCreateRequest(
         'scrhit_52xR9LKo77r1Np',
     ],
     watchlist_screening_id='scr_52xR9LKo77r1Np',
+    comment='These look like legitimate matches, rejecting the customer.',
 )
 
 res = s.plaid.watchlist_screening_individual_review_create(req)
@@ -12173,8 +12173,8 @@ s = plaid.Plaid(
 )
 
 req = components.WatchlistScreeningIndividualReviewListRequest(
-    cursor='eyJkaXJlY3Rpb24iOiJuZXh0Iiwib2Zmc2V0IjoiMTU5NDM',
     watchlist_screening_id='scr_52xR9LKo77r1Np',
+    cursor='eyJkaXJlY3Rpb24iOiJuZXh0Iiwib2Zmc2V0IjoiMTU5NDM',
 )
 
 res = s.plaid.watchlist_screening_individual_review_list(req)
@@ -12222,6 +12222,7 @@ s = plaid.Plaid(
 )
 
 req = components.WatchlistScreeningIndividualUpdateRequest(
+    watchlist_screening_id='scr_52xR9LKo77r1Np',
     assignee='54350110fedcbaf01234ffee',
     client_user_id='your-db-id-3b24110',
     reset_fields=[
@@ -12235,7 +12236,6 @@ req = components.WatchlistScreeningIndividualUpdateRequest(
         watchlist_program_id='prg_2eRPsDnL66rZ7H',
     ),
     status=components.WatchlistScreeningStatus.CLEARED,
-    watchlist_screening_id='scr_52xR9LKo77r1Np',
 )
 
 res = s.plaid.watchlist_screening_individual_update(req)

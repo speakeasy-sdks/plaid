@@ -12,9 +12,9 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class DistributionBreakdown:
     r"""Information about the accounts that the payment was distributed to."""
+    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     account_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_name') }})
     r"""Name of the account for the given distribution."""
-    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     bank_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bank_name') }})
     r"""The name of the bank that the payment is being deposited to."""
     current_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('current_amount') }})

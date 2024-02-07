@@ -11,10 +11,10 @@ from typing import Optional
 class PaymentInitiationConsentPaymentExecuteResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     payment_initiation_consent_payment_execute_response: Optional[components_paymentinitiationconsentpaymentexecuteresponse.PaymentInitiationConsentPaymentExecuteResponse] = dataclasses.field(default=None)
     r"""OK"""
     
