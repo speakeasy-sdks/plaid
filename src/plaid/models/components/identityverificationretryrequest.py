@@ -14,6 +14,7 @@ from typing import Optional
 @dataclasses.dataclass
 class IdentityVerificationRetryRequest:
     r"""Request input for retrying an identity verification attempt"""
+    UNSET='__SPEAKEASY_UNSET__'
     client_user_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_user_id') }})
     r"""A unique ID that identifies the end user in your system. This ID can also be used to associate user-specific data from other Plaid products. Financial Account Matching requires this field and the `/link/token/create` `client_user_id` to be consistent. Personally identifiable information, such as an email address or phone number, should not be used in the `client_user_id`."""
     strategy: Strategy = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('strategy') }})
@@ -40,7 +41,7 @@ class IdentityVerificationRetryRequest:
     r"""Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body."""
     secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secret'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body."""
-    steps: Optional[IdentityVerificationRetryRequestStepsObject] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('steps') }})
+    steps: Optional[IdentityVerificationRetryRequestStepsObject] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('steps'), 'exclude': lambda f: f is IdentityVerificationRetryRequest.UNSET }})
     r"""Instructions for the `custom` retry strategy specifying which steps should be required or skipped.
 
 
@@ -53,7 +54,7 @@ class IdentityVerificationRetryRequest:
 
     The `selfie_check` step is currently not supported on the sandbox server. Sandbox requests will silently disable the `selfie_check` step when provided.
     """
-    user: Optional[IdentityVerificationRequestUser] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user') }})
+    user: Optional[IdentityVerificationRequestUser] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user'), 'exclude': lambda f: f is IdentityVerificationRetryRequest.UNSET }})
     r"""User information collected outside of Link, most likely via your own onboarding process.
 
     Each of the following identity fields are optional:

@@ -11,14 +11,15 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class SignalAddressData:
     r"""Data about the components comprising an address."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     city: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city'), 'exclude': lambda f: f is None }})
     r"""The full city name"""
-    country: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country') }})
+    country: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country'), 'exclude': lambda f: f is SignalAddressData.UNSET }})
     r"""The ISO 3166-1 alpha-2 country code"""
-    postal_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postal_code') }})
+    postal_code: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postal_code'), 'exclude': lambda f: f is SignalAddressData.UNSET }})
     r"""The postal code"""
-    region: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('region') }})
+    region: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('region'), 'exclude': lambda f: f is SignalAddressData.UNSET }})
     r"""The region or state
     Example: `\"NC\"`
     """

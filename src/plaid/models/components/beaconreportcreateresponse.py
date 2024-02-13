@@ -22,6 +22,7 @@ class BeaconReportCreateResponse:
 
     You can manage your fraud reports by adding, deleting, or editing reports as you get additional information on fraudulent users.
     """
+    UNSET='__SPEAKEASY_UNSET__'
     audit_trail: BeaconAuditTrail = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('audit_trail') }})
     r"""Information about the last change made to the parent object specifying what caused the change as well as when it occurred."""
     beacon_user_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('beacon_user_id') }})

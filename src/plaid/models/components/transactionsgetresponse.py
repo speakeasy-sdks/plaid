@@ -14,6 +14,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class TransactionsGetResponse:
     r"""TransactionsGetResponse defines the response schema for `/transactions/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     accounts: List[AccountBase] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts') }})
     r"""An array containing the `accounts` associated with the Item for which transactions are being returned. Each transaction can be mapped to its corresponding account via the `account_id` field."""
     item: Item = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('item') }})

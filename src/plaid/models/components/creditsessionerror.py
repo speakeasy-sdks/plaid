@@ -11,7 +11,8 @@ from typing import Optional
 @dataclasses.dataclass
 class CreditSessionError:
     r"""The details of a Link error."""
-    display_message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_message') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    display_message: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_message'), 'exclude': lambda f: f is CreditSessionError.UNSET }})
     r"""A user-friendly representation of the error code. `null` if the error is not related to user action."""
     error_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error_code'), 'exclude': lambda f: f is None }})
     r"""The particular error code."""

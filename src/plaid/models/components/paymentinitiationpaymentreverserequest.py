@@ -12,6 +12,7 @@ from typing import Optional
 @dataclasses.dataclass
 class PaymentInitiationPaymentReverseRequest:
     r"""PaymentInitiationPaymentReverseRequest defines the request schema for `/payment_initiation/payment/reverse`"""
+    UNSET='__SPEAKEASY_UNSET__'
     idempotency_key: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('idempotency_key') }})
     r"""A random key provided by the client, per unique wallet transaction. Maximum of 128 characters.
 
@@ -21,7 +22,7 @@ class PaymentInitiationPaymentReverseRequest:
     r"""The ID of the payment to reverse"""
     reference: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reference') }})
     r"""A reference for the refund. This must be an alphanumeric string with 6 to 18 characters and must not contain any special characters or spaces."""
-    amount: Optional[PaymentAmountToRefund] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
+    amount: Optional[PaymentAmountToRefund] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount'), 'exclude': lambda f: f is PaymentInitiationPaymentReverseRequest.UNSET }})
     r"""The amount and currency of a payment"""
     client_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_id'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body."""

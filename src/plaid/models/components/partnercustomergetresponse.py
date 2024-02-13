@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class PartnerCustomerGetResponse:
     r"""Response schema for `/partner/customer/get`."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     end_customer: Optional[PartnerEndCustomer] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_customer'), 'exclude': lambda f: f is None }})
     r"""The details for an end customer."""

@@ -13,6 +13,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class ClientProvidedEnrichedTransaction:
     r"""A client-provided transaction that Plaid has enriched."""
+    UNSET='__SPEAKEASY_UNSET__'
     amount: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
     r"""The absolute value of the transaction (>= 0)"""
     description: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})

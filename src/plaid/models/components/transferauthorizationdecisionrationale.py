@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferAuthorizationDecisionRationale:
     r"""The rationale for Plaid's decision regarding a proposed transfer. It is always set for `declined` decisions, and may or may not be null for `approved` decisions."""
+    UNSET='__SPEAKEASY_UNSET__'
     code: TransferAuthorizationDecisionRationaleCode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     r"""A code representing the rationale for approving or declining the proposed transfer. Possible values are:
 

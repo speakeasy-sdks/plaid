@@ -14,6 +14,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class BeaconUserCreateEmbeddedReport:
     r"""Data for creating a Beacon Report as part of an initial Beacon User creation. Providing a fraud report as part of an initial Beacon User creation will omit the Beacon User from any billing charges."""
+    UNSET='__SPEAKEASY_UNSET__'
     fraud_date: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fraud_date'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat }})
     r"""A date in the format YYYY-MM-DD (RFC 3339 Section 5.6)."""
     type: BeaconReportType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
@@ -30,7 +31,7 @@ class BeaconUserCreateEmbeddedReport:
     `unknown`: If you aren't sure who committed the fraud.
     """
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    fraud_amount: Optional[FraudAmountNullable] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fraud_amount') }})
+    fraud_amount: Optional[FraudAmountNullable] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fraud_amount'), 'exclude': lambda f: f is BeaconUserCreateEmbeddedReport.UNSET }})
     r"""The amount and currency of the fraud or attempted fraud.
     `fraud_amount` should be omitted to indicate an unknown fraud amount.
     """

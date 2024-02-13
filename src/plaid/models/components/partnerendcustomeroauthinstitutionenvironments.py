@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class PartnerEndCustomerOAuthInstitutionEnvironments:
     r"""Registration statuses by environment."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     development: Optional[PartnerEndCustomerOAuthInstitutionApplicationStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('development'), 'exclude': lambda f: f is None }})
     r"""The registration status for the end customer's application."""

@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class PayStubEarningsBreakdown:
     r"""An object representing the earnings line items for the pay period."""
+    UNSET='__SPEAKEASY_UNSET__'
     canonical_description: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('canonical_description') }})
     r"""Commonly used term to describe the earning line item."""
     current_amount: Optional[float] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('current_amount') }})

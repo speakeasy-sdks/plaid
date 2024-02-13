@@ -14,6 +14,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class CraBankIncomeSummary:
     r"""Summary for bank income across all income sources and items (max history of 730 days)."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     end_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is None }})
     r"""The latest date in which all income sources identified by Plaid appear in the user's account.

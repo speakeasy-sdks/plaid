@@ -12,14 +12,15 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class Credit1099Payer:
     r"""An object representing a payer used by 1099-MISC tax documents."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     address: Optional[CreditPayStubAddress] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address'), 'exclude': lambda f: f is None }})
     r"""Address on the pay stub."""
-    name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
+    name: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is Credit1099Payer.UNSET }})
     r"""Name of payer."""
-    telephone_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('telephone_number') }})
+    telephone_number: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('telephone_number'), 'exclude': lambda f: f is Credit1099Payer.UNSET }})
     r"""Telephone number of payer."""
-    tin: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tin') }})
+    tin: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tin'), 'exclude': lambda f: f is Credit1099Payer.UNSET }})
     r"""Tax identification number of payer."""
     
 

@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferMetricsGetResponse:
     r"""Defines the response schema for `/transfer/metrics/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     daily_credit_transfer_volume: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('daily_credit_transfer_volume') }})
     r"""Sum of dollar amount of credit transfers in last 24 hours (decimal string with two digits of precision e.g. \\"10.00\\")."""
     daily_debit_transfer_volume: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('daily_debit_transfer_volume') }})

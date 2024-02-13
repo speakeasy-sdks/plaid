@@ -12,9 +12,10 @@ from typing import Optional
 @dataclasses.dataclass
 class TransferBalanceGetRequest:
     r"""Defines the request schema for `/transfer/balance/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     client_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_id'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body."""
-    originator_client_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('originator_client_id') }})
+    originator_client_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('originator_client_id'), 'exclude': lambda f: f is TransferBalanceGetRequest.UNSET }})
     r"""Client ID of the end customer."""
     secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secret'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body."""

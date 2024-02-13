@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class KYCCheckPhoneSummary:
     r"""Result summary object specifying how the `phone` field matched."""
+    UNSET='__SPEAKEASY_UNSET__'
     area_code: MatchSummaryCode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('area_code') }})
     r"""An enum indicating the match type between data provided by user and data checked against an external data source.
 

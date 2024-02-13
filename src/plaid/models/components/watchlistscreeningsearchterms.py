@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class WatchlistScreeningSearchTerms:
     r"""Search terms for creating an individual watchlist screening"""
+    UNSET='__SPEAKEASY_UNSET__'
     country: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country') }})
     r"""Valid, capitalized, two-letter ISO code representing the country of this object. Must be in ISO 3166-1 alpha-2 form."""
     date_of_birth: Optional[date] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('date_of_birth'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat }})

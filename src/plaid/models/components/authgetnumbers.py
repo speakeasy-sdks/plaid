@@ -15,6 +15,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class AuthGetNumbers:
     r"""An object containing identifying numbers used for making electronic transfers to and from the `accounts`. The identifying number type (ACH, EFT, IBAN, or BACS) used will depend on the country of the account. An account may have more than one number type. If a particular identifying number type is not used by any `accounts` for which data has been requested, the array for that type will be empty."""
+    UNSET='__SPEAKEASY_UNSET__'
     ach: List[NumbersACH] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ach') }})
     r"""An array of ACH numbers identifying accounts."""
     bacs: List[NumbersBACS] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bacs') }})

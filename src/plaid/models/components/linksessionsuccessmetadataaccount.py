@@ -11,11 +11,12 @@ from typing import Optional
 @dataclasses.dataclass
 class LinkSessionSuccessMetadataAccount:
     r"""An account attached to the connected Item."""
-    class_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('class_type') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    class_type: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('class_type'), 'exclude': lambda f: f is LinkSessionSuccessMetadataAccount.UNSET }})
     r"""If micro-deposit verification is being used, indicates whether the account being verified is a `business` or `personal` account."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""The Plaid `account_id`"""
-    mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mask') }})
+    mask: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mask'), 'exclude': lambda f: f is LinkSessionSuccessMetadataAccount.UNSET }})
     r"""The last 2-4 alphanumeric characters of an account's official account number. Note that the mask may be non-unique between an Item's accounts. It may also not match the mask that the bank displays to the user."""
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
     r"""The official account name"""
@@ -23,7 +24,7 @@ class LinkSessionSuccessMetadataAccount:
     r"""The account subtype. See the [Account schema](/docs/api/accounts#account-type-schema) for a full list of possible values"""
     type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""The account type. See the [Account schema](/docs/api/accounts#account-type-schema) for a full list of possible values"""
-    verification_status: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('verification_status') }})
+    verification_status: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('verification_status'), 'exclude': lambda f: f is LinkSessionSuccessMetadataAccount.UNSET }})
     r"""Indicates an Item's micro-deposit-based verification status. Possible values are:
 
     `pending_automatic_verification`: The Item is pending automatic verification

@@ -11,6 +11,7 @@ from typing import List, Optional
 @dataclasses.dataclass
 class WatchlistScreeningEntityReviewCreateRequest:
     r"""Request input for creating a review for an entity screening"""
+    UNSET='__SPEAKEASY_UNSET__'
     confirmed_hits: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('confirmed_hits') }})
     r"""Hits to mark as a true positive after thorough manual review. These hits will never recur or be updated once dismissed. In most cases, confirmed hits indicate that the customer should be rejected."""
     dismissed_hits: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dismissed_hits') }})
@@ -19,7 +20,7 @@ class WatchlistScreeningEntityReviewCreateRequest:
     r"""ID of the associated entity screening."""
     client_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_id'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body."""
-    comment: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('comment') }})
+    comment: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('comment'), 'exclude': lambda f: f is WatchlistScreeningEntityReviewCreateRequest.UNSET }})
     r"""A comment submitted by a team member as part of reviewing a watchlist screening."""
     secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secret'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body."""

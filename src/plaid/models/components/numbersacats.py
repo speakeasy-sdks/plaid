@@ -11,6 +11,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class NumbersACATS:
     r"""Identifying information for transferring holdings to an investments account via ACATS."""
+    UNSET='__SPEAKEASY_UNSET__'
     account: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account') }})
     r"""The full account number for the account"""
     account_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id') }})

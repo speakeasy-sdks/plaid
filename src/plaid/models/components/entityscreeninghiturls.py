@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class EntityScreeningHitUrls:
     r"""URLs associated with the entity screening hit"""
+    UNSET='__SPEAKEASY_UNSET__'
     url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""An 'http' or 'https' URL (must begin with either of those)."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})

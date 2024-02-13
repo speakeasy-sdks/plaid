@@ -14,6 +14,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class SelfieCheckSelfie:
     r"""Captures and analysis from a user's selfie."""
+    UNSET='__SPEAKEASY_UNSET__'
     analysis: SelfieAnalysis = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('analysis') }})
     r"""High level descriptions of how the associated selfie was processed. If a selfie fails verification, the details in the `analysis` object should help clarify why the selfie was rejected."""
     attempt: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attempt') }})

@@ -15,6 +15,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class AccountFiltersResponse:
     r"""The `account_filters` specified in the original call to `/link/token/create`."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     credit: Optional[CreditFilter] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('credit'), 'exclude': lambda f: f is None }})
     r"""A filter to apply to `credit`-type accounts"""

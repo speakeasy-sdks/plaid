@@ -13,6 +13,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class SignalInsights:
     r"""Signal insights including scores and attributes. This response is offered as an add-on to `/transfer/authorization/create`. To request access to these fields please contact your Plaid account manager."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     scores: Optional[SignalScores] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('scores'), 'exclude': lambda f: f is None }})
     r"""Risk scoring details broken down by risk category."""

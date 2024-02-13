@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class ConsumerReportUserIdentity:
     r"""ConsumerReportUserIdentity defines the user identity data collected for consumer report purpose. This field is required to be set if you later use the created user for consumer report purpose."""
+    UNSET='__SPEAKEASY_UNSET__'
     emails: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emails') }})
     r"""The user's emails"""
     first_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('first_name') }})

@@ -13,10 +13,11 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class WalletTransactionCounterpartyNumbers:
     r"""The counterparty's bank account numbers. Exactly one of IBAN or BACS data is required."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    bacs: Optional[WalletTransactionCounterpartyBACS] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bacs') }})
+    bacs: Optional[WalletTransactionCounterpartyBACS] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bacs'), 'exclude': lambda f: f is WalletTransactionCounterpartyNumbers.UNSET }})
     r"""The account number and sort code of the counterparty's account"""
-    international: Optional[WalletTransactionCounterpartyInternational] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('international') }})
+    international: Optional[WalletTransactionCounterpartyInternational] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('international'), 'exclude': lambda f: f is WalletTransactionCounterpartyNumbers.UNSET }})
     r"""International Bank Account Number for a Wallet Transaction"""
     
 

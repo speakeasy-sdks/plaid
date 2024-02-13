@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class WalletTransactionAmount:
     r"""The amount and currency of a transaction"""
+    UNSET='__SPEAKEASY_UNSET__'
     iso_currency_code: WalletISOCurrencyCode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iso_currency_code') }})
     r"""An ISO-4217 currency code, used with e-wallets and transactions."""
     value: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})

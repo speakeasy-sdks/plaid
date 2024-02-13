@@ -13,6 +13,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class RiskCheckIdentityAbuseSignals:
     r"""Result summary object capturing abuse signals related to `identity abuse`, e.g. stolen and synthetic identity fraud."""
+    UNSET='__SPEAKEASY_UNSET__'
     stolen_identity: Optional[RiskCheckStolenIdentity] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stolen_identity') }})
     r"""Field containing the data used in determining the outcome of the stolen identity risk check.
 

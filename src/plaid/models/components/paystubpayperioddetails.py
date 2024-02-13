@@ -14,6 +14,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class PayStubPayPeriodDetails:
     r"""Details about the pay period."""
+    UNSET='__SPEAKEASY_UNSET__'
     distribution_breakdown: List[PayStubDistributionBreakdown] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('distribution_breakdown') }})
     end_date: Optional[date] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_date'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat }})
     r"""The date on which the pay period ended, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (\\"yyyy-mm-dd\\")."""

@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class WalletTransactionCounterpartyInternational:
     r"""International Bank Account Number for a Wallet Transaction"""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     iban: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iban'), 'exclude': lambda f: f is None }})
     r"""International Bank Account Number (IBAN)."""

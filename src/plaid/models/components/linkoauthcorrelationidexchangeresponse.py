@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class LinkOAuthCorrelationIDExchangeResponse:
     r"""LinkOAuthCorrelationIdExchangeResponse defines the response schema for `/link/oauth/correlation_id/exchange`"""
+    UNSET='__SPEAKEASY_UNSET__'
     link_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('link_token') }})
     r"""The `link_token` associated to the given `link_correlation_id`, which can be used to re-initialize Link."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

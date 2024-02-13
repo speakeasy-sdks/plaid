@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class AssetHolderName:
     r"""Documentation not found in the MISMO model viewer and not provided by Freddie Mac."""
+    UNSET='__SPEAKEASY_UNSET__'
     full_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('FullName') }})
     r"""The unparsed name of either an individual or a legal entity."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})

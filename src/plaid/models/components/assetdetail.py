@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class AssetDetail:
     r"""Details about an asset."""
+    UNSET='__SPEAKEASY_UNSET__'
     asset_account_identifier: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AssetAccountIdentifier') }})
     r"""A unique alphanumeric string identifying an asset."""
     asset_as_of_date: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AssetAsOfDate') }})

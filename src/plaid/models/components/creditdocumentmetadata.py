@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class CreditDocumentMetadata:
     r"""Object representing metadata pertaining to the document."""
+    UNSET='__SPEAKEASY_UNSET__'
     document_type: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('document_type') }})
     r"""The type of document.
 
@@ -48,7 +49,7 @@ class CreditDocumentMetadata:
     `UNKNOWN` or `null`: An internal error occurred. If this happens repeatedly, contact support or your Plaid account manager.
     """
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    page_count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('page_count') }})
+    page_count: Optional[int] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('page_count'), 'exclude': lambda f: f is CreditDocumentMetadata.UNSET }})
     r"""The number of pages of the uploaded document (if available)."""
     
 

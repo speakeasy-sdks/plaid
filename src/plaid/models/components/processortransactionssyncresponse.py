@@ -13,6 +13,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class ProcessorTransactionsSyncResponse:
     r"""ProcessorTransactionsSyncResponse defines the response schema for `/processor/transactions/sync`"""
+    UNSET='__SPEAKEASY_UNSET__'
     added: List[Transaction] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('added') }})
     r"""Transactions that have been added to the Item since `cursor` ordered by ascending last modified time."""
     has_more: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('has_more') }})

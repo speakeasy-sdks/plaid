@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class CreditFreddieMacLoanVOA24:
     r"""Information specific to a mortgage loan agreement between one or more borrowers and a mortgage lender."""
+    UNSET='__SPEAKEASY_UNSET__'
     loan_identifiers: CreditFreddieMacLoanIdentifiersVOA24 = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('LOAN_IDENTIFIERS') }})
     r"""Collection of current and previous identifiers for this loan."""
     loan_role_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('LoanRoleType') }})

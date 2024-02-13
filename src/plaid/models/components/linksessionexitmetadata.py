@@ -12,7 +12,8 @@ from typing import Optional
 @dataclasses.dataclass
 class LinkSessionExitMetadata:
     r"""Displayed if a user exits Link without successfully linking an Item."""
-    institution: Optional[LinkSessionExitMetadataInstitution] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('institution') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    institution: Optional[LinkSessionExitMetadataInstitution] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('institution'), 'exclude': lambda f: f is LinkSessionExitMetadata.UNSET }})
     r"""An institution object. If the Item was created via Same-Day micro-deposit verification, will be `null`."""
     link_session_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('link_session_id'), 'exclude': lambda f: f is None }})
     r"""A unique identifier associated with a user's actions and events through the Link flow. Include this identifier when opening a support ticket for faster turnaround."""

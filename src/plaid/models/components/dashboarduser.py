@@ -14,6 +14,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class DashboardUser:
     r"""Account information associated with a team member with access to the Plaid dashboard."""
+    UNSET='__SPEAKEASY_UNSET__'
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""An ISO8601 formatted timestamp."""
     email_address: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_address') }})

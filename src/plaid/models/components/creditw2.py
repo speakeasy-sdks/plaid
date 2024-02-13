@@ -16,6 +16,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class CreditW2:
     r"""W2 is an object that represents income data taken from a W2 tax document."""
+    UNSET='__SPEAKEASY_UNSET__'
     allocated_tips: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('allocated_tips') }})
     r"""Allocated tips."""
     box_12: List[W2Box12] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('box_12') }})

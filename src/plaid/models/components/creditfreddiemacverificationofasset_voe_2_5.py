@@ -14,6 +14,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class CreditFreddieMacVerificationOfAssetVOE25:
     r"""Documentation not found in the MISMO model viewer and not provided by Freddie Mac."""
+    UNSET='__SPEAKEASY_UNSET__'
     reporting_information: CreditFreddieMacReportingInformationVOA24 = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('REPORTING_INFORMATION') }})
     r"""Information about an report identifier and a report name."""
     service_product_fulfillment: ServiceProductFulfillment = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('SERVICE_PRODUCT_FULFILLMENT') }})

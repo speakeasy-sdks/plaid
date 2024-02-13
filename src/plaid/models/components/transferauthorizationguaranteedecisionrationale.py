@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferAuthorizationGuaranteeDecisionRationale:
     r"""The rationale for Plaid's decision to not guarantee a transfer. Will be `null` unless `guarantee_decision` is `NOT_GUARANTEED`."""
+    UNSET='__SPEAKEASY_UNSET__'
     code: TransferAuthorizationGuaranteeDecisionRationaleCode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     r"""A code representing the reason Plaid declined to guarantee this transfer:
 

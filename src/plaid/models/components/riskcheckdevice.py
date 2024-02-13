@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class RiskCheckDevice:
     r"""Result summary object specifying values for `device` attributes of risk check."""
+    UNSET='__SPEAKEASY_UNSET__'
     ip_proxy_type: Optional[ProxyType] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ip_proxy_type') }})
     r"""An enum indicating whether a network proxy is present and if so what type it is.
 

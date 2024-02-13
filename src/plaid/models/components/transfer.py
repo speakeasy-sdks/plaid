@@ -25,6 +25,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class Transfer:
     r"""Represents a transfer within the Transfers API."""
+    UNSET='__SPEAKEASY_UNSET__'
     amount: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
     r"""The amount of the transfer (decimal string with two digits of precision e.g. \\"10.00\\")."""
     authorization_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('authorization_id') }})
@@ -114,7 +115,7 @@ class Transfer:
     """
     expected_sweep_settlement_schedule: Optional[List[TransferExpectedSweepSettlementScheduleItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expected_sweep_settlement_schedule'), 'exclude': lambda f: f is None }})
     r"""The expected sweep settlement schedule of this transfer, assuming this transfer is not `returned`. Only applies to ACH debit transfers."""
-    sweep_status: Optional[TransferSweepStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sweep_status') }})
+    sweep_status: Optional[TransferSweepStatus] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sweep_status'), 'exclude': lambda f: f is Transfer.UNSET }})
     r"""The status of the sweep for the transfer.
 
     `unswept`: The transfer hasn't been swept yet.

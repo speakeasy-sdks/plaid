@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class EntityScreeningHitNames:
     r"""Name information for the associated entity watchlist hit"""
+    UNSET='__SPEAKEASY_UNSET__'
     full: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('full') }})
     r"""The full name of the entity."""
     is_primary: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_primary') }})

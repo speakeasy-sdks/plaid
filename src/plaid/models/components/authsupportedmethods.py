@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class AuthSupportedMethods:
     r"""Metadata specifically related to which auth methods an institution supports."""
+    UNSET='__SPEAKEASY_UNSET__'
     automated_micro_deposits: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('automated_micro_deposits') }})
     r"""Indicates if automated microdeposits are supported."""
     instant_auth: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('instant_auth') }})

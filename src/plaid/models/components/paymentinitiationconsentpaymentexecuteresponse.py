@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class PaymentInitiationConsentPaymentExecuteResponse:
     r"""PaymentInitiationConsentPaymentExecuteResponse defines the response schema for `/payment_initiation/consent/payment/execute`"""
+    UNSET='__SPEAKEASY_UNSET__'
     payment_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payment_id') }})
     r"""A unique ID identifying the payment"""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

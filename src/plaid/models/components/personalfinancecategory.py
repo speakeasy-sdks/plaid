@@ -14,12 +14,13 @@ class PersonalFinanceCategory:
 
     See the [`taxonomy csv file`](https://plaid.com/documents/transactions-personal-finance-category-taxonomy.csv) for a full list of personal finance categories.
     """
+    UNSET='__SPEAKEASY_UNSET__'
     detailed: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('detailed') }})
     r"""A granular category conveying the transaction's intent. This field can also be used as a unique identifier for the category."""
     primary: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('primary') }})
     r"""A high level category that communicates the broad category of the transaction."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    confidence_level: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('confidence_level') }})
+    confidence_level: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('confidence_level'), 'exclude': lambda f: f is PersonalFinanceCategory.UNSET }})
     r"""Note: This field is only available for `/transactions/enrich` endpoint currently.
     A description of how confident we are that the provided categories accurately describe the transaction intent.
 

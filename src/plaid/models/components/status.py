@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class Status:
     r"""Documentation not found in the MISMO model viewer and not provided by Freddie Mac."""
+    UNSET='__SPEAKEASY_UNSET__'
     status_code: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('StatusCode') }})
     r"""Satus Code."""
     status_description: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('StatusDescription') }})

@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class AssetTransactionDescription:
     r"""Documentation not found in the MISMO model viewer and not provided by Freddie Mac."""
+    UNSET='__SPEAKEASY_UNSET__'
     asset_transaction_description: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AssetTransactionDescription') }})
     r"""Asset Transaction Description String up to 3 occurances 1 required."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})

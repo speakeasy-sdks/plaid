@@ -14,6 +14,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class CreditBankIncomeSummary:
     r"""Summary for bank income across all income sources and items (max history of 730 days)."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     end_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is None }})
     r"""The latest date in which all income sources identified by Plaid appear in the user's account.
@@ -26,7 +27,7 @@ class CreditBankIncomeSummary:
     r"""Number of income sources per end user."""
     income_transactions_count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('income_transactions_count'), 'exclude': lambda f: f is None }})
     r"""Number of income transactions per end user."""
-    iso_currency_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iso_currency_code') }})
+    iso_currency_code: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iso_currency_code'), 'exclude': lambda f: f is CreditBankIncomeSummary.UNSET }})
     r"""The ISO 4217 currency code of the amount or balance.
     Please use [`total_amounts`](https://plaid.com/docs/api/products/income/#credit-bank_income-get-response-bank-income-bank-income-summary-total-amounts) instead.
 
@@ -47,7 +48,7 @@ class CreditBankIncomeSummary:
     r"""Total amount of earnings across all the income sources in the end user's Items for the days requested by the client.
     This can contain multiple amounts, with each amount denominated in one unique currency.
     """
-    unofficial_currency_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unofficial_currency_code') }})
+    unofficial_currency_code: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unofficial_currency_code'), 'exclude': lambda f: f is CreditBankIncomeSummary.UNSET }})
     r"""The unofficial currency code associated with the amount or balance. Always `null` if `iso_currency_code` is non-null.
     Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.
     Please use [`total_amounts`](https://plaid.com/docs/api/products/income/#credit-bank_income-get-response-bank-income-bank-income-summary-total-amounts) instead.

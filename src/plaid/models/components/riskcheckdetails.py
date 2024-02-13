@@ -17,6 +17,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class RiskCheckDetails:
     r"""Additional information for the `risk_check` step."""
+    UNSET='__SPEAKEASY_UNSET__'
     behavior: Optional[RiskCheckBehavior] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('behavior') }})
     r"""Result summary object specifying values for `behavior` attributes of risk check, when available."""
     devices: List[RiskCheckDevice] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('devices') }})

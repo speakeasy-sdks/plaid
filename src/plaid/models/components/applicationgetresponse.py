@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class ApplicationGetResponse:
     r"""ApplicationGetResponse defines the response schema for `/application/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     application: Application = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('application') }})
     r"""Metadata about the application"""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

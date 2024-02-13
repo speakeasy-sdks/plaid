@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferQuestionnaireCreateResponse:
     r"""Defines the response schema for `/transfer/questionnaire/create`"""
+    UNSET='__SPEAKEASY_UNSET__'
     onboarding_url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onboarding_url') }})
     r"""Plaid-hosted onboarding URL that you will redirect the end customer to."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

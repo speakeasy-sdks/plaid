@@ -15,6 +15,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class PhysicalDocumentExtractedDataAnalysis:
     r"""Analysis of the data extracted from the submitted document."""
+    UNSET='__SPEAKEASY_UNSET__'
     date_of_birth: DocumentDateOfBirthMatchCode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('date_of_birth') }})
     r"""A match summary describing the cross comparison between the subject's date of birth, extracted from the document image, and the date of birth they separately provided to the identity verification attempt."""
     expiration_date: ExpirationDate = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expiration_date') }})

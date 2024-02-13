@@ -15,6 +15,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class LinkTokenGetResponse:
     r"""LinkTokenGetResponse defines the response schema for `/link/token/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     created_at: Optional[datetime] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""The creation timestamp for the `link_token`, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format."""
     expiration: Optional[datetime] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expiration'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})

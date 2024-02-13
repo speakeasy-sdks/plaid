@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class EntityScreeningHitAnalysis:
     r"""Analysis information describing why a screening hit matched the provided entity information"""
+    UNSET='__SPEAKEASY_UNSET__'
     search_terms_version: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('search_terms_version') }})
     r"""The version of the entity screening's `search_terms` that were compared when the entity screening hit was added. entity screening hits are immutable once they have been reviewed. If changes are detected due to updates to the entity screening's `search_terms`, the associated entity program, or the list's source data prior to review, the entity screening hit will be updated to reflect those changes."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})

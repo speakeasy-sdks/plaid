@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferDevice:
     r"""Information about the device being used to initiate the authorization."""
+    UNSET='__SPEAKEASY_UNSET__'
     ip_address: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ip_address') }})
     r"""The IP address of the device being used to initiate the authorization."""
     user_agent: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_agent') }})

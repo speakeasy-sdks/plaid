@@ -28,7 +28,6 @@ pip install git+https://github.com/speakeasy-sdks/plaid.git
 ### Example
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -42,11 +41,6 @@ s = plaid.Plaid(
 
 req = components.AccountsBalanceGetRequest(
     access_token='string',
-    options=components.AccountsBalanceGetRequestOptions(
-        account_ids=[
-            'string',
-        ],
-    ),
 )
 
 res = s.plaid.accounts_balance_get(req)
@@ -304,9 +298,8 @@ Handling errors in this SDK should largely match your expectations.  All operati
 ### Example
 
 ```python
-import dateutil.parser
 import plaid
-from plaid.models import components
+from plaid.models import components, errors
 
 s = plaid.Plaid(
     security=components.Security1(
@@ -318,18 +311,13 @@ s = plaid.Plaid(
 
 req = components.AccountsBalanceGetRequest(
     access_token='string',
-    options=components.AccountsBalanceGetRequestOptions(
-        account_ids=[
-            'string',
-        ],
-    ),
 )
 
 res = None
 try:
     res = s.plaid.accounts_balance_get(req)
 except errors.SDKError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 
 if res.accounts_get_response is not None:
@@ -354,7 +342,6 @@ You can override the default server globally by passing a server index to the `s
 #### Example
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -369,11 +356,6 @@ s = plaid.Plaid(
 
 req = components.AccountsBalanceGetRequest(
     access_token='string',
-    options=components.AccountsBalanceGetRequestOptions(
-        account_ids=[
-            'string',
-        ],
-    ),
 )
 
 res = s.plaid.accounts_balance_get(req)
@@ -388,7 +370,6 @@ if res.accounts_get_response is not None:
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -403,11 +384,6 @@ s = plaid.Plaid(
 
 req = components.AccountsBalanceGetRequest(
     access_token='string',
-    options=components.AccountsBalanceGetRequestOptions(
-        account_ids=[
-            'string',
-        ],
-    ),
 )
 
 res = s.plaid.accounts_balance_get(req)
@@ -449,7 +425,6 @@ This SDK supports the following security schemes globally:
 
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -463,11 +438,6 @@ s = plaid.Plaid(
 
 req = components.AccountsBalanceGetRequest(
     access_token='string',
-    options=components.AccountsBalanceGetRequestOptions(
-        account_ids=[
-            'string',
-        ],
-    ),
 )
 
 res = s.plaid.accounts_balance_get(req)

@@ -13,6 +13,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class Security:
     r"""Contains details about a security"""
+    UNSET='__SPEAKEASY_UNSET__'
     close_price: Optional[float] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('close_price') }})
     r"""Price of the security at the close of the previous trading session. Null for non-public securities.
 
@@ -71,7 +72,7 @@ class Security:
     See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `iso_currency_code`s.
     """
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    update_datetime: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('update_datetime'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse }})
+    update_datetime: Optional[datetime] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('update_datetime'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is Security.UNSET }})
     r"""Date and time at which `close_price` is accurate, in ISO 8601 format (YYYY-MM-DDTHH:mm:ssZ). Always `null` if `close_price` is `null`."""
     
 

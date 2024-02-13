@@ -17,6 +17,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class EntityScreeningHitData:
     r"""Information associated with the entity watchlist hit"""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     documents: Optional[List[EntityScreeningHitDocumentsItems]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('documents'), 'exclude': lambda f: f is None }})
     r"""Documents associated with the watchlist hit"""

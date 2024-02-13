@@ -13,6 +13,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class MultiDocumentRiskSignal:
     r"""Object containing risk signals and relevant metadata for a set of uploaded documents"""
+    UNSET='__SPEAKEASY_UNSET__'
     document_references: List[RiskSignalDocumentReference] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('document_references') }})
     r"""Array of objects containing attributes that could indicate if a document is fraudulent"""
     risk_signals: List[DocumentRiskSignal] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('risk_signals') }})

@@ -11,7 +11,8 @@ from typing import Optional
 @dataclasses.dataclass
 class ItemApplicationListRequest:
     r"""Request to list connected applications for a user."""
-    access_token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('access_token') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    access_token: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('access_token'), 'exclude': lambda f: f is ItemApplicationListRequest.UNSET }})
     r"""The access token associated with the Item data is being requested for."""
     client_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_id'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body."""

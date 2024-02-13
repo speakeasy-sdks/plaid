@@ -11,10 +11,11 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class BankTransferUserInput:
     r"""The legal name and other information for the account holder."""
+    UNSET='__SPEAKEASY_UNSET__'
     legal_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('legal_name') }})
     r"""The account holder’s full legal name. If the transfer `ach_class` is `ccd`, this should be the business name of the account holder."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    email_address: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_address') }})
+    email_address: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_address'), 'exclude': lambda f: f is BankTransferUserInput.UNSET }})
     r"""The account holder’s email."""
     
 

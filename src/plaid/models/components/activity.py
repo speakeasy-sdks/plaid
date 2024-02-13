@@ -15,6 +15,7 @@ from typing import Optional
 @dataclasses.dataclass
 class Activity:
     r"""Describes a consent activity."""
+    UNSET='__SPEAKEASY_UNSET__'
     activity: ActivityType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('activity') }})
     r"""Types of consent activities"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -25,7 +26,7 @@ class Activity:
     r"""Application ID of the client who initiated the activity."""
     state: ActionState = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state') }})
     r"""Enum representing the state of the action/activity."""
-    scopes: Optional[ScopesNullable] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('scopes') }})
+    scopes: Optional[ScopesNullable] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('scopes'), 'exclude': lambda f: f is Activity.UNSET }})
     r"""The scopes object"""
     target_application_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target_application_id'), 'exclude': lambda f: f is None }})
     r"""This field will map to the application ID that is returned from /item/applications/list, or provided to the institution in an oauth redirect."""

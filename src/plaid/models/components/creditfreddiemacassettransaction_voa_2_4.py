@@ -13,6 +13,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class CreditFreddieMacAssetTransactionVOA24:
     r"""An object representing..."""
+    UNSET='__SPEAKEASY_UNSET__'
     asset_transaction_description: List[AssetTransactionDescription] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ASSET_TRANSACTION_DESCRIPTION') }})
     r"""Documentation not found in the MISMO model viewer and not provided by Freddie Mac."""
     asset_transaction_detail: AssetTransactionDetail = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ASSET_TRANSACTION_DETAIL') }})

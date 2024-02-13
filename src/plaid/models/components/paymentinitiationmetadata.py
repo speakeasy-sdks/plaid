@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class PaymentInitiationMetadata:
     r"""Metadata that captures what specific payment configurations an institution supports when making Payment Initiation requests."""
+    UNSET='__SPEAKEASY_UNSET__'
     maximum_payment_amount: Dict[str, str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maximum_payment_amount') }})
     r"""A mapping of currency to maximum payment amount (denominated in the smallest unit of currency) supported by the institution.
 

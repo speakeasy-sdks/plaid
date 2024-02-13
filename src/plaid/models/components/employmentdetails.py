@@ -16,13 +16,14 @@ class EmploymentDetails:
 
     Deprecated class: This will be removed in a future release, please migrate away from it as soon as possible.
     """
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     annual_salary: Optional[Pay] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('annual_salary'), 'exclude': lambda f: f is None }})
     r"""An object representing a monetary amount.
 
     Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
     """
-    hire_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hire_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat }})
+    hire_date: Optional[date] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hire_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is EmploymentDetails.UNSET }})
     r"""Date on which the employee was hired, in the YYYY-MM-DD format."""
     
 

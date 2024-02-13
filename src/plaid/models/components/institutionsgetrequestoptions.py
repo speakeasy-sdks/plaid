@@ -12,6 +12,7 @@ from typing import List, Optional
 @dataclasses.dataclass
 class InstitutionsGetRequestOptions:
     r"""An optional object to filter `/institutions/get` results."""
+    UNSET='__SPEAKEASY_UNSET__'
     include_auth_metadata: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('include_auth_metadata'), 'exclude': lambda f: f is None }})
     r"""When `true`, returns metadata related to the Auth product indicating which auth methods are supported."""
     include_optional_metadata: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('include_optional_metadata'), 'exclude': lambda f: f is None }})
@@ -21,11 +22,11 @@ class InstitutionsGetRequestOptions:
     """
     include_payment_initiation_metadata: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('include_payment_initiation_metadata'), 'exclude': lambda f: f is None }})
     r"""When `true`, returns metadata related to the Payment Initiation product indicating which payment configurations are supported."""
-    oauth: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('oauth') }})
+    oauth: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('oauth'), 'exclude': lambda f: f is InstitutionsGetRequestOptions.UNSET }})
     r"""Limit results to institutions with or without OAuth login flows. Note that institutions will have `oauth` set to `true` if some Items associated with that institution are required to use OAuth flows; institutions in a state of migration to OAuth will have the `oauth` attribute set to `true`."""
-    products: Optional[List[Products]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('products') }})
+    products: Optional[List[Products]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('products'), 'exclude': lambda f: f is InstitutionsGetRequestOptions.UNSET }})
     r"""Filter the Institutions based on which products they support."""
-    routing_numbers: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('routing_numbers') }})
+    routing_numbers: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('routing_numbers'), 'exclude': lambda f: f is InstitutionsGetRequestOptions.UNSET }})
     r"""Specify an array of routing numbers to filter institutions. The response will only return institutions that match all of the routing numbers in the array. Routing number records used for this matching are not comprehensive; failure to match a given routing number to an institution does not mean that the institution is unsupported by Plaid."""
     
 

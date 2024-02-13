@@ -16,110 +16,111 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class Credit1099:
     r"""An object representing an end user's 1099 tax form"""
+    UNSET='__SPEAKEASY_UNSET__'
     document_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('document_id') }})
     r"""An identifier of the document referenced by the document metadata."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    april_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('april_amount') }})
+    april_amount: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('april_amount'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount reported for April."""
-    august_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('august_amount') }})
+    august_amount: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('august_amount'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount reported for August."""
-    card_not_present_transaction: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('card_not_present_transaction') }})
+    card_not_present_transaction: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('card_not_present_transaction'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount in card not present transactions."""
-    crop_insurance_proceeds: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('crop_insurance_proceeds') }})
+    crop_insurance_proceeds: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('crop_insurance_proceeds'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount of crop insurance proceeds."""
-    december_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('december_amount') }})
+    december_amount: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('december_amount'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount reported for December."""
     document_metadata: Optional[CreditDocumentMetadata] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('document_metadata'), 'exclude': lambda f: f is None }})
     r"""Object representing metadata pertaining to the document."""
-    excess_golden_parachute_payments: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('excess_golden_parachute_payments') }})
+    excess_golden_parachute_payments: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('excess_golden_parachute_payments'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount of golden parachute payments made by payer."""
-    february_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('february_amount') }})
+    february_amount: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('february_amount'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount reported for February."""
-    federal_income_tax_withheld: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('federal_income_tax_withheld') }})
+    federal_income_tax_withheld: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('federal_income_tax_withheld'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount of federal income tax withheld from payer."""
     filer: Optional[Credit1099Filer] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filer'), 'exclude': lambda f: f is None }})
     r"""An object representing a filer used by 1099-K tax documents."""
-    fishing_boat_proceeds: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fishing_boat_proceeds') }})
+    fishing_boat_proceeds: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fishing_boat_proceeds'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount of fishing boat proceeds from payer."""
     form_1099_type: Optional[Form1099Type] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('form_1099_type'), 'exclude': lambda f: f is None }})
     r"""Form 1099 Type"""
-    gross_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('gross_amount') }})
+    gross_amount: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('gross_amount'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Gross amount reported."""
-    gross_proceeds_paid_to_an_attorney: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('gross_proceeds_paid_to_an_attorney') }})
+    gross_proceeds_paid_to_an_attorney: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('gross_proceeds_paid_to_an_attorney'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount of gross proceeds paid to an attorney by payer."""
-    january_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('january_amount') }})
+    january_amount: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('january_amount'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount reported for January."""
-    july_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('july_amount') }})
+    july_amount: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('july_amount'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount reported for July."""
-    june_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('june_amount') }})
+    june_amount: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('june_amount'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount reported for June."""
-    march_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('march_amount') }})
+    march_amount: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('march_amount'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount reported for March."""
-    may_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('may_amount') }})
+    may_amount: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('may_amount'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount reported for May."""
-    medical_and_healthcare_payments: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('medical_and_healthcare_payments') }})
+    medical_and_healthcare_payments: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('medical_and_healthcare_payments'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount of medical and healthcare payments from payer."""
-    merchant_category_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('merchant_category_code') }})
+    merchant_category_code: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('merchant_category_code'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Merchant category of filer."""
-    nonemployee_compensation: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nonemployee_compensation') }})
+    nonemployee_compensation: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nonemployee_compensation'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount of nonemployee compensation from payer."""
-    november_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('november_amount') }})
+    november_amount: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('november_amount'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount reported for November."""
-    number_of_payment_transactions: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('number_of_payment_transactions') }})
+    number_of_payment_transactions: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('number_of_payment_transactions'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Number of payment transactions made."""
-    october_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('october_amount') }})
+    october_amount: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('october_amount'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount reported for October."""
-    other_income: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('other_income') }})
+    other_income: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('other_income'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount in other income by payer."""
     payer: Optional[Credit1099Payer] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payer'), 'exclude': lambda f: f is None }})
     r"""An object representing a payer used by 1099-MISC tax documents."""
-    payer_made_direct_sales_of_5000_or_more_of_consumer_products_to_buyer: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payer_made_direct_sales_of_5000_or_more_of_consumer_products_to_buyer') }})
+    payer_made_direct_sales_of_5000_or_more_of_consumer_products_to_buyer: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payer_made_direct_sales_of_5000_or_more_of_consumer_products_to_buyer'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Whether or not payer made direct sales over $5000 of consumer products."""
-    payer_state_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payer_state_number') }})
+    payer_state_number: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payer_state_number'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Primary state ID."""
-    payer_state_number_lower: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payer_state_number_lower') }})
+    payer_state_number_lower: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payer_state_number_lower'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Secondary state ID."""
-    primary_state: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('primary_state') }})
+    primary_state: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('primary_state'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Primary state of business."""
-    primary_state_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('primary_state_id') }})
+    primary_state_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('primary_state_id'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Primary state ID."""
-    primary_state_income_tax: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('primary_state_income_tax') }})
+    primary_state_income_tax: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('primary_state_income_tax'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""State income tax reported for primary state."""
-    pse_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pse_name') }})
+    pse_name: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pse_name'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Name of the PSE (Payment Settlement Entity)."""
-    pse_telephone_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pse_telephone_number') }})
+    pse_telephone_number: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pse_telephone_number'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Formatted (XXX) XXX-XXXX. Phone number of the PSE (Payment Settlement Entity)."""
     recipient: Optional[Credit1099Recipient] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('recipient'), 'exclude': lambda f: f is None }})
     r"""An object representing a recipient used in both 1099-K and 1099-MISC tax documents."""
-    rents: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rents') }})
+    rents: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rents'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount in rent by payer."""
-    royalties: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('royalties') }})
+    royalties: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('royalties'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount in royalties by payer."""
-    secondary_state: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secondary_state') }})
+    secondary_state: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secondary_state'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Secondary state of business."""
-    secondary_state_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secondary_state_id') }})
+    secondary_state_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secondary_state_id'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Secondary state ID."""
-    secondary_state_income_tax: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secondary_state_income_tax') }})
+    secondary_state_income_tax: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secondary_state_income_tax'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""State income tax reported for secondary state."""
-    section_409a_deferrals: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('section_409a_deferrals') }})
+    section_409a_deferrals: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('section_409a_deferrals'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount of 409A deferrals earned by payer."""
-    section_409a_income: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('section_409a_income') }})
+    section_409a_income: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('section_409a_income'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount of 409A income earned by payer."""
-    september_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('september_amount') }})
+    september_amount: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('september_amount'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount reported for September."""
-    state_income: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state_income') }})
+    state_income: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state_income'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""State income reported for primary state."""
-    state_income_lower: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state_income_lower') }})
+    state_income_lower: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state_income_lower'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""State income reported for secondary state."""
-    state_tax_withheld: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state_tax_withheld') }})
+    state_tax_withheld: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state_tax_withheld'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount of state tax withheld of payer for primary state."""
-    state_tax_withheld_lower: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state_tax_withheld_lower') }})
+    state_tax_withheld_lower: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state_tax_withheld_lower'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount of state tax withheld of payer for secondary state."""
-    substitute_payments_in_lieu_of_dividends_or_interest: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('substitute_payments_in_lieu_of_dividends_or_interest') }})
+    substitute_payments_in_lieu_of_dividends_or_interest: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('substitute_payments_in_lieu_of_dividends_or_interest'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Amount of substitute payments made by payer."""
-    tax_year: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tax_year') }})
+    tax_year: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tax_year'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""Tax year of the tax form."""
-    transactions_reported: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transactions_reported') }})
+    transactions_reported: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transactions_reported'), 'exclude': lambda f: f is Credit1099.UNSET }})
     r"""One of the values will be provided Payment card Third party network"""
     
 

@@ -12,23 +12,24 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class CreditBankIncomeTransaction:
     r"""The transactions data for the end user's income source(s)."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount'), 'exclude': lambda f: f is None }})
     r"""The settled value of the transaction, denominated in the transactions's currency as stated in `iso_currency_code` or `unofficial_currency_code`.
     Positive values when money moves out of the account; negative values when money moves in.
     For example, credit card purchases are positive; credit card payment, direct deposits, and refunds are negative.
     """
-    check_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('check_number') }})
+    check_number: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('check_number'), 'exclude': lambda f: f is CreditBankIncomeTransaction.UNSET }})
     r"""The check number of the transaction. This field is only populated for check transactions."""
     date_: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is None }})
     r"""For pending transactions, the date that the transaction occurred; for posted transactions, the date that the transaction posted.
     Both dates are returned in an ISO 8601 format (YYYY-MM-DD).
     """
-    iso_currency_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iso_currency_code') }})
+    iso_currency_code: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iso_currency_code'), 'exclude': lambda f: f is CreditBankIncomeTransaction.UNSET }})
     r"""The ISO 4217 currency code of the amount or balance."""
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
     r"""The merchant name or transaction description."""
-    original_description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('original_description') }})
+    original_description: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('original_description'), 'exclude': lambda f: f is CreditBankIncomeTransaction.UNSET }})
     r"""The string returned by the financial institution to describe the transaction."""
     pending: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pending'), 'exclude': lambda f: f is None }})
     r"""When true, identifies the transaction as pending or unsettled.
@@ -36,7 +37,7 @@ class CreditBankIncomeTransaction:
     """
     transaction_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transaction_id'), 'exclude': lambda f: f is None }})
     r"""The unique ID of the transaction. Like all Plaid identifiers, the `transaction_id` is case sensitive."""
-    unofficial_currency_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unofficial_currency_code') }})
+    unofficial_currency_code: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unofficial_currency_code'), 'exclude': lambda f: f is CreditBankIncomeTransaction.UNSET }})
     r"""The unofficial currency code associated with the amount or balance. Always `null` if `iso_currency_code` is non-null.
     Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.
     """

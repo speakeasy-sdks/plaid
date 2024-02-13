@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class EntityDocument:
     r"""An official document, usually issued by a governing body or institution, with an associated identifier."""
+    UNSET='__SPEAKEASY_UNSET__'
     number: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('number') }})
     r"""The numeric or alphanumeric identifier associated with this document."""
     type: EntityDocumentType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})

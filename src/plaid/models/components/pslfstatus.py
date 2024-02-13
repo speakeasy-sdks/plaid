@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class PSLFStatus:
     r"""Information about the student's eligibility in the Public Service Loan Forgiveness program. This is only returned if the institution is FedLoan (`ins_116527`)."""
+    UNSET='__SPEAKEASY_UNSET__'
     estimated_eligibility_date: Optional[date] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('estimated_eligibility_date'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat }})
     r"""The estimated date borrower will have completed 120 qualifying monthly payments. Returned in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD)."""
     payments_made: Optional[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payments_made') }})

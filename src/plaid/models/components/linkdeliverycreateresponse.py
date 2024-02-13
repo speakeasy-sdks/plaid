@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class LinkDeliveryCreateResponse:
     r"""LinkDeliveryCreateResponse defines the response schema for `/link_delivery/create`"""
+    UNSET='__SPEAKEASY_UNSET__'
     link_delivery_session_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('link_delivery_session_id') }})
     r"""The ID for the Hosted Link session. Same as the `link_token` string excluding the \\"link-{env}-\\" prefix."""
     link_delivery_url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('link_delivery_url') }})

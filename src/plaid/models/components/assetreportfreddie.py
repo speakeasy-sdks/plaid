@@ -14,6 +14,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class AssetReportFreddie:
     r"""An object representing an Asset Report with Freddie Mac schema."""
+    UNSET='__SPEAKEASY_UNSET__'
     loans: Loans = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('LOANS') }})
     r"""A collection of loans that are part of a single deal."""
     parties: Parties = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PARTIES') }})

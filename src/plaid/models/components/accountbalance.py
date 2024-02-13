@@ -13,6 +13,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class AccountBalance:
     r"""A set of fields describing the balance for an account. Balance information may be cached unless the balance object was returned by `/accounts/balance/get`."""
+    UNSET='__SPEAKEASY_UNSET__'
     available: Optional[float] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('available') }})
     r"""The amount of funds available to be withdrawn from the account, as determined by the financial institution.
 
@@ -56,7 +57,7 @@ class AccountBalance:
     See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `unofficial_currency_code`s.
     """
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    last_updated_datetime: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('last_updated_datetime'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse }})
+    last_updated_datetime: Optional[datetime] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('last_updated_datetime'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is AccountBalance.UNSET }})
     r"""Timestamp in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (`YYYY-MM-DDTHH:mm:ssZ`) indicating the last time that the balance for the given account has been updated
 
     This is currently only provided when the `min_last_updated_datetime` is passed when calling `/accounts/balance/get` for `ins_128026` (Capital One).

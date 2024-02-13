@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class CreditBankStatementsUploadsGetResponse:
     r"""CreditBankStatementsUploadsGetResponse defines the response schema for `/credit/bank_statements/uploads/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     items: List[CreditBankStatementUploadItem] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items') }})
     r"""Array of bank statement upload items."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class StatementsListResponse:
     r"""StatementsListResponse defines the response schema for `/statements/list`"""
+    UNSET='__SPEAKEASY_UNSET__'
     accounts: List[StatementsAccount] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts') }})
     institution_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('institution_id') }})
     r"""The Plaid Institution ID associated with the Item."""

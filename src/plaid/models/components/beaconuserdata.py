@@ -15,6 +15,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class BeaconUserData:
     r"""A Beacon User's data and resulting analysis when checked against duplicate records and the Beacon Fraud Network."""
+    UNSET='__SPEAKEASY_UNSET__'
     address: BeaconUserAddress = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address') }})
     r"""Even if an address has been collected, some fields may be null depending on the region's addressing system. For example:
 

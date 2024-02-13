@@ -12,18 +12,19 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class Credit1099Recipient:
     r"""An object representing a recipient used in both 1099-K and 1099-MISC tax documents."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    account_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_number') }})
+    account_number: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_number'), 'exclude': lambda f: f is Credit1099Recipient.UNSET }})
     r"""Account number number of recipient."""
     address: Optional[CreditPayStubAddress] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address'), 'exclude': lambda f: f is None }})
     r"""Address on the pay stub."""
-    facta_filing_requirement: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('facta_filing_requirement') }})
+    facta_filing_requirement: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('facta_filing_requirement'), 'exclude': lambda f: f is Credit1099Recipient.UNSET }})
     r"""Checked if FACTA is a filing requirement."""
-    name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
+    name: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is Credit1099Recipient.UNSET }})
     r"""Name of recipient."""
-    second_tin_exists: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('second_tin_exists') }})
+    second_tin_exists: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('second_tin_exists'), 'exclude': lambda f: f is Credit1099Recipient.UNSET }})
     r"""Checked if 2nd TIN exists."""
-    tin: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tin') }})
+    tin: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tin'), 'exclude': lambda f: f is Credit1099Recipient.UNSET }})
     r"""Tax identification number of recipient."""
     
 

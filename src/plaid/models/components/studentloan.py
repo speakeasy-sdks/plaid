@@ -16,6 +16,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class StudentLoan:
     r"""Contains details about a student loan account"""
+    UNSET='__SPEAKEASY_UNSET__'
     account_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id') }})
     r"""The ID of the account that this liability belongs to."""
     account_number: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_number') }})

@@ -13,6 +13,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class AssetReportGetResponse:
     r"""AssetReportGetResponse defines the response schema for `/asset_report/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     report: AssetReport = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('report') }})
     r"""An object representing an Asset Report"""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

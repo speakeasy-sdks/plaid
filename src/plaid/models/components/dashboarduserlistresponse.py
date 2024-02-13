@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class DashboardUserListResponse:
     r"""Paginated list of dashboard users"""
+    UNSET='__SPEAKEASY_UNSET__'
     dashboard_users: List[DashboardUser] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dashboard_users') }})
     r"""List of dashboard users"""
     next_cursor: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next_cursor') }})

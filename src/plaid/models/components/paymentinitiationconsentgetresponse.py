@@ -16,6 +16,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class PaymentInitiationConsentGetResponse:
     r"""PaymentInitiationConsentGetResponse defines the response schema for `/payment_initation/consent/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     consent_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('consent_id') }})
     r"""The consent ID."""
     constraints: PaymentInitiationConsentConstraints = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('constraints') }})

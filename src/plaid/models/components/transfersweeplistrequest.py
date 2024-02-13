@@ -14,25 +14,26 @@ from typing import Optional
 @dataclasses.dataclass
 class TransferSweepListRequest:
     r"""Defines the request schema for `/transfer/sweep/list`"""
-    amount: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    amount: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount'), 'exclude': lambda f: f is TransferSweepListRequest.UNSET }})
     r"""Filter sweeps to only those with the specified amount."""
     client_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_id'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body."""
-    count: Optional[int] = dataclasses.field(default=25, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count') }})
+    count: Optional[int] = dataclasses.field(default=25, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count'), 'exclude': lambda f: f is TransferSweepListRequest.UNSET }})
     r"""The maximum number of sweeps to return."""
-    end_date: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_date'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse }})
+    end_date: Optional[datetime] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_date'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is TransferSweepListRequest.UNSET }})
     r"""The end datetime of sweeps to return (RFC 3339 format)."""
-    funding_account_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('funding_account_id') }})
+    funding_account_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('funding_account_id'), 'exclude': lambda f: f is TransferSweepListRequest.UNSET }})
     r"""Filter sweeps to only those with the specified `funding_account_id`."""
     offset: Optional[int] = dataclasses.field(default=0, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('offset'), 'exclude': lambda f: f is None }})
     r"""The number of sweeps to skip before returning results."""
-    originator_client_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('originator_client_id') }})
+    originator_client_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('originator_client_id'), 'exclude': lambda f: f is TransferSweepListRequest.UNSET }})
     r"""Filter sweeps to only those with the specified originator client."""
     secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secret'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body."""
-    start_date: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start_date'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse }})
+    start_date: Optional[datetime] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start_date'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is TransferSweepListRequest.UNSET }})
     r"""The start datetime of sweeps to return (RFC 3339 format)."""
-    status: Optional[SweepStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
+    status: Optional[SweepStatus] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is TransferSweepListRequest.UNSET }})
     r"""The status of a sweep transfer
 
     `\"pending\"` - The sweep is currently pending
@@ -41,7 +42,7 @@ class TransferSweepListRequest:
     `\"returned\"` - The sweep has been returned
     `\"failed\"` - The sweep has failed
     """
-    transfer_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transfer_id') }})
+    transfer_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transfer_id'), 'exclude': lambda f: f is TransferSweepListRequest.UNSET }})
     r"""Filter sweeps to only those with the included `transfer_id`."""
     
 

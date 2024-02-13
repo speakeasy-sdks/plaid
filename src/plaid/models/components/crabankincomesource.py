@@ -16,17 +16,18 @@ from typing import List, Optional
 @dataclasses.dataclass
 class CraBankIncomeSource:
     r"""Detailed information for the income source."""
+    UNSET='__SPEAKEASY_UNSET__'
     employer: Optional[CraBankIncomeEmployer] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employer'), 'exclude': lambda f: f is None }})
     r"""The object containing employer data."""
     end_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is None }})
     r"""Maximum of all dates within the specific income sources in the user’s bank account for days requested by the client.
     The date will be returned in an ISO 8601 format (YYYY-MM-DD).
     """
-    forecasted_average_monthly_income: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('forecasted_average_monthly_income') }})
+    forecasted_average_monthly_income: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('forecasted_average_monthly_income'), 'exclude': lambda f: f is CraBankIncomeSource.UNSET }})
     r"""The predicted average monthly net income amount for the income source(s)."""
-    historical_average_monthly_gross_income: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('historical_average_monthly_gross_income') }})
+    historical_average_monthly_gross_income: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('historical_average_monthly_gross_income'), 'exclude': lambda f: f is CraBankIncomeSource.UNSET }})
     r"""An estimate of the average gross monthly income based on the historical net amount and income category for the income source(s)."""
-    historical_average_monthly_income: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('historical_average_monthly_income') }})
+    historical_average_monthly_income: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('historical_average_monthly_income'), 'exclude': lambda f: f is CraBankIncomeSource.UNSET }})
     r"""The average monthly net income amount estimated based on the historical data for the income source(s)."""
     historical_summary: Optional[List[CraBankIncomeHistoricalSummary]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('historical_summary'), 'exclude': lambda f: f is None }})
     income_category: Optional[CreditBankIncomeCategory] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('income_category'), 'exclude': lambda f: f is None }})
@@ -35,9 +36,9 @@ class CraBankIncomeSource:
     r"""The most common name or original description for the underlying income transactions."""
     income_source_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('income_source_id'), 'exclude': lambda f: f is None }})
     r"""A unique identifier for an income source."""
-    iso_currency_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iso_currency_code') }})
+    iso_currency_code: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iso_currency_code'), 'exclude': lambda f: f is CraBankIncomeSource.UNSET }})
     r"""The ISO 4217 currency code of the amount or balance."""
-    next_payment_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next_payment_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat }})
+    next_payment_date: Optional[date] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next_payment_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is CraBankIncomeSource.UNSET }})
     r"""The expected date of the end user’s next paycheck for the income source.
     The date will be returned in an ISO 8601 format (YYYY-MM-DD).
     """
@@ -51,7 +52,7 @@ class CraBankIncomeSource:
     r"""Total amount of earnings in the user’s bank account for the specific income source for days requested by the client."""
     transaction_count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transaction_count'), 'exclude': lambda f: f is None }})
     r"""Number of transactions for the income source within the start and end date."""
-    unofficial_currency_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unofficial_currency_code') }})
+    unofficial_currency_code: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unofficial_currency_code'), 'exclude': lambda f: f is CraBankIncomeSource.UNSET }})
     r"""The unofficial currency code associated with the amount or balance. Always `null` if `iso_currency_code` is non-null.
     Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.
     """

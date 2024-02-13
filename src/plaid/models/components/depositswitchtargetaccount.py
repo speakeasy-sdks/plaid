@@ -17,6 +17,7 @@ class DepositSwitchTargetAccountAccountSubtype(str, Enum):
 @dataclasses.dataclass
 class DepositSwitchTargetAccount:
     r"""The deposit switch destination account"""
+    UNSET='__SPEAKEASY_UNSET__'
     account_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_name') }})
     r"""The name of the deposit switch destination account, as it will be displayed to the end user in the Deposit Switch interface. It is not required to match the name used in online banking."""
     account_number: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_number') }})

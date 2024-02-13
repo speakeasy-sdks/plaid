@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class CreditRelayCreateResponse:
     r"""CreditRelayCreateResponse defines the response schema for `/credit/relay/create`"""
+    UNSET='__SPEAKEASY_UNSET__'
     relay_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relay_token') }})
     r"""A token that can be shared with a third party to allow them to access the Asset Report. This token should be stored securely."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

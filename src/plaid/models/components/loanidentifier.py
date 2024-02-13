@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class LoanIdentifier:
     r"""The information used to identify this loan by various parties to the transaction or other organizations."""
+    UNSET='__SPEAKEASY_UNSET__'
     loan_identifier: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('LoanIdentifier') }})
     r"""The value of the identifier for the specified type."""
     loan_identifier_type: Optional[LoanIdentifierType] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('LoanIdentifierType') }})

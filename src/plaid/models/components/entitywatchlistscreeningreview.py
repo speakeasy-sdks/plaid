@@ -14,6 +14,7 @@ class EntityWatchlistScreeningReview:
     r"""A review submitted by a team member for an entity watchlist screening. A review can be either a comment on the current screening state, actions taken
     against hits attached to the watchlist screening, or both.
     """
+    UNSET='__SPEAKEASY_UNSET__'
     audit_trail: WatchlistScreeningAuditTrail = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('audit_trail') }})
     r"""Information about the last change made to the parent object specifying what caused the change as well as when it occurred."""
     comment: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('comment') }})

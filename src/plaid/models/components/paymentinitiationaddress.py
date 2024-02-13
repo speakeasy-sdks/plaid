@@ -11,6 +11,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class PaymentInitiationAddress:
     r"""The optional address of the payment recipient's bank account. Required by most institutions outside of the UK."""
+    UNSET='__SPEAKEASY_UNSET__'
     city: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city') }})
     r"""The city where the recipient is located. Maximum of 35 characters."""
     country: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country') }})

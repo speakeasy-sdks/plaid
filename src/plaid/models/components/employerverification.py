@@ -11,8 +11,9 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class EmployerVerification:
     r"""An object containing employer data."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
+    name: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is EmployerVerification.UNSET }})
     r"""Name of employer."""
     
 

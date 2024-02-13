@@ -19,6 +19,7 @@ class WarningCode(str, Enum):
 @dataclasses.dataclass
 class WarningT:
     r"""It is possible for an Asset Report to be returned with missing account owner information. In such cases, the Asset Report will contain warning data in the response, indicating why obtaining the owner information failed."""
+    UNSET='__SPEAKEASY_UNSET__'
     cause: Optional[Cause] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cause') }})
     r"""An error object and associated `item_id` used to identify a specific Item and error when a batch operation operating on multiple Items has encountered an error in one of the Items."""
     warning_code: WarningCode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('warning_code') }})

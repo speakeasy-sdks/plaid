@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class PayStubDistributionBreakdown:
     r"""Information about the accounts that the payment was distributed to."""
+    UNSET='__SPEAKEASY_UNSET__'
     account_name: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_name') }})
     r"""Name of the account for the given distribution."""
     bank_name: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bank_name') }})

@@ -12,6 +12,7 @@ from typing import Optional
 @dataclasses.dataclass
 class WalletTransactionListRequest:
     r"""WalletTransactionListRequest defines the request schema for `/wallet/transaction/list`"""
+    UNSET='__SPEAKEASY_UNSET__'
     wallet_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('wallet_id') }})
     r"""The ID of the e-wallet to fetch transactions from"""
     client_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_id'), 'exclude': lambda f: f is None }})
@@ -20,7 +21,7 @@ class WalletTransactionListRequest:
     r"""The number of transactions to fetch"""
     cursor: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cursor'), 'exclude': lambda f: f is None }})
     r"""A base64 value representing the latest transaction that has already been requested. Set this to `next_cursor` received from the previous `/wallet/transaction/list` request. If provided, the response will only contain transactions created before that transaction. If omitted, the response will contain transactions starting from the most recent, and in descending order by the `created_at` time."""
-    options: Optional[WalletTransactionListRequestOptions] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('options') }})
+    options: Optional[WalletTransactionListRequestOptions] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('options'), 'exclude': lambda f: f is WalletTransactionListRequest.UNSET }})
     r"""Additional wallet transaction options"""
     secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secret'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body."""

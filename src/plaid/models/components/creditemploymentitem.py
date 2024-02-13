@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class CreditEmploymentItem:
     r"""The object containing employment items."""
+    UNSET='__SPEAKEASY_UNSET__'
     employments: List[CreditEmploymentVerification] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employments') }})
     item_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('item_id') }})
     r"""The `item_id` of the Item associated with this webhook, warning, or error"""

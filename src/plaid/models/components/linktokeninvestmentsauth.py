@@ -11,9 +11,10 @@ from typing import Optional
 @dataclasses.dataclass
 class LinkTokenInvestmentsAuth:
     r"""Configuration parameters for the Investments Auth Product"""
-    manual_entry_enabled: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('manual_entry_enabled') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    manual_entry_enabled: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('manual_entry_enabled'), 'exclude': lambda f: f is LinkTokenInvestmentsAuth.UNSET }})
     r"""If `true`, show institutions that use the manual entry fallback flow."""
-    masked_number_match_enabled: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('masked_number_match_enabled') }})
+    masked_number_match_enabled: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('masked_number_match_enabled'), 'exclude': lambda f: f is LinkTokenInvestmentsAuth.UNSET }})
     r"""If `true`, show institutions that use the masked number match fallback flow."""
     
 

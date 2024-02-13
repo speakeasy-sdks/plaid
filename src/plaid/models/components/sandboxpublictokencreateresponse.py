@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class SandboxPublicTokenCreateResponse:
     r"""SandboxPublicTokenCreateResponse defines the response schema for `/sandbox/public_token/create`"""
+    UNSET='__SPEAKEASY_UNSET__'
     public_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('public_token') }})
     r"""A public token that can be exchanged for an access token using `/item/public_token/exchange`"""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

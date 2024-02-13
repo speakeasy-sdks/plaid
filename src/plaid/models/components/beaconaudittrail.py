@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class BeaconAuditTrail:
     r"""Information about the last change made to the parent object specifying what caused the change as well as when it occurred."""
+    UNSET='__SPEAKEASY_UNSET__'
     dashboard_user_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dashboard_user_id') }})
     r"""ID of the associated user."""
     source: BeaconAuditTrailSource = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source') }})

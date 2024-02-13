@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class InstitutionSupportedNetworks:
     r"""Contains the RTP network and types supported by the linked Item's institution."""
+    UNSET='__SPEAKEASY_UNSET__'
     rtp: TransferCapabilitiesGetRTP = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rtp') }})
     r"""Contains the supported service types in RTP"""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})

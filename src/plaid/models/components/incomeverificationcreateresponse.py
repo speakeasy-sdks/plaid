@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class IncomeVerificationCreateResponse:
     r"""IncomeVerificationCreateResponse defines the response schema for `/income/verification/create`."""
+    UNSET='__SPEAKEASY_UNSET__'
     income_verification_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('income_verification_id') }})
     r"""ID of the verification. This ID is persisted throughout the lifetime of the verification."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

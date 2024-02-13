@@ -10,13 +10,14 @@ from typing import Optional
 
 @dataclasses.dataclass
 class SignalPrepareResponse:
+    UNSET='__SPEAKEASY_UNSET__'
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     raw_response: requests_http.Response = dataclasses.field()
     r"""Raw HTTP response; suitable for custom response parsing"""
-    plaid_error: Optional[components_plaiderror.PlaidError] = dataclasses.field(default=None)
+    plaid_error: Optional[components_plaiderror.PlaidError] = dataclasses.field(default=UNSET)
     r"""Error response."""
     signal_prepare_response: Optional[components_signalprepareresponse.SignalPrepareResponse] = dataclasses.field(default=None)
     r"""OK"""

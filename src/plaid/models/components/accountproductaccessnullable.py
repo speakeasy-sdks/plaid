@@ -11,12 +11,13 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class AccountProductAccessNullable:
     r"""Allow the application to access specific products on this account"""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    account_data: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_data') }})
+    account_data: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_data'), 'exclude': lambda f: f is AccountProductAccessNullable.UNSET }})
     r"""Allow the application to access account data. Only used by certain partners. If relevant to the partner and unset, defaults to `true`."""
-    statements: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('statements') }})
+    statements: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('statements'), 'exclude': lambda f: f is AccountProductAccessNullable.UNSET }})
     r"""Allow the application to access bank statements. Only used by certain partners. If relevant to the partner and unset, defaults to `true`."""
-    tax_documents: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tax_documents') }})
+    tax_documents: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tax_documents'), 'exclude': lambda f: f is AccountProductAccessNullable.UNSET }})
     r"""Allow the application to access tax documents. Only used by certain partners. If relevant to the partner and unset, defaults to `true`."""
     
 

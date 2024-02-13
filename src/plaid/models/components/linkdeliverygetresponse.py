@@ -14,6 +14,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class LinkDeliveryGetResponse:
     r"""LinkDeliveryGetRequest defines the response schema for `/link_delivery/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""Timestamp in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (`YYYY-MM-DDTHH:mm:ssZ`) indicating the time the given Hosted Link session was created at."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})
@@ -32,11 +33,11 @@ class LinkDeliveryGetResponse:
     `EXPIRED`: The session has expired
     """
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    access_tokens: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('access_tokens') }})
+    access_tokens: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('access_tokens'), 'exclude': lambda f: f is LinkDeliveryGetResponse.UNSET }})
     r"""An array of access tokens associated with the Hosted Link session."""
-    completed_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('completed_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse }})
+    completed_at: Optional[datetime] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('completed_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is LinkDeliveryGetResponse.UNSET }})
     r"""Timestamp in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (`YYYY-MM-DDTHH:mm:ssZ`) indicating the time the given Hosted Link session was completed at."""
-    item_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('item_ids') }})
+    item_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('item_ids'), 'exclude': lambda f: f is LinkDeliveryGetResponse.UNSET }})
     r"""An array of `item_id`s associated with the Hosted Link session."""
     
 

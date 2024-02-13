@@ -18,6 +18,7 @@ class Type(str, Enum):
 @dataclasses.dataclass
 class Email:
     r"""An object representing an email address"""
+    UNSET='__SPEAKEASY_UNSET__'
     data: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
     r"""The email address."""
     primary: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('primary') }})

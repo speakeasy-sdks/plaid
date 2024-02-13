@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class ClientProvidedRawTransaction:
     r"""A client-provided transaction for Plaid to enhance."""
+    UNSET='__SPEAKEASY_UNSET__'
     amount: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
     r"""The value of the transaction with direction. (NOTE: this will affect enrichment results, so directions are important):.
       Negative (-) for credits (e.g., incoming transfers, refunds)

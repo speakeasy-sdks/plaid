@@ -16,6 +16,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class Enrichments:
     r"""A grouping of the Plaid produced transaction enrichment fields."""
+    UNSET='__SPEAKEASY_UNSET__'
     counterparties: List[Counterparty] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('counterparties') }})
     r"""The counterparties present in the transaction. Counterparties, such as the merchant or the financial institution, are extracted by Plaid from the raw description."""
     location: Location = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('location') }})
@@ -42,9 +43,9 @@ class Enrichments:
     website: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('website') }})
     r"""The website associated with this transaction."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    check_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('check_number') }})
+    check_number: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('check_number'), 'exclude': lambda f: f is Enrichments.UNSET }})
     r"""The check number of the transaction. This field is only populated for check transactions."""
-    entity_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_id') }})
+    entity_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_id'), 'exclude': lambda f: f is Enrichments.UNSET }})
     r"""A unique, stable, Plaid-generated id that maps to the primary counterparty."""
     legacy_category: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('legacy_category'), 'exclude': lambda f: f is None }})
     r"""A hierarchical array of the legacy categories to which this transaction belongs. For a full list of legacy categories, see [`/categories/get`](https://plaid.com/docs/api/products/transactions/#categoriesget).
@@ -53,14 +54,14 @@ class Enrichments:
 
     Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
     """
-    legacy_category_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('legacy_category_id') }})
+    legacy_category_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('legacy_category_id'), 'exclude': lambda f: f is Enrichments.UNSET }})
     r"""The ID of the legacy category to which this transaction belongs. For a full list of legacy categories, see [`/categories/get`](https://plaid.com/docs/api/products/transactions/#categoriesget).
 
     We recommend using the `personal_finance_category` for transaction categorization to obtain the best results.
 
     Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
     """
-    recurrence: Optional[Recurrence] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('recurrence') }})
+    recurrence: Optional[Recurrence] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('recurrence'), 'exclude': lambda f: f is Enrichments.UNSET }})
     r"""Insights relating to expenses and deposits that are predicted to occur on a scheduled basis, such as biweekly, monthly, or annually.
 
     Common examples include loan payments, bill payments, subscriptions, and payroll income.

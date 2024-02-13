@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class WatchlistScreeningIndividualReviewListResponse:
     r"""Paginated list of screening reviews"""
+    UNSET='__SPEAKEASY_UNSET__'
     next_cursor: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next_cursor') }})
     r"""An identifier that determines which page of results you receive."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

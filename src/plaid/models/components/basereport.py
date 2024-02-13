@@ -14,6 +14,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class BaseReport:
     r"""An object representing a Base Report"""
+    UNSET='__SPEAKEASY_UNSET__'
     date_generated: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('date_generated'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""The date and time when the Base Report was created, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (e.g. \\"2018-04-12T03:32:11Z\\")."""
     days_requested: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days_requested') }})

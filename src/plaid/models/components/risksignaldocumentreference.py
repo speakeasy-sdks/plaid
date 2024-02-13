@@ -12,8 +12,9 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class RiskSignalDocumentReference:
     r"""Object containing metadata for the document"""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    document_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('document_id') }})
+    document_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('document_id'), 'exclude': lambda f: f is RiskSignalDocumentReference.UNSET }})
     r"""An identifier of the document referenced by the document metadata."""
     document_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('document_name'), 'exclude': lambda f: f is None }})
     r"""The name of the document"""

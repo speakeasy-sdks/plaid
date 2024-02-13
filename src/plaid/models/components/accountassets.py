@@ -41,6 +41,7 @@ class VerificationStatus(str, Enum):
 @dataclasses.dataclass
 class AccountAssets:
     r"""Asset information about an account"""
+    UNSET='__SPEAKEASY_UNSET__'
     account_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id') }})
     r"""Plaid’s unique identifier for the account. This value will not change unless Plaid can't reconcile the account with the data returned by the financial institution. This may occur, for example, when the name of the account changes. If this happens a new `account_id` will be assigned to the account.
 
@@ -82,7 +83,7 @@ class AccountAssets:
     See the [Account type schema](https://plaid.com/docs/api/accounts#account-type-schema) for a full listing of account types and corresponding subtypes.
     """
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    ownership_type: Optional[OwnershipType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ownership_type') }})
+    ownership_type: Optional[OwnershipType] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ownership_type'), 'exclude': lambda f: f is AccountAssets.UNSET }})
     r"""How an asset is owned.
 
     `association`: Ownership by a corporation, partnership, or unincorporated association, including for-profit and not-for-profit organizations.

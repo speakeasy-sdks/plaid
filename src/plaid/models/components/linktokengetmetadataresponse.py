@@ -15,6 +15,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class LinkTokenGetMetadataResponse:
     r"""An object specifying the arguments originally provided to the `/link/token/create` call."""
+    UNSET='__SPEAKEASY_UNSET__'
     client_name: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_name') }})
     r"""The `client_name` specified in the `/link/token/create` call."""
     country_codes: List[CountryCode] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country_codes') }})

@@ -14,6 +14,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class PaymentInitiationPaymentListResponse:
     r"""PaymentInitiationPaymentListResponse defines the response schema for `/payment_initiation/payment/list`"""
+    UNSET='__SPEAKEASY_UNSET__'
     next_cursor: Optional[datetime] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next_cursor'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""The value that, when used as the optional `cursor` parameter to `/payment_initiation/payment/list`, will return the next unreturned payment as its first payment."""
     payments: List[PaymentInitiationPayment] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payments') }})

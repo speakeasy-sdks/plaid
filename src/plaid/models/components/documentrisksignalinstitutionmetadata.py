@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class DocumentRiskSignalInstitutionMetadata:
     r"""An object which contains additional metadata about the institution used to compute the verification attribute"""
+    UNSET='__SPEAKEASY_UNSET__'
     item_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('item_id') }})
     r"""The `item_id` of the Item associated with this webhook, warning, or error"""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})

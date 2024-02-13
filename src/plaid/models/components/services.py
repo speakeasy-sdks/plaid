@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class Services:
     r"""A collection of objects that describe requests and responses for services."""
+    UNSET='__SPEAKEASY_UNSET__'
     service: Service = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('SERVICE') }})
     r"""A collection of details related to a fulfillment service or product in terms of request, process and result."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})

@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class PayStubTaxpayerID:
     r"""Taxpayer ID of the individual receiving the paystub."""
+    UNSET='__SPEAKEASY_UNSET__'
     id_mask: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id_mask') }})
     r"""ID mask; i.e. last 4 digits of the taxpayer ID."""
     id_type: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id_type') }})

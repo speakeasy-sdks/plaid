@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class InstitutionsGetByIDResponse:
     r"""InstitutionsGetByIdResponse defines the response schema for `/institutions/get_by_id`"""
+    UNSET='__SPEAKEASY_UNSET__'
     institution: Institution = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('institution') }})
     r"""Details relating to a specific financial institution"""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

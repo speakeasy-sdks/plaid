@@ -37,6 +37,7 @@ class WalletTransactionGetResponseType(str, Enum):
 @dataclasses.dataclass
 class WalletTransactionGetResponse:
     r"""WalletTransactionGetResponse defines the response schema for `/wallet/transaction/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     amount: WalletTransactionAmount = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
     r"""The amount and currency of a transaction"""
     counterparty: WalletTransactionCounterparty = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('counterparty') }})
@@ -81,7 +82,7 @@ class WalletTransactionGetResponse:
     wallet_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('wallet_id') }})
     r"""The EMI (E-Money Institution) wallet that this payment is associated with, if any. This wallet is used as an intermediary account to enable Plaid to reconcile the settlement of funds for Payment Initiation requests."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    failure_reason: Optional[WalletTransactionFailureReason] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('failure_reason') }})
+    failure_reason: Optional[WalletTransactionFailureReason] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('failure_reason'), 'exclude': lambda f: f is WalletTransactionGetResponse.UNSET }})
     r"""The error code of a failed transaction. Error codes include:
     `EXTERNAL_SYSTEM`: The transaction was declined by an external system.
     `EXPIRED`: The transaction request has expired.
@@ -89,9 +90,9 @@ class WalletTransactionGetResponse:
     `INVALID`: The transaction did not meet certain criteria, such as an inactive account or no valid counterparty, etc.
     `UNKNOWN`: The transaction was unsuccessful, but the exact cause is unknown.
     """
-    payment_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payment_id') }})
+    payment_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payment_id'), 'exclude': lambda f: f is WalletTransactionGetResponse.UNSET }})
     r"""The payment id that this transaction is associated with, if any. This is present only for transaction types `PIS_PAY_IN` and `REFUND`."""
-    scheme: Optional[WalletPaymentScheme] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('scheme') }})
+    scheme: Optional[WalletPaymentScheme] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('scheme'), 'exclude': lambda f: f is WalletTransactionGetResponse.UNSET }})
     r"""The payment scheme used to execute this transaction. This is present only for transaction types `PAYOUT` and `REFUND`.
 
     `FASTER_PAYMENTS`: The standard payment scheme within the UK.

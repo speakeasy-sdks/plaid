@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class AuthMetadata:
     r"""Metadata that captures information about the Auth features of an institution."""
+    UNSET='__SPEAKEASY_UNSET__'
     supported_methods: Optional[AuthSupportedMethods] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('supported_methods') }})
     r"""Metadata specifically related to which auth methods an institution supports."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})

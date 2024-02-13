@@ -13,11 +13,12 @@ from typing import Optional
 @dataclasses.dataclass
 class SandboxTransferTestClockCreateRequest:
     r"""Defines the request schema for `/sandbox/transfer/test_clock/create`"""
+    UNSET='__SPEAKEASY_UNSET__'
     client_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_id'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body."""
     secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secret'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body."""
-    virtual_time: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('virtual_time'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse }})
+    virtual_time: Optional[datetime] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('virtual_time'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is SandboxTransferTestClockCreateRequest.UNSET }})
     r"""The virtual timestamp on the test clock. If not provided, the current timestamp will be used. This will be of the form `2006-01-02T15:04:05Z`."""
     
 

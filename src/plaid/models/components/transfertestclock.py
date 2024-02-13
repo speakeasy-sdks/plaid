@@ -13,6 +13,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferTestClock:
     r"""Defines the test clock for a transfer."""
+    UNSET='__SPEAKEASY_UNSET__'
     test_clock_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('test_clock_id') }})
     r"""Plaid’s unique identifier for a test clock."""
     virtual_time: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('virtual_time'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})

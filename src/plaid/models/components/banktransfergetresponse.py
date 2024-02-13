@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class BankTransferGetResponse:
     r"""Defines the response schema for `/bank_transfer/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     bank_transfer: BankTransfer = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bank_transfer') }})
     r"""Represents a bank transfer within the Bank Transfers API."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

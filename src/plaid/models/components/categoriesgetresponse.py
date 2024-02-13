@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class CategoriesGetResponse:
     r"""CategoriesGetResponse defines the response schema for `/categories/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     categories: List[Category] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('categories') }})
     r"""An array of all of the transaction categories used by Plaid."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

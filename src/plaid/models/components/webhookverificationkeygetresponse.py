@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class WebhookVerificationKeyGetResponse:
     r"""WebhookVerificationKeyGetResponse defines the response schema for `/webhook_verification_key/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     key: JWKPublicKey = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key') }})
     r"""A JSON Web Key (JWK) that can be used in conjunction with [JWT libraries](https://jwt.io/#libraries-io) to verify Plaid webhooks"""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

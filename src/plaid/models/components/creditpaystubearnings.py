@@ -13,6 +13,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class CreditPayStubEarnings:
     r"""An object representing both a breakdown of earnings on a pay stub and the total earnings."""
+    UNSET='__SPEAKEASY_UNSET__'
     breakdown: List[PayStubEarningsBreakdown] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('breakdown') }})
     total: PayStubEarningsTotal = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('total') }})
     r"""An object representing both the current pay period and year to date amount for an earning category."""

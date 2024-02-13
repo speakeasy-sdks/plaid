@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class BankTransferBalance:
     r"""Information about the balance of a bank transfer"""
+    UNSET='__SPEAKEASY_UNSET__'
     available: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('available') }})
     r"""The total available balance - the sum of all successful debit transfer amounts minus all credit transfer amounts."""
     transactable: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transactable') }})

@@ -14,6 +14,7 @@ class FraudAmountNullable:
     r"""The amount and currency of the fraud or attempted fraud.
     `fraud_amount` should be omitted to indicate an unknown fraud amount.
     """
+    UNSET='__SPEAKEASY_UNSET__'
     iso_currency_code: ISOCurrencyCode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iso_currency_code') }})
     r"""An ISO-4217 currency code."""
     value: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})

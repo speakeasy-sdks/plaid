@@ -14,6 +14,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class PhysicalDocumentExtractedData:
     r"""Data extracted from a user-submitted document."""
+    UNSET='__SPEAKEASY_UNSET__'
     address: Optional[IdentityVerificationDocumentAddressResponse] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address') }})
     r"""The address extracted from the document. The address must at least contain the following fields to be a valid address: `street`, `city`, `country`. If any are missing or unable to be extracted, the address will be null.
 

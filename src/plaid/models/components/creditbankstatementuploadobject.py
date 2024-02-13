@@ -14,6 +14,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class CreditBankStatementUploadObject:
     r"""An object containing data that has been parsed from a user-uploaded bank statement."""
+    UNSET='__SPEAKEASY_UNSET__'
     bank_accounts: List[CreditBankStatementUploadBankAccount] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bank_accounts') }})
     r"""An array of bank accounts associated with the uploaded bank statement."""
     document_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('document_id') }})

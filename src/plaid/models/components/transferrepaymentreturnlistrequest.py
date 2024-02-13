@@ -11,11 +11,12 @@ from typing import Optional
 @dataclasses.dataclass
 class TransferRepaymentReturnListRequest:
     r"""Defines the request schema for `/transfer/repayment/return/list`"""
+    UNSET='__SPEAKEASY_UNSET__'
     repayment_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('repayment_id') }})
     r"""Identifier of the repayment to query."""
     client_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_id'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body."""
-    count: Optional[int] = dataclasses.field(default=25, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count') }})
+    count: Optional[int] = dataclasses.field(default=25, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count'), 'exclude': lambda f: f is TransferRepaymentReturnListRequest.UNSET }})
     r"""The maximum number of repayments to return."""
     offset: Optional[int] = dataclasses.field(default=0, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('offset'), 'exclude': lambda f: f is None }})
     r"""The number of repayments to skip before returning results."""

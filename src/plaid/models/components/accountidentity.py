@@ -38,6 +38,7 @@ class AccountIdentityVerificationStatus(str, Enum):
 @dataclasses.dataclass
 class AccountIdentity:
     r"""Identity information about an account"""
+    UNSET='__SPEAKEASY_UNSET__'
     account_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id') }})
     r"""Plaid’s unique identifier for the account. This value will not change unless Plaid can't reconcile the account with the data returned by the financial institution. This may occur, for example, when the name of the account changes. If this happens a new `account_id` will be assigned to the account.
 

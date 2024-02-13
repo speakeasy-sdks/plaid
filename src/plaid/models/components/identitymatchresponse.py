@@ -13,6 +13,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class IdentityMatchResponse:
     r"""IdentityMatchResponse defines the response schema for `/identity/match`"""
+    UNSET='__SPEAKEASY_UNSET__'
     accounts: List[AccountIdentityMatchScore] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts') }})
     r"""The accounts for which Identity match has been requested"""
     item: Item = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('item') }})

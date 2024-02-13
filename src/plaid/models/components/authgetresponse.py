@@ -14,6 +14,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class AuthGetResponse:
     r"""AuthGetResponse defines the response schema for `/auth/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     accounts: List[AccountBase] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts') }})
     r"""The `accounts` for which numbers are being retrieved."""
     item: Item = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('item') }})

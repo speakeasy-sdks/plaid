@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class ServicerAddressData:
     r"""The address of the student loan servicer. This is generally the remittance address to which payments should be sent."""
+    UNSET='__SPEAKEASY_UNSET__'
     city: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city') }})
     r"""The full city name"""
     country: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country') }})

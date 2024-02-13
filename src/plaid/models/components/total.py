@@ -16,15 +16,16 @@ class Total:
 
     Deprecated class: This will be removed in a future release, please migrate away from it as soon as possible.
     """
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    canonical_description: Optional[TotalCanonicalDescription] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('canonical_description') }})
+    canonical_description: Optional[TotalCanonicalDescription] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('canonical_description'), 'exclude': lambda f: f is Total.UNSET }})
     r"""Commonly used term to describe the line item."""
     current_pay: Optional[Pay] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('current_pay'), 'exclude': lambda f: f is None }})
     r"""An object representing a monetary amount.
 
     Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
     """
-    description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
+    description: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is Total.UNSET }})
     r"""Text of the line item as printed on the paystub."""
     ytd_pay: Optional[Pay] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ytd_pay'), 'exclude': lambda f: f is None }})
     r"""An object representing a monetary amount.

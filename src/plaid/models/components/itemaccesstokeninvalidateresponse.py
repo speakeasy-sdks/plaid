@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class ItemAccessTokenInvalidateResponse:
     r"""ItemAccessTokenInvalidateResponse defines the response schema for `/item/access_token/invalidate`"""
+    UNSET='__SPEAKEASY_UNSET__'
     new_access_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('new_access_token') }})
     r"""The access token associated with the Item data is being requested for."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

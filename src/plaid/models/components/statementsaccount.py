@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class StatementsAccount:
     r"""Account associated with the item."""
+    UNSET='__SPEAKEASY_UNSET__'
     account_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id') }})
     r"""Plaid's unique identifier for the account."""
     account_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_name') }})

@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class PaymentInitiationStandingOrderMetadata:
     r"""Metadata specifically related to valid Payment Initiation standing order configurations for the institution."""
+    UNSET='__SPEAKEASY_UNSET__'
     supports_standing_order_end_date: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('supports_standing_order_end_date') }})
     r"""Indicates whether the institution supports closed-ended standing orders by providing an end date."""
     supports_standing_order_negative_execution_days: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('supports_standing_order_negative_execution_days') }})

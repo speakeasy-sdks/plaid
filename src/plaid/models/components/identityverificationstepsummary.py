@@ -36,6 +36,7 @@ class IdentityVerificationStepSummary:
 
     `manually_rejected` - The step was manually overridden to fail by a team member in the dashboard.
     """
+    UNSET='__SPEAKEASY_UNSET__'
     accept_tos: IdentityVerificationStepStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accept_tos') }})
     r"""The status of a step in the identity verification process."""
     documentary_verification: IdentityVerificationStepStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('documentary_verification') }})

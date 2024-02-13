@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class PayStubEarningsTotal:
     r"""An object representing both the current pay period and year to date amount for an earning category."""
+    UNSET='__SPEAKEASY_UNSET__'
     current_amount: Optional[float] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('current_amount') }})
     r"""Total amount of the earnings for this pay period."""
     hours: Optional[float] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hours') }})

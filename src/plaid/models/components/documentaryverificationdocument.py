@@ -17,6 +17,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class DocumentaryVerificationDocument:
     r"""Images, extracted data, and analysis from a user's identity document"""
+    UNSET='__SPEAKEASY_UNSET__'
     analysis: DocumentAnalysis = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('analysis') }})
     r"""High level descriptions of how the associated document was processed. If a document fails verification, the details in the `analysis` object should help clarify why the document was rejected."""
     attempt: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attempt') }})

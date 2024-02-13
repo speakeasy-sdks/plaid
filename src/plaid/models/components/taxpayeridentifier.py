@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TaxpayerIdentifier:
     r"""Information about the Taxpayer identification values assigned to the individual or legal entity.Information about the Taxpayer identification values assigned to the individual or legal entity."""
+    UNSET='__SPEAKEASY_UNSET__'
     taxpayer_identifier_type: Optional[TaxpayerIdentifierType] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TaxpayerIdentifierType') }})
     r"""A value from a MISMO prescribed list that classifies identification numbers used by the Internal Revenue Service (IRS) in the administration of tax laws. A Social Security number (SSN) is issued by the SSA; all other taxpayer identification numbers are issued by the IRS."""
     taxpayer_identifier_value: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TaxpayerIdentifierValue') }})

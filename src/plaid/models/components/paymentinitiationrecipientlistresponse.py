@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class PaymentInitiationRecipientListResponse:
     r"""PaymentInitiationRecipientListResponse defines the response schema for `/payment_initiation/recipient/list`"""
+    UNSET='__SPEAKEASY_UNSET__'
     recipients: List[PaymentInitiationRecipient] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('recipients') }})
     r"""An array of payment recipients created for Payment Initiation"""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

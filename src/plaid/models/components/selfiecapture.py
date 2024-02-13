@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class SelfieCapture:
     r"""The image or video capture of a selfie. Only one of image or video URL will be populated per selfie."""
+    UNSET='__SPEAKEASY_UNSET__'
     image_url: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('image_url') }})
     r"""Temporary URL for downloading an image selfie capture."""
     video_url: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('video_url') }})

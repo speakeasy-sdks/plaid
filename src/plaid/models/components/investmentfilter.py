@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class InvestmentFilter:
     r"""A filter to apply to `investment`-type accounts (or `brokerage`-type accounts for API versions 2018-05-22 and earlier)."""
+    UNSET='__SPEAKEASY_UNSET__'
     account_subtypes: List[InvestmentAccountSubtype] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_subtypes') }})
     r"""An array of account subtypes to display in Link. If not specified, all account subtypes will be shown. For a full list of valid types and subtypes, see the [Account schema](https://plaid.com/docs/api/accounts#account-type-schema)."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})

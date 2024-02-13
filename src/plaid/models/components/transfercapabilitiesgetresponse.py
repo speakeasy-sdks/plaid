@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferCapabilitiesGetResponse:
     r"""Defines the response schema for `/transfer/capabilities/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     institution_supported_networks: InstitutionSupportedNetworks = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('institution_supported_networks') }})
     r"""Contains the RTP network and types supported by the linked Item's institution."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

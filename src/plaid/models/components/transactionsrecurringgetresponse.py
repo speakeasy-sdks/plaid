@@ -14,6 +14,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class TransactionsRecurringGetResponse:
     r"""TransactionsRecurringGetResponse defines the response schema for `/transactions/recurring/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     inflow_streams: List[TransactionStream] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('inflow_streams') }})
     r"""An array of depository transaction streams."""
     outflow_streams: List[TransactionStream] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('outflow_streams') }})

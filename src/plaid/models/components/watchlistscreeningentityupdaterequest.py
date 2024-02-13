@@ -14,6 +14,7 @@ from typing import List, Optional
 @dataclasses.dataclass
 class WatchlistScreeningEntityUpdateRequest:
     r"""Request input for editing an entity watchlist screening"""
+    UNSET='__SPEAKEASY_UNSET__'
     entity_watchlist_screening_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_watchlist_screening_id') }})
     r"""ID of the associated entity screening."""
     assignee: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignee'), 'exclude': lambda f: f is None }})
@@ -22,9 +23,9 @@ class WatchlistScreeningEntityUpdateRequest:
     r"""Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body."""
     client_user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_user_id'), 'exclude': lambda f: f is None }})
     r"""A unique ID that identifies the end user in your system. This ID can also be used to associate user-specific data from other Plaid products. Financial Account Matching requires this field and the `/link/token/create` `client_user_id` to be consistent. Personally identifiable information, such as an email address or phone number, should not be used in the `client_user_id`."""
-    reset_fields: Optional[List[WatchlistScreeningEntityUpdateRequestResettableField]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reset_fields') }})
+    reset_fields: Optional[List[WatchlistScreeningEntityUpdateRequestResettableField]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reset_fields'), 'exclude': lambda f: f is WatchlistScreeningEntityUpdateRequest.UNSET }})
     r"""A list of fields to reset back to null"""
-    search_terms: Optional[UpdateEntityScreeningRequestSearchTerms] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('search_terms') }})
+    search_terms: Optional[UpdateEntityScreeningRequestSearchTerms] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('search_terms'), 'exclude': lambda f: f is WatchlistScreeningEntityUpdateRequest.UNSET }})
     r"""Search terms for editing an entity watchlist screening"""
     secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secret'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body."""

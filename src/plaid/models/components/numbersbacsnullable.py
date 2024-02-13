@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class NumbersBACSNullable:
     r"""Identifying information for transferring money to or from a UK bank account via BACS."""
+    UNSET='__SPEAKEASY_UNSET__'
     account: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account') }})
     r"""The BACS account number for the account"""
     account_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id') }})

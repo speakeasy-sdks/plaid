@@ -16,6 +16,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class KYCCheckDetails:
     r"""Additional information for the `kyc_check` step. This field will be `null` unless `steps.kyc_check` has reached a terminal state of either `success` or `failed`."""
+    UNSET='__SPEAKEASY_UNSET__'
     address: KYCCheckAddressSummary = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address') }})
     r"""Result summary object specifying how the `address` field matched."""
     date_of_birth: KYCCheckDateOfBirthSummary = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('date_of_birth') }})

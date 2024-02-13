@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class NumbersACH:
     r"""Identifying information for transferring money to or from a US account via ACH or wire transfer."""
+    UNSET='__SPEAKEASY_UNSET__'
     account: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account') }})
     r"""The ACH account number for the account.
 
@@ -23,9 +24,9 @@ class NumbersACH:
     wire_routing: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('wire_routing') }})
     r"""The wire transfer routing number for the account, if available"""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    can_transfer_in: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('can_transfer_in') }})
+    can_transfer_in: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('can_transfer_in'), 'exclude': lambda f: f is NumbersACH.UNSET }})
     r"""Whether the account supports ACH transfers into the account"""
-    can_transfer_out: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('can_transfer_out') }})
+    can_transfer_out: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('can_transfer_out'), 'exclude': lambda f: f is NumbersACH.UNSET }})
     r"""Whether the account supports ACH transfers out of the account"""
     
 

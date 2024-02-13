@@ -16,6 +16,7 @@ class RiskCheckStolenIdentity:
 
     `score` - A score from 0 to 100 indicating the likelihood that the user is a stolen identity.
     """
+    UNSET='__SPEAKEASY_UNSET__'
     score: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('score') }})
     r"""A score from 0 to 100 indicating the likelihood that the user is a stolen identity."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})

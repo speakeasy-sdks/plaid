@@ -16,6 +16,7 @@ class TransferRepayment:
 
     Repayments are sent over ACH, with funds typically available on the next banking day.
     """
+    UNSET='__SPEAKEASY_UNSET__'
     amount: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
     r"""Decimal amount of the repayment as it appears on your account ledger."""
     created: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})

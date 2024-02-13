@@ -245,7 +245,6 @@ The `/accounts/balance/get` endpoint returns the real-time balance for each of a
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -259,11 +258,6 @@ s = plaid.Plaid(
 
 req = components.AccountsBalanceGetRequest(
     access_token='string',
-    options=components.AccountsBalanceGetRequestOptions(
-        account_ids=[
-            'string',
-        ],
-    ),
 )
 
 res = s.plaid.accounts_balance_get(req)
@@ -314,11 +308,6 @@ s = plaid.Plaid(
 
 req = components.AccountsGetRequest(
     access_token='string',
-    options=components.AccountsGetRequestOptions(
-        account_ids=[
-            'string',
-        ],
-    ),
 )
 
 res = s.plaid.accounts_get(req)
@@ -560,22 +549,6 @@ s = plaid.Plaid(
 
 req = components.AssetReportCreateRequest(
     days_requested=35362,
-    access_tokens=[
-        'string',
-    ],
-    options=components.AssetReportCreateRequestOptions(
-        add_ons=[
-            components.AssetReportAddOns.FAST_ASSETS,
-        ],
-        products=[
-            'string',
-        ],
-        user=components.AssetReportUser(
-            additional_properties={
-                'key': 'string',
-            },
-        ),
-    ),
 )
 
 res = s.plaid.asset_report_create(req)
@@ -683,9 +656,7 @@ s = plaid.Plaid(
     ),
 )
 
-req = components.AssetReportGetRequest(
-    options=components.AssetReportGetRequestOptions(),
-)
+req = components.AssetReportGetRequest()
 
 res = s.plaid.asset_report_get(req)
 
@@ -738,7 +709,6 @@ s = plaid.Plaid(
 
 req = components.AssetReportPDFGetRequest(
     asset_report_token='string',
-    options=components.AssetReportPDFGetRequestOptions(),
 )
 
 res = s.plaid.asset_report_pdf_get(req)
@@ -788,13 +758,6 @@ s = plaid.Plaid(
 
 req = components.AssetReportRefreshRequest(
     asset_report_token='string',
-    options=components.AssetReportRefreshRequestOptions(
-        user=components.AssetReportUser(
-            additional_properties={
-                'key': 'string',
-            },
-        ),
-    ),
 )
 
 res = s.plaid.asset_report_refresh(req)
@@ -895,11 +858,6 @@ s = plaid.Plaid(
 
 req = components.AuthGetRequest(
     access_token='string',
-    options=components.AuthGetRequestOptions(
-        account_ids=[
-            'string',
-        ],
-    ),
 )
 
 res = s.plaid.auth_get(req)
@@ -1052,13 +1010,7 @@ req = components.BankTransferCreateRequest(
     type=components.BankTransferType.DEBIT,
     user=components.BankTransferUserInput(
         legal_name='string',
-        additional_properties={
-            'key': 'string',
-        },
     ),
-    metadata={
-        'key': 'string',
-    },
 )
 
 res = s.plaid.bank_transfer_create(req)
@@ -1093,7 +1045,6 @@ Use the `/bank_transfer/event/list` endpoint to get a list of Plaid-initiated AC
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -1105,11 +1056,7 @@ s = plaid.Plaid(
     ),
 )
 
-req = components.BankTransferEventListRequest(
-    event_types=[
-        components.BankTransferEventType.POSTED,
-    ],
-)
+req = components.BankTransferEventListRequest()
 
 res = s.plaid.bank_transfer_event_list(req)
 
@@ -1238,7 +1185,6 @@ Use the `/bank_transfer/list` endpoint to see a list of all your bank transfers 
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -1380,7 +1326,6 @@ The `/bank_transfer/sweep/list` endpoint fetches information about the sweeps ma
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -1491,13 +1436,6 @@ req = components.BeaconReportCreateRequest(
     beacon_user_id='becusr_11111111111111',
     fraud_date=dateutil.parser.parse('1990-05-29').date(),
     type=components.BeaconReportType.UNKNOWN,
-    fraud_amount=components.FraudAmount(
-        iso_currency_code=components.ISOCurrencyCode.USD,
-        value=100,
-        additional_properties={
-            'key': 'string',
-        },
-    ),
 )
 
 res = s.plaid.beacon_report_create(req)
@@ -1560,9 +1498,6 @@ req = components.BeaconUserCreateRequest(
             city='Pawnee',
             country='US',
             street='123 Main St.',
-            additional_properties={
-                'key': 'string',
-            },
             postal_code='46001',
             region='IN',
             street2='Unit 42',
@@ -1571,37 +1506,10 @@ req = components.BeaconUserCreateRequest(
         name=components.BeaconUserName(
             family_name='Knope',
             given_name='Leslie',
-            additional_properties={
-                'key': 'string',
-            },
         ),
-        additional_properties={
-            'key': 'string',
-        },
         email_address='user@example.com',
-        id_number=components.BeaconUserIDNumber(
-            type=components.IDNumberType.US_SSN,
-            value='123456789',
-            additional_properties={
-                'key': 'string',
-            },
-        ),
         ip_address='192.0.2.42',
         phone_number='+19876543212',
-    ),
-    report=components.BeaconUserCreateEmbeddedReport(
-        fraud_date=dateutil.parser.parse('1990-05-29').date(),
-        type=components.BeaconReportType.SYNTHETIC,
-        additional_properties={
-            'key': 'string',
-        },
-        fraud_amount=components.FraudAmountNullable(
-            iso_currency_code=components.ISOCurrencyCode.USD,
-            value=100,
-            additional_properties={
-                'key': 'string',
-            },
-        ),
     ),
 )
 
@@ -1843,9 +1751,6 @@ s = plaid.Plaid(
 
 req = components.AssetReportFreddieGetRequest(
     audit_copy_token='string',
-    additional_properties={
-        'key': 'string',
-    },
 )
 
 res = s.plaid.credit_asset_report_freddie_mac_get(req)
@@ -2039,9 +1944,7 @@ s = plaid.Plaid(
     ),
 )
 
-req = components.CreditBankIncomeGetRequest(
-    options=components.CreditBankIncomeGetRequestOptions(),
-)
+req = components.CreditBankIncomeGetRequest()
 
 res = s.plaid.credit_bank_income_get(req)
 
@@ -2135,7 +2038,6 @@ s = plaid.Plaid(
 
 req = components.CreditBankIncomeRefreshRequest(
     user_token='string',
-    options=components.CreditBankIncomeRefreshRequestOptions(),
 )
 
 res = s.plaid.credit_bank_income_refresh(req)
@@ -2421,20 +2323,7 @@ s = plaid.Plaid(
     ),
 )
 
-req = components.CreditPayrollIncomePrecheckRequest(
-    access_tokens=[
-        'string',
-    ],
-    employer=components.IncomeVerificationPrecheckEmployer(
-        address=components.IncomeVerificationPrecheckEmployerAddress(
-            additional_properties={
-                'key': 'string',
-            },
-        ),
-    ),
-    payroll_institution=components.IncomeVerificationPrecheckPayrollInstitution(),
-    us_military_info=components.IncomeVerificationPrecheckMilitaryInfo(),
-)
+req = components.CreditPayrollIncomePrecheckRequest()
 
 res = s.plaid.credit_payroll_income_precheck(req)
 
@@ -2481,11 +2370,6 @@ s = plaid.Plaid(
 
 req = components.CreditPayrollIncomeRefreshRequest(
     user_token='string',
-    options=components.CreditPayrollIncomeRefreshRequestOptions(
-        item_ids=[
-            'string',
-        ],
-    ),
 )
 
 res = s.plaid.credit_payroll_income_refresh(req)
@@ -3023,33 +2907,12 @@ req = components.DepositSwitchAltCreateRequest(
         account_number='string',
         account_subtype=components.DepositSwitchTargetAccountAccountSubtype.CHECKING,
         routing_number='string',
-        additional_properties={
-            'key': 'string',
-        },
     ),
     target_user=components.DepositSwitchTargetUser(
         email='Melody_Schmeler51@gmail.com',
         family_name='string',
         given_name='string',
         phone='(748) 725-9375 x62825',
-        additional_properties={
-            'key': 'string',
-        },
-        address=components.DepositSwitchAddressData(
-            city='Port Stanley',
-            country='Slovenia',
-            postal_code='82345',
-            region='string',
-            street='Turcotte Extensions',
-            additional_properties={
-                'key': 'string',
-            },
-        ),
-    ),
-    options=components.DepositSwitchCreateRequestOptions(
-        transaction_item_access_tokens=[
-            'string',
-        ],
     ),
 )
 
@@ -3099,11 +2962,6 @@ s = plaid.Plaid(
 req = components.DepositSwitchCreateRequest(
     target_access_token='string',
     target_account_id='string',
-    options=components.DepositSwitchCreateRequestOptions(
-        transaction_item_access_tokens=[
-            'string',
-        ],
-    ),
 )
 
 res = s.plaid.deposit_switch_create(req)
@@ -3351,30 +3209,13 @@ s = plaid.Plaid(
 req = components.FDXNotification(
     category=components.FDXNotificationCategory.CONSENT,
     notification_id='string',
-    notification_payload=components.FDXNotificationPayload(
-        custom_fields=[
-            components.FDXFiAttribute(
-                name='string',
-                value='string',
-            ),
-        ],
-    ),
+    notification_payload=components.FDXNotificationPayload(),
     publisher=components.FDXParty(
         name='string',
         type=components.FDXPartyType.MERCHANT,
     ),
     sent_on=dateutil.parser.isoparse('2021-07-15T14:46:41.375Z'),
     type=components.FDXNotificationType.CONSENT_REVOKED,
-    subscriber=components.FDXParty(
-        name='string',
-        type=components.FDXPartyType.INDIVIDUAL,
-    ),
-    url=components.FDXHateoasLink(
-        href='https://api.fi.com/fdx/v4/accounts/12345',
-        types=[
-            components.FDXContentTypes.IMAGE_TIFF,
-        ],
-    ),
 )
 
 res = s.plaid.fdx_notifications(req)
@@ -3426,11 +3267,6 @@ s = plaid.Plaid(
 
 req = components.IdentityGetRequest(
     access_token='string',
-    options=components.IdentityGetRequestOptions(
-        account_ids=[
-            'string',
-        ],
-    ),
 )
 
 res = s.plaid.identity_get(req)
@@ -3480,21 +3316,6 @@ s = plaid.Plaid(
 
 req = components.IdentityMatchRequest(
     access_token='string',
-    options=components.IdentityMatchRequestOptions(
-        account_ids=[
-            'string',
-        ],
-    ),
-    user=components.IdentityMatchUser(
-        additional_properties={
-            'key': 'string',
-        },
-        address=components.AddressDataNullableNoRequiredFields(
-            additional_properties={
-                'key': 'string',
-            },
-        ),
-    ),
 )
 
 res = s.plaid.identity_match(req)
@@ -3581,7 +3402,6 @@ You can also use this endpoint to supply information you already have collected 
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -3599,34 +3419,6 @@ req = components.IdentityVerificationCreateRequest(
     client_user_id='your-db-id-3b24110',
     gave_consent=True,
     is_idempotent=True,
-    user=components.IdentityVerificationCreateRequestUser(
-        address=components.UserAddress(
-            city='Pawnee',
-            country='US',
-            street='123 Main St.',
-            additional_properties={
-                'key': 'string',
-            },
-            postal_code='46001',
-            region='IN',
-            street2='Unit 42',
-        ),
-        client_user_id='your-db-id-3b24110',
-        date_of_birth=dateutil.parser.parse('1990-05-29').date(),
-        email_address='user@example.com',
-        id_number=components.UserIDNumber(
-            type=components.IDNumberType.US_SSN,
-            value='123456789',
-            additional_properties={
-                'key': 'string',
-            },
-        ),
-        name=components.IdentityVerificationRequestUserName(
-            family_name='Knope',
-            given_name='Leslie',
-        ),
-        phone_number='+19876543212',
-    ),
 )
 
 res = s.plaid.identity_verification_create(req)
@@ -3757,7 +3549,6 @@ Allow a customer to retry their identity verification
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -3773,42 +3564,6 @@ req = components.IdentityVerificationRetryRequest(
     client_user_id='your-db-id-3b24110',
     strategy=components.Strategy.INCOMPLETE,
     template_id='idvtmp_4FrXJvfQU3zGUR',
-    steps=components.IdentityVerificationRetryRequestStepsObject(
-        documentary_verification=False,
-        kyc_check=False,
-        selfie_check=False,
-        verify_sms=False,
-    ),
-    user=components.IdentityVerificationRequestUser(
-        additional_properties={
-            'key': 'string',
-        },
-        address=components.UserAddress(
-            city='Pawnee',
-            country='US',
-            street='123 Main St.',
-            additional_properties={
-                'key': 'string',
-            },
-            postal_code='46001',
-            region='IN',
-            street2='Unit 42',
-        ),
-        date_of_birth=dateutil.parser.parse('1990-05-29').date(),
-        email_address='user@example.com',
-        id_number=components.UserIDNumber(
-            type=components.IDNumberType.US_SSN,
-            value='123456789',
-            additional_properties={
-                'key': 'string',
-            },
-        ),
-        name=components.IdentityVerificationRequestUserName(
-            family_name='Knope',
-            given_name='Leslie',
-        ),
-        phone_number='+19876543212',
-    ),
 )
 
 res = s.plaid.identity_verification_retry(req)
@@ -3858,11 +3613,6 @@ s = plaid.Plaid(
 
 req = components.IncomeVerificationCreateRequest(
     webhook='string',
-    options=components.IncomeVerificationCreateRequestOptions(
-        access_tokens=[
-            'string',
-        ],
-    ),
 )
 
 res = s.plaid.income_verification_create(req)
@@ -4018,27 +3768,7 @@ s = plaid.Plaid(
     ),
 )
 
-req = components.IncomeVerificationPrecheckRequest(
-    employer=components.IncomeVerificationPrecheckEmployer(
-        address=components.IncomeVerificationPrecheckEmployerAddress(
-            additional_properties={
-                'key': 'string',
-            },
-        ),
-    ),
-    payroll_institution=components.IncomeVerificationPrecheckPayrollInstitution(),
-    transactions_access_tokens=[
-        'string',
-    ],
-    us_military_info=components.IncomeVerificationPrecheckMilitaryInfo(),
-    user=components.IncomeVerificationPrecheckUser(
-        home_address=components.SignalAddressData(
-            additional_properties={
-                'key': 'string',
-            },
-        ),
-    ),
-)
+req = components.IncomeVerificationPrecheckRequest()
 
 res = s.plaid.income_verification_precheck(req)
 
@@ -4140,14 +3870,6 @@ req = components.InstitutionsGetRequest(
         components.CountryCode.CA,
     ],
     offset=294528,
-    options=components.InstitutionsGetRequestOptions(
-        products=[
-            components.Products.BALANCE,
-        ],
-        routing_numbers=[
-            'string',
-        ],
-    ),
 )
 
 res = s.plaid.institutions_get(req)
@@ -4201,7 +3923,6 @@ req = components.InstitutionsGetByIDRequest(
         components.CountryCode.NO,
     ],
     institution_id='string',
-    options=components.InstitutionsGetByIDRequestOptions(),
 )
 
 res = s.plaid.institutions_get_by_id(req)
@@ -4258,9 +3979,6 @@ req = components.InstitutionsSearchRequest(
         components.Products.DEPOSIT_SWITCH,
     ],
     query='string',
-    options=components.InstitutionsSearchRequestOptions(
-        payment_initiation=components.InstitutionsSearchPaymentInitiationOptions(),
-    ),
 )
 
 res = s.plaid.institutions_search(req)
@@ -4308,11 +4026,6 @@ s = plaid.Plaid(
 
 req = components.InvestmentsAuthGetRequest(
     access_token='string',
-    options=components.InvestmentsAuthGetRequestOptions(
-        account_ids=[
-            'string',
-        ],
-    ),
 )
 
 res = s.plaid.investments_auth_get(req)
@@ -4360,11 +4073,6 @@ s = plaid.Plaid(
 
 req = components.InvestmentsHoldingsGetRequest(
     access_token='string',
-    options=components.InvestmentHoldingsGetRequestOptions(
-        account_ids=[
-            'string',
-        ],
-    ),
 )
 
 res = s.plaid.investments_holdings_get(req)
@@ -4471,11 +4179,6 @@ req = components.InvestmentsTransactionsGetRequest(
     access_token='string',
     end_date=dateutil.parser.parse('2024-08-24').date(),
     start_date=dateutil.parser.parse('2024-03-17').date(),
-    options=components.InvestmentsTransactionsGetRequestOptions(
-        account_ids=[
-            'string',
-        ],
-    ),
 )
 
 res = s.plaid.investments_transactions_get(req)
@@ -4659,23 +4362,7 @@ req = components.ItemApplicationScopesUpdateRequest(
     access_token='string',
     application_id='string',
     context=components.ScopesContext.ENROLLMENT,
-    scopes=components.Scopes(
-        accounts=[
-            components.AccountAccess(
-                unique_id='string',
-                account_product_access=components.AccountProductAccessNullable(
-                    additional_properties={
-                        'key': 'string',
-                    },
-                ),
-            ),
-        ],
-        product_access=components.ProductAccess(
-            additional_properties={
-                'key': 'string',
-            },
-        ),
-    ),
+    scopes=components.Scopes(),
 )
 
 res = s.plaid.item_application_scopes_update(req)
@@ -4829,7 +4516,6 @@ req = components.ItemImportRequest(
         auth_token='string',
         user_id='string',
     ),
-    options=components.ItemImportRequestOptions(),
 )
 
 res = s.plaid.item_import(req)
@@ -5030,11 +4716,6 @@ s = plaid.Plaid(
 
 req = components.LiabilitiesGetRequest(
     access_token='string',
-    options=components.LiabilitiesGetRequestOptions(
-        account_ids=[
-            'string',
-        ],
-    ),
 )
 
 res = s.plaid.liabilities_get(req)
@@ -5082,13 +4763,6 @@ s = plaid.Plaid(
 
 req = components.LinkDeliveryCreateRequest(
     link_token='string',
-    options=components.LinkDeliveryOptions(
-        recipient=components.LinkDeliveryRecipient(
-            communication_methods=[
-                components.LinkDeliveryCommunicationMethod(),
-            ],
-        ),
-    ),
 )
 
 res = s.plaid.link_delivery_create(req)
@@ -5220,7 +4894,6 @@ A `link_token` generated by `/link/token/create` is also used to initialize othe
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -5240,128 +4913,7 @@ req = components.LinkTokenCreateRequest(
     language='string',
     user=components.LinkTokenCreateRequestUser(
         client_user_id='string',
-        address=components.UserAddress(
-            city='Pawnee',
-            country='US',
-            street='123 Main St.',
-            additional_properties={
-                'key': 'string',
-            },
-            postal_code='46001',
-            region='IN',
-            street2='Unit 42',
-        ),
-        id_number=components.UserIDNumber(
-            type=components.IDNumberType.US_SSN,
-            value='123456789',
-            additional_properties={
-                'key': 'string',
-            },
-        ),
-        name=components.IdentityVerificationRequestUserName(
-            family_name='Knope',
-            given_name='Leslie',
-        ),
     ),
-    account_filters=components.LinkTokenAccountFilters(
-        additional_properties={
-            'key': 'string',
-        },
-        credit=components.CreditFilter(
-            account_subtypes=[
-                components.CreditAccountSubtype.PAYPAL,
-            ],
-            additional_properties={
-                'key': 'string',
-            },
-        ),
-        depository=components.DepositoryFilter(
-            account_subtypes=[
-                components.DepositoryAccountSubtype.MONEY_MARKET,
-            ],
-            additional_properties={
-                'key': 'string',
-            },
-        ),
-        investment=components.InvestmentFilter(
-            account_subtypes=[
-                components.InvestmentAccountSubtype.OTHER_INSURANCE,
-            ],
-            additional_properties={
-                'key': 'string',
-            },
-        ),
-        loan=components.LoanFilter(
-            account_subtypes=[
-                components.LoanAccountSubtype.OTHER,
-            ],
-            additional_properties={
-                'key': 'string',
-            },
-        ),
-    ),
-    additional_consented_products=[
-        components.Products.INVESTMENTS_AUTH,
-    ],
-    auth=components.LinkTokenCreateRequestAuth(),
-    base_report=components.LinkTokenCreateRequestBaseReport(),
-    deposit_switch=components.LinkTokenCreateRequestDepositSwitch(
-        deposit_switch_id='string',
-    ),
-    employment=components.LinkTokenCreateRequestEmployment(
-        bank_employment=components.LinkTokenCreateRequestEmploymentBankIncome(
-            days_requested=81876,
-        ),
-        employment_source_types=[
-            components.EmploymentSourceType.PAYROLL,
-        ],
-    ),
-    eu_config=components.LinkTokenEUConfig(),
-    hosted_link=components.LinkTokenCreateHostedLink(
-        additional_properties={
-            'key': 'string',
-        },
-    ),
-    identity_verification=components.LinkTokenCreateRequestIdentityVerification(
-        template_id='idvtmp_4FrXJvfQU3zGUR',
-        consent=True,
-        gave_consent=True,
-    ),
-    income_verification=components.LinkTokenCreateRequestIncomeVerification(
-        access_tokens=[
-            'string',
-        ],
-        bank_income=components.LinkTokenCreateRequestIncomeVerificationBankIncome(
-            days_requested=330055,
-        ),
-        income_source_types=[
-            components.IncomeVerificationSourceType.BANK,
-        ],
-        payroll_income=components.LinkTokenCreateRequestIncomeVerificationPayrollIncome(
-            flow_types=[
-                components.IncomeVerificationPayrollFlowType.PAYROLL_DOCUMENT_INCOME,
-            ],
-            parsing_config=[
-                components.IncomeVerificationDocParsingConfig.OCR,
-            ],
-        ),
-        stated_income_sources=[
-            components.LinkTokenCreateRequestUserStatedIncomeSource(),
-        ],
-    ),
-    institution_data=components.LinkTokenCreateInstitutionData(),
-    investments=components.LinkTokenInvestments(),
-    investments_auth=components.LinkTokenInvestmentsAuth(),
-    payment_initiation=components.LinkTokenCreateRequestPaymentInitiation(),
-    products=[
-        components.Products.SIGNAL,
-    ],
-    required_if_supported_products=[
-        components.Products.TRANSACTIONS,
-    ],
-    statements=components.LinkTokenCreateRequestStatements(),
-    transfer=components.LinkTokenCreateRequestTransfer(),
-    update=components.LinkTokenCreateRequestUpdate(),
 )
 
 res = s.plaid.link_token_create(req)
@@ -5456,11 +5008,7 @@ s = plaid.Plaid(
 )
 
 req = components.PartnerCustomerCreateRequest(
-    address=components.PartnerEndCustomerAddress(
-        additional_properties={
-            'key': 'string',
-        },
-    ),
+    address=components.PartnerEndCustomerAddress(),
     application_name='string',
     company_name='Padberg - Hyatt',
     is_bank_addendum_completed=False,
@@ -5470,31 +5018,6 @@ req = components.PartnerCustomerCreateRequest(
         components.Products.ASSETS,
     ],
     website='string',
-    assets_under_management=components.PartnerEndCustomerAssetsUnderManagement(
-        amount=4837.4,
-        iso_currency_code='string',
-        additional_properties={
-            'key': 'string',
-        },
-    ),
-    billing_contact=components.PartnerEndCustomerBillingContact(
-        additional_properties={
-            'key': 'string',
-        },
-    ),
-    customer_support_info=components.PartnerEndCustomerCustomerSupportInfo(
-        additional_properties={
-            'key': 'string',
-        },
-    ),
-    redirect_uris=[
-        'string',
-    ],
-    technical_contact=components.PartnerEndCustomerTechnicalContact(
-        additional_properties={
-            'key': 'string',
-        },
-    ),
 )
 
 res = s.plaid.partner_customer_create(req)
@@ -5719,7 +5242,6 @@ Consents can be limited in time and scope, and have constraints that describe li
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -5747,20 +5269,12 @@ req = components.PaymentInitiationConsentCreateRequest(
                 interval=components.PaymentConsentPeriodicInterval.YEAR,
             ),
         ],
-        valid_date_time=components.PaymentConsentValidDateTime(),
     ),
     recipient_id='string',
     reference='string',
     scopes=[
         components.PaymentInitiationConsentScope.ME_TO_ME,
     ],
-    options=components.ExternalPaymentInitiationConsentOptions(
-        bacs=components.PaymentInitiationOptionalRestrictionBacs(
-            additional_properties={
-                'key': 'string',
-            },
-        ),
-    ),
 )
 
 res = s.plaid.payment_initiation_consent_create(req)
@@ -5945,7 +5459,6 @@ In the Development environment, payments must be below 5 GBP or other chosen [cu
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -5964,21 +5477,6 @@ req = components.PaymentInitiationPaymentCreateRequest(
     ),
     recipient_id='string',
     reference='string',
-    options=components.ExternalPaymentOptions(
-        bacs=components.PaymentInitiationOptionalRestrictionBacs(
-            additional_properties={
-                'key': 'string',
-            },
-        ),
-    ),
-    schedule=components.ExternalPaymentScheduleRequest(
-        interval=components.PaymentScheduleInterval.MONTHLY,
-        interval_execution_day=136559,
-        start_date=dateutil.parser.parse('2023-02-18').date(),
-        additional_properties={
-            'key': 'string',
-        },
-    ),
 )
 
 res = s.plaid.payment_initiation_payment_create(req)
@@ -6060,7 +5558,6 @@ The `/payment_initiation/payment/list` endpoint can be used to retrieve all crea
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -6131,13 +5628,6 @@ req = components.PaymentInitiationPaymentReverseRequest(
     idempotency_key='string',
     payment_id='string',
     reference='string',
-    amount=components.PaymentAmountToRefund(
-        currency=components.PaymentAmountCurrency.DKK,
-        value=9546.44,
-        additional_properties={
-            'key': 'string',
-        },
-    ),
 )
 
 res = s.plaid.payment_initiation_payment_reverse(req)
@@ -6190,22 +5680,6 @@ s = plaid.Plaid(
 
 req = components.PaymentInitiationRecipientCreateRequest(
     name='string',
-    address=components.PaymentInitiationAddress(
-        city='Port Kendallfort',
-        country='Pakistan',
-        postal_code='20520',
-        street=[
-            'string',
-        ],
-        additional_properties={
-            'key': 'string',
-        },
-    ),
-    bacs=components.RecipientBACSNullable(
-        additional_properties={
-            'key': 'string',
-        },
-    ),
 )
 
 res = s.plaid.payment_initiation_recipient_create(req)
@@ -6571,7 +6045,6 @@ The `/processor/balance/get` endpoint returns the real-time balance for each of 
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -6585,7 +6058,6 @@ s = plaid.Plaid(
 
 req = components.ProcessorBalanceGetRequest(
     processor_token='string',
-    options=components.ProcessorBalanceGetRequestOptions(),
 )
 
 res = s.plaid.processor_balance_get(req)
@@ -6641,13 +6113,7 @@ req = components.ProcessorBankTransferCreateRequest(
     type=components.BankTransferType.DEBIT,
     user=components.BankTransferUserInput(
         legal_name='string',
-        additional_properties={
-            'key': 'string',
-        },
     ),
-    metadata={
-        'key': 'string',
-    },
 )
 
 res = s.plaid.processor_bank_transfer_create(req)
@@ -6744,16 +6210,6 @@ s = plaid.Plaid(
 
 req = components.ProcessorIdentityMatchRequest(
     processor_token='string',
-    user=components.IdentityMatchUser(
-        additional_properties={
-            'key': 'string',
-        },
-        address=components.AddressDataNullableNoRequiredFields(
-            additional_properties={
-                'key': 'string',
-            },
-        ),
-    ),
 )
 
 res = s.plaid.processor_identity_match(req)
@@ -6856,15 +6312,6 @@ req = components.ProcessorSignalEvaluateRequest(
     amount=2186.98,
     client_transaction_id='string',
     processor_token='string',
-    device=components.SignalDevice(),
-    user=components.SignalUser(
-        address=components.SignalAddressData(
-            additional_properties={
-                'key': 'string',
-            },
-        ),
-        name=components.SignalPersonName(),
-    ),
 )
 
 res = s.plaid.processor_signal_evaluate(req)
@@ -6899,7 +6346,6 @@ Call the `/processor/signal/return/report` endpoint to report a returned transac
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -7222,11 +6668,6 @@ req = components.ProcessorTransactionsGetRequest(
     end_date=dateutil.parser.parse('2022-04-08').date(),
     processor_token='string',
     start_date=dateutil.parser.parse('2023-04-01').date(),
-    options=components.TransactionsGetRequestOptions(
-        account_ids=[
-            'string',
-        ],
-    ),
 )
 
 res = s.plaid.processor_transactions_get(req)
@@ -7285,7 +6726,6 @@ req = components.ProcessorTransactionsRecurringGetRequest(
         'string',
     ],
     processor_token='string',
-    options=components.TransactionsRecurringGetRequestOptions(),
 )
 
 res = s.plaid.processor_transactions_recurring_get(req)
@@ -7400,7 +6840,6 @@ s = plaid.Plaid(
 
 req = components.ProcessorTransactionsSyncRequest(
     processor_token='string',
-    options=components.TransactionsSyncRequestOptions(),
 )
 
 res = s.plaid.processor_transactions_sync(req)
@@ -7546,11 +6985,6 @@ s = plaid.Plaid(
 req = components.SandboxBankTransferSimulateRequest(
     bank_transfer_id='string',
     event_type='string',
-    failure_reason=components.BankTransferFailure(
-        additional_properties={
-            'key': 'string',
-        },
-    ),
 )
 
 res = s.plaid.sandbox_bank_transfer_simulate(req)
@@ -7913,7 +7347,6 @@ s = plaid.Plaid(
 
 req = components.SandboxProcessorTokenCreateRequest(
     institution_id='string',
-    options=components.SandboxProcessorTokenCreateRequestOptions(),
 )
 
 res = s.plaid.sandbox_processor_token_create(req)
@@ -7948,7 +7381,6 @@ Use the `/sandbox/public_token/create` endpoint to create a valid `public_token`
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -7965,15 +7397,6 @@ req = components.SandboxPublicTokenCreateRequest(
         components.Products.STANDING_ORDERS,
     ],
     institution_id='string',
-    options=components.SandboxPublicTokenCreateRequestOptions(
-        income_verification=components.SandboxPublicTokenCreateRequestOptionsIncomeVerification(
-            bank_income=components.SandboxPublicTokenCreateRequestIncomeVerificationBankIncome(),
-            income_source_types=[
-                components.IncomeVerificationSourceType.BANK,
-            ],
-        ),
-        transactions=components.SandboxPublicTokenCreateRequestOptionsTransactions(),
-    ),
 )
 
 res = s.plaid.sandbox_public_token_create(req)
@@ -8114,11 +7537,6 @@ s = plaid.Plaid(
 req = components.SandboxTransferSimulateRequest(
     event_type='string',
     transfer_id='string',
-    failure_reason=components.TransferFailure(
-        additional_properties={
-            'key': 'string',
-        },
-    ),
 )
 
 res = s.plaid.sandbox_transfer_simulate(req)
@@ -8259,7 +7677,6 @@ A test clock can be associated with up to 5 recurring transfers.
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -8352,7 +7769,6 @@ Use the `/sandbox/transfer/test_clock/list` endpoint to see a list of all your t
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -8466,15 +7882,6 @@ req = components.SignalEvaluateRequest(
     account_id='string',
     amount=306.52,
     client_transaction_id='string',
-    device=components.SignalDevice(),
-    user=components.SignalUser(
-        address=components.SignalAddressData(
-            additional_properties={
-                'key': 'string',
-            },
-        ),
-        name=components.SignalPersonName(),
-    ),
 )
 
 res = s.plaid.signal_evaluate(req)
@@ -8560,7 +7967,6 @@ Call the `/signal/return/report` endpoint to report a returned transaction that 
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -8723,9 +8129,6 @@ req = components.TransactionsEnhanceGetRequest(
             description='Integrated user-facing model',
             id='<ID>',
             iso_currency_code='string',
-            additional_properties={
-                'key': 'string',
-            },
         ),
     ],
 )
@@ -8762,7 +8165,6 @@ The `/transactions/enrich` endpoint enriches raw transaction data generated by y
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -8783,17 +8185,8 @@ req = components.TransactionsEnrichGetRequest(
             direction=components.EnrichTransactionDirection.INFLOW,
             id='<ID>',
             iso_currency_code='string',
-            additional_properties={
-                'key': 'string',
-            },
-            location=components.ClientProvidedTransactionLocation(
-                additional_properties={
-                    'key': 'string',
-                },
-            ),
         ),
     ],
-    options=components.TransactionsEnrichRequestOptions(),
 )
 
 res = s.plaid.transactions_enrich(req)
@@ -8854,11 +8247,6 @@ req = components.TransactionsGetRequest(
     access_token='string',
     end_date=dateutil.parser.parse('2022-06-27').date(),
     start_date=dateutil.parser.parse('2023-07-17').date(),
-    options=components.TransactionsGetRequestOptions(
-        account_ids=[
-            'string',
-        ],
-    ),
 )
 
 res = s.plaid.transactions_get(req)
@@ -8915,7 +8303,6 @@ req = components.TransactionsRecurringGetRequest(
     account_ids=[
         'string',
     ],
-    options=components.TransactionsRecurringGetRequestOptions(),
 )
 
 res = s.plaid.transactions_recurring_get(req)
@@ -9176,7 +8563,6 @@ s = plaid.Plaid(
 
 req = components.TransactionsSyncRequest(
     access_token='string',
-    options=components.TransactionsSyncRequestOptions(),
 )
 
 res = s.plaid.transactions_sync(req)
@@ -9242,12 +8628,6 @@ req = components.TransferAuthorizationCreateRequest(
     type=components.TransferType.CREDIT,
     user=components.TransferAuthorizationUserInRequest(
         legal_name='string',
-        address=components.TransferUserAddressInRequest(),
-    ),
-    device=components.TransferAuthorizationDevice(
-        additional_properties={
-            'key': 'string',
-        },
     ),
 )
 
@@ -9479,9 +8859,6 @@ s = plaid.Plaid(
 req = components.TransferCreateRequest(
     authorization_id='string',
     description='Horizontal incremental throughput',
-    metadata={
-        'key': 'string',
-    },
 )
 
 res = s.plaid.transfer_create(req)
@@ -9591,24 +8968,6 @@ req = components.TransferDiligenceSubmitRequest(
         naics_code='string',
         tax_id='string',
         website='string',
-        credit_usage_configuration=components.TransferCreditUsageConfiguration(
-            expected_average_amount='string',
-            expected_frequency=components.OriginatorExpectedTransferFrequency.ONCE_PER_WEEK,
-            expected_highest_amount='string',
-            expected_monthly_amount='string',
-            sec_codes=[
-                components.CreditACHClass.CCD,
-            ],
-        ),
-        debit_usage_configuration=components.TransferDebitUsageConfiguration(
-            expected_average_amount='string',
-            expected_frequency=components.OriginatorExpectedTransferFrequency.DAILY,
-            expected_highest_amount='string',
-            expected_monthly_amount='string',
-            sec_codes=[
-                components.ACHClass.PPD,
-            ],
-        ),
     ),
 )
 
@@ -9644,7 +9003,6 @@ Use the `/transfer/event/list` endpoint to get a list of transfer events based o
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -9656,11 +9014,7 @@ s = plaid.Plaid(
     ),
 )
 
-req = components.TransferEventListRequest(
-    event_types=[
-        components.TransferEventType.SWEPT,
-    ],
-)
+req = components.TransferEventListRequest()
 
 res = s.plaid.transfer_event_list(req)
 
@@ -9805,11 +9159,7 @@ req = components.TransferIntentCreateRequest(
     mode=components.TransferIntentCreateMode.PAYMENT,
     user=components.TransferUserInRequest(
         legal_name='string',
-        address=components.TransferUserAddressInRequest(),
     ),
-    metadata={
-        'key': 'string',
-    },
 )
 
 res = s.plaid.transfer_intent_create(req)
@@ -9857,9 +9207,6 @@ s = plaid.Plaid(
 
 req = components.TransferIntentGetRequest(
     transfer_intent_id='string',
-    additional_properties={
-        'key': 'string',
-    },
 )
 
 res = s.plaid.transfer_intent_get(req)
@@ -9940,7 +9287,6 @@ Use the `/transfer/list` endpoint to see a list of all your transfers and their 
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -10379,9 +9725,6 @@ req = components.TransferRecurringCreateRequest(
     device=components.TransferDevice(
         ip_address='20.163.92.142',
         user_agent='string',
-        additional_properties={
-            'key': 'string',
-        },
     ),
     idempotency_key='string',
     network=components.TransferNetwork.SAME_DAY_ACH,
@@ -10394,7 +9737,6 @@ req = components.TransferRecurringCreateRequest(
     type=components.TransferType.CREDIT,
     user=components.TransferUserInRequest(
         legal_name='string',
-        address=components.TransferUserAddressInRequest(),
     ),
     user_present=False,
 )
@@ -10479,7 +9821,6 @@ Use the `/transfer/recurring/list` endpoint to see a list of all your recurring 
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -10670,7 +10011,6 @@ The `/transfer/repayment/list` endpoint fetches repayments matching the given fi
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -10810,7 +10150,6 @@ The `/transfer/sweep/list` endpoint fetches sweeps matching the given filters.
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -10873,29 +10212,6 @@ s = plaid.Plaid(
 
 req = components.UserCreateRequest(
     client_user_id='string',
-    consumer_report_user_identity=components.ConsumerReportUserIdentity(
-        emails=[
-            'string',
-        ],
-        first_name='Retta',
-        last_name='Prohaska',
-        phone_numbers=[
-            'string',
-        ],
-        primary_address=components.AddressData(
-            city='Schmidtburgh',
-            country='El Salvador',
-            postal_code='29690-0155',
-            region='string',
-            street='Flo Overpass',
-            additional_properties={
-                'key': 'string',
-            },
-        ),
-        additional_properties={
-            'key': 'string',
-        },
-    ),
 )
 
 res = s.plaid.user_create(req)
@@ -11071,7 +10387,6 @@ Transactions will settle in seconds to several days, depending on the underlying
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -11087,41 +10402,10 @@ req = components.WalletTransactionExecuteRequest(
     amount=components.WalletTransactionAmount(
         iso_currency_code=components.WalletISOCurrencyCode.GBP,
         value=6174.29,
-        additional_properties={
-            'key': 'string',
-        },
     ),
     counterparty=components.WalletTransactionCounterparty(
         name='string',
-        numbers=components.WalletTransactionCounterpartyNumbers(
-            additional_properties={
-                'key': 'string',
-            },
-            bacs=components.WalletTransactionCounterpartyBACS(
-                additional_properties={
-                    'key': 'string',
-                },
-            ),
-            international=components.WalletTransactionCounterpartyInternational(
-                additional_properties={
-                    'key': 'string',
-                },
-            ),
-        ),
-        additional_properties={
-            'key': 'string',
-        },
-        address=components.PaymentInitiationAddress(
-            city='Lake Demetrius',
-            country='Niger',
-            postal_code='68618',
-            street=[
-                'string',
-            ],
-            additional_properties={
-                'key': 'string',
-            },
-        ),
+        numbers=components.WalletTransactionCounterpartyNumbers(),
     ),
     idempotency_key='string',
     reference='string',
@@ -11207,7 +10491,6 @@ This endpoint lists the latest transactions of the specified e-wallet. Transacti
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -11221,7 +10504,6 @@ s = plaid.Plaid(
 
 req = components.WalletTransactionListRequest(
     wallet_id='string',
-    options=components.WalletTransactionListRequestOptions(),
 )
 
 res = s.plaid.wallet_transaction_list(req)
@@ -11717,18 +10999,6 @@ req = components.WatchlistScreeningEntityUpdateRequest(
     entity_watchlist_screening_id='entscr_52xR9LKo77r1Np',
     assignee='54350110fedcbaf01234ffee',
     client_user_id='your-db-id-3b24110',
-    reset_fields=[
-        components.WatchlistScreeningEntityUpdateRequestResettableField.ASSIGNEE,
-    ],
-    search_terms=components.UpdateEntityScreeningRequestSearchTerms(
-        entity_watchlist_program_id='entprg_2eRPsDnL66rZ7H',
-        country='US',
-        document_number='C31195855',
-        email_address='user@example.com',
-        legal_name='Al-Qaida',
-        phone_number='+14025671234',
-        url='https://example.com',
-    ),
     status=components.WatchlistScreeningStatus.CLEARED,
 )
 
@@ -12209,7 +11479,6 @@ Update a specific individual watchlist screening. This endpoint can be used to a
 ### Example Usage
 
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -12225,16 +11494,6 @@ req = components.WatchlistScreeningIndividualUpdateRequest(
     watchlist_screening_id='scr_52xR9LKo77r1Np',
     assignee='54350110fedcbaf01234ffee',
     client_user_id='your-db-id-3b24110',
-    reset_fields=[
-        components.WatchlistScreeningIndividualUpdateRequestResettableField.ASSIGNEE,
-    ],
-    search_terms=components.UpdateIndividualScreeningRequestSearchTerms(
-        country='US',
-        date_of_birth=dateutil.parser.parse('1990-05-29').date(),
-        document_number='C31195855',
-        legal_name='Aleksey Potemkin',
-        watchlist_program_id='prg_2eRPsDnL66rZ7H',
-    ),
     status=components.WatchlistScreeningStatus.CLEARED,
 )
 

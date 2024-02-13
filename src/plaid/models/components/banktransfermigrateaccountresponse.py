@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class BankTransferMigrateAccountResponse:
     r"""Defines the response schema for `/bank_transfer/migrate_account`"""
+    UNSET='__SPEAKEASY_UNSET__'
     access_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('access_token') }})
     r"""The Plaid `access_token` for the newly created Item."""
     account_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id') }})

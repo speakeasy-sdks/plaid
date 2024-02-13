@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class DateRange:
     r"""A date range with a start and end date"""
+    UNSET='__SPEAKEASY_UNSET__'
     beginning: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('beginning'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat }})
     r"""A date in the format YYYY-MM-DD (RFC 3339 Section 5.6)."""
     ending: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ending'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat }})

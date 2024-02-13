@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class CreditPlatformIds:
     r"""The object containing a set of ids related to an employee."""
+    UNSET='__SPEAKEASY_UNSET__'
     employee_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employee_id') }})
     r"""The ID of an employee as given by their employer."""
     payroll_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payroll_id') }})

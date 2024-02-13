@@ -15,6 +15,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class ScreeningHitData:
     r"""Information associated with the watchlist hit"""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     dates_of_birth: Optional[List[ScreeningHitDateOfBirthItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dates_of_birth'), 'exclude': lambda f: f is None }})
     r"""Dates of birth associated with the watchlist hit"""

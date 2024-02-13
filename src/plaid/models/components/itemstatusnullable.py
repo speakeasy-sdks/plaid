@@ -14,12 +14,13 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class ItemStatusNullable:
     r"""Information about the last successful and failed transactions update for the Item."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    investments: Optional[ItemStatusInvestments] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('investments') }})
+    investments: Optional[ItemStatusInvestments] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('investments'), 'exclude': lambda f: f is ItemStatusNullable.UNSET }})
     r"""Information about the last successful and failed investments update for the Item."""
-    last_webhook: Optional[ItemStatusLastWebhook] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('last_webhook') }})
+    last_webhook: Optional[ItemStatusLastWebhook] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('last_webhook'), 'exclude': lambda f: f is ItemStatusNullable.UNSET }})
     r"""Information about the last webhook fired for the Item."""
-    transactions: Optional[ItemStatusTransactions] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transactions') }})
+    transactions: Optional[ItemStatusTransactions] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transactions'), 'exclude': lambda f: f is ItemStatusNullable.UNSET }})
     r"""Information about the last successful and failed transactions update for the Item."""
     
 

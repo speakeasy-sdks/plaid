@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class ProcessorTokenPermissionsGetResponse:
     r"""ProcessorTokenPermissionsGetResponse defines the response schema for `/processor/token/permissions/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     products: List[Products] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('products') }})
     r"""A list of products the processor token should have access to. An empty list means that the processor has access to all available products, including future products."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

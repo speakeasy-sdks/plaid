@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class CreditAuditCopyTokenRemoveResponse:
     r"""CreditAuditCopyTokenRemoveResponse defines the response schema for `/credit/audit_copy_token/remove`"""
+    UNSET='__SPEAKEASY_UNSET__'
     removed: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('removed') }})
     r"""`true` if the Audit Copy was successfully removed."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

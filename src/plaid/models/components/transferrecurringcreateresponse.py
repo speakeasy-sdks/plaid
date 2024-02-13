@@ -14,6 +14,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferRecurringCreateResponse:
     r"""Defines the response schema for `/transfer/recurring/create`"""
+    UNSET='__SPEAKEASY_UNSET__'
     decision: TransferAuthorizationDecision = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('decision') }})
     r"""A decision regarding the proposed transfer.
 
@@ -24,9 +25,9 @@ class TransferRecurringCreateResponse:
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})
     r"""A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    decision_rationale: Optional[TransferAuthorizationDecisionRationale] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('decision_rationale') }})
+    decision_rationale: Optional[TransferAuthorizationDecisionRationale] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('decision_rationale'), 'exclude': lambda f: f is TransferRecurringCreateResponse.UNSET }})
     r"""The rationale for Plaid's decision regarding a proposed transfer. It is always set for `declined` decisions, and may or may not be null for `approved` decisions."""
-    recurring_transfer: Optional[RecurringTransferNullable] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('recurring_transfer') }})
+    recurring_transfer: Optional[RecurringTransferNullable] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('recurring_transfer'), 'exclude': lambda f: f is TransferRecurringCreateResponse.UNSET }})
     r"""Represents a recurring transfer within the Transfers API."""
     
 

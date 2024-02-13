@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class JWKPublicKey:
     r"""A JSON Web Key (JWK) that can be used in conjunction with [JWT libraries](https://jwt.io/#libraries-io) to verify Plaid webhooks"""
+    UNSET='__SPEAKEASY_UNSET__'
     alg: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('alg') }})
     r"""The alg member identifies the cryptographic algorithm family used with the key."""
     created_at: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at') }})

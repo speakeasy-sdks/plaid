@@ -16,24 +16,25 @@ class InstitutionStatus:
 
     Institution status is accessible in the Dashboard and via the API using the `/institutions/get_by_id` endpoint with the `include_status` option set to true. Note that institution status is not available in the Sandbox environment.
     """
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    auth: Optional[ProductStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('auth') }})
+    auth: Optional[ProductStatus] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('auth'), 'exclude': lambda f: f is InstitutionStatus.UNSET }})
     r"""A representation of the status health of a request type. Auth requests, Balance requests, Identity requests, Investments requests, Liabilities requests, Transactions updates, Investments updates, Liabilities updates, and Item logins each have their own status object."""
-    health_incidents: Optional[List[HealthIncident]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('health_incidents') }})
+    health_incidents: Optional[List[HealthIncident]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('health_incidents'), 'exclude': lambda f: f is InstitutionStatus.UNSET }})
     r"""Details of recent health incidents associated with the institution."""
-    identity: Optional[ProductStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('identity') }})
+    identity: Optional[ProductStatus] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('identity'), 'exclude': lambda f: f is InstitutionStatus.UNSET }})
     r"""A representation of the status health of a request type. Auth requests, Balance requests, Identity requests, Investments requests, Liabilities requests, Transactions updates, Investments updates, Liabilities updates, and Item logins each have their own status object."""
-    investments: Optional[ProductStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('investments') }})
+    investments: Optional[ProductStatus] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('investments'), 'exclude': lambda f: f is InstitutionStatus.UNSET }})
     r"""A representation of the status health of a request type. Auth requests, Balance requests, Identity requests, Investments requests, Liabilities requests, Transactions updates, Investments updates, Liabilities updates, and Item logins each have their own status object."""
-    investments_updates: Optional[ProductStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('investments_updates') }})
+    investments_updates: Optional[ProductStatus] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('investments_updates'), 'exclude': lambda f: f is InstitutionStatus.UNSET }})
     r"""A representation of the status health of a request type. Auth requests, Balance requests, Identity requests, Investments requests, Liabilities requests, Transactions updates, Investments updates, Liabilities updates, and Item logins each have their own status object."""
-    item_logins: Optional[ProductStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('item_logins') }})
+    item_logins: Optional[ProductStatus] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('item_logins'), 'exclude': lambda f: f is InstitutionStatus.UNSET }})
     r"""A representation of the status health of a request type. Auth requests, Balance requests, Identity requests, Investments requests, Liabilities requests, Transactions updates, Investments updates, Liabilities updates, and Item logins each have their own status object."""
-    liabilities: Optional[ProductStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('liabilities') }})
+    liabilities: Optional[ProductStatus] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('liabilities'), 'exclude': lambda f: f is InstitutionStatus.UNSET }})
     r"""A representation of the status health of a request type. Auth requests, Balance requests, Identity requests, Investments requests, Liabilities requests, Transactions updates, Investments updates, Liabilities updates, and Item logins each have their own status object."""
-    liabilities_updates: Optional[ProductStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('liabilities_updates') }})
+    liabilities_updates: Optional[ProductStatus] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('liabilities_updates'), 'exclude': lambda f: f is InstitutionStatus.UNSET }})
     r"""A representation of the status health of a request type. Auth requests, Balance requests, Identity requests, Investments requests, Liabilities requests, Transactions updates, Investments updates, Liabilities updates, and Item logins each have their own status object."""
-    transactions_updates: Optional[ProductStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transactions_updates') }})
+    transactions_updates: Optional[ProductStatus] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transactions_updates'), 'exclude': lambda f: f is InstitutionStatus.UNSET }})
     r"""A representation of the status health of a request type. Auth requests, Balance requests, Identity requests, Investments requests, Liabilities requests, Transactions updates, Investments updates, Liabilities updates, and Item logins each have their own status object."""
     
 

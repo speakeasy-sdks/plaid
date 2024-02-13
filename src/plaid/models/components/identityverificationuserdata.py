@@ -15,6 +15,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class IdentityVerificationUserData:
     r"""The identity data that was either collected from the user or provided via API in order to perform an identity verification."""
+    UNSET='__SPEAKEASY_UNSET__'
     address: Optional[IdentityVerificationUserAddress] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address') }})
     r"""Even if an address has been collected, some fields may be null depending on the region's addressing system. For example:
 
@@ -33,7 +34,7 @@ class IdentityVerificationUserData:
     name: Optional[IdentityVerificationResponseUserName] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The full name provided by the user. If the user has not submitted their name, this field will be null. Otherwise, both fields are guaranteed to be filled."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    phone_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone_number') }})
+    phone_number: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone_number'), 'exclude': lambda f: f is IdentityVerificationUserData.UNSET }})
     r"""A phone number in E.164 format."""
     
 

@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class ServiceProductFulfillmentDetail:
     r"""Documentation not found in the MISMO model viewer and not provided by Freddie Mac."""
+    UNSET='__SPEAKEASY_UNSET__'
     service_product_fulfillment_identifier: ServiceProductFulfillmentIdentifier = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ServiceProductFulfillmentIdentifier') }})
     r"""Documentation not found in the MISMO model viewer and not provided by Freddie Mac."""
     vendor_order_identifier: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('VendorOrderIdentifier') }})

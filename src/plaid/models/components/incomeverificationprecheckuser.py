@@ -12,13 +12,14 @@ from typing import Optional
 @dataclasses.dataclass
 class IncomeVerificationPrecheckUser:
     r"""Information about the user whose eligibility is being evaluated."""
-    email_address: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_address') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    email_address: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_address'), 'exclude': lambda f: f is IncomeVerificationPrecheckUser.UNSET }})
     r"""The user's email address"""
-    first_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('first_name') }})
+    first_name: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('first_name'), 'exclude': lambda f: f is IncomeVerificationPrecheckUser.UNSET }})
     r"""The user's first name"""
-    home_address: Optional[SignalAddressData] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('home_address') }})
+    home_address: Optional[SignalAddressData] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('home_address'), 'exclude': lambda f: f is IncomeVerificationPrecheckUser.UNSET }})
     r"""Data about the components comprising an address."""
-    last_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('last_name') }})
+    last_name: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('last_name'), 'exclude': lambda f: f is IncomeVerificationPrecheckUser.UNSET }})
     r"""The user's last name"""
     
 

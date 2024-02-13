@@ -16,16 +16,17 @@ class PaystubDetails:
 
     Deprecated class: This will be removed in a future release, please migrate away from it as soon as possible.
     """
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    pay_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pay_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat }})
+    pay_date: Optional[date] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pay_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is PaystubDetails.UNSET }})
     r"""Pay date on the paystub in the 'YYYY-MM-DD' format."""
-    pay_frequency: Optional[PaystubPayFrequency] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pay_frequency') }})
+    pay_frequency: Optional[PaystubPayFrequency] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pay_frequency'), 'exclude': lambda f: f is PaystubDetails.UNSET }})
     r"""The frequency at which the employee is paid. Possible values: `MONTHLY`, `BI-WEEKLY`, `WEEKLY`, `SEMI-MONTHLY`."""
-    pay_period_end_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pay_period_end_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat }})
+    pay_period_end_date: Optional[date] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pay_period_end_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is PaystubDetails.UNSET }})
     r"""Ending date of the pay period on the paystub in the 'YYYY-MM-DD' format."""
-    pay_period_start_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pay_period_start_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat }})
+    pay_period_start_date: Optional[date] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pay_period_start_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is PaystubDetails.UNSET }})
     r"""Beginning date of the pay period on the paystub in the 'YYYY-MM-DD' format."""
-    paystub_provider: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('paystub_provider') }})
+    paystub_provider: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('paystub_provider'), 'exclude': lambda f: f is PaystubDetails.UNSET }})
     r"""The name of the payroll provider that generated the paystub, e.g. ADP"""
     
 

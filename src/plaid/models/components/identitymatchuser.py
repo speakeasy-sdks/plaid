@@ -12,14 +12,15 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class IdentityMatchUser:
     r"""The user's legal name, phone number, email address and address used to perform fuzzy match. If Financial Account Matching is enabled in the Identity Verification product, leave this field empty to automatically match against PII collected from the Identity Verification checks."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    address: Optional[AddressDataNullableNoRequiredFields] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address') }})
+    address: Optional[AddressDataNullableNoRequiredFields] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address'), 'exclude': lambda f: f is IdentityMatchUser.UNSET }})
     r"""Data about the components comprising an address."""
-    email_address: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_address') }})
+    email_address: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_address'), 'exclude': lambda f: f is IdentityMatchUser.UNSET }})
     r"""The user's email address."""
-    legal_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('legal_name') }})
+    legal_name: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('legal_name'), 'exclude': lambda f: f is IdentityMatchUser.UNSET }})
     r"""The user's full legal name."""
-    phone_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone_number') }})
+    phone_number: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone_number'), 'exclude': lambda f: f is IdentityMatchUser.UNSET }})
     r"""The user's phone number, in E.164 format: +{countrycode}{number}. For example: \\"+14151234567\\". Phone numbers provided in other formats will be parsed on a best-effort basis."""
     
 

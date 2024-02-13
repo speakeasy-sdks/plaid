@@ -11,10 +11,11 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class PayrollIncomeRateOfPay:
     r"""An object representing the rate at which an individual is paid."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    pay_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pay_amount') }})
+    pay_amount: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pay_amount'), 'exclude': lambda f: f is PayrollIncomeRateOfPay.UNSET }})
     r"""The amount at which an employee is paid."""
-    pay_rate: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pay_rate') }})
+    pay_rate: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pay_rate'), 'exclude': lambda f: f is PayrollIncomeRateOfPay.UNSET }})
     r"""The rate at which an employee is paid."""
     
 

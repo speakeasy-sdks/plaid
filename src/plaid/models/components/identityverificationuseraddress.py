@@ -16,6 +16,7 @@ class IdentityVerificationUserAddress:
 
     Addresses from Hong Kong will not include postal code
     """
+    UNSET='__SPEAKEASY_UNSET__'
     city: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city') }})
     r"""City from the end user's address"""
     country: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country') }})

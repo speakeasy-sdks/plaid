@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class NumbersInternational:
     r"""Identifying information for transferring money to or from an international bank account via wire transfer."""
+    UNSET='__SPEAKEASY_UNSET__'
     account_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id') }})
     r"""The Plaid account ID associated with the account numbers"""
     bic: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bic') }})

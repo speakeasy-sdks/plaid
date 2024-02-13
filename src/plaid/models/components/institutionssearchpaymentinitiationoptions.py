@@ -11,9 +11,10 @@ from typing import Optional
 @dataclasses.dataclass
 class InstitutionsSearchPaymentInitiationOptions:
     r"""Additional options that will be used to filter institutions by various Payment Initiation configurations."""
-    consent_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('consent_id') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    consent_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('consent_id'), 'exclude': lambda f: f is InstitutionsSearchPaymentInitiationOptions.UNSET }})
     r"""A unique ID identifying the payment consent"""
-    payment_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payment_id') }})
+    payment_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payment_id'), 'exclude': lambda f: f is InstitutionsSearchPaymentInitiationOptions.UNSET }})
     r"""A unique ID identifying the payment"""
     
 

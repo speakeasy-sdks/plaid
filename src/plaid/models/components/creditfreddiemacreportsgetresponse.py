@@ -13,12 +13,13 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class CreditFreddieMacReportsGetResponse:
     r"""CreditFreddieMacReportsGetResponse defines the response schema for `/credit/freddie_mac/reports/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})
     r"""A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    voa: Optional[CreditFreddieMacVerificationOfAssetsVOA24] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('VOA') }})
+    voa: Optional[CreditFreddieMacVerificationOfAssetsVOA24] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('VOA'), 'exclude': lambda f: f is CreditFreddieMacReportsGetResponse.UNSET }})
     r"""Verification of Assets Report"""
-    voe: Optional[CreditFreddieVerificationOfEmploymentVOE25] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('VOE') }})
+    voe: Optional[CreditFreddieVerificationOfEmploymentVOE25] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('VOE'), 'exclude': lambda f: f is CreditFreddieMacReportsGetResponse.UNSET }})
     r"""Verification of Employment Report"""
     
 

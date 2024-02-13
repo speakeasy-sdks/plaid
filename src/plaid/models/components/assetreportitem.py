@@ -14,6 +14,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class AssetReportItem:
     r"""A representation of an Item within an Asset Report."""
+    UNSET='__SPEAKEASY_UNSET__'
     accounts: List[AccountAssets] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts') }})
     r"""Data about each of the accounts open on the Item."""
     date_last_updated: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('date_last_updated'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})

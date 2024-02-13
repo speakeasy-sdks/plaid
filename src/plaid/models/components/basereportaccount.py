@@ -19,6 +19,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class BaseReportAccount:
     r"""Base Report information about an account"""
+    UNSET='__SPEAKEASY_UNSET__'
     balances: AccountBalance = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('balances') }})
     r"""A set of fields describing the balance for an account. Balance information may be cached unless the balance object was returned by `/accounts/balance/get`."""
     days_available: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days_available') }})

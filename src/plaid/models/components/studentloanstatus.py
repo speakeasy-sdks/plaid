@@ -34,6 +34,7 @@ class StudentLoanStatusType(str, Enum):
 @dataclasses.dataclass
 class StudentLoanStatus:
     r"""An object representing the status of the student loan"""
+    UNSET='__SPEAKEASY_UNSET__'
     end_date: Optional[date] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_date'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat }})
     r"""The date until which the loan will be in its current status. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD)."""
     type: Optional[StudentLoanStatusType] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})

@@ -14,6 +14,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class DocumentAnalysis:
     r"""High level descriptions of how the associated document was processed. If a document fails verification, the details in the `analysis` object should help clarify why the document was rejected."""
+    UNSET='__SPEAKEASY_UNSET__'
     authenticity: DocumentAuthenticityMatchCode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('authenticity') }})
     r"""High level summary of whether the document in the provided image matches the formatting rules and security checks for the associated jurisdiction.
 

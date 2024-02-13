@@ -1,6 +1,5 @@
 <!-- Start SDK Example Usage [usage] -->
 ```python
-import dateutil.parser
 import plaid
 from plaid.models import components
 
@@ -14,11 +13,6 @@ s = plaid.Plaid(
 
 req = components.AccountsBalanceGetRequest(
     access_token='string',
-    options=components.AccountsBalanceGetRequestOptions(
-        account_ids=[
-            'string',
-        ],
-    ),
 )
 
 res = s.plaid.accounts_balance_get(req)

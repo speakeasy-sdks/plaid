@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferRecurringGetResponse:
     r"""Defines the response schema for `/transfer/recurring/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     recurring_transfer: RecurringTransfer = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('recurring_transfer') }})
     r"""Represents a recurring transfer within the Transfers API."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

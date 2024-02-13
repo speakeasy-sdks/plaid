@@ -10,6 +10,7 @@ from typing import Optional
 
 @dataclasses.dataclass
 class PartnerCustomerGetResponse:
+    UNSET='__SPEAKEASY_UNSET__'
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
@@ -18,7 +19,7 @@ class PartnerCustomerGetResponse:
     r"""Raw HTTP response; suitable for custom response parsing"""
     partner_customer_get_response: Optional[components_partnercustomergetresponse.PartnerCustomerGetResponse] = dataclasses.field(default=None)
     r"""OK"""
-    plaid_error: Optional[components_plaiderror.PlaidError] = dataclasses.field(default=None)
+    plaid_error: Optional[components_plaiderror.PlaidError] = dataclasses.field(default=UNSET)
     r"""Error response"""
     
 

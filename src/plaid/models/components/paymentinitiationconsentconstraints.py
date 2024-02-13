@@ -14,11 +14,12 @@ from typing import List, Optional
 @dataclasses.dataclass
 class PaymentInitiationConsentConstraints:
     r"""Limitations that will be applied to payments initiated using the payment consent."""
+    UNSET='__SPEAKEASY_UNSET__'
     max_payment_amount: PaymentAmount = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('max_payment_amount') }})
     r"""Maximum amount of a single payment initiated using the payment consent."""
     periodic_amounts: List[PaymentConsentPeriodicAmount] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('periodic_amounts') }})
     r"""A list of amount limitations per period of time."""
-    valid_date_time: Optional[PaymentConsentValidDateTime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valid_date_time') }})
+    valid_date_time: Optional[PaymentConsentValidDateTime] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valid_date_time'), 'exclude': lambda f: f is PaymentInitiationConsentConstraints.UNSET }})
     r"""Life span for the payment consent. After the `to` date the payment consent expires and can no longer be used for payment initiation."""
     
 

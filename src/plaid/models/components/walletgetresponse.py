@@ -14,6 +14,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class WalletGetResponse:
     r"""WalletGetResponse defines the response schema for `/wallet/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     balance: WalletBalance = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('balance') }})
     r"""An object representing the e-wallet balance"""
     numbers: WalletNumbers = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numbers') }})

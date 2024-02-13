@@ -11,15 +11,16 @@ from typing import Optional
 @dataclasses.dataclass
 class SignalPersonName:
     r"""The user's legal name"""
-    family_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('family_name') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    family_name: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('family_name'), 'exclude': lambda f: f is SignalPersonName.UNSET }})
     r"""The user's family name / surname"""
-    given_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('given_name') }})
+    given_name: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('given_name'), 'exclude': lambda f: f is SignalPersonName.UNSET }})
     r"""The user's given name. If the user has a one-word name, it should be provided in this field."""
-    middle_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('middle_name') }})
+    middle_name: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('middle_name'), 'exclude': lambda f: f is SignalPersonName.UNSET }})
     r"""The user's middle name"""
-    prefix: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('prefix') }})
+    prefix: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('prefix'), 'exclude': lambda f: f is SignalPersonName.UNSET }})
     r"""The user's name prefix (e.g. \\"Mr.\\")"""
-    suffix: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('suffix') }})
+    suffix: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('suffix'), 'exclude': lambda f: f is SignalPersonName.UNSET }})
     r"""The user's name suffix (e.g. \\"II\\")"""
     
 

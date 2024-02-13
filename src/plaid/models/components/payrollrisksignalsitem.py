@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class PayrollRiskSignalsItem:
     r"""Object containing fraud risk data pertaining to the Item linked as part of the verification."""
+    UNSET='__SPEAKEASY_UNSET__'
     item_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('item_id') }})
     r"""The `item_id` of the Item associated with this webhook, warning, or error"""
     verification_risk_signals: List[DocumentRiskSignalsObject] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('verification_risk_signals') }})

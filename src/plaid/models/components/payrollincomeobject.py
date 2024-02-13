@@ -14,6 +14,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class PayrollIncomeObject:
     r"""An object representing payroll data."""
+    UNSET='__SPEAKEASY_UNSET__'
     account_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id') }})
     r"""ID of the payroll provider account."""
     form1099s: List[Credit1099] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('form1099s') }})

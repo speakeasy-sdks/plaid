@@ -13,6 +13,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class PaymentInitiationPaymentTokenCreateResponse:
     r"""PaymentInitiationPaymentTokenCreateResponse defines the response schema for `/payment_initiation/payment/token/create`"""
+    UNSET='__SPEAKEASY_UNSET__'
     payment_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payment_token') }})
     r"""A `payment_token` that can be provided to Link initialization to enter the payment initiation flow"""
     payment_token_expiration_time: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payment_token_expiration_time'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})

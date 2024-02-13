@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class EntityScreeningHitEmails:
     r"""Email address information for the associated entity watchlist hit"""
+    UNSET='__SPEAKEASY_UNSET__'
     email_address: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_address') }})
     r"""A valid email address."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})

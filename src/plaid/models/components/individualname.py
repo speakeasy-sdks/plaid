@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class IndividualName:
     r"""Parent container for name that allows for choice group between parsed and unparsed containers.Parent container for name that allows for choice group between parsed and unparsed containers."""
+    UNSET='__SPEAKEASY_UNSET__'
     first_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('FirstName') }})
     r"""The first name of the individual represented by the parent object."""
     last_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('LastName') }})

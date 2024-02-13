@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class PaymentInitiationRecipientCreateResponse:
     r"""PaymentInitiationRecipientCreateResponse defines the response schema for `/payment_initation/recipient/create`"""
+    UNSET='__SPEAKEASY_UNSET__'
     recipient_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('recipient_id') }})
     r"""A unique ID identifying the recipient"""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

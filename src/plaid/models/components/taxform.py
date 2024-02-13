@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class Taxform:
     r"""Data about an official document used to report the user's income to the IRS."""
+    UNSET='__SPEAKEASY_UNSET__'
     document_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('document_type') }})
     r"""The type of tax document. Currently, the only supported value is `w2`."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})

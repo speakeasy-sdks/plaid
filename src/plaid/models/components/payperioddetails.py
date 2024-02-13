@@ -23,24 +23,25 @@ class PayFrequency(str, Enum):
 @dataclasses.dataclass
 class PayPeriodDetails:
     r"""Details about the pay period."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    check_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('check_amount') }})
+    check_amount: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('check_amount'), 'exclude': lambda f: f is PayPeriodDetails.UNSET }})
     r"""The amount of the paycheck."""
     distribution_breakdown: Optional[List[DistributionBreakdown]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('distribution_breakdown'), 'exclude': lambda f: f is None }})
-    end_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat }})
+    end_date: Optional[date] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is PayPeriodDetails.UNSET }})
     r"""The pay period end date, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format: \\"yyyy-mm-dd\\"."""
-    gross_earnings: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('gross_earnings') }})
+    gross_earnings: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('gross_earnings'), 'exclude': lambda f: f is PayPeriodDetails.UNSET }})
     r"""Total earnings before tax/deductions."""
-    pay_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pay_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat }})
+    pay_date: Optional[date] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pay_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is PayPeriodDetails.UNSET }})
     r"""The date on which the paystub was issued, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (\\"yyyy-mm-dd\\")."""
-    pay_day: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pay_day'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat }})
+    pay_day: Optional[date] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pay_day'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is PayPeriodDetails.UNSET }})
     r"""The date on which the paystub was issued, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (\\"yyyy-mm-dd\\").
 
     Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
     """
-    pay_frequency: Optional[PayFrequency] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pay_frequency') }})
+    pay_frequency: Optional[PayFrequency] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pay_frequency'), 'exclude': lambda f: f is PayPeriodDetails.UNSET }})
     r"""The frequency at which an individual is paid."""
-    start_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat }})
+    start_date: Optional[date] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is PayPeriodDetails.UNSET }})
     r"""The pay period start date, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format: \\"yyyy-mm-dd\\"."""
     
 

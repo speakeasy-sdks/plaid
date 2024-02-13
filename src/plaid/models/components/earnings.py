@@ -13,6 +13,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class Earnings:
     r"""An object representing both a breakdown of earnings on a paystub and the total earnings."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     breakdown: Optional[List[EarningsBreakdown]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('breakdown'), 'exclude': lambda f: f is None }})
     subtotals: Optional[List[EarningsTotal]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subtotals'), 'exclude': lambda f: f is None }})

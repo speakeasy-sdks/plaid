@@ -15,6 +15,7 @@ class IncomeBreakdown:
 
     Deprecated class: This will be removed in a future release, please migrate away from it as soon as possible.
     """
+    UNSET='__SPEAKEASY_UNSET__'
     hours: Optional[float] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hours') }})
     r"""The number of hours logged for this income for this pay period."""
     rate: Optional[float] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rate') }})

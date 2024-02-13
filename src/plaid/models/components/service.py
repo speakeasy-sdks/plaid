@@ -13,6 +13,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class Service:
     r"""A collection of details related to a fulfillment service or product in terms of request, process and result."""
+    UNSET='__SPEAKEASY_UNSET__'
     statuses: Statuses = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('STATUSES') }})
     r"""A collection of STATUS containers."""
     verification_of_asset: VerificationOfAsset = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('VERIFICATION_OF_ASSET') }})

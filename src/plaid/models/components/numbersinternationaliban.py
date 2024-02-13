@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class NumbersInternationalIBAN:
     r"""Account numbers using the International Bank Account Number and BIC/SWIFT code format."""
+    UNSET='__SPEAKEASY_UNSET__'
     bic: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bic') }})
     r"""The Business Identifier Code, also known as SWIFT code, for this bank account."""
     iban: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iban') }})

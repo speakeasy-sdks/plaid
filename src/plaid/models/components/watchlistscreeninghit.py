@@ -17,6 +17,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class WatchlistScreeningHit:
     r"""Data from a government watchlist or PEP list that has been attached to the screening."""
+    UNSET='__SPEAKEASY_UNSET__'
     first_active: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('first_active'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""An ISO8601 formatted timestamp."""
     historical_since: Optional[datetime] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('historical_since'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})

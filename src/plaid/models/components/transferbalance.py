@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferBalance:
     r"""Information about the balance held with Plaid."""
+    UNSET='__SPEAKEASY_UNSET__'
     available: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('available') }})
     r"""The amount of this balance available for use (decimal string with two digits of precision e.g. \\"10.00\\")."""
     type: TransferBalanceType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})

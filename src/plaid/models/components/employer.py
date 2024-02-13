@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class Employer:
     r"""Data about the employer."""
+    UNSET='__SPEAKEASY_UNSET__'
     address: Optional[AddressDataNullable] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address') }})
     r"""Data about the components comprising an address."""
     confidence_score: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('confidence_score') }})

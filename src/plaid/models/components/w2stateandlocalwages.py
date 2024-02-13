@@ -11,20 +11,21 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class W2StateAndLocalWages:
     r"""W2 state and local wages"""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    employer_state_id_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employer_state_id_number') }})
+    employer_state_id_number: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employer_state_id_number'), 'exclude': lambda f: f is W2StateAndLocalWages.UNSET }})
     r"""State identification number of the employer."""
-    local_income_tax: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('local_income_tax') }})
+    local_income_tax: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('local_income_tax'), 'exclude': lambda f: f is W2StateAndLocalWages.UNSET }})
     r"""Income tax from the locality."""
-    local_wages_tips: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('local_wages_tips') }})
+    local_wages_tips: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('local_wages_tips'), 'exclude': lambda f: f is W2StateAndLocalWages.UNSET }})
     r"""Wages and tips from the locality."""
-    locality_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('locality_name') }})
+    locality_name: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('locality_name'), 'exclude': lambda f: f is W2StateAndLocalWages.UNSET }})
     r"""Name of the locality."""
-    state: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state') }})
+    state: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state'), 'exclude': lambda f: f is W2StateAndLocalWages.UNSET }})
     r"""State associated with the wage."""
-    state_income_tax: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state_income_tax') }})
+    state_income_tax: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state_income_tax'), 'exclude': lambda f: f is W2StateAndLocalWages.UNSET }})
     r"""Income tax from the specified state."""
-    state_wages_tips: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state_wages_tips') }})
+    state_wages_tips: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state_wages_tips'), 'exclude': lambda f: f is W2StateAndLocalWages.UNSET }})
     r"""Wages and tips from the specified state."""
     
 

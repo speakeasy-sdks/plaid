@@ -11,9 +11,10 @@ from typing import Optional
 @dataclasses.dataclass
 class LinkTokenCreateRequestIncomeVerificationBankIncome:
     r"""Specifies options for initializing Link for use with Bank Income. This field is required if `income_verification` is included in the `products` array and `bank` is specified in `income_source_types`."""
+    UNSET='__SPEAKEASY_UNSET__'
     days_requested: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days_requested') }})
     r"""The number of days of data to request for the Bank Income product"""
-    enable_multiple_items: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enable_multiple_items') }})
+    enable_multiple_items: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enable_multiple_items'), 'exclude': lambda f: f is LinkTokenCreateRequestIncomeVerificationBankIncome.UNSET }})
     r"""Whether to enable multiple Items to be added in the Link session"""
     
 

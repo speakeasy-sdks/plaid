@@ -13,6 +13,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class SignalScores:
     r"""Risk scoring details broken down by risk category."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     bank_initiated_return_risk: Optional[BankInitiatedReturnRisk] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bank_initiated_return_risk'), 'exclude': lambda f: f is None }})
     r"""The object contains a risk score and a risk tier that evaluate the transaction return risk because an account is overdrawn or because an ineligible account is used. Common return codes in this category include: \\"R01\\", \\"R02\\", \\"R03\\", \\"R04\\", \\"R06\\", \\"R08\\",  \\"R09\\", \\"R13\\", \\"R16\\", \\"R17\\", \\"R20\\", \\"R23\\". These returns have a turnaround time of 2 banking days."""

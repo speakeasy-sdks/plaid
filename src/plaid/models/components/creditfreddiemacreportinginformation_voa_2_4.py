@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class CreditFreddieMacReportingInformationVOA24:
     r"""Information about an report identifier and a report name."""
+    UNSET='__SPEAKEASY_UNSET__'
     reporting_information_identifier: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ReportingInformationIdentifier') }})
     r"""Documentation not found in the MISMO model viewer and not provided by Freddie Mac."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})

@@ -14,6 +14,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class Party:
     r"""A collection of information about a single party to a transaction. Included direct participants like the borrower and seller as well as indirect participants such as the flood certificate provider."""
+    UNSET='__SPEAKEASY_UNSET__'
     individual: PartyIndividual = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('INDIVIDUAL') }})
     r"""Documentation not found in the MISMO model viewer and not provided by Freddie Mac."""
     roles: Roles = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ROLES') }})

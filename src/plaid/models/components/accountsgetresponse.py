@@ -13,6 +13,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class AccountsGetResponse:
     r"""AccountsGetResponse defines the response schema for `/accounts/get` and `/accounts/balance/get`."""
+    UNSET='__SPEAKEASY_UNSET__'
     accounts: List[AccountBase] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts') }})
     r"""An array of financial institution accounts associated with the Item.
     If `/accounts/balance/get` was called, each account will include real-time balance information.

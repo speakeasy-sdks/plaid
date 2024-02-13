@@ -50,6 +50,7 @@ class TransferCreateRequestTransferType(str, Enum):
 @dataclasses.dataclass
 class TransferCreateRequest:
     r"""Defines the request schema for `/transfer/create`"""
+    UNSET='__SPEAKEASY_UNSET__'
     authorization_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('authorization_id') }})
     r"""Plaid’s unique identifier for a transfer authorization. This parameter also serves the purpose of acting as an idempotency identifier."""
     description: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
@@ -78,7 +79,7 @@ class TransferCreateRequest:
 
     Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
     """
-    metadata: Optional[Dict[str, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata') }})
+    metadata: Optional[Dict[str, str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is TransferCreateRequest.UNSET }})
     r"""The Metadata object is a mapping of client-provided string fields to any string value. The following limitations apply:
     The JSON values must be Strings (no nested JSON objects allowed)
     Only ASCII characters may be used
@@ -88,7 +89,7 @@ class TransferCreateRequest:
     """
     network: Optional[TransferCreateRequestTransferNetwork] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('network'), 'exclude': lambda f: f is None }})
     r"""Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible."""
-    origination_account_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('origination_account_id') }})
+    origination_account_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('origination_account_id'), 'exclude': lambda f: f is TransferCreateRequest.UNSET }})
     r"""Plaid’s unique identifier for the origination account for this transfer. If you have more than one origination account, this value must be specified. Otherwise, this field should be left blank.
 
     Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -97,11 +98,11 @@ class TransferCreateRequest:
     r"""The payment profile token associated with the Payment Profile that will be debited or credited. Required if not using `access_token`."""
     secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secret'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body."""
-    test_clock_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('test_clock_id') }})
+    test_clock_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('test_clock_id'), 'exclude': lambda f: f is TransferCreateRequest.UNSET }})
     r"""Plaid’s unique identifier for a test clock. This field may only be used when using `sandbox` environment. If provided, the `transfer` is created at the `virtual_time` on the provided `test_clock`."""
     type: Optional[TransferCreateRequestTransferType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible."""
-    user: Optional[TransferUserInRequestDeprecated] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user') }})
+    user: Optional[TransferUserInRequestDeprecated] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user'), 'exclude': lambda f: f is TransferCreateRequest.UNSET }})
     r"""The legal name and other information for the account holder.
 
     Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.

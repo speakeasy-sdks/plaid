@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferRepaymentReturn:
     r"""Represents a return on a Guaranteed ACH transfer that is included in the specified repayment."""
+    UNSET='__SPEAKEASY_UNSET__'
     amount: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
     r"""The value of the returned transfer."""
     event_id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('event_id') }})

@@ -51,6 +51,7 @@ class TransactionType(str, Enum):
 @dataclasses.dataclass
 class Transaction:
     r"""A representation of a transaction"""
+    UNSET='__SPEAKEASY_UNSET__'
     account_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id') }})
     r"""The ID of the account in which this transaction occurred."""
     account_owner: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_owner') }})
@@ -150,17 +151,17 @@ class Transaction:
     See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `iso_currency_code`s.
     """
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    check_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('check_number') }})
+    check_number: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('check_number'), 'exclude': lambda f: f is Transaction.UNSET }})
     r"""The check number of the transaction. This field is only populated for check transactions."""
     counterparties: Optional[List[TransactionCounterparty]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('counterparties'), 'exclude': lambda f: f is None }})
     r"""The counterparties present in the transaction. Counterparties, such as the financial institutions, are extracted by Plaid from the raw description."""
-    logo_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('logo_url') }})
+    logo_url: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('logo_url'), 'exclude': lambda f: f is Transaction.UNSET }})
     r"""The logo associated with the merchant, if available. Formatted as a 100x100 pixels PNG file path."""
-    merchant_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('merchant_name') }})
+    merchant_name: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('merchant_name'), 'exclude': lambda f: f is Transaction.UNSET }})
     r"""The merchant name, as enriched by Plaid from the `name` field. This is typically a more human-readable version of the merchant counterparty in the transaction. For some bank transactions (such as checks or account transfers) where there is no meaningful merchant name, this value will be `null`."""
-    original_description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('original_description') }})
+    original_description: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('original_description'), 'exclude': lambda f: f is Transaction.UNSET }})
     r"""The string returned by the financial institution to describe the transaction. For transactions returned by `/transactions/sync` or `/transactions/get`, this field is in beta and will be omitted unless the client is both enrolled in the closed beta program and has set `options.include_original_description` to `true`."""
-    personal_finance_category: Optional[PersonalFinanceCategory] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('personal_finance_category') }})
+    personal_finance_category: Optional[PersonalFinanceCategory] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('personal_finance_category'), 'exclude': lambda f: f is Transaction.UNSET }})
     r"""Information describing the intent of the transaction. Most relevant for personal finance use cases, but not limited to such use cases.
 
     See the [`taxonomy csv file`](https://plaid.com/documents/transactions-personal-finance-category-taxonomy.csv) for a full list of personal finance categories.
@@ -180,7 +181,7 @@ class Transaction:
 
     Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
     """
-    website: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('website') }})
+    website: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('website'), 'exclude': lambda f: f is Transaction.UNSET }})
     r"""The website associated with the merchant, if available."""
     
 

@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class ItemWebhookUpdateResponse:
     r"""ItemWebhookUpdateResponse defines the response schema for `/item/webhook/update`"""
+    UNSET='__SPEAKEASY_UNSET__'
     item: Item = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('item') }})
     r"""Metadata about the Item."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

@@ -16,6 +16,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class TransactionStream:
     r"""A grouping of related transactions"""
+    UNSET='__SPEAKEASY_UNSET__'
     account_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id') }})
     r"""The ID of the account to which the stream belongs"""
     average_amount: TransactionStreamAmount = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('average_amount') }})
@@ -73,7 +74,7 @@ class TransactionStream:
     transaction_ids: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transaction_ids') }})
     r"""An array of Plaid transaction IDs belonging to the stream, sorted by posted date."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    personal_finance_category: Optional[PersonalFinanceCategory] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('personal_finance_category') }})
+    personal_finance_category: Optional[PersonalFinanceCategory] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('personal_finance_category'), 'exclude': lambda f: f is TransactionStream.UNSET }})
     r"""Information describing the intent of the transaction. Most relevant for personal finance use cases, but not limited to such use cases.
 
     See the [`taxonomy csv file`](https://plaid.com/documents/transactions-personal-finance-category-taxonomy.csv) for a full list of personal finance categories.

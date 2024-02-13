@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class CreditPayrollIncomePrecheckResponse:
     r"""Defines the response schema for `/credit/payroll_income/precheck`."""
+    UNSET='__SPEAKEASY_UNSET__'
     confidence: IncomeVerificationPrecheckConfidence = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('confidence') }})
     r"""The confidence that Plaid can support the user in the digital income verification flow instead of requiring a manual paystub upload. One of the following:
 

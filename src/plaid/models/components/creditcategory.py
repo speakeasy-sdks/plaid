@@ -14,6 +14,7 @@ class CreditCategory:
 
     See the [`taxonomy csv file`](https://plaid.com/documents/credit-category-taxonomy.csv) for a full list of credit categories.
     """
+    UNSET='__SPEAKEASY_UNSET__'
     detailed: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('detailed') }})
     r"""A granular category conveying the transaction's intent. This field can also be used as a unique identifier for the category."""
     primary: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('primary') }})

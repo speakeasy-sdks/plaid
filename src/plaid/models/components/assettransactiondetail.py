@@ -14,6 +14,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class AssetTransactionDetail:
     r"""Documentation not found in the MISMO model viewer and not provided by Freddie Mac."""
+    UNSET='__SPEAKEASY_UNSET__'
     asset_transaction_amount: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AssetTransactionAmount') }})
     r"""Asset Transaction Amount."""
     asset_transaction_category_type: Optional[AssetTransactionCategoryType] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AssetTransactionCategoryType') }})

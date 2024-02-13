@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class ValidationSource:
     r"""Documentation not found in the MISMO model viewer and not provided by Freddie Mac."""
+    UNSET='__SPEAKEASY_UNSET__'
     validation_source_name: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ValidationSourceName') }})
     r"""Documentation not found in the MISMO model viewer and not provided by Freddie Mac."""
     validation_source_reference_identifier: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ValidationSourceReferenceIdentifier') }})

@@ -21,6 +21,7 @@ class TransferSweep:
 
     The total sum of the `swept` and `return_swept` events is equal to the `amount` of the sweep Plaid creates and matches the amount of the entry on your sweep account ledger.
     """
+    UNSET='__SPEAKEASY_UNSET__'
     amount: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
     r"""Signed decimal amount of the sweep as it appears on your sweep account ledger (e.g. \\"-10.00\\")
 
@@ -37,7 +38,7 @@ class TransferSweep:
     settled: Optional[date] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('settled'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat }})
     r"""The date when the sweep settled, in the YYYY-MM-DD format."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    status: Optional[SweepStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
+    status: Optional[SweepStatus] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is TransferSweep.UNSET }})
     r"""The status of a sweep transfer
 
     `\"pending\"` - The sweep is currently pending

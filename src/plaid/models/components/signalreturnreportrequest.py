@@ -13,6 +13,7 @@ from typing import Optional
 @dataclasses.dataclass
 class SignalReturnReportRequest:
     r"""SignalReturnReportRequest defines the request schema for `/signal/return/report`"""
+    UNSET='__SPEAKEASY_UNSET__'
     client_transaction_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_transaction_id') }})
     r"""Must be the same as the `client_transaction_id` supplied when calling `/signal/evaluate`"""
     return_code: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('return_code') }})
@@ -22,7 +23,7 @@ class SignalReturnReportRequest:
     """
     client_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_id'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body."""
-    returned_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('returned_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse }})
+    returned_at: Optional[datetime] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('returned_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is SignalReturnReportRequest.UNSET }})
     r"""Date and time when you receive the returns from your payment processors, in ISO 8601 format (`YYYY-MM-DDTHH:mm:ssZ`)."""
     secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secret'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body."""

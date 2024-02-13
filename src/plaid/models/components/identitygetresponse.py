@@ -13,6 +13,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class IdentityGetResponse:
     r"""IdentityGetResponse defines the response schema for `/identity/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     accounts: List[AccountIdentity] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts') }})
     r"""The accounts for which Identity data has been requested"""
     item: Item = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('item') }})

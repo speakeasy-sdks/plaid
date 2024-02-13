@@ -13,6 +13,7 @@ from typing import Optional
 @dataclasses.dataclass
 class TransferRecurringSchedule:
     r"""The schedule that the recurring transfer will be executed on."""
+    UNSET='__SPEAKEASY_UNSET__'
     interval_count: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('interval_count') }})
     r"""The number of recurring `interval_units` between originations. The recurring interval(before holiday adjustment) is calculated by multiplying `interval_unit` and `interval_count`.
     For instance, to schedule a recurring transfer which originates once every two weeks, set `interval_unit` = `week` and `interval_count` = 2.
@@ -33,7 +34,7 @@ class TransferRecurringSchedule:
 
     If the first `interval_execution_day` on or after the start date is also the same day that `/transfer/recurring/create` was called, the bank *may* make the first payment on that day, but it is not guaranteed to do so.
     """
-    end_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat }})
+    end_date: Optional[date] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is TransferRecurringSchedule.UNSET }})
     r"""A date in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD). The recurring transfer will end on the last `interval_execution_day` on or before the `end_date`.
     If the `interval_execution_day` between the start date and the end date (inclusive) is also the same day that `/transfer/recurring/create` was called, the bank *may* make a payment on that day, but it is not guaranteed to do so.
     """

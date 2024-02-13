@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransactionCounterparty:
     r"""The counterparty, such as the merchant or financial institution, is extracted by Plaid from the raw description."""
+    UNSET='__SPEAKEASY_UNSET__'
     logo_url: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('logo_url') }})
     r"""The URL of a logo associated with the counterparty, if available. The logo is formatted as a 100x100 pixel PNG filepath."""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})

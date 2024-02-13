@@ -15,6 +15,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferAuthorizationProposedTransfer:
     r"""Details regarding the proposed transfer."""
+    UNSET='__SPEAKEASY_UNSET__'
     amount: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
     r"""The amount of the transfer (decimal string with two digits of precision e.g. \\"10.00\\")."""
     credit_funds_source: Optional[TransferCreditFundsSource] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('credit_funds_source') }})

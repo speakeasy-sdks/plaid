@@ -13,6 +13,7 @@ from typing import Optional
 @dataclasses.dataclass
 class SignalEvaluateRequest:
     r"""SignalEvaluateRequest defines the request schema for `/signal/evaluate`"""
+    UNSET='__SPEAKEASY_UNSET__'
     access_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('access_token') }})
     r"""The access token associated with the Item data is being requested for."""
     account_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id') }})
@@ -28,7 +29,7 @@ class SignalEvaluateRequest:
     r"""Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body."""
     client_user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_user_id'), 'exclude': lambda f: f is None }})
     r"""A unique ID that identifies the end user in your system. This ID is used to correlate requests by a user with multiple Items. Personally identifiable information, such as an email address or phone number, should not be used in the `client_user_id`."""
-    default_payment_method: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('default_payment_method') }})
+    default_payment_method: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('default_payment_method'), 'exclude': lambda f: f is SignalEvaluateRequest.UNSET }})
     r"""The default ACH or non-ACH payment method to complete the transaction.
     `SAME_DAY_ACH`: Same Day ACH by NACHA. The debit transaction is processed and settled on the same day
     `NEXT_DAY_ACH`: Next Day ACH settlement for debit transactions, offered by some payment processors
@@ -40,13 +41,13 @@ class SignalEvaluateRequest:
     """
     device: Optional[SignalDevice] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('device'), 'exclude': lambda f: f is None }})
     r"""Details about the end user's device"""
-    is_recurring: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_recurring') }})
+    is_recurring: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_recurring'), 'exclude': lambda f: f is SignalEvaluateRequest.UNSET }})
     r"""`true` if the ACH transaction is a recurring transaction; `false` otherwise"""
     secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secret'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body."""
     user: Optional[SignalUser] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user'), 'exclude': lambda f: f is None }})
     r"""Details about the end user initiating the transaction (i.e., the account holder)."""
-    user_present: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_present') }})
+    user_present: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_present'), 'exclude': lambda f: f is SignalEvaluateRequest.UNSET }})
     r"""`true` if the end user is present while initiating the ACH transfer and the endpoint is being called; `false` otherwise (for example, when the ACH transfer is scheduled and the end user is not present, or you call this endpoint after the ACH transfer but before submitting the Nacha file for ACH processing)."""
     
 

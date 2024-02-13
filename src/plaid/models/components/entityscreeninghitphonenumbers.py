@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class EntityScreeningHitPhoneNumbers:
     r"""Phone number information associated with the entity screening hit"""
+    UNSET='__SPEAKEASY_UNSET__'
     phone_number: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone_number') }})
     r"""A phone number in E.164 format."""
     type: PhoneType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})

@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class AssetReportRefreshResponse:
     r"""AssetReportRefreshResponse defines the response schema for `/asset_report/refresh`"""
+    UNSET='__SPEAKEASY_UNSET__'
     asset_report_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('asset_report_id') }})
     r"""A unique ID identifying an Asset Report. Like all Plaid identifiers, this ID is case sensitive."""
     asset_report_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('asset_report_token') }})

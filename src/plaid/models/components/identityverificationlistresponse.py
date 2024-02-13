@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class IdentityVerificationListResponse:
     r"""Paginated list of Plaid sessions."""
+    UNSET='__SPEAKEASY_UNSET__'
     identity_verifications: List[IdentityVerification] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('identity_verifications') }})
     r"""List of Plaid sessions"""
     next_cursor: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next_cursor') }})

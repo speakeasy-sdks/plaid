@@ -21,6 +21,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class Paystub:
     r"""An object representing data extracted from the end user's paystub."""
+    UNSET='__SPEAKEASY_UNSET__'
     deductions: Deductions = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deductions') }})
     r"""An object with the deduction information found on a paystub."""
     doc_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('doc_id') }})

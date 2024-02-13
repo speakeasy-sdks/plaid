@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class BaseReportGetResponse:
     r"""BaseReportGetResponse defines the response schema for `/cra/base_report/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     report: BaseReport = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('report') }})
     r"""An object representing a Base Report"""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

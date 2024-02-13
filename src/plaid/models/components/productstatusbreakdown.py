@@ -18,6 +18,7 @@ class RefreshInterval(str, Enum):
 @dataclasses.dataclass
 class ProductStatusBreakdown:
     r"""A detailed breakdown of the institution's performance for a request type. The values for `success`, `error_plaid`, and `error_institution` sum to 1. The time range used for calculating the breakdown may range from the most recent few minutes to the past six hours. In general, smaller institutions will show status that was calculated over a longer period of time. For Investment updates, which are refreshed less frequently, the period assessed may be 24 hours or more. For more details, see [Institution status details](https://plaid.com/docs/account/activity/#institution-status-details)."""
+    UNSET='__SPEAKEASY_UNSET__'
     error_institution: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error_institution') }})
     r"""The percentage of logins that are failing due to an issue in the institution's system, expressed as a decimal."""
     error_plaid: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error_plaid') }})

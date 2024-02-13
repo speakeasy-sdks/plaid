@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class AssetReportAuditCopyCreateResponse:
     r"""AssetReportAuditCopyCreateResponse defines the response schema for `/asset_report/audit_copy/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     audit_copy_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('audit_copy_token') }})
     r"""A token that can be shared with a third party auditor to allow them to obtain access to the Asset Report. This token should be stored securely."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

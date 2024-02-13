@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class IdentityVerificationTemplateReference:
     r"""The resource ID and version number of the template configuring the behavior of a given identity verification."""
+    UNSET='__SPEAKEASY_UNSET__'
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""ID of the associated Identity Verification template."""
     version: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('version') }})

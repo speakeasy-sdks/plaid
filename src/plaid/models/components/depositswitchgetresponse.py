@@ -43,6 +43,7 @@ class SwitchMethod(str, Enum):
 @dataclasses.dataclass
 class DepositSwitchGetResponse:
     r"""DepositSwitchGetResponse defines the response schema for `/deposit_switch/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     account_has_multiple_allocations: Optional[bool] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_has_multiple_allocations') }})
     r"""When `true`, user’s direct deposit goes to multiple banks. When false, user’s direct deposit only goes to the target account. Always `null` if the deposit switch has not been completed."""
     amount_allocated: Optional[float] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount_allocated') }})
@@ -75,15 +76,15 @@ class DepositSwitchGetResponse:
     target_item_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target_item_id') }})
     r"""The ID of the Item the direct deposit was switched to."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    employer_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employer_id') }})
+    employer_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employer_id'), 'exclude': lambda f: f is DepositSwitchGetResponse.UNSET }})
     r"""The ID of the employer selected by the user. If the user did not select an employer, the value returned is `null`."""
-    employer_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employer_name') }})
+    employer_name: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employer_name'), 'exclude': lambda f: f is DepositSwitchGetResponse.UNSET }})
     r"""The name of the employer selected by the user. If the user did not select an employer, the value returned is `null`."""
-    institution_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('institution_id') }})
+    institution_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('institution_id'), 'exclude': lambda f: f is DepositSwitchGetResponse.UNSET }})
     r"""The ID of the institution selected by the user. If the user did not select an institution, the value returned is `null`."""
-    institution_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('institution_name') }})
+    institution_name: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('institution_name'), 'exclude': lambda f: f is DepositSwitchGetResponse.UNSET }})
     r"""The name of the institution selected by the user. If the user did not select an institution, the value returned is `null`."""
-    switch_method: Optional[SwitchMethod] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('switch_method') }})
+    switch_method: Optional[SwitchMethod] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('switch_method'), 'exclude': lambda f: f is DepositSwitchGetResponse.UNSET }})
     r"""The method used to make the deposit switch.
 
     - `instant` – User instantly switched their direct deposit to a new or existing bank account by connecting their payroll or employer account.

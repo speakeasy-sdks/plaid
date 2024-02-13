@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class TransactionsEnhanceGetResponse:
     r"""TransactionsEnhanceGetResponse defines the response schema for `/beta/transactions/v1/enhance`."""
+    UNSET='__SPEAKEASY_UNSET__'
     enhanced_transactions: List[ClientProvidedEnhancedTransaction] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enhanced_transactions') }})
     r"""An array of enhanced transactions."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})

@@ -11,34 +11,35 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class PaystubAddress:
     r"""Address on the paystub"""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    city: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city') }})
+    city: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city'), 'exclude': lambda f: f is PaystubAddress.UNSET }})
     r"""The full city name."""
-    country: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country') }})
+    country: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country'), 'exclude': lambda f: f is PaystubAddress.UNSET }})
     r"""The ISO 3166-1 alpha-2 country code."""
-    line1: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('line1') }})
+    line1: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('line1'), 'exclude': lambda f: f is PaystubAddress.UNSET }})
     r"""Street address line 1.
 
     Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
     """
-    line2: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('line2') }})
+    line2: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('line2'), 'exclude': lambda f: f is PaystubAddress.UNSET }})
     r"""Street address line 2.
 
     Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
     """
-    postal_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postal_code') }})
+    postal_code: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postal_code'), 'exclude': lambda f: f is PaystubAddress.UNSET }})
     r"""The postal code of the address."""
-    region: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('region') }})
+    region: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('region'), 'exclude': lambda f: f is PaystubAddress.UNSET }})
     r"""The region or state
     Example: `\"NC\"`
     """
-    state_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state_code') }})
+    state_code: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state_code'), 'exclude': lambda f: f is PaystubAddress.UNSET }})
     r"""The region or state
     Example: `\"NC\"`
 
     Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
     """
-    street: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street') }})
+    street: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street'), 'exclude': lambda f: f is PaystubAddress.UNSET }})
     r"""The full street address."""
     
 

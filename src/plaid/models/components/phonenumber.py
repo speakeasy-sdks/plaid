@@ -21,6 +21,7 @@ class PhoneNumberType(str, Enum):
 @dataclasses.dataclass
 class PhoneNumber:
     r"""A phone number"""
+    UNSET='__SPEAKEASY_UNSET__'
     data: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
     r"""The phone number."""
     primary: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('primary') }})

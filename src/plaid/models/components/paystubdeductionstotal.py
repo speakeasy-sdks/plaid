@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class PayStubDeductionsTotal:
     r"""An object representing the total deductions for the pay period"""
+    UNSET='__SPEAKEASY_UNSET__'
     current_amount: Optional[float] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('current_amount') }})
     r"""Raw amount of the deduction"""
     iso_currency_code: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iso_currency_code') }})

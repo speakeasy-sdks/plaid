@@ -11,6 +11,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class InvestmentsAuthOwner:
     r"""Information on the ownership of an investments account"""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     account_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id'), 'exclude': lambda f: f is None }})
     r"""The ID of the account that this identity information pertains to"""

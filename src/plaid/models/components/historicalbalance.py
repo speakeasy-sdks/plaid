@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class HistoricalBalance:
     r"""An object representing a balance held by an account in the past"""
+    UNSET='__SPEAKEASY_UNSET__'
     current: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('current') }})
     r"""The total amount of funds in the account, calculated from the `current` balance in the `balance` object by subtracting inflows and adding back outflows according to the posted date of each transaction.
 

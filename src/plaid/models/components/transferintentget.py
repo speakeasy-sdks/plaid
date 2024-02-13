@@ -23,6 +23,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferIntentGet:
     r"""Represents a transfer intent within Transfer UI."""
+    UNSET='__SPEAKEASY_UNSET__'
     amount: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
     r"""The amount of the transfer (decimal string with two digits of precision e.g. \\"10.00\\")."""
     authorization_decision: Optional[TransferIntentAuthorizationDecision] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('authorization_decision') }})
@@ -74,7 +75,7 @@ class TransferIntentGet:
     user: TransferUserInResponse = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user') }})
     r"""The legal name and other information for the account holder."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    account_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id') }})
+    account_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id'), 'exclude': lambda f: f is TransferIntentGet.UNSET }})
     r"""The Plaid `account_id` for the account that will be debited or credited. Returned only if `account_id` was set on intent creation."""
     ach_class: Optional[ACHClass] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ach_class'), 'exclude': lambda f: f is None }})
     r"""Specifies the use case of the transfer. Required for transfers on an ACH network.
@@ -87,7 +88,7 @@ class TransferIntentGet:
 
     `\"web\"` - Internet-Initiated Entry - debits from a consumer’s account where their authorization is obtained over the Internet
     """
-    metadata: Optional[Dict[str, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata') }})
+    metadata: Optional[Dict[str, str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is TransferIntentGet.UNSET }})
     r"""The Metadata object is a mapping of client-provided string fields to any string value. The following limitations apply:
     The JSON values must be Strings (no nested JSON objects allowed)
     Only ASCII characters may be used
@@ -100,7 +101,7 @@ class TransferIntentGet:
 
     For transfers submitted as either `ach` or `same-day-ach` the cutoff for same-day is 3:30 PM Eastern Time and the cutoff for next-day transfers is 5:30 PM Eastern Time. It is recommended to submit a transfer at least 15 minutes before the cutoff time in order to ensure that it will be processed before the cutoff. Any transfer that is indicated as `same-day-ach` and that misses the same-day cutoff, but is submitted in time for the next-day cutoff, will be sent over next-day rails and will not incur same-day charges. Note that both legs of the transfer will be downgraded if applicable.
     """
-    require_guarantee: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('require_guarantee') }})
+    require_guarantee: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('require_guarantee'), 'exclude': lambda f: f is TransferIntentGet.UNSET }})
     r"""When `true`, the transfer requires a `GUARANTEED` decision by Plaid to proceed (Guarantee customers only)."""
     
 

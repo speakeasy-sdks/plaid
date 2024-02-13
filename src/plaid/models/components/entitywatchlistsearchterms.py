@@ -11,19 +11,20 @@ from typing import Optional
 @dataclasses.dataclass
 class EntityWatchlistSearchTerms:
     r"""Search inputs for creating an entity watchlist screening"""
+    UNSET='__SPEAKEASY_UNSET__'
     entity_watchlist_program_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_watchlist_program_id') }})
     r"""ID of the associated entity program."""
     legal_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('legal_name') }})
     r"""The name of the organization being screened."""
-    country: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country') }})
+    country: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country'), 'exclude': lambda f: f is EntityWatchlistSearchTerms.UNSET }})
     r"""Valid, capitalized, two-letter ISO code representing the country of this object. Must be in ISO 3166-1 alpha-2 form."""
-    document_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('document_number') }})
+    document_number: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('document_number'), 'exclude': lambda f: f is EntityWatchlistSearchTerms.UNSET }})
     r"""The numeric or alphanumeric identifier associated with this document."""
-    email_address: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_address') }})
+    email_address: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_address'), 'exclude': lambda f: f is EntityWatchlistSearchTerms.UNSET }})
     r"""A valid email address."""
-    phone_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone_number') }})
+    phone_number: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone_number'), 'exclude': lambda f: f is EntityWatchlistSearchTerms.UNSET }})
     r"""A phone number in E.164 format."""
-    url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
+    url: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is EntityWatchlistSearchTerms.UNSET }})
     r"""An 'http' or 'https' URL (must begin with either of those)."""
     
 

@@ -11,11 +11,12 @@ from typing import Optional
 @dataclasses.dataclass
 class IncomeVerificationPrecheckMilitaryInfo:
     r"""Data about military info in the income verification precheck."""
-    branch: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('branch') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    branch: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('branch'), 'exclude': lambda f: f is IncomeVerificationPrecheckMilitaryInfo.UNSET }})
     r"""If the user is currently serving in the US military, the branch of the military in which they are serving
     Valid values: 'AIR FORCE', 'ARMY', 'COAST GUARD', 'MARINES', 'NAVY', 'UNKNOWN'
     """
-    is_active_duty: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_active_duty') }})
+    is_active_duty: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_active_duty'), 'exclude': lambda f: f is IncomeVerificationPrecheckMilitaryInfo.UNSET }})
     r"""Is the user currently active duty in the US military"""
     
 

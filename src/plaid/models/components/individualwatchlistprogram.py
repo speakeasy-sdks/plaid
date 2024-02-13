@@ -16,6 +16,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class IndividualWatchlistProgram:
     r"""A program that configures the active lists, search parameters, and other behavior for initial and ongoing screening of individuals."""
+    UNSET='__SPEAKEASY_UNSET__'
     audit_trail: WatchlistScreeningAuditTrail = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('audit_trail') }})
     r"""Information about the last change made to the parent object specifying what caused the change as well as when it occurred."""
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})

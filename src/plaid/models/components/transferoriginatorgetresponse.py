@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferOriginatorGetResponse:
     r"""Defines the response schema for `/transfer/originator/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     originator: DetailedOriginator = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('originator') }})
     r"""Originator and their status."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

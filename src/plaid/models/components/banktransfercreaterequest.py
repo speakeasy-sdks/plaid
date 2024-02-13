@@ -15,6 +15,7 @@ from typing import Dict, Optional
 @dataclasses.dataclass
 class BankTransferCreateRequest:
     r"""Defines the request schema for `/bank_transfer/create`"""
+    UNSET='__SPEAKEASY_UNSET__'
     access_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('access_token') }})
     r"""The Plaid `access_token` for the account that will be debited or credited."""
     account_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id') }})
@@ -49,9 +50,9 @@ class BankTransferCreateRequest:
     """
     client_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_id'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body."""
-    custom_tag: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_tag') }})
+    custom_tag: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_tag'), 'exclude': lambda f: f is BankTransferCreateRequest.UNSET }})
     r"""An arbitrary string provided by the client for storage with the bank transfer. May be up to 100 characters."""
-    metadata: Optional[Dict[str, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata') }})
+    metadata: Optional[Dict[str, str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is BankTransferCreateRequest.UNSET }})
     r"""The Metadata object is a mapping of client-provided string fields to any string value. The following limitations apply:
     The JSON values must be Strings (no nested JSON objects allowed)
     Only ASCII characters may be used
@@ -59,7 +60,7 @@ class BankTransferCreateRequest:
     Maximum key length of 40 characters
     Maximum value length of 500 characters
     """
-    origination_account_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('origination_account_id') }})
+    origination_account_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('origination_account_id'), 'exclude': lambda f: f is BankTransferCreateRequest.UNSET }})
     r"""Plaid’s unique identifier for the origination account for this transfer. If you have more than one origination account, this value must be specified. Otherwise, this field should be left blank."""
     secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secret'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body."""

@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class DepositSwitchCreateResponse:
     r"""DepositSwitchCreateResponse defines the response schema for `/deposit_switch/create`"""
+    UNSET='__SPEAKEASY_UNSET__'
     deposit_switch_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deposit_switch_id') }})
     r"""ID of the deposit switch. This ID is persisted throughout the lifetime of the deposit switch."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

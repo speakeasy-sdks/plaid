@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class CreditFreddieMacLoansVOA24:
     r"""A collection of loans that are part of a single deal."""
+    UNSET='__SPEAKEASY_UNSET__'
     loan: CreditFreddieMacLoanVOA24 = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('LOAN') }})
     r"""Information specific to a mortgage loan agreement between one or more borrowers and a mortgage lender."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})

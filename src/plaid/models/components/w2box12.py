@@ -11,10 +11,11 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class W2Box12:
     r"""Data on the W2 Box 12"""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    amount: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
+    amount: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount'), 'exclude': lambda f: f is W2Box12.UNSET }})
     r"""W2 Box 12 amount."""
-    code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
+    code: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is W2Box12.UNSET }})
     r"""W2 Box 12 code."""
     
 

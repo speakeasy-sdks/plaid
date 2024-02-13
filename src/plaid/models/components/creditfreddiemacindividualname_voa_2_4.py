@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class CreditFreddieMacIndividualNameVOA24:
     r"""Documentation not found in the MISMO model viewer and not provided by Freddie Mac."""
+    UNSET='__SPEAKEASY_UNSET__'
     first_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('FirstName') }})
     r"""The first name of the individual represented by the parent object."""
     last_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('LastName') }})

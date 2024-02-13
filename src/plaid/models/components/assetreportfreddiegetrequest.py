@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class AssetReportFreddieGetRequest:
     r"""AssetReportFreddieGetRequest defines the request schema for `credit/asset_report/freddie_mac/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     audit_copy_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('audit_copy_token') }})
     r"""A token that can be shared with a third party auditor to allow them to obtain access to the Asset Report. This token should be stored securely."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})

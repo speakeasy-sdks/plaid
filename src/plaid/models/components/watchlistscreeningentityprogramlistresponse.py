@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class WatchlistScreeningEntityProgramListResponse:
     r"""Paginated list of entity watchlist screening programs"""
+    UNSET='__SPEAKEASY_UNSET__'
     entity_watchlist_programs: List[EntityWatchlistProgram] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_watchlist_programs') }})
     r"""List of entity watchlist screening programs"""
     next_cursor: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next_cursor') }})

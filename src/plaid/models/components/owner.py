@@ -14,6 +14,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class Owner:
     r"""Data returned from the financial institution about the owner or owners of an account. Only the `names` array must be non-empty."""
+    UNSET='__SPEAKEASY_UNSET__'
     addresses: List[Address] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('addresses') }})
     r"""Data about the various addresses associated with the account by the financial institution. May be an empty array if no relevant information is returned from the financial institution."""
     emails: List[Email] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emails') }})

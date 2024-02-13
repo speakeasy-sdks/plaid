@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class ProcessorIdentityGetResponse:
     r"""ProcessorIdentityGetResponse defines the response schema for `/processor/identity/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     account: AccountIdentity = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account') }})
     r"""Identity information about an account"""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

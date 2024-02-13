@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class CreditPayStubNetPay:
     r"""An object representing information about the net pay amount on the pay stub."""
+    UNSET='__SPEAKEASY_UNSET__'
     current_amount: Optional[float] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('current_amount') }})
     r"""Raw amount of the net pay for the pay period."""
     description: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})

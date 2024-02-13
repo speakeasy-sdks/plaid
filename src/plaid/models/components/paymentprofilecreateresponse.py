@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class PaymentProfileCreateResponse:
     r"""PaymentProfileCreateResponse defines the response schema for `/payment_profile/create`"""
+    UNSET='__SPEAKEASY_UNSET__'
     payment_profile_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payment_profile_token') }})
     r"""A payment profile token associated with the Payment Profile data that is being requested."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

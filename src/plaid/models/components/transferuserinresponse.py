@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferUserInResponse:
     r"""The legal name and other information for the account holder."""
+    UNSET='__SPEAKEASY_UNSET__'
     address: Optional[TransferUserAddressInResponse] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address') }})
     r"""The address associated with the account holder."""
     email_address: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_address') }})

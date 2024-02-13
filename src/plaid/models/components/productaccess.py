@@ -11,24 +11,25 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class ProductAccess:
     r"""The product access being requested. Used to or disallow product access across all accounts. If unset, defaults to all products allowed."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    accounts_details_transactions: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts_details_transactions') }})
+    accounts_details_transactions: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts_details_transactions'), 'exclude': lambda f: f is ProductAccess.UNSET }})
     r"""Allow access to \\"accounts_details_transactions\\". Only used by certain partners. If relevant to the partner and unset, defaults to `true`."""
-    accounts_routing_number: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts_routing_number') }})
+    accounts_routing_number: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts_routing_number'), 'exclude': lambda f: f is ProductAccess.UNSET }})
     r"""Allow access to \\"accounts_routing_number\\". Only used by certain partners. If relevant to the partner and unset, defaults to `true`."""
-    accounts_statements: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts_statements') }})
+    accounts_statements: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts_statements'), 'exclude': lambda f: f is ProductAccess.UNSET }})
     r"""Allow access to \\"accounts_statements\\". Only used by certain partners. If relevant to the partner and unset, defaults to `true`."""
-    accounts_tax_statements: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts_tax_statements') }})
+    accounts_tax_statements: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts_tax_statements'), 'exclude': lambda f: f is ProductAccess.UNSET }})
     r"""Allow access to \\"accounts_tax_statements\\". Only used by certain partners. If relevant to the partner and unset, defaults to `true`."""
-    auth: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('auth') }})
+    auth: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('auth'), 'exclude': lambda f: f is ProductAccess.UNSET }})
     r"""Allow access to account number details. Only used by certain partners. If relevant to the partner and unset, defaults to `true`."""
-    customers_profiles: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('customers_profiles') }})
+    customers_profiles: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('customers_profiles'), 'exclude': lambda f: f is ProductAccess.UNSET }})
     r"""Allow access to \\"customers_profiles\\". Only used by certain partners. If relevant to the partner and unset, defaults to `true`."""
-    identity: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('identity') }})
+    identity: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('identity'), 'exclude': lambda f: f is ProductAccess.UNSET }})
     r"""Allow access to the Identity product (name, email, phone, address). Only used by certain partners. If relevant to the partner and unset, defaults to `true`."""
-    statements: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('statements') }})
+    statements: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('statements'), 'exclude': lambda f: f is ProductAccess.UNSET }})
     r"""Allow access to statements. Only used by certain partners. If relevant to the partner and unset, defaults to `true`."""
-    transactions: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transactions') }})
+    transactions: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transactions'), 'exclude': lambda f: f is ProductAccess.UNSET }})
     r"""Allow access to transaction details. Only used by certain partners. If relevant to the partner and unset, defaults to `true`."""
     
 

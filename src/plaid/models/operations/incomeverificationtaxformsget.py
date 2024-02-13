@@ -10,6 +10,7 @@ from typing import Optional
 
 @dataclasses.dataclass
 class IncomeVerificationTaxformsGetResponse:
+    UNSET='__SPEAKEASY_UNSET__'
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
@@ -18,7 +19,7 @@ class IncomeVerificationTaxformsGetResponse:
     r"""Raw HTTP response; suitable for custom response parsing"""
     income_verification_taxforms_get_response: Optional[components_incomeverificationtaxformsgetresponse.IncomeVerificationTaxformsGetResponse] = dataclasses.field(default=None)
     r"""OK"""
-    plaid_error: Optional[components_plaiderror.PlaidError] = dataclasses.field(default=None)
+    plaid_error: Optional[components_plaiderror.PlaidError] = dataclasses.field(default=UNSET)
     r"""Error response."""
     
 

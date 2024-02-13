@@ -13,6 +13,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class LinkSessionExit:
     r"""An object representing an [onExit](https://plaid.com/docs/link/web/#onexit) callback from Link."""
+    UNSET='__SPEAKEASY_UNSET__'
     error: Optional[PlaidError] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     r"""We use standard HTTP response codes for success and failure notifications, and our errors are further classified by `error_type`. In general, 200 HTTP codes correspond to success, 40X codes are for developer- or user-related failures, and 50X codes are for Plaid-related issues. An Item with a non-`null` error object will only be part of an API response when calling `/item/get` to view Item status. Otherwise, error fields will be `null` if no error has occurred; if an error has occurred, an error code will be returned instead."""
     metadata: Optional[LinkSessionExitMetadata] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata') }})

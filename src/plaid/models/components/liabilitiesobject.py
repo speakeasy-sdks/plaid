@@ -14,6 +14,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class LiabilitiesObject:
     r"""An object containing liability accounts"""
+    UNSET='__SPEAKEASY_UNSET__'
     credit: Optional[List[CreditCardLiability]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('credit') }})
     r"""The credit accounts returned."""
     mortgage: Optional[List[MortgageLiability]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mortgage') }})

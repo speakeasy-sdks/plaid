@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class CreditFreddieVerificationOfEmploymentVOE25:
     r"""Verification of Employment Report"""
+    UNSET='__SPEAKEASY_UNSET__'
     deal: CreditFreddieVerificationOfEmploymentDealVOE25 = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('DEAL') }})
     r"""An object representing a Verification of Employment report."""
     schema_version: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('SchemaVersion') }})

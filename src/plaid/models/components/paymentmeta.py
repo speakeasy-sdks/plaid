@@ -14,6 +14,7 @@ class PaymentMeta:
 
     If the `transactions` object was returned by a Transactions endpoint such as `/transactions/sync` or `/transactions/get`, the `payment_meta` key will always appear, but no data elements are guaranteed. If the `transactions` object was returned by an Assets endpoint such as `/asset_report/get/` or `/asset_report/pdf/get`, this field will only appear in an Asset Report with Insights.
     """
+    UNSET='__SPEAKEASY_UNSET__'
     by_order_of: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('by_order_of') }})
     r"""The party initiating a wire transfer. Will be `null` if the transaction is not a wire transfer."""
     payee: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payee') }})

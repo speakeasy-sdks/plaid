@@ -11,6 +11,7 @@ from typing import List, Optional
 @dataclasses.dataclass
 class TransactionsGetRequestOptions:
     r"""An optional object to be used with the request. If specified, `options` must not be `null`."""
+    UNSET='__SPEAKEASY_UNSET__'
     account_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_ids'), 'exclude': lambda f: f is None }})
     r"""A list of `account_ids` to retrieve for the Item
 
@@ -20,7 +21,7 @@ class TransactionsGetRequestOptions:
     r"""The number of transactions to fetch."""
     include_logo_and_counterparty_beta: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('include_logo_and_counterparty_beta'), 'exclude': lambda f: f is None }})
     r"""Include counterparties and extran merchant fields in the transaction. This field is disabled by default. If you need this information in addition to the parsed data provided, contact your Plaid Account Manager."""
-    include_original_description: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('include_original_description') }})
+    include_original_description: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('include_original_description'), 'exclude': lambda f: f is TransactionsGetRequestOptions.UNSET }})
     r"""Include the raw unparsed transaction description from the financial institution. This field is disabled by default. If you need this information in addition to the parsed data provided, contact your Plaid Account Manager, or submit a [Support request](https://dashboard.plaid.com/support/new/product-and-development/product-troubleshooting/product-functionality) ."""
     include_personal_finance_category: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('include_personal_finance_category'), 'exclude': lambda f: f is None }})
     r"""Include the [`personal_finance_category`](https://plaid.com/docs/api/products/transactions/#transactions-get-response-transactions-personal-finance-category) object in the response.

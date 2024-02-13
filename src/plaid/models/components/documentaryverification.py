@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class DocumentaryVerification:
     r"""Data, images, analysis, and results from the `documentary_verification` step. This field will be `null` unless `steps.documentary_verification` has reached a terminal state of either `success` or `failed`."""
+    UNSET='__SPEAKEASY_UNSET__'
     documents: List[DocumentaryVerificationDocument] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('documents') }})
     r"""An array of documents submitted to the `documentary_verification` step. Each entry represents one user submission, where each submission will contain both a front and back image, or just a front image, depending on the document type.
 

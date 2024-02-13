@@ -16,6 +16,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class Institution:
     r"""Details relating to a specific financial institution"""
+    UNSET='__SPEAKEASY_UNSET__'
     country_codes: List[CountryCode] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country_codes') }})
     r"""A list of the country codes supported by the institution."""
     institution_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('institution_id') }})
@@ -29,22 +30,22 @@ class Institution:
     routing_numbers: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('routing_numbers') }})
     r"""A partial list of routing numbers associated with the institution. This list is provided for the purpose of looking up institutions by routing number. It is not comprehensive and should never be used as a complete list of routing numbers for an institution."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    auth_metadata: Optional[AuthMetadata] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('auth_metadata') }})
+    auth_metadata: Optional[AuthMetadata] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('auth_metadata'), 'exclude': lambda f: f is Institution.UNSET }})
     r"""Metadata that captures information about the Auth features of an institution."""
     dtc_numbers: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dtc_numbers'), 'exclude': lambda f: f is None }})
     r"""A partial list of DTC numbers associated with the institution."""
-    logo: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('logo') }})
+    logo: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('logo'), 'exclude': lambda f: f is Institution.UNSET }})
     r"""Base64 encoded representation of the institution's logo, returned as a base64 encoded 152x152 PNG. Not all institutions' logos are available."""
-    payment_initiation_metadata: Optional[PaymentInitiationMetadata] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payment_initiation_metadata') }})
+    payment_initiation_metadata: Optional[PaymentInitiationMetadata] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payment_initiation_metadata'), 'exclude': lambda f: f is Institution.UNSET }})
     r"""Metadata that captures what specific payment configurations an institution supports when making Payment Initiation requests."""
-    primary_color: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('primary_color') }})
+    primary_color: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('primary_color'), 'exclude': lambda f: f is Institution.UNSET }})
     r"""Hexadecimal representation of the primary color used by the institution"""
-    status: Optional[InstitutionStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
+    status: Optional[InstitutionStatus] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is Institution.UNSET }})
     r"""The status of an institution is determined by the health of its Item logins, Transactions updates, Investments updates, Liabilities updates, Auth requests, Balance requests, Identity requests, Investments requests, and Liabilities requests. A login attempt is conducted during the initial Item add in Link. If there is not enough traffic to accurately calculate an institution's status, Plaid will return null rather than potentially inaccurate data.
 
     Institution status is accessible in the Dashboard and via the API using the `/institutions/get_by_id` endpoint with the `include_status` option set to true. Note that institution status is not available in the Sandbox environment.
     """
-    url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
+    url: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is Institution.UNSET }})
     r"""The URL for the institution's website"""
     
 

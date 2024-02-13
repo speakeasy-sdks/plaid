@@ -19,6 +19,7 @@ class AprType(str, Enum):
 @dataclasses.dataclass
 class Apr:
     r"""Information about the APR on the account."""
+    UNSET='__SPEAKEASY_UNSET__'
     apr_percentage: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apr_percentage') }})
     r"""Annual Percentage Rate applied."""
     apr_type: AprType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apr_type') }})

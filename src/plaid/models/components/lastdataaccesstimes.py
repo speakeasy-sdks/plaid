@@ -13,6 +13,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class LastDataAccessTimes:
     r"""Describes the last time each datatype was accessed by an application."""
+    UNSET='__SPEAKEASY_UNSET__'
     account_balance_info: Optional[datetime] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_balance_info'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""The last time account_balance_info was accessed by this application in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format in UTC. null if never accessed."""
     account_routing_number: Optional[datetime] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_routing_number'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})

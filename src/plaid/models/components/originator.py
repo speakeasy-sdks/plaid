@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class Originator:
     r"""Originator and their status."""
+    UNSET='__SPEAKEASY_UNSET__'
     client_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_id') }})
     r"""Originator’s client ID."""
     transfer_diligence_status: TransferDiligenceStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transfer_diligence_status') }})

@@ -12,6 +12,7 @@ from typing import Optional
 @dataclasses.dataclass
 class CreditRelayRefreshRequest:
     r"""CreditRelayRefreshRequest defines the request schema for `/credit/relay/refresh`"""
+    UNSET='__SPEAKEASY_UNSET__'
     relay_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relay_token') }})
     r"""The `relay_token` granting access to the report you would like to refresh."""
     report_type: ReportType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('report_type') }})
@@ -20,7 +21,7 @@ class CreditRelayRefreshRequest:
     r"""Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body."""
     secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secret'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body."""
-    webhook: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('webhook') }})
+    webhook: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('webhook'), 'exclude': lambda f: f is CreditRelayRefreshRequest.UNSET }})
     r"""The URL registered to receive webhooks when the report of a relay token has been refreshed."""
     
 

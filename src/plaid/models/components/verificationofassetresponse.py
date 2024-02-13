@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class VerificationOfAssetResponse:
     r"""Documentation not found in the MISMO model viewer and not provided by Freddie Mac."""
+    UNSET='__SPEAKEASY_UNSET__'
     assets: Assets = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ASSETS') }})
     r"""Documentation not found in the MISMO model viewer and not provided by Freddie Mac."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})

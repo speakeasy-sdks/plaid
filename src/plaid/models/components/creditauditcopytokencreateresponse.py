@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class CreditAuditCopyTokenCreateResponse:
     r"""CreditAuditCopyTokenCreateResponse defines the response schema for `/credit/audit_copy_token/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     audit_copy_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('audit_copy_token') }})
     r"""A token that can be shared with a third party auditor, which allows them to fetch the Asset Reports attached to the token. This token should be stored securely."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

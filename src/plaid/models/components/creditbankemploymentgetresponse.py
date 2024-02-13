@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class CreditBankEmploymentGetResponse:
     r"""CreditBankEmploymentGetResponse defines the response schema for `/beta/credit/v1/bank_employment/get`."""
+    UNSET='__SPEAKEASY_UNSET__'
     bank_employment_reports: List[CreditBankEmploymentReport] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bank_employment_reports') }})
     r"""Bank Employment data. Each entry in the array will be a distinct bank employment report."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

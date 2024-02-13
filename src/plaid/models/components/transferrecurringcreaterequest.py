@@ -17,6 +17,7 @@ from typing import Optional
 @dataclasses.dataclass
 class TransferRecurringCreateRequest:
     r"""Defines the request schema for `/transfer/recurring/create`"""
+    UNSET='__SPEAKEASY_UNSET__'
     access_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('access_token') }})
     r"""The Plaid `access_token` for the account that will be debited or credited. Required if not using `payment_profile_token`."""
     account_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id') }})
@@ -58,7 +59,7 @@ class TransferRecurringCreateRequest:
     """
     client_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_id'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body."""
-    funding_account_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('funding_account_id') }})
+    funding_account_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('funding_account_id'), 'exclude': lambda f: f is TransferRecurringCreateRequest.UNSET }})
     r"""The id of the funding account to use, available in the Plaid Dashboard. This determines which of your business checking accounts will be credited or debited. Defaults to the account configured during onboarding."""
     iso_currency_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iso_currency_code'), 'exclude': lambda f: f is None }})
     r"""The currency of the transfer amount. The default value is \\"USD\\".
@@ -67,7 +68,7 @@ class TransferRecurringCreateRequest:
     """
     secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secret'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body."""
-    test_clock_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('test_clock_id') }})
+    test_clock_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('test_clock_id'), 'exclude': lambda f: f is TransferRecurringCreateRequest.UNSET }})
     r"""Plaid’s unique identifier for a test clock. This field may only be used when using `sandbox` environment. If provided, the created `recurring_transfer` is associated with the `test_clock`. New originations are automatically generated when the associated `test_clock` advances."""
     
 

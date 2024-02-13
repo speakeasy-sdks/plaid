@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class SandboxProcessorTokenCreateResponse:
     r"""SandboxProcessorTokenCreateResponse defines the response schema for `/sandbox/processor_token/create`"""
+    UNSET='__SPEAKEASY_UNSET__'
     processor_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('processor_token') }})
     r"""A processor token that can be used to call the `/processor/` endpoints."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

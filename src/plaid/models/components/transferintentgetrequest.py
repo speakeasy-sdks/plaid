@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferIntentGetRequest:
     r"""Defines the request schema for `/transfer/intent/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     transfer_intent_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transfer_intent_id') }})
     r"""Plaid's unique identifier for a transfer intent object."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})

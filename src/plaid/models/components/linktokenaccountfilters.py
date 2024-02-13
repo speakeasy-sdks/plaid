@@ -18,6 +18,7 @@ class LinkTokenAccountFilters:
 
     For institutions using OAuth, the filter will not affect the list of accounts shown by the bank in the OAuth window.
     """
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     credit: Optional[CreditFilter] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('credit'), 'exclude': lambda f: f is None }})
     r"""A filter to apply to `credit`-type accounts"""

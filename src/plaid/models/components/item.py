@@ -26,6 +26,7 @@ class UpdateType(str, Enum):
 @dataclasses.dataclass
 class Item:
     r"""Metadata about the Item."""
+    UNSET='__SPEAKEASY_UNSET__'
     available_products: List[Products] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('available_products') }})
     r"""A list of products available for the Item that have not yet been accessed. The contents of this array will be mutually exclusive with `billed_products`."""
     billed_products: List[Products] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billed_products') }})
@@ -51,7 +52,7 @@ class Item:
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     consented_products: Optional[List[Products]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('consented_products'), 'exclude': lambda f: f is None }})
     r"""A list of products that have gone through consent collection for the Item. Only present for those enabled in the [Data Transparency](https://plaid.com/docs/link/data-transparency-messaging-migration-guide) beta. If you are not enrolled in Data Transparency, this field is not used."""
-    institution_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('institution_id') }})
+    institution_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('institution_id'), 'exclude': lambda f: f is Item.UNSET }})
     r"""The Plaid Institution ID associated with the Item. Field is `null` for Items created via Same Day Micro-deposits."""
     products: Optional[List[Products]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('products'), 'exclude': lambda f: f is None }})
     r"""A list of initialized products for the Item. In almost all cases, this will be the same as the `billed_products` field. For some products, it is possible for the product to be initialized on an Item but not yet billed (e.g. Assets, before `/asset_report/create` has been called), in which case the product may appear in `products` but not in `billed_products`."""

@@ -16,6 +16,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferEvent:
     r"""Represents an event in the Transfers API."""
+    UNSET='__SPEAKEASY_UNSET__'
     account_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id') }})
     r"""The account ID associated with the transfer."""
     event_id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('event_id') }})

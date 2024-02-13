@@ -41,6 +41,7 @@ class AccountIdentityMatchScoreVerificationStatus(str, Enum):
 @dataclasses.dataclass
 class AccountIdentityMatchScore:
     r"""Identity match scores for an account"""
+    UNSET='__SPEAKEASY_UNSET__'
     account_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id') }})
     r"""Plaid’s unique identifier for the account. This value will not change unless Plaid can't reconcile the account with the data returned by the financial institution. This may occur, for example, when the name of the account changes. If this happens a new `account_id` will be assigned to the account.
 
@@ -74,15 +75,15 @@ class AccountIdentityMatchScore:
     See the [Account type schema](https://plaid.com/docs/api/accounts#account-type-schema) for a full listing of account types and corresponding subtypes.
     """
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    address: Optional[AddressMatchScore] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address') }})
+    address: Optional[AddressMatchScore] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address'), 'exclude': lambda f: f is AccountIdentityMatchScore.UNSET }})
     r"""Score found by matching address provided by the API with the address on the account at the financial institution. The score can range from 0 to 100 where 100 is a perfect match and 0 is a no match. If the account contains multiple owners, the maximum match score is filled."""
-    email_address: Optional[EmailAddressMatchScore] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_address') }})
+    email_address: Optional[EmailAddressMatchScore] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_address'), 'exclude': lambda f: f is AccountIdentityMatchScore.UNSET }})
     r"""Score found by matching email provided by the API with the email on the account at the financial institution. 100 is a perfect match and 0 is a no match. If the account contains multiple owners, the maximum match score is filled."""
-    legal_name: Optional[NameMatchScore] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('legal_name') }})
+    legal_name: Optional[NameMatchScore] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('legal_name'), 'exclude': lambda f: f is AccountIdentityMatchScore.UNSET }})
     r"""Score found by matching name provided by the API with the name on the account at the financial institution. If the account contains multiple owners, the maximum match score is filled."""
     persistent_account_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('persistent_account_id'), 'exclude': lambda f: f is None }})
     r"""A unique and persistent identifier for accounts that can be used to trace multiple instances of the same account across different Items for depository accounts. This is currently an opt-in field and only supported for Chase Items."""
-    phone_number: Optional[PhoneNumberMatchScore] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone_number') }})
+    phone_number: Optional[PhoneNumberMatchScore] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone_number'), 'exclude': lambda f: f is AccountIdentityMatchScore.UNSET }})
     r"""Score found by matching phone number provided by the API with the phone number on the account at the financial institution. 100 is a perfect match and 0 is a no match. If the account contains multiple owners, the maximum match score is filled."""
     verification_status: Optional[AccountIdentityMatchScoreVerificationStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('verification_status'), 'exclude': lambda f: f is None }})
     r"""The current verification status of an Auth Item initiated through Automated or Manual micro-deposits.  Returned for Auth Items only.

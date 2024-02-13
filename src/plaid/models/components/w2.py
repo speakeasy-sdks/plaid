@@ -15,46 +15,47 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class W2:
     r"""W2 is an object that represents income data taken from a W2 tax document."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    allocated_tips: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('allocated_tips') }})
+    allocated_tips: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('allocated_tips'), 'exclude': lambda f: f is W2.UNSET }})
     r"""Allocated tips."""
     box_12: Optional[List[W2Box12]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('box_12'), 'exclude': lambda f: f is None }})
-    box_9: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('box_9') }})
+    box_9: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('box_9'), 'exclude': lambda f: f is W2.UNSET }})
     r"""Contents from box 9 on the W2."""
-    dependent_care_benefits: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dependent_care_benefits') }})
+    dependent_care_benefits: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dependent_care_benefits'), 'exclude': lambda f: f is W2.UNSET }})
     r"""Dependent care benefits."""
     employee: Optional[Employee] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employee'), 'exclude': lambda f: f is None }})
     r"""Data about the employee."""
     employer: Optional[PaystubEmployer] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employer'), 'exclude': lambda f: f is None }})
     r"""Information about the employer on the paystub"""
-    employer_id_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employer_id_number') }})
+    employer_id_number: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employer_id_number'), 'exclude': lambda f: f is W2.UNSET }})
     r"""An employee identification number or EIN."""
-    federal_income_tax_withheld: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('federal_income_tax_withheld') }})
+    federal_income_tax_withheld: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('federal_income_tax_withheld'), 'exclude': lambda f: f is W2.UNSET }})
     r"""Federal income tax withheld for the tax year."""
-    medicare_tax_withheld: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('medicare_tax_withheld') }})
+    medicare_tax_withheld: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('medicare_tax_withheld'), 'exclude': lambda f: f is W2.UNSET }})
     r"""Medicare tax withheld for the tax year."""
-    medicare_wages_and_tips: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('medicare_wages_and_tips') }})
+    medicare_wages_and_tips: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('medicare_wages_and_tips'), 'exclude': lambda f: f is W2.UNSET }})
     r"""Wages and tips from medicare."""
-    nonqualified_plans: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nonqualified_plans') }})
+    nonqualified_plans: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nonqualified_plans'), 'exclude': lambda f: f is W2.UNSET }})
     r"""Nonqualified plans."""
-    other: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('other') }})
+    other: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('other'), 'exclude': lambda f: f is W2.UNSET }})
     r"""Other."""
-    retirement_plan: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('retirement_plan') }})
+    retirement_plan: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('retirement_plan'), 'exclude': lambda f: f is W2.UNSET }})
     r"""Retirement plan."""
-    social_security_tax_withheld: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('social_security_tax_withheld') }})
+    social_security_tax_withheld: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('social_security_tax_withheld'), 'exclude': lambda f: f is W2.UNSET }})
     r"""Social security tax withheld for the tax year."""
-    social_security_tips: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('social_security_tips') }})
+    social_security_tips: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('social_security_tips'), 'exclude': lambda f: f is W2.UNSET }})
     r"""Tips from social security."""
-    social_security_wages: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('social_security_wages') }})
+    social_security_wages: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('social_security_wages'), 'exclude': lambda f: f is W2.UNSET }})
     r"""Wages from social security."""
     state_and_local_wages: Optional[List[W2StateAndLocalWages]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state_and_local_wages'), 'exclude': lambda f: f is None }})
-    statutory_employee: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('statutory_employee') }})
+    statutory_employee: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('statutory_employee'), 'exclude': lambda f: f is W2.UNSET }})
     r"""Statutory employee."""
-    tax_year: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tax_year') }})
+    tax_year: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tax_year'), 'exclude': lambda f: f is W2.UNSET }})
     r"""The tax year of the W2 document."""
-    third_party_sick_pay: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('third_party_sick_pay') }})
+    third_party_sick_pay: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('third_party_sick_pay'), 'exclude': lambda f: f is W2.UNSET }})
     r"""Third party sick pay."""
-    wages_tips_other_comp: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('wages_tips_other_comp') }})
+    wages_tips_other_comp: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('wages_tips_other_comp'), 'exclude': lambda f: f is W2.UNSET }})
     r"""Wages from tips and other compensation."""
     
 

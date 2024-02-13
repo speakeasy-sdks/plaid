@@ -14,6 +14,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class PartnerCustomerOAuthInstitutionsGetResponse:
     r"""Response schema for `/partner/customer/oauth_institutions/get`."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     flowdown_status: Optional[PartnerEndCustomerFlowdownStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flowdown_status'), 'exclude': lambda f: f is None }})
     r"""The status of the addendum to the Plaid MSA (\\"flowdown\\") for the end customer."""

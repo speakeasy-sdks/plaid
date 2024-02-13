@@ -17,8 +17,9 @@ class Recurrence:
 
     This is a beta field, available to all users.
     """
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    frequency: Optional[RecurringFrequency] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('frequency') }})
+    frequency: Optional[RecurringFrequency] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('frequency'), 'exclude': lambda f: f is Recurrence.UNSET }})
     r"""Describes the frequency of the transaction stream.
 
     `WEEKLY`: Assigned to a transaction stream that occurs approximately every week.
@@ -37,7 +38,7 @@ class Recurrence:
 
     `UNKNOWN`: Assigned to a transaction stream that isn't recurring in nature.
     """
-    is_recurring: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_recurring') }})
+    is_recurring: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_recurring'), 'exclude': lambda f: f is Recurrence.UNSET }})
     r"""Whether or not the transaction is periodically recurring."""
     
 

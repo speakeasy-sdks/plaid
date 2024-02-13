@@ -12,13 +12,14 @@ from typing import Optional
 @dataclasses.dataclass
 class IncomeVerificationPrecheckEmployer:
     r"""Information about the end user's employer"""
-    address: Optional[IncomeVerificationPrecheckEmployerAddress] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    address: Optional[IncomeVerificationPrecheckEmployerAddress] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address'), 'exclude': lambda f: f is IncomeVerificationPrecheckEmployer.UNSET }})
     r"""The address of the employer"""
-    name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
+    name: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is IncomeVerificationPrecheckEmployer.UNSET }})
     r"""The employer's name"""
-    tax_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tax_id') }})
+    tax_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tax_id'), 'exclude': lambda f: f is IncomeVerificationPrecheckEmployer.UNSET }})
     r"""The employer's tax id"""
-    url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
+    url: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is IncomeVerificationPrecheckEmployer.UNSET }})
     r"""The URL for the employer's public website"""
     
 

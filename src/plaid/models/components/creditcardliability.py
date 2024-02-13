@@ -13,6 +13,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class CreditCardLiability:
     r"""An object representing a credit card account."""
+    UNSET='__SPEAKEASY_UNSET__'
     account_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id') }})
     r"""The ID of the account that this liability belongs to."""
     aprs: List[Apr] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('aprs') }})

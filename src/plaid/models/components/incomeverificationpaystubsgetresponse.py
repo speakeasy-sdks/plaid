@@ -14,13 +14,14 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class IncomeVerificationPaystubsGetResponse:
     r"""IncomeVerificationPaystubsGetResponse defines the response schema for `/income/verification/paystubs/get`."""
+    UNSET='__SPEAKEASY_UNSET__'
     paystubs: List[Paystub] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('paystubs') }})
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})
     r"""A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     document_metadata: Optional[List[DocumentMetadata]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('document_metadata'), 'exclude': lambda f: f is None }})
     r"""Metadata for an income document."""
-    error: Optional[PlaidError] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
+    error: Optional[PlaidError] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error'), 'exclude': lambda f: f is IncomeVerificationPaystubsGetResponse.UNSET }})
     r"""We use standard HTTP response codes for success and failure notifications, and our errors are further classified by `error_type`. In general, 200 HTTP codes correspond to success, 40X codes are for developer- or user-related failures, and 50X codes are for Plaid-related issues. An Item with a non-`null` error object will only be part of an API response when calling `/item/get` to view Item status. Otherwise, error fields will be `null` if no error has occurred; if an error has occurred, an error code will be returned instead."""
     
 

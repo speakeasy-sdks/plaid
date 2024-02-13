@@ -14,12 +14,13 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class BaseReportAccountInsights:
     r"""Calculated insights derived from transaction-level data."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     average_days_between_transactions: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('average_days_between_transactions'), 'exclude': lambda f: f is None }})
     r"""Average number of days between sequential transactions"""
-    average_inflow_amount: Optional[List[BaseReportAverageFlowInsights]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('average_inflow_amount') }})
+    average_inflow_amount: Optional[List[BaseReportAverageFlowInsights]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('average_inflow_amount'), 'exclude': lambda f: f is BaseReportAccountInsights.UNSET }})
     r"""Average amount of debit transactions into account. This field will be null for non-depository accounts. This field only takes into account USD transactions from the account."""
-    average_outflow_amount: Optional[List[BaseReportAverageFlowInsights]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('average_outflow_amount') }})
+    average_outflow_amount: Optional[List[BaseReportAverageFlowInsights]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('average_outflow_amount'), 'exclude': lambda f: f is BaseReportAccountInsights.UNSET }})
     r"""Average amount of credit transactions into account. This field will be null for non-depository accounts. This field only takes into account USD transactions from the account."""
     days_available: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days_available'), 'exclude': lambda f: f is None }})
     r"""Number of days days available in the base report for the account."""
@@ -29,9 +30,9 @@ class BaseReportAccountInsights:
     r"""Date of the most recent transaction in the base report for the account."""
     number_of_days_no_transactions: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('number_of_days_no_transactions'), 'exclude': lambda f: f is None }})
     r"""Number of days with no transactions"""
-    number_of_inflows: Optional[List[BaseReportNumberFlowInsights]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('number_of_inflows') }})
+    number_of_inflows: Optional[List[BaseReportNumberFlowInsights]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('number_of_inflows'), 'exclude': lambda f: f is BaseReportAccountInsights.UNSET }})
     r"""The number of debits into the account. This field will be null for non-depository accounts."""
-    number_of_outflows: Optional[List[BaseReportNumberFlowInsights]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('number_of_outflows') }})
+    number_of_outflows: Optional[List[BaseReportNumberFlowInsights]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('number_of_outflows'), 'exclude': lambda f: f is BaseReportAccountInsights.UNSET }})
     r"""The number of credit into the account. This field will be null for non-depository accounts."""
     oldest_transaction_date: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('oldest_transaction_date'), 'exclude': lambda f: f is None }})
     r"""Date of the earliest transaction in the base report for the account."""

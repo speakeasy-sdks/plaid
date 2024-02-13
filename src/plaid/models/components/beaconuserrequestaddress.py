@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class BeaconUserRequestAddress:
     r"""Home address for the associated user. For more context on this field, see [Input Validation by Country](https://plaid.com/docs/identity-verification/hybrid-input-validation/#input-validation-by-country)."""
+    UNSET='__SPEAKEASY_UNSET__'
     city: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city') }})
     r"""City from the end user's address"""
     country: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country') }})
@@ -18,11 +19,11 @@ class BeaconUserRequestAddress:
     street: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street') }})
     r"""The primary street portion of an address. If the user has submitted their address, this field will always be filled."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    postal_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postal_code') }})
+    postal_code: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postal_code'), 'exclude': lambda f: f is BeaconUserRequestAddress.UNSET }})
     r"""The postal code for the associated address. Between 2 and 10 alphanumeric characters. For US-based addresses this must be 5 numeric digits."""
-    region: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('region') }})
+    region: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('region'), 'exclude': lambda f: f is BeaconUserRequestAddress.UNSET }})
     r"""An ISO 3166-2 subdivision code. Related terms would be \\"state\\", \\"province\\", \\"prefecture\\", \\"zone\\", \\"subdivision\\", etc."""
-    street2: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street2') }})
+    street2: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street2'), 'exclude': lambda f: f is BeaconUserRequestAddress.UNSET }})
     r"""Extra street information, like an apartment or suite number."""
     
 

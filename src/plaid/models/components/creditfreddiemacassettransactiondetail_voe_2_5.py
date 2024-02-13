@@ -14,6 +14,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class CreditFreddieMacAssetTransactionDetailVOE25:
     r"""Documentation not found in the MISMO model viewer and not provided by Freddie Mac."""
+    UNSET='__SPEAKEASY_UNSET__'
     asset_transaction_category_type: Optional[AssetTransactionCategoryType] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AssetTransactionCategoryType') }})
     r"""Asset Transaction Category Type Enumerated derived by Vendor."""
     asset_transaction_date: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('AssetTransactionDate'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat }})

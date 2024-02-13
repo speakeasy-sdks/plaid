@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferExpectedSweepSettlementScheduleItem:
     r"""Defines an expected sweep date and amount."""
+    UNSET='__SPEAKEASY_UNSET__'
     sweep_settlement_date: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sweep_settlement_date'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat }})
     r"""The settlement date of a sweep for this transfer."""
     swept_settled_amount: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('swept_settled_amount') }})

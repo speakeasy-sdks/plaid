@@ -14,6 +14,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class BaseReportTransaction:
     r"""A transaction on the Base Report"""
+    UNSET='__SPEAKEASY_UNSET__'
     amount: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
     r"""The settled value of the transaction, denominated in the transaction's currency, as stated in `iso_currency_code` or `unofficial_currency_code`. Positive values when money moves out of the account; negative values when money moves in. For example, debit card purchases are positive; credit card payments, direct deposits, and refunds are negative."""
     date_: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('date'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat }})
@@ -30,20 +31,20 @@ class BaseReportTransaction:
     See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `unofficial_currency_code`s.
     """
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    account_owner: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_owner') }})
+    account_owner: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_owner'), 'exclude': lambda f: f is BaseReportTransaction.UNSET }})
     r"""The name of the account owner. This field is not typically populated and only relevant when dealing with sub-accounts."""
-    check_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('check_number') }})
+    check_number: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('check_number'), 'exclude': lambda f: f is BaseReportTransaction.UNSET }})
     r"""The check number of the transaction. This field is only populated for check transactions."""
-    credit_category: Optional[CreditCategory] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('credit_category') }})
+    credit_category: Optional[CreditCategory] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('credit_category'), 'exclude': lambda f: f is BaseReportTransaction.UNSET }})
     r"""Information describing the intent of the transaction. Most relevant for credit use cases, but not limited to such use cases.
 
     See the [`taxonomy csv file`](https://plaid.com/documents/credit-category-taxonomy.csv) for a full list of credit categories.
     """
-    date_transacted: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('date_transacted') }})
+    date_transacted: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('date_transacted'), 'exclude': lambda f: f is BaseReportTransaction.UNSET }})
     r"""The date on which the transaction took place, in IS0 8601 format."""
     location: Optional[Location] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('location'), 'exclude': lambda f: f is None }})
     r"""A representation of where a transaction took place"""
-    merchant_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('merchant_name') }})
+    merchant_name: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('merchant_name'), 'exclude': lambda f: f is BaseReportTransaction.UNSET }})
     r"""The merchant name, as enriched by Plaid from the `name` field. This is typically a more human-readable version of the merchant counterparty in the transaction. For some bank transactions (such as checks or account transfers) where there is no meaningful merchant name, this value will be `null`."""
     
 

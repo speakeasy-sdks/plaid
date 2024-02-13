@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class PaymentInitiationPaymentReverseResponse:
     r"""PaymentInitiationPaymentReverseResponse defines the response schema for `/payment_initation/payment/reverse`"""
+    UNSET='__SPEAKEASY_UNSET__'
     refund_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('refund_id') }})
     r"""A unique ID identifying the refund"""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

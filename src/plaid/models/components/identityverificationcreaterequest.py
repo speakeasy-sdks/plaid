@@ -12,6 +12,7 @@ from typing import Optional
 @dataclasses.dataclass
 class IdentityVerificationCreateRequest:
     r"""Request schema for '/identity_verification/create'"""
+    UNSET='__SPEAKEASY_UNSET__'
     is_shareable: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_shareable') }})
     r"""A flag specifying whether you would like Plaid to expose a shareable URL for the verification being created."""
     template_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template_id') }})
@@ -25,13 +26,13 @@ class IdentityVerificationCreateRequest:
 
     If `gave_consent` is set to `true`, the `accept_tos` step will be marked as `skipped` and the end user's session will start at the next step requirement.
     """
-    is_idempotent: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_idempotent') }})
+    is_idempotent: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_idempotent'), 'exclude': lambda f: f is IdentityVerificationCreateRequest.UNSET }})
     r"""An optional flag specifying how you would like Plaid to handle attempts to create an Identity Verification when an Identity Verification already exists for the provided `client_user_id` and `template_id`.
     If idempotency is enabled, Plaid will return the existing Identity Verification. If idempotency is disabled, Plaid will reject the request with a `400 Bad Request` status code if an Identity Verification already exists for the supplied `client_user_id` and `template_id`.
     """
     secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secret'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body."""
-    user: Optional[IdentityVerificationCreateRequestUser] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user') }})
+    user: Optional[IdentityVerificationCreateRequestUser] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user'), 'exclude': lambda f: f is IdentityVerificationCreateRequest.UNSET }})
     r"""User information collected outside of Link, most likely via your own onboarding process.
 
     Each of the following identity fields are optional:

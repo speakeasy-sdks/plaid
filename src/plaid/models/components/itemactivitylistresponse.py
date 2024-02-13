@@ -13,6 +13,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class ItemActivityListResponse:
     r"""Describes a historical log of user consent events."""
+    UNSET='__SPEAKEASY_UNSET__'
     activities: List[Activity] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('activities') }})
     r"""A list of activities."""
     last_data_access_times: List[LastDataAccessTimes] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('last_data_access_times') }})

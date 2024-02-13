@@ -15,14 +15,15 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class ProcessorNumber:
     r"""An object containing identifying numbers used for making electronic transfers to and from the `account`. The identifying number type (ACH, EFT, IBAN, or BACS) used will depend on the country of the account. An account may have more than one number type. If a particular identifying number type is not used by the `account` for which auth data has been requested, a null value will be returned."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    ach: Optional[NumbersACHNullable] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ach') }})
+    ach: Optional[NumbersACHNullable] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ach'), 'exclude': lambda f: f is ProcessorNumber.UNSET }})
     r"""Identifying information for transferring money to or from a US account via ACH or wire transfer."""
-    bacs: Optional[NumbersBACSNullable] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bacs') }})
+    bacs: Optional[NumbersBACSNullable] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bacs'), 'exclude': lambda f: f is ProcessorNumber.UNSET }})
     r"""Identifying information for transferring money to or from a UK bank account via BACS."""
-    eft: Optional[NumbersEFTNullable] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('eft') }})
+    eft: Optional[NumbersEFTNullable] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('eft'), 'exclude': lambda f: f is ProcessorNumber.UNSET }})
     r"""Identifying information for transferring money to or from a Canadian bank account via EFT."""
-    international: Optional[NumbersInternationalNullable] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('international') }})
+    international: Optional[NumbersInternationalNullable] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('international'), 'exclude': lambda f: f is ProcessorNumber.UNSET }})
     r"""Identifying information for transferring money to or from an international bank account via wire transfer."""
     
 

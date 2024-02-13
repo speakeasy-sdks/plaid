@@ -15,21 +15,22 @@ from typing import List, Optional
 @dataclasses.dataclass
 class IncomeVerificationPrecheckRequest:
     r"""IncomeVerificationPrecheckRequest defines the request schema for `/income/verification/precheck`"""
+    UNSET='__SPEAKEASY_UNSET__'
     client_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_id'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body."""
-    employer: Optional[IncomeVerificationPrecheckEmployer] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employer') }})
+    employer: Optional[IncomeVerificationPrecheckEmployer] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employer'), 'exclude': lambda f: f is IncomeVerificationPrecheckRequest.UNSET }})
     r"""Information about the end user's employer"""
-    payroll_institution: Optional[IncomeVerificationPrecheckPayrollInstitution] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payroll_institution') }})
+    payroll_institution: Optional[IncomeVerificationPrecheckPayrollInstitution] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payroll_institution'), 'exclude': lambda f: f is IncomeVerificationPrecheckRequest.UNSET }})
     r"""Information about the end user's payroll institution"""
     secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secret'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body."""
-    transactions_access_token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transactions_access_token') }})
+    transactions_access_token: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transactions_access_token'), 'exclude': lambda f: f is IncomeVerificationPrecheckRequest.UNSET }})
     r"""Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible."""
     transactions_access_tokens: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transactions_access_tokens'), 'exclude': lambda f: f is None }})
     r"""An array of access tokens corresponding to Items belonging to the user whose eligibility is being checked. Note that if the Items specified here are not already initialized with `transactions`, providing them in this field will cause these Items to be initialized with (and billed for) the Transactions product."""
-    us_military_info: Optional[IncomeVerificationPrecheckMilitaryInfo] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('us_military_info') }})
+    us_military_info: Optional[IncomeVerificationPrecheckMilitaryInfo] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('us_military_info'), 'exclude': lambda f: f is IncomeVerificationPrecheckRequest.UNSET }})
     r"""Data about military info in the income verification precheck."""
-    user: Optional[IncomeVerificationPrecheckUser] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user') }})
+    user: Optional[IncomeVerificationPrecheckUser] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user'), 'exclude': lambda f: f is IncomeVerificationPrecheckRequest.UNSET }})
     r"""Information about the user whose eligibility is being evaluated."""
     
 

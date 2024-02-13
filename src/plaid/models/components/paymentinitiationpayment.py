@@ -20,6 +20,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class PaymentInitiationPayment:
     r"""PaymentInitiationPayment defines a payment initiation payment"""
+    UNSET='__SPEAKEASY_UNSET__'
     amount: PaymentAmount = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
     r"""The amount and currency of a payment"""
     bacs: Optional[SenderBACSNullable] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bacs') }})
@@ -69,9 +70,9 @@ class PaymentInitiationPayment:
     `PAYMENT_STATUS_COMPLETED`: Indicates that the standing order has been successfully established. This state is only used for standing orders.
     """
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    adjusted_reference: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('adjusted_reference') }})
+    adjusted_reference: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('adjusted_reference'), 'exclude': lambda f: f is PaymentInitiationPayment.UNSET }})
     r"""The value of the reference sent to the bank after adjustment to pass bank validation rules."""
-    adjusted_scheme: Optional[PaymentScheme] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('adjusted_scheme') }})
+    adjusted_scheme: Optional[PaymentScheme] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('adjusted_scheme'), 'exclude': lambda f: f is PaymentInitiationPayment.UNSET }})
     r"""Payment scheme. If not specified - the default in the region will be used (e.g. `SEPA_CREDIT_TRANSFER` for EU). Using unsupported values will result in a failed payment.
 
     `LOCAL_DEFAULT`: The default payment scheme for the selected market and currency will be used.
@@ -82,17 +83,17 @@ class PaymentInitiationPayment:
 
     `SEPA_CREDIT_TRANSFER_INSTANT`: Instant payment within the SEPA area. May involve additional fees and may not be available at some banks.
     """
-    amount_refunded: Optional[PaymentAmountRefunded] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount_refunded') }})
+    amount_refunded: Optional[PaymentAmountRefunded] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount_refunded'), 'exclude': lambda f: f is PaymentInitiationPayment.UNSET }})
     r"""The amount and currency of a payment"""
-    consent_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('consent_id') }})
+    consent_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('consent_id'), 'exclude': lambda f: f is PaymentInitiationPayment.UNSET }})
     r"""The payment consent ID that this payment was initiated with. Is present only when payment was initiated using the payment consent."""
-    refund_details: Optional[ExternalPaymentRefundDetails] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('refund_details') }})
+    refund_details: Optional[ExternalPaymentRefundDetails] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('refund_details'), 'exclude': lambda f: f is PaymentInitiationPayment.UNSET }})
     r"""Details about external payment refund"""
-    refund_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('refund_ids') }})
+    refund_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('refund_ids'), 'exclude': lambda f: f is PaymentInitiationPayment.UNSET }})
     r"""Refund IDs associated with the payment."""
-    schedule: Optional[ExternalPaymentScheduleGet] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('schedule') }})
+    schedule: Optional[ExternalPaymentScheduleGet] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('schedule'), 'exclude': lambda f: f is PaymentInitiationPayment.UNSET }})
     r"""The schedule that the payment will be executed on. If a schedule is provided, the payment is automatically set up as a standing order. If no schedule is specified, the payment will be executed only once."""
-    scheme: Optional[PaymentScheme] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('scheme') }})
+    scheme: Optional[PaymentScheme] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('scheme'), 'exclude': lambda f: f is PaymentInitiationPayment.UNSET }})
     r"""Payment scheme. If not specified - the default in the region will be used (e.g. `SEPA_CREDIT_TRANSFER` for EU). Using unsupported values will result in a failed payment.
 
     `LOCAL_DEFAULT`: The default payment scheme for the selected market and currency will be used.
@@ -103,9 +104,9 @@ class PaymentInitiationPayment:
 
     `SEPA_CREDIT_TRANSFER_INSTANT`: Instant payment within the SEPA area. May involve additional fees and may not be available at some banks.
     """
-    transaction_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transaction_id') }})
+    transaction_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transaction_id'), 'exclude': lambda f: f is PaymentInitiationPayment.UNSET }})
     r"""The transaction ID that this payment is associated with, if any. This is present only when a payment was initiated using virtual accounts."""
-    wallet_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('wallet_id') }})
+    wallet_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('wallet_id'), 'exclude': lambda f: f is PaymentInitiationPayment.UNSET }})
     r"""The EMI (E-Money Institution) wallet that this payment is associated with, if any. This wallet is used as an intermediary account to enable Plaid to reconcile the settlement of funds for Payment Initiation requests."""
     
 

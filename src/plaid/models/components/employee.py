@@ -13,12 +13,13 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class Employee:
     r"""Data about the employee."""
+    UNSET='__SPEAKEASY_UNSET__'
     address: PaystubAddress = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address') }})
     r"""Address on the paystub"""
     name: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The name of the employee."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    marital_status: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('marital_status') }})
+    marital_status: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('marital_status'), 'exclude': lambda f: f is Employee.UNSET }})
     r"""Marital status of the employee - either `single` or `married`."""
     taxpayer_id: Optional[TaxpayerID] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('taxpayer_id'), 'exclude': lambda f: f is None }})
     r"""Taxpayer ID of the individual receiving the paystub."""

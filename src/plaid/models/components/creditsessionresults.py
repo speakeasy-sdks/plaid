@@ -16,11 +16,12 @@ from typing import List, Optional
 @dataclasses.dataclass
 class CreditSessionResults:
     r"""The set of results for a Link session."""
+    UNSET='__SPEAKEASY_UNSET__'
     bank_employment_results: Optional[List[CreditSessionBankEmploymentResult]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bank_employment_results'), 'exclude': lambda f: f is None }})
     r"""The set of bank employment verifications for the Link session."""
     bank_income_results: Optional[List[CreditSessionBankIncomeResult]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bank_income_results'), 'exclude': lambda f: f is None }})
     r"""The set of bank income verifications for the Link session."""
-    document_income_results: Optional[CreditSessionDocumentIncomeResult] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('document_income_results') }})
+    document_income_results: Optional[CreditSessionDocumentIncomeResult] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('document_income_results'), 'exclude': lambda f: f is CreditSessionResults.UNSET }})
     r"""The details of a document income verification in Link"""
     item_add_results: Optional[List[CreditSessionItemAddResult]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('item_add_results'), 'exclude': lambda f: f is None }})
     r"""The set of Item adds for the Link session."""

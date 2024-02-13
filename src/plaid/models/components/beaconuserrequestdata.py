@@ -15,6 +15,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class BeaconUserRequestData:
     r"""A Beacon User's data which is used to check against duplicate records and the Beacon Fraud Network."""
+    UNSET='__SPEAKEASY_UNSET__'
     address: BeaconUserRequestAddress = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address') }})
     r"""Home address for the associated user. For more context on this field, see [Input Validation by Country](https://plaid.com/docs/identity-verification/hybrid-input-validation/#input-validation-by-country)."""
     date_of_birth: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('date_of_birth'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat }})
@@ -26,9 +27,9 @@ class BeaconUserRequestData:
     r"""A valid email address."""
     id_number: Optional[BeaconUserIDNumber] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id_number'), 'exclude': lambda f: f is None }})
     r"""The ID number associated with a Beacon User."""
-    ip_address: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ip_address') }})
+    ip_address: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ip_address'), 'exclude': lambda f: f is BeaconUserRequestData.UNSET }})
     r"""An IPv4 or IPV6 address."""
-    phone_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone_number') }})
+    phone_number: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone_number'), 'exclude': lambda f: f is BeaconUserRequestData.UNSET }})
     r"""A phone number in E.164 format."""
     
 

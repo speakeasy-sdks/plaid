@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class WalletListResponse:
     r"""WalletListResponse defines the response schema for `/wallet/list`"""
+    UNSET='__SPEAKEASY_UNSET__'
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})
     r"""A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive."""
     wallets: List[Wallet] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('wallets') }})

@@ -34,9 +34,10 @@ class IdentityVerificationCreateRequestUser:
     Providing these fields via the API will result in Link skipping the data collection process for the associated user. All verification steps enabled in the associated Identity Verification Template will still be run. Verification steps will either be run immediately, or once the user completes the `accept_tos` step, depending on the value provided to the `gave_consent` field.
     If you are not using the shareable URL feature, you can optionally provide these fields via `/link/token/create` instead; both `/identity_verification/create` and `/link/token/create` are valid ways to provide this information. Note that if you provide a non-`null` user data object via `/identity_verification/create`, any user data fields entered via `/link/token/create` for the same `client_user_id` will be ignored when prefilling Link.
     """
-    address: Optional[UserAddress] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    address: Optional[UserAddress] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address'), 'exclude': lambda f: f is IdentityVerificationCreateRequestUser.UNSET }})
     r"""Home address for the user. For more context on this field, see [Input Validation by Country](https://plaid.com/docs/identity-verification/hybrid-input-validation/#input-validation-by-country)."""
-    client_user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_user_id') }})
+    client_user_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_user_id'), 'exclude': lambda f: f is IdentityVerificationCreateRequestUser.UNSET }})
     r"""Specifying `user.client_user_id` is deprecated. Please provide `client_user_id` at the root level instead.
 
     Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -45,11 +46,11 @@ class IdentityVerificationCreateRequestUser:
     r"""A date in the format YYYY-MM-DD (RFC 3339 Section 5.6)."""
     email_address: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_address'), 'exclude': lambda f: f is None }})
     r"""A valid email address."""
-    id_number: Optional[UserIDNumber] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id_number') }})
+    id_number: Optional[UserIDNumber] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id_number'), 'exclude': lambda f: f is IdentityVerificationCreateRequestUser.UNSET }})
     r"""ID number submitted by the user, currently used only for the Identity Verification product. If the user has not submitted this data yet, this field will be `null`. Otherwise, both fields are guaranteed to be filled."""
-    name: Optional[IdentityVerificationRequestUserName] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
+    name: Optional[IdentityVerificationRequestUserName] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is IdentityVerificationCreateRequestUser.UNSET }})
     r"""You can use this field to pre-populate the user's legal name; if it is provided here, they will not be prompted to enter their name in the identity verification attempt."""
-    phone_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone_number') }})
+    phone_number: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone_number'), 'exclude': lambda f: f is IdentityVerificationCreateRequestUser.UNSET }})
     r"""A phone number in E.164 format."""
     
 

@@ -13,6 +13,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class ItemPublicTokenCreateResponse:
     r"""ItemPublicTokenCreateResponse defines the response schema for `/item/public_token/create`"""
+    UNSET='__SPEAKEASY_UNSET__'
     public_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('public_token') }})
     r"""A `public_token` for the particular Item corresponding to the specified `access_token`"""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

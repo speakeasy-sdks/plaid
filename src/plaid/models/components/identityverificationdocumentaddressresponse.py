@@ -20,6 +20,7 @@ class IdentityVerificationDocumentAddressResponse:
 
     Note: Optical Character Recognition (OCR) technology may sometimes extract incorrect data from a document.
     """
+    UNSET='__SPEAKEASY_UNSET__'
     city: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city') }})
     r"""City extracted from the document."""
     country: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country') }})

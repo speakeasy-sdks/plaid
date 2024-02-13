@@ -15,18 +15,19 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class EmploymentVerification:
     r"""An object containing proof of employment data for an individual"""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     employer: Optional[EmployerVerification] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employer'), 'exclude': lambda f: f is None }})
     r"""An object containing employer data."""
-    end_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat }})
+    end_date: Optional[date] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is EmploymentVerification.UNSET }})
     r"""End of employment, if applicable. Provided in ISO 8601 format (YYY-MM-DD)."""
     platform_ids: Optional[PlatformIds] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('platform_ids'), 'exclude': lambda f: f is None }})
     r"""An object containing a set of ids related to an employee"""
-    start_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat }})
+    start_date: Optional[date] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is EmploymentVerification.UNSET }})
     r"""Start of employment in ISO 8601 format (YYYY-MM-DD)."""
-    status: Optional[EmploymentVerificationStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
+    status: Optional[EmploymentVerificationStatus] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is EmploymentVerification.UNSET }})
     r"""Current employment status."""
-    title: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title') }})
+    title: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title'), 'exclude': lambda f: f is EmploymentVerification.UNSET }})
     r"""Current title of employee."""
     
 

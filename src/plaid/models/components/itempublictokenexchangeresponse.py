@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class ItemPublicTokenExchangeResponse:
     r"""ItemPublicTokenExchangeResponse defines the response schema for `/item/public_token/exchange`"""
+    UNSET='__SPEAKEASY_UNSET__'
     access_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('access_token') }})
     r"""The access token associated with the Item data is being requested for."""
     item_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('item_id') }})

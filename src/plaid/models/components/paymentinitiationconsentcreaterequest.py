@@ -14,6 +14,7 @@ from typing import List, Optional
 @dataclasses.dataclass
 class PaymentInitiationConsentCreateRequest:
     r"""PaymentInitiationConsentCreateRequest defines the request schema for `/payment_initiation/consent/create`"""
+    UNSET='__SPEAKEASY_UNSET__'
     constraints: PaymentInitiationConsentConstraints = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('constraints') }})
     r"""Limitations that will be applied to payments initiated using the payment consent."""
     recipient_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('recipient_id') }})
@@ -24,7 +25,7 @@ class PaymentInitiationConsentCreateRequest:
     r"""An array of payment consent scopes."""
     client_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_id'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body."""
-    options: Optional[ExternalPaymentInitiationConsentOptions] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('options') }})
+    options: Optional[ExternalPaymentInitiationConsentOptions] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('options'), 'exclude': lambda f: f is PaymentInitiationConsentCreateRequest.UNSET }})
     r"""Additional payment consent options"""
     secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secret'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body."""

@@ -13,6 +13,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class DocumentRiskSignalsObject:
     r"""Object containing fraud risk data for a set of income documents."""
+    UNSET='__SPEAKEASY_UNSET__'
     account_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id') }})
     r"""ID of the payroll provider account."""
     multi_document_risk_signals: List[MultiDocumentRiskSignal] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('multi_document_risk_signals') }})

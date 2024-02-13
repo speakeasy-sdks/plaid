@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class CreditRelayRefreshResponse:
     r"""CreditRelayRefreshResponse defines the response schema for `/credit/relay/refresh`"""
+    UNSET='__SPEAKEASY_UNSET__'
     relay_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relay_token') }})
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})
     r"""A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive."""

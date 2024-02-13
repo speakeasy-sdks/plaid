@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class MortgageInterestRate:
     r"""Object containing metadata about the interest rate for the mortgage."""
+    UNSET='__SPEAKEASY_UNSET__'
     percentage: Optional[float] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('percentage') }})
     r"""Percentage value (interest rate of current mortgage, not APR) of interest payable on a loan."""
     type: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})

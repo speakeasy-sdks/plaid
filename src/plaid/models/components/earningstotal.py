@@ -12,24 +12,25 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class EarningsTotal:
     r"""An object representing both the current pay period and year to date amount for an earning category."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    current_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('current_amount') }})
+    current_amount: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('current_amount'), 'exclude': lambda f: f is EarningsTotal.UNSET }})
     r"""Total amount of the earnings for this pay period"""
     current_pay: Optional[Pay] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('current_pay'), 'exclude': lambda f: f is None }})
     r"""An object representing a monetary amount.
 
     Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
     """
-    hours: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hours') }})
+    hours: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hours'), 'exclude': lambda f: f is EarningsTotal.UNSET }})
     r"""Total number of hours worked for this pay period"""
-    iso_currency_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iso_currency_code') }})
+    iso_currency_code: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iso_currency_code'), 'exclude': lambda f: f is EarningsTotal.UNSET }})
     r"""The ISO-4217 currency code of the line item. Always `null` if `unofficial_currency_code` is non-null."""
-    unofficial_currency_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unofficial_currency_code') }})
+    unofficial_currency_code: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unofficial_currency_code'), 'exclude': lambda f: f is EarningsTotal.UNSET }})
     r"""The unofficial currency code associated with the security. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.
 
     See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `iso_currency_code`s.
     """
-    ytd_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ytd_amount') }})
+    ytd_amount: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ytd_amount'), 'exclude': lambda f: f is EarningsTotal.UNSET }})
     r"""The total year-to-date amount of the earnings"""
     ytd_pay: Optional[Pay] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ytd_pay'), 'exclude': lambda f: f is None }})
     r"""An object representing a monetary amount.

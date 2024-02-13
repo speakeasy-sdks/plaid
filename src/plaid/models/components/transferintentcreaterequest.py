@@ -15,6 +15,7 @@ from typing import Dict, Optional
 @dataclasses.dataclass
 class TransferIntentCreateRequest:
     r"""Defines the request schema for `/transfer/intent/create`"""
+    UNSET='__SPEAKEASY_UNSET__'
     amount: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
     r"""The amount of the transfer (decimal string with two digits of precision e.g. \\"10.00\\")."""
     description: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
@@ -28,7 +29,7 @@ class TransferIntentCreateRequest:
     """
     user: TransferUserInRequest = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user') }})
     r"""The legal name and other information for the account holder."""
-    account_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id') }})
+    account_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id'), 'exclude': lambda f: f is TransferIntentCreateRequest.UNSET }})
     r"""The Plaid `account_id` corresponding to the end-user account that will be debited or credited."""
     ach_class: Optional[ACHClass] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ach_class'), 'exclude': lambda f: f is None }})
     r"""Specifies the use case of the transfer. Required for transfers on an ACH network.
@@ -43,11 +44,11 @@ class TransferIntentCreateRequest:
     """
     client_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_id'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body."""
-    funding_account_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('funding_account_id') }})
+    funding_account_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('funding_account_id'), 'exclude': lambda f: f is TransferIntentCreateRequest.UNSET }})
     r"""The id of the funding account to use, available in the Plaid Dashboard. This determines which of your business checking accounts will be credited or debited. Defaults to the account configured during onboarding."""
     iso_currency_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iso_currency_code'), 'exclude': lambda f: f is None }})
     r"""The currency of the transfer amount, e.g. \\"USD\\" """
-    metadata: Optional[Dict[str, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata') }})
+    metadata: Optional[Dict[str, str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is TransferIntentCreateRequest.UNSET }})
     r"""The Metadata object is a mapping of client-provided string fields to any string value. The following limitations apply:
     The JSON values must be Strings (no nested JSON objects allowed)
     Only ASCII characters may be used
@@ -60,12 +61,12 @@ class TransferIntentCreateRequest:
 
     For transfers submitted as either `ach` or `same-day-ach` the cutoff for same-day is 3:30 PM Eastern Time and the cutoff for next-day transfers is 5:30 PM Eastern Time. It is recommended to submit a transfer at least 15 minutes before the cutoff time in order to ensure that it will be processed before the cutoff. Any transfer that is indicated as `same-day-ach` and that misses the same-day cutoff, but is submitted in time for the next-day cutoff, will be sent over next-day rails and will not incur same-day charges. Note that both legs of the transfer will be downgraded if applicable.
     """
-    origination_account_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('origination_account_id') }})
+    origination_account_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('origination_account_id'), 'exclude': lambda f: f is TransferIntentCreateRequest.UNSET }})
     r"""Plaid’s unique identifier for the origination account for the intent. If not provided, the default account will be used.
 
     Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
     """
-    require_guarantee: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('require_guarantee') }})
+    require_guarantee: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('require_guarantee'), 'exclude': lambda f: f is TransferIntentCreateRequest.UNSET }})
     r"""When `true`, the transfer requires a `GUARANTEED` decision by Plaid to proceed (Guarantee customers only)."""
     secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secret'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body."""

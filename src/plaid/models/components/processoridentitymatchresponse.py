@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class ProcessorIdentityMatchResponse:
     r"""ProcessorIdentityMatchResponse defines the response schema for `/processor/identity/match`"""
+    UNSET='__SPEAKEASY_UNSET__'
     account: AccountIdentityMatchScore = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account') }})
     r"""Identity match scores for an account"""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

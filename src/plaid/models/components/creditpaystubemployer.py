@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class CreditPayStubEmployer:
     r"""Information about the employer on the pay stub."""
+    UNSET='__SPEAKEASY_UNSET__'
     address: CreditPayStubAddress = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address') }})
     r"""Address on the pay stub."""
     name: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})

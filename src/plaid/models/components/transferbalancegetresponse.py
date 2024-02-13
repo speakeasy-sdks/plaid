@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferBalanceGetResponse:
     r"""Defines the response schema for `/transfer/balance/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     balance: TransferBalance = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('balance') }})
     r"""Information about the balance held with Plaid."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

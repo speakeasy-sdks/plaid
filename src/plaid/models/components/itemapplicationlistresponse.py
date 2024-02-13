@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class ItemApplicationListResponse:
     r"""Describes the connected application for a particular end user."""
+    UNSET='__SPEAKEASY_UNSET__'
     applications: List[ConnectedApplication] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('applications') }})
     r"""A list of connected applications."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})

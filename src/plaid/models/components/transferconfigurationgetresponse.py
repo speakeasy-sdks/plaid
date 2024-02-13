@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferConfigurationGetResponse:
     r"""Defines the response schema for `/transfer/configuration/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     iso_currency_code: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iso_currency_code') }})
     r"""The currency of the dollar amount, e.g. \\"USD\\"."""
     max_daily_credit_amount: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('max_daily_credit_amount') }})

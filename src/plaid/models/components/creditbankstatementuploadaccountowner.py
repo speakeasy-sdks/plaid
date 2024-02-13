@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class CreditBankStatementUploadAccountOwner:
     r"""An object containing data about the owner of the bank account for the uploaded bank statement."""
+    UNSET='__SPEAKEASY_UNSET__'
     address: CreditBankStatementUploadAccountOwnerAddress = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address') }})
     r"""Address on the uploaded bank statement"""
     name: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})

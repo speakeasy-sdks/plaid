@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class StatementsStatement:
     r"""A statement's metadata associated with an account"""
+    UNSET='__SPEAKEASY_UNSET__'
     month: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('month') }})
     r"""Month of the year. Possible values: 1 through 12 (January through December)."""
     statement_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('statement_id') }})

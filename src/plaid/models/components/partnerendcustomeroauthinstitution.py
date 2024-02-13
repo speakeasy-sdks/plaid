@@ -12,14 +12,15 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class PartnerEndCustomerOAuthInstitution:
     r"""The OAuth registration information for an institution."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    classic_disablement_date: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('classic_disablement_date') }})
+    classic_disablement_date: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('classic_disablement_date'), 'exclude': lambda f: f is PartnerEndCustomerOAuthInstitution.UNSET }})
     r"""The date on which non-OAuth Item adds will no longer be supported for this institution, or an empty string if no such date has been set by the institution."""
     environments: Optional[PartnerEndCustomerOAuthInstitutionEnvironments] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('environments'), 'exclude': lambda f: f is None }})
     r"""Registration statuses by environment."""
     institution_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('institution_id'), 'exclude': lambda f: f is None }})
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
-    production_enablement_date: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('production_enablement_date') }})
+    production_enablement_date: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('production_enablement_date'), 'exclude': lambda f: f is PartnerEndCustomerOAuthInstitution.UNSET }})
     r"""The date on which the end customer's application was approved by the institution, or an empty string if their application has not yet been approved."""
     
 

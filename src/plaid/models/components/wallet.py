@@ -14,6 +14,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class Wallet:
     r"""An object representing the e-wallet"""
+    UNSET='__SPEAKEASY_UNSET__'
     balance: WalletBalance = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('balance') }})
     r"""An object representing the e-wallet balance"""
     numbers: WalletNumbers = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numbers') }})

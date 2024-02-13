@@ -13,6 +13,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class SelfieCheck:
     r"""Additional information for the `selfie_check` step. This field will be `null` unless `steps.selfie_check` has reached a terminal state of either `success` or `failed`."""
+    UNSET='__SPEAKEASY_UNSET__'
     selfies: List[SelfieCheckSelfie] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('selfies') }})
     r"""An array of selfies submitted to the `selfie_check` step. Each entry represents one user submission."""
     status: SelfieCheckStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})

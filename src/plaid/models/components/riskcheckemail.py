@@ -18,6 +18,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class RiskCheckEmail:
     r"""Result summary object specifying values for `email` attributes of risk check."""
+    UNSET='__SPEAKEASY_UNSET__'
     breach_count: Optional[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('breach_count') }})
     r"""Count of all known breaches of this email address if known."""
     domain_is_custom: RiskCheckEmailDomainIsCustom = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('domain_is_custom') }})

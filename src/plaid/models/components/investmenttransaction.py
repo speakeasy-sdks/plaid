@@ -14,6 +14,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class InvestmentTransaction:
     r"""A transaction within an investment account."""
+    UNSET='__SPEAKEASY_UNSET__'
     account_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id') }})
     r"""The `account_id` of the account against which this transaction posted."""
     amount: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
@@ -53,7 +54,7 @@ class InvestmentTransaction:
     See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `iso_currency_code`s.
     """
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    cancel_transaction_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cancel_transaction_id') }})
+    cancel_transaction_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cancel_transaction_id'), 'exclude': lambda f: f is InvestmentTransaction.UNSET }})
     r"""A legacy field formerly used internally by Plaid to identify certain canceled transactions.
 
     Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.

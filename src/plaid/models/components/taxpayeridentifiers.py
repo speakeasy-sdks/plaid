@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TaxpayerIdentifiers:
     r"""The collection of TAXPAYER_IDENTIFICATION elements"""
+    UNSET='__SPEAKEASY_UNSET__'
     taxpayer_identifier: TaxpayerIdentifier = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('TAXPAYER_IDENTIFIER') }})
     r"""Information about the Taxpayer identification values assigned to the individual or legal entity.Information about the Taxpayer identification values assigned to the individual or legal entity."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})

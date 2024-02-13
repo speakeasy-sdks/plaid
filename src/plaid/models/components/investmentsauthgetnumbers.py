@@ -13,6 +13,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class InvestmentsAuthGetNumbers:
     r"""Identifying information for transferring holdings to an investments account."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     acats: Optional[List[NumbersACATS]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('acats'), 'exclude': lambda f: f is None }})
     aton: Optional[List[NumbersATON]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('aton'), 'exclude': lambda f: f is None }})

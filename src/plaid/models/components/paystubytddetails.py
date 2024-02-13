@@ -14,10 +14,11 @@ class PaystubYTDDetails:
 
     Deprecated class: This will be removed in a future release, please migrate away from it as soon as possible.
     """
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    gross_earnings: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('gross_earnings') }})
+    gross_earnings: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('gross_earnings'), 'exclude': lambda f: f is PaystubYTDDetails.UNSET }})
     r"""Year-to-date gross earnings."""
-    net_earnings: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('net_earnings') }})
+    net_earnings: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('net_earnings'), 'exclude': lambda f: f is PaystubYTDDetails.UNSET }})
     r"""Year-to-date net (take home) earnings."""
     
 

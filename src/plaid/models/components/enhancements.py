@@ -15,6 +15,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class Enhancements:
     r"""A grouping of the Plaid produced transaction enhancement fields."""
+    UNSET='__SPEAKEASY_UNSET__'
     category: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('category') }})
     r"""A hierarchical array of the categories to which this transaction belongs. For a full list of categories, see [`/categories/get`](https://plaid.com/docs/api/products/transactions/#categoriesget)."""
     category_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('category_id') }})
@@ -30,22 +31,22 @@ class Enhancements:
     `other:` transactions that relate to banks, e.g. fees or deposits.
     """
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    check_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('check_number') }})
+    check_number: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('check_number'), 'exclude': lambda f: f is Enhancements.UNSET }})
     r"""The check number of the transaction. This field is only populated for check transactions."""
     counterparties: Optional[List[Counterparty]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('counterparties'), 'exclude': lambda f: f is None }})
     r"""The counterparties present in the transaction. Counterparties, such as the merchant or the financial institution, are extracted by Plaid from the raw description."""
-    logo_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('logo_url') }})
+    logo_url: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('logo_url'), 'exclude': lambda f: f is Enhancements.UNSET }})
     r"""The URL of a logo associated with this transaction, if available. The logo is formatted as a 100x100 pixel PNG file."""
-    merchant_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('merchant_name') }})
+    merchant_name: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('merchant_name'), 'exclude': lambda f: f is Enhancements.UNSET }})
     r"""The name of the primary counterparty, such as the merchant or the financial institution, as extracted by Plaid from the raw description."""
-    personal_finance_category: Optional[PersonalFinanceCategory] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('personal_finance_category') }})
+    personal_finance_category: Optional[PersonalFinanceCategory] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('personal_finance_category'), 'exclude': lambda f: f is Enhancements.UNSET }})
     r"""Information describing the intent of the transaction. Most relevant for personal finance use cases, but not limited to such use cases.
 
     See the [`taxonomy csv file`](https://plaid.com/documents/transactions-personal-finance-category-taxonomy.csv) for a full list of personal finance categories.
     """
     personal_finance_category_icon_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('personal_finance_category_icon_url'), 'exclude': lambda f: f is None }})
     r"""A link to the icon associated with the primary personal finance category. The logo will always be 100x100 pixels."""
-    website: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('website') }})
+    website: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('website'), 'exclude': lambda f: f is Enhancements.UNSET }})
     r"""The website associated with this transaction, if available."""
     
 

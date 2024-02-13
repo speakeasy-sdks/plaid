@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class Counterparty:
     r"""The counterparty, such as the merchant or financial institution, is extracted by Plaid from the raw description."""
+    UNSET='__SPEAKEASY_UNSET__'
     logo_url: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('logo_url') }})
     r"""The URL of a logo associated with the counterparty, if available. The logo is formatted as a 100x100 pixel PNG file."""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
@@ -29,7 +30,7 @@ class Counterparty:
     website: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('website') }})
     r"""The website associated with the counterparty."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    confidence_level: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('confidence_level') }})
+    confidence_level: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('confidence_level'), 'exclude': lambda f: f is Counterparty.UNSET }})
     r"""A description of how confident we are that the provided counterparty is involved in the transaction.
 
     `VERY_HIGH`: We recognize this counterparty and we are more than 98% confident that it is involved in this transaction.
@@ -38,7 +39,7 @@ class Counterparty:
     `LOW`: We didn’t find a matching counterparty in our records, so we are returning a cleansed name parsed out of the request description.
     `UNKNOWN`: Error
     """
-    entity_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_id') }})
+    entity_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_id'), 'exclude': lambda f: f is Counterparty.UNSET }})
     r"""A unique, stable, Plaid-generated id that maps to the counterparty."""
     
 

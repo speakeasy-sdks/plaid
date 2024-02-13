@@ -14,6 +14,7 @@ from typing import Optional
 @dataclasses.dataclass
 class TransferOriginatorDiligence:
     r"""The diligence information for the originator."""
+    UNSET='__SPEAKEASY_UNSET__'
     address: TransferOriginatorAddress = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address') }})
     r"""The originator's address."""
     dba: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dba') }})
@@ -24,9 +25,9 @@ class TransferOriginatorDiligence:
     r"""The tax ID of the originator."""
     website: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('website') }})
     r"""The website of the originator."""
-    credit_usage_configuration: Optional[TransferCreditUsageConfiguration] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('credit_usage_configuration') }})
+    credit_usage_configuration: Optional[TransferCreditUsageConfiguration] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('credit_usage_configuration'), 'exclude': lambda f: f is TransferOriginatorDiligence.UNSET }})
     r"""Specifies the originator's expected usage of credits. For all dollar amounts, use a decimal string with two digits of precision e.g. \\"10.00\\". This field is required if the originator is expected to process credit transfers."""
-    debit_usage_configuration: Optional[TransferDebitUsageConfiguration] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('debit_usage_configuration') }})
+    debit_usage_configuration: Optional[TransferDebitUsageConfiguration] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('debit_usage_configuration'), 'exclude': lambda f: f is TransferOriginatorDiligence.UNSET }})
     r"""Specifies the originator's expected usage of debits. For all dollar amounts, use a decimal string with two digits of precision e.g. \\"10.00\\". This field is required if the originator is expected to process debit transfers."""
     
 

@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class EmployersSearchResponse:
     r"""EmployersSearchResponse defines the response schema for `/employers/search`."""
+    UNSET='__SPEAKEASY_UNSET__'
     employers: List[Employer] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employers') }})
     r"""A list of employers matching the search criteria."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

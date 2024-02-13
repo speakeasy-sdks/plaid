@@ -11,12 +11,13 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TaxpayerID:
     r"""Taxpayer ID of the individual receiving the paystub."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    id_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id_mask') }})
+    id_mask: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id_mask'), 'exclude': lambda f: f is TaxpayerID.UNSET }})
     r"""ID mask; i.e. last 4 digits of the taxpayer ID"""
-    id_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id_type') }})
+    id_type: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id_type'), 'exclude': lambda f: f is TaxpayerID.UNSET }})
     r"""Type of ID, e.g. 'SSN'"""
-    last_4_digits: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('last_4_digits') }})
+    last_4_digits: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('last_4_digits'), 'exclude': lambda f: f is TaxpayerID.UNSET }})
     r"""Last 4 digits of unique number of ID.
 
     Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.

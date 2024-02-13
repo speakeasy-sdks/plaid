@@ -13,15 +13,16 @@ from typing import Optional
 @dataclasses.dataclass
 class PaymentInitiationRecipientCreateRequest:
     r"""PaymentInitiationRecipientCreateRequest defines the request schema for `/payment_initiation/recipient/create`"""
+    UNSET='__SPEAKEASY_UNSET__'
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The name of the recipient. We recommend using strings of length 18 or less and avoid special characters to ensure compatibility with all institutions."""
-    address: Optional[PaymentInitiationAddress] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address') }})
+    address: Optional[PaymentInitiationAddress] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address'), 'exclude': lambda f: f is PaymentInitiationRecipientCreateRequest.UNSET }})
     r"""The optional address of the payment recipient's bank account. Required by most institutions outside of the UK."""
-    bacs: Optional[RecipientBACSNullable] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bacs') }})
+    bacs: Optional[RecipientBACSNullable] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bacs'), 'exclude': lambda f: f is PaymentInitiationRecipientCreateRequest.UNSET }})
     r"""An object containing a BACS account number and sort code. If an IBAN is not provided or if this recipient needs to accept domestic GBP-denominated payments, BACS data is required."""
     client_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_id'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body."""
-    iban: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iban') }})
+    iban: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iban'), 'exclude': lambda f: f is PaymentInitiationRecipientCreateRequest.UNSET }})
     r"""The International Bank Account Number (IBAN) for the recipient. If BACS data is not provided, an IBAN is required."""
     secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secret'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body."""

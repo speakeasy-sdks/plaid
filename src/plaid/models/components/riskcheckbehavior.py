@@ -14,6 +14,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class RiskCheckBehavior:
     r"""Result summary object specifying values for `behavior` attributes of risk check, when available."""
+    UNSET='__SPEAKEASY_UNSET__'
     bot_detected: RiskCheckBehaviorBotDetectedLabel = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bot_detected') }})
     r"""Field describing the outcome of a bot detection behavior risk check.
 

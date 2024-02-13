@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferAuthorizationCreateResponse:
     r"""Defines the response schema for `/transfer/authorization/create`"""
+    UNSET='__SPEAKEASY_UNSET__'
     authorization: TransferAuthorization = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('authorization') }})
     r"""Contains the authorization decision for a proposed transfer."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

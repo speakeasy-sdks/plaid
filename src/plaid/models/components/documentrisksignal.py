@@ -12,6 +12,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class DocumentRiskSignal:
     r"""Details about a certain reason as to why a document could potentially be fraudulent."""
+    UNSET='__SPEAKEASY_UNSET__'
     actual_value: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('actual_value') }})
     r"""The derived value obtained in the risk signal calculation process for this field"""
     expected_value: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expected_value') }})

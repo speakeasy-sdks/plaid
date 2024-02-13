@@ -16,6 +16,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class AssetReportTransaction:
     r"""A transaction on the asset report"""
+    UNSET='__SPEAKEASY_UNSET__'
     account_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id') }})
     r"""The ID of the account in which this transaction occurred."""
     amount: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
@@ -36,32 +37,32 @@ class AssetReportTransaction:
     See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `unofficial_currency_code`s.
     """
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    account_owner: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_owner') }})
+    account_owner: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_owner'), 'exclude': lambda f: f is AssetReportTransaction.UNSET }})
     r"""The name of the account owner. This field is not typically populated and only relevant when dealing with sub-accounts."""
-    category: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('category') }})
+    category: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('category'), 'exclude': lambda f: f is AssetReportTransaction.UNSET }})
     r"""A hierarchical array of the categories to which this transaction belongs. For a full list of categories, see [`/categories/get`](https://plaid.com/docs/api/products/transactions/#categoriesget).
 
     This field will only appear in an Asset Report with Insights.
     """
-    category_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('category_id') }})
+    category_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('category_id'), 'exclude': lambda f: f is AssetReportTransaction.UNSET }})
     r"""The ID of the category to which this transaction belongs. For a full list of categories, see [`/categories/get`](https://plaid.com/docs/api/products/transactions/#categoriesget).
 
     This field will only appear in an Asset Report with Insights.
     """
-    check_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('check_number') }})
+    check_number: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('check_number'), 'exclude': lambda f: f is AssetReportTransaction.UNSET }})
     r"""The check number of the transaction. This field is only populated for check transactions."""
-    credit_category: Optional[CreditCategory] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('credit_category') }})
+    credit_category: Optional[CreditCategory] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('credit_category'), 'exclude': lambda f: f is AssetReportTransaction.UNSET }})
     r"""Information describing the intent of the transaction. Most relevant for credit use cases, but not limited to such use cases.
 
     See the [`taxonomy csv file`](https://plaid.com/documents/credit-category-taxonomy.csv) for a full list of credit categories.
     """
-    date_transacted: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('date_transacted') }})
+    date_transacted: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('date_transacted'), 'exclude': lambda f: f is AssetReportTransaction.UNSET }})
     r"""The date on which the transaction took place, in IS0 8601 format."""
     income_source_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('income_source_id'), 'exclude': lambda f: f is None }})
     r"""A unique identifier for an income source."""
     location: Optional[Location] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('location'), 'exclude': lambda f: f is None }})
     r"""A representation of where a transaction took place"""
-    merchant_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('merchant_name') }})
+    merchant_name: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('merchant_name'), 'exclude': lambda f: f is AssetReportTransaction.UNSET }})
     r"""The merchant name, as enriched by Plaid from the `name` field. This is typically a more human-readable version of the merchant counterparty in the transaction. For some bank transactions (such as checks or account transfers) where there is no meaningful merchant name, this value will be `null`."""
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
     r"""The merchant name or transaction description.
@@ -73,7 +74,7 @@ class AssetReportTransaction:
 
     If the `transactions` object was returned by a Transactions endpoint such as `/transactions/sync` or `/transactions/get`, the `payment_meta` key will always appear, but no data elements are guaranteed. If the `transactions` object was returned by an Assets endpoint such as `/asset_report/get/` or `/asset_report/pdf/get`, this field will only appear in an Asset Report with Insights.
     """
-    pending_transaction_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pending_transaction_id') }})
+    pending_transaction_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pending_transaction_id'), 'exclude': lambda f: f is AssetReportTransaction.UNSET }})
     r"""The ID of a posted transaction's associated pending transaction, where applicable."""
     transaction_type: Optional[AssetReportTransactionType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transaction_type'), 'exclude': lambda f: f is None }})
     r"""`digital:` transactions that took place online.

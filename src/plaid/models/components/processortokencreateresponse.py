@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class ProcessorTokenCreateResponse:
     r"""ProcessorTokenCreateResponse defines the response schema for `/processor/token/create` and `/processor/apex/processor_token/create`"""
+    UNSET='__SPEAKEASY_UNSET__'
     processor_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('processor_token') }})
     r"""The `processor_token` that can then be used by the Plaid partner to make API requests"""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})

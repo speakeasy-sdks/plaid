@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferIntentGetFailureReason:
     r"""The reason for a failed transfer intent. Returned only if the transfer intent status is `failed`. Null otherwise."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     error_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error_code'), 'exclude': lambda f: f is None }})
     r"""A code representing the reason for a failed transfer intent (i.e., an API error or the authorization being declined)."""

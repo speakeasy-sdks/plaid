@@ -14,6 +14,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class SingleDocumentRiskSignal:
     r"""Object containing all risk signals and relevant metadata for a single document"""
+    UNSET='__SPEAKEASY_UNSET__'
     document_reference: RiskSignalDocumentReference = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('document_reference') }})
     r"""Object containing metadata for the document"""
     risk_signals: List[DocumentRiskSignal] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('risk_signals') }})

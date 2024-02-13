@@ -13,13 +13,14 @@ from typing import Optional
 @dataclasses.dataclass
 class SignalUser:
     r"""Details about the end user initiating the transaction (i.e., the account holder)."""
-    address: Optional[SignalAddressData] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    address: Optional[SignalAddressData] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address'), 'exclude': lambda f: f is SignalUser.UNSET }})
     r"""Data about the components comprising an address."""
-    email_address: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_address') }})
+    email_address: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_address'), 'exclude': lambda f: f is SignalUser.UNSET }})
     r"""The user's email address."""
-    name: Optional[SignalPersonName] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
+    name: Optional[SignalPersonName] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is SignalUser.UNSET }})
     r"""The user's legal name"""
-    phone_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone_number') }})
+    phone_number: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone_number'), 'exclude': lambda f: f is SignalUser.UNSET }})
     r"""The user's phone number, in E.164 format: +{countrycode}{number}. For example: \\"+14151234567\\" """
     
 

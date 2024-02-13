@@ -11,6 +11,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class Category:
     r"""Information describing a transaction category"""
+    UNSET='__SPEAKEASY_UNSET__'
     category_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('category_id') }})
     r"""An identifying number for the category. `category_id` is a Plaid-specific identifier and does not necessarily correspond to merchant category codes."""
     group: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('group') }})

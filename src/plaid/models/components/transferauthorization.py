@@ -19,6 +19,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferAuthorization:
     r"""Contains the authorization decision for a proposed transfer."""
+    UNSET='__SPEAKEASY_UNSET__'
     created: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""The datetime representing when the authorization was created, in the format `2006-01-02T15:04:05Z`."""
     decision: TransferAuthorizationDecision = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('decision') }})
@@ -39,7 +40,7 @@ class TransferAuthorization:
     proposed_transfer: TransferAuthorizationProposedTransfer = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('proposed_transfer') }})
     r"""Details regarding the proposed transfer."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    signal_insights: Optional[SignalInsights] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('signal_insights') }})
+    signal_insights: Optional[SignalInsights] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('signal_insights'), 'exclude': lambda f: f is TransferAuthorization.UNSET }})
     r"""Signal insights including scores and attributes. This response is offered as an add-on to `/transfer/authorization/create`. To request access to these fields please contact your Plaid account manager."""
     
 

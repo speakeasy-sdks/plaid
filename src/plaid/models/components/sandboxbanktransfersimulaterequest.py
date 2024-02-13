@@ -12,6 +12,7 @@ from typing import Optional
 @dataclasses.dataclass
 class SandboxBankTransferSimulateRequest:
     r"""Defines the request schema for `/sandbox/bank_transfer/simulate`"""
+    UNSET='__SPEAKEASY_UNSET__'
     bank_transfer_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bank_transfer_id') }})
     r"""Plaid’s unique identifier for a bank transfer."""
     event_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('event_type') }})
@@ -27,7 +28,7 @@ class SandboxBankTransferSimulateRequest:
     """
     client_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client_id'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body."""
-    failure_reason: Optional[BankTransferFailure] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('failure_reason') }})
+    failure_reason: Optional[BankTransferFailure] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('failure_reason'), 'exclude': lambda f: f is SandboxBankTransferSimulateRequest.UNSET }})
     r"""The failure reason if the type of this transfer is `\\"failed\\"` or `\\"reversed\\"`. Null value otherwise."""
     secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secret'), 'exclude': lambda f: f is None }})
     r"""Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body."""

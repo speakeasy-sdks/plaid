@@ -13,6 +13,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class ProcessorAuthGetResponse:
     r"""ProcessorAuthGetResponse defines the response schema for `/processor/auth/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     account: AccountBase = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account') }})
     r"""A single account at a financial institution."""
     numbers: ProcessorNumber = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numbers') }})

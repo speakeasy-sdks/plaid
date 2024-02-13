@@ -26,6 +26,7 @@ class StudentRepaymentPlanType(str, Enum):
 @dataclasses.dataclass
 class StudentRepaymentPlan:
     r"""An object representing the repayment plan for the student loan"""
+    UNSET='__SPEAKEASY_UNSET__'
     description: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
     r"""The description of the repayment plan as provided by the servicer."""
     type: Optional[StudentRepaymentPlanType] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})

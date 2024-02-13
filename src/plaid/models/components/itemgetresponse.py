@@ -13,12 +13,13 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class ItemGetResponse:
     r"""ItemGetResponse defines the response schema for `/item/get` and `/item/webhook/update`"""
+    UNSET='__SPEAKEASY_UNSET__'
     item: Item = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('item') }})
     r"""Metadata about the Item."""
     request_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request_id') }})
     r"""A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    status: Optional[ItemStatusNullable] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
+    status: Optional[ItemStatusNullable] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is ItemGetResponse.UNSET }})
     r"""Information about the last successful and failed transactions update for the Item."""
     
 

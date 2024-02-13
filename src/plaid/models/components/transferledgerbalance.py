@@ -11,6 +11,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class TransferLedgerBalance:
     r"""Information about the balance of the ledger held with Plaid."""
+    UNSET='__SPEAKEASY_UNSET__'
     available: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('available') }})
     r"""The amount of this balance available for use (decimal string with two digits of precision e.g. \\"10.00\\")."""
     pending: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pending') }})

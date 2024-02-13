@@ -14,6 +14,7 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class KYCCheckAddressSummary:
     r"""Result summary object specifying how the `address` field matched."""
+    UNSET='__SPEAKEASY_UNSET__'
     po_box: POBoxStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('po_box') }})
     r"""Field describing whether the associated address is a post office box. Will be `yes` when a P.O. box is detected, `no` when Plaid confirmed the address is not a P.O. box, and `no_data` when Plaid was not able to determine if the address is a P.O. box."""
     summary: MatchSummaryCode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('summary') }})

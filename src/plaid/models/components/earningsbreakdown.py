@@ -12,25 +12,26 @@ from typing import Any, Dict, Optional
 @dataclasses.dataclass
 class EarningsBreakdown:
     r"""An object representing the earnings line items for the pay period."""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    canonical_description: Optional[EarningsBreakdownCanonicalDescription] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('canonical_description') }})
+    canonical_description: Optional[EarningsBreakdownCanonicalDescription] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('canonical_description'), 'exclude': lambda f: f is EarningsBreakdown.UNSET }})
     r"""Commonly used term to describe the earning line item."""
-    current_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('current_amount') }})
+    current_amount: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('current_amount'), 'exclude': lambda f: f is EarningsBreakdown.UNSET }})
     r"""Raw amount of the earning line item."""
-    description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
+    description: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is EarningsBreakdown.UNSET }})
     r"""Description of the earning line item."""
-    hours: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hours') }})
+    hours: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hours'), 'exclude': lambda f: f is EarningsBreakdown.UNSET }})
     r"""Number of hours applicable for this earning."""
-    iso_currency_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iso_currency_code') }})
+    iso_currency_code: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iso_currency_code'), 'exclude': lambda f: f is EarningsBreakdown.UNSET }})
     r"""The ISO-4217 currency code of the line item. Always `null` if `unofficial_currency_code` is non-null."""
-    rate: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rate') }})
+    rate: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rate'), 'exclude': lambda f: f is EarningsBreakdown.UNSET }})
     r"""Hourly rate applicable for this earning."""
-    unofficial_currency_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unofficial_currency_code') }})
+    unofficial_currency_code: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unofficial_currency_code'), 'exclude': lambda f: f is EarningsBreakdown.UNSET }})
     r"""The unofficial currency code associated with the line item. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.
 
     See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `iso_currency_code`s.
     """
-    ytd_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ytd_amount') }})
+    ytd_amount: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ytd_amount'), 'exclude': lambda f: f is EarningsBreakdown.UNSET }})
     r"""The year-to-date amount of the deduction."""
     
 

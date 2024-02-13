@@ -12,15 +12,16 @@ from typing import Optional
 @dataclasses.dataclass
 class InstitutionsSearchRequestOptions:
     r"""An optional object to filter `/institutions/search` results."""
-    include_auth_metadata: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('include_auth_metadata') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    include_auth_metadata: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('include_auth_metadata'), 'exclude': lambda f: f is InstitutionsSearchRequestOptions.UNSET }})
     r"""When `true`, returns metadata related to the Auth product indicating which auth methods are supported."""
     include_optional_metadata: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('include_optional_metadata'), 'exclude': lambda f: f is None }})
     r"""When true, return the institution's homepage URL, logo and primary brand color."""
-    include_payment_initiation_metadata: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('include_payment_initiation_metadata') }})
+    include_payment_initiation_metadata: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('include_payment_initiation_metadata'), 'exclude': lambda f: f is InstitutionsSearchRequestOptions.UNSET }})
     r"""When `true`, returns metadata related to the Payment Initiation product indicating which payment configurations are supported."""
-    oauth: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('oauth') }})
+    oauth: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('oauth'), 'exclude': lambda f: f is InstitutionsSearchRequestOptions.UNSET }})
     r"""Limit results to institutions with or without OAuth login flows. Note that institutions will have `oauth` set to `true` if some Items associated with that institution are required to use OAuth flows; institutions in a state of migration to OAuth will have the `oauth` attribute set to `true`."""
-    payment_initiation: Optional[InstitutionsSearchPaymentInitiationOptions] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payment_initiation') }})
+    payment_initiation: Optional[InstitutionsSearchPaymentInitiationOptions] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payment_initiation'), 'exclude': lambda f: f is InstitutionsSearchRequestOptions.UNSET }})
     r"""Additional options that will be used to filter institutions by various Payment Initiation configurations."""
     
 

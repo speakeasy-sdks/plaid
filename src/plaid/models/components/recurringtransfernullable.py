@@ -19,6 +19,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class RecurringTransferNullable:
     r"""Represents a recurring transfer within the Transfers API."""
+    UNSET='__SPEAKEASY_UNSET__'
     account_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_id') }})
     r"""The Plaid `account_id` corresponding to the end-user account that will be debited or credited."""
     amount: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
@@ -74,7 +75,7 @@ class RecurringTransferNullable:
 
     `\"web\"` - Internet-Initiated Entry - debits from a consumer’s account where their authorization is obtained over the Internet
     """
-    test_clock_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('test_clock_id') }})
+    test_clock_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('test_clock_id'), 'exclude': lambda f: f is RecurringTransferNullable.UNSET }})
     r"""Plaid’s unique identifier for a test clock."""
     
 

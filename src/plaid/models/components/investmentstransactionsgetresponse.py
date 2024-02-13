@@ -15,6 +15,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class InvestmentsTransactionsGetResponse:
     r"""InvestmentsTransactionsGetResponse defines the response schema for `/investments/transactions/get`"""
+    UNSET='__SPEAKEASY_UNSET__'
     accounts: List[AccountBase] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts') }})
     r"""The accounts for which transaction history is being fetched."""
     investment_transactions: List[InvestmentTransaction] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('investment_transactions') }})
