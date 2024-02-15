@@ -21,14 +21,13 @@ Describes the frequency of the transaction stream.
 
 ## Values
 
-| Name                          | Value                         |
-| ----------------------------- | ----------------------------- |
-| `UNKNOWN`                     | UNKNOWN                       |
-| `WEEKLY`                      | WEEKLY                        |
-| `BIWEEKLY`                    | BIWEEKLY                      |
-| `SEMI_MONTHLY`                | SEMI_MONTHLY                  |
-| `MONTHLY`                     | MONTHLY                       |
-| `ANNUALLY`                    | ANNUALLY                      |
-| `DAILY`                       | DAILY                         |
-| `DYNAMIC`                     | DYNAMIC                       |
-| `LESS_THAN_NIL_GREATER_THAN_` | <nil>                         |
+| Name           | Value          |
+| -------------- | -------------- |
+| `UNKNOWN`      | UNKNOWN        |
+| `WEEKLY`       | WEEKLY         |
+| `BIWEEKLY`     | BIWEEKLY       |
+| `SEMI_MONTHLY` | SEMI_MONTHLY   |
+| `MONTHLY`      | MONTHLY        |
+| `ANNUALLY`     | ANNUALLY       |
+| `DAILY`        | DAILY          |
+| `DYNAMIC`      | DYNAMIC        |

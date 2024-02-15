@@ -9,4 +9,3 @@ class BankTransferEventListDirection(str, Enum):
     """
     INBOUND = 'inbound'
     OUTBOUND = 'outbound'
-    LESS_THAN_NIL_GREATER_THAN_ = '<nil>'

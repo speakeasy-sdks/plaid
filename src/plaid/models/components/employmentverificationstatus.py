@@ -7,4 +7,3 @@ class EmploymentVerificationStatus(str, Enum):
     r"""Current employment status."""
     EMPLOYMENT_STATUS_ACTIVE = 'EMPLOYMENT_STATUS_ACTIVE'
     EMPLOYMENT_STATUS_INACTIVE = 'EMPLOYMENT_STATUS_INACTIVE'
-    LESS_THAN_NIL_GREATER_THAN_ = '<nil>'

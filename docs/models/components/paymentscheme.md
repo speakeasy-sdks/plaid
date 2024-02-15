@@ -15,7 +15,6 @@ Payment scheme. If not specified - the default in the region will be used (e.g. 
 
 | Name                           | Value                          |
 | ------------------------------ | ------------------------------ |
-| `LESS_THAN_NIL_GREATER_THAN_`  | <nil>                          |
 | `LOCAL_DEFAULT`                | LOCAL_DEFAULT                  |
 | `LOCAL_INSTANT`                | LOCAL_INSTANT                  |
 | `SEPA_CREDIT_TRANSFER`         | SEPA_CREDIT_TRANSFER           |

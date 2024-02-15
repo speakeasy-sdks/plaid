@@ -5,8 +5,7 @@ Indicates whether the transfer is guaranteed by Plaid (Guarantee customers only)
 
 ## Values
 
-| Name                          | Value                         |
-| ----------------------------- | ----------------------------- |
-| `GUARANTEED`                  | GUARANTEED                    |
-| `NOT_GUARANTEED`              | NOT_GUARANTEED                |
-| `LESS_THAN_NIL_GREATER_THAN_` | <nil>                         |
+| Name             | Value            |
+| ---------------- | ---------------- |
+| `GUARANTEED`     | GUARANTEED       |
+| `NOT_GUARANTEED` | NOT_GUARANTEED   |

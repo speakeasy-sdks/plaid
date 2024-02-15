@@ -31,18 +31,17 @@ This field is only populated for European institutions. For institutions in the 
 
 ## Values
 
-| Name                          | Value                         |
-| ----------------------------- | ----------------------------- |
-| `ADJUSTMENT`                  | adjustment                    |
-| `ATM`                         | atm                           |
-| `BANK_CHARGE`                 | bank charge                   |
-| `BILL_PAYMENT`                | bill payment                  |
-| `CASH`                        | cash                          |
-| `CASHBACK`                    | cashback                      |
-| `CHEQUE`                      | cheque                        |
-| `DIRECT_DEBIT`                | direct debit                  |
-| `INTEREST`                    | interest                      |
-| `PURCHASE`                    | purchase                      |
-| `STANDING_ORDER`              | standing order                |
-| `TRANSFER`                    | transfer                      |
-| `LESS_THAN_NIL_GREATER_THAN_` | <nil>                         |
+| Name             | Value            |
+| ---------------- | ---------------- |
+| `ADJUSTMENT`     | adjustment       |
+| `ATM`            | atm              |
+| `BANK_CHARGE`    | bank charge      |
+| `BILL_PAYMENT`   | bill payment     |
+| `CASH`           | cash             |
+| `CASHBACK`       | cashback         |
+| `CHEQUE`         | cheque           |
+| `DIRECT_DEBIT`   | direct debit     |
+| `INTEREST`       | interest         |
+| `PURCHASE`       | purchase         |
+| `STANDING_ORDER` | standing order   |
+| `TRANSFER`       | transfer         |

@@ -12,4 +12,3 @@ class IncomeBreakdownType(str, Enum):
     BONUS = 'bonus'
     OVERTIME = 'overtime'
     REGULAR = 'regular'
-    LESS_THAN_NIL_GREATER_THAN_ = '<nil>'

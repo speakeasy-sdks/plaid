@@ -12,7 +12,6 @@ class WalletPaymentScheme(str, Enum):
 
     `SEPA_CREDIT_TRANSFER_INSTANT`: Instant payment to a beneficiary within the SEPA area.
     """
-    LESS_THAN_NIL_GREATER_THAN_ = '<nil>'
     FASTER_PAYMENTS = 'FASTER_PAYMENTS'
     SEPA_CREDIT_TRANSFER = 'SEPA_CREDIT_TRANSFER'
     SEPA_CREDIT_TRANSFER_INSTANT = 'SEPA_CREDIT_TRANSFER_INSTANT'

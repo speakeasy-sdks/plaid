@@ -11,9 +11,8 @@ The method used to make the deposit switch.
 
 ## Values
 
-| Name                          | Value                         |
-| ----------------------------- | ----------------------------- |
-| `INSTANT`                     | instant                       |
-| `MAIL`                        | mail                          |
-| `PDF`                         | pdf                           |
-| `LESS_THAN_NIL_GREATER_THAN_` | <nil>                         |
+| Name      | Value     |
+| --------- | --------- |
+| `INSTANT` | instant   |
+| `MAIL`    | mail      |
+| `PDF`     | pdf       |

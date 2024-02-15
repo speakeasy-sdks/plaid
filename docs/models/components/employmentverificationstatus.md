@@ -5,8 +5,7 @@ Current employment status.
 
 ## Values
 
-| Name                          | Value                         |
-| ----------------------------- | ----------------------------- |
-| `EMPLOYMENT_STATUS_ACTIVE`    | EMPLOYMENT_STATUS_ACTIVE      |
-| `EMPLOYMENT_STATUS_INACTIVE`  | EMPLOYMENT_STATUS_INACTIVE    |
-| `LESS_THAN_NIL_GREATER_THAN_` | <nil>                         |
+| Name                         | Value                        |
+| ---------------------------- | ---------------------------- |
+| `EMPLOYMENT_STATUS_ACTIVE`   | EMPLOYMENT_STATUS_ACTIVE     |
+| `EMPLOYMENT_STATUS_INACTIVE` | EMPLOYMENT_STATUS_INACTIVE   |

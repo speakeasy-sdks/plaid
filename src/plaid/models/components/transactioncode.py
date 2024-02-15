@@ -44,4 +44,3 @@ class TransactionCode(str, Enum):
     PURCHASE = 'purchase'
     STANDING_ORDER = 'standing order'
     TRANSFER = 'transfer'
-    LESS_THAN_NIL_GREATER_THAN_ = '<nil>'

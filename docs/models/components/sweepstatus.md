@@ -11,11 +11,10 @@ The status of a sweep transfer
 
 ## Values
 
-| Name                          | Value                         |
-| ----------------------------- | ----------------------------- |
-| `PENDING`                     | pending                       |
-| `POSTED`                      | posted                        |
-| `SETTLED`                     | settled                       |
-| `RETURNED`                    | returned                      |
-| `FAILED`                      | failed                        |
-| `LESS_THAN_NIL_GREATER_THAN_` | <nil>                         |
+| Name       | Value      |
+| ---------- | ---------- |
+| `PENDING`  | pending    |
+| `POSTED`   | posted     |
+| `SETTLED`  | settled    |
+| `RETURNED` | returned   |
+| `FAILED`   | failed     |

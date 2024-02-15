@@ -6,8 +6,7 @@ Indicates the direction of the transfer: `outbound`: for API-initiated transfers
 
 ## Values
 
-| Name                          | Value                         |
-| ----------------------------- | ----------------------------- |
-| `INBOUND`                     | inbound                       |
-| `OUTBOUND`                    | outbound                      |
-| `LESS_THAN_NIL_GREATER_THAN_` | <nil>                         |
+| Name       | Value      |
+| ---------- | ---------- |
+| `INBOUND`  | inbound    |
+| `OUTBOUND` | outbound   |

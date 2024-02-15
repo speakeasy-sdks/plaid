@@ -78,4 +78,3 @@ class AccountSubtype(str, Enum):
     SAFE_DEPOSIT = 'safe deposit'
     SARSEP = 'sarsep'
     PAYROLL = 'payroll'
-    LESS_THAN_NIL_GREATER_THAN_ = '<nil>'

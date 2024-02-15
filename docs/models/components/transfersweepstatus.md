@@ -11,10 +11,9 @@ The status of the sweep for the transfer.
 
 ## Values
 
-| Name                          | Value                         |
-| ----------------------------- | ----------------------------- |
-| `LESS_THAN_NIL_GREATER_THAN_` | <nil>                         |
-| `UNSWEPT`                     | unswept                       |
-| `SWEPT`                       | swept                         |
-| `SWEPT_SETTLED`               | swept_settled                 |
-| `RETURN_SWEPT`                | return_swept                  |
+| Name            | Value           |
+| --------------- | --------------- |
+| `UNSWEPT`       | unswept         |
+| `SWEPT`         | swept           |
+| `SWEPT_SETTLED` | swept_settled   |
+| `RETURN_SWEPT`  | return_swept    |

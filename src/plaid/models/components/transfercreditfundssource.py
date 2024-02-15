@@ -13,4 +13,3 @@ class TransferCreditFundsSource(str, Enum):
     SWEEP = 'sweep'
     PREFUNDED_RTP_CREDITS = 'prefunded_rtp_credits'
     PREFUNDED_ACH_CREDITS = 'prefunded_ach_credits'
-    LESS_THAN_NIL_GREATER_THAN_ = '<nil>'

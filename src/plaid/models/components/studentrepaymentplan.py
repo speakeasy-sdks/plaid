@@ -19,7 +19,6 @@ class StudentRepaymentPlanType(str, Enum):
     PAY_AS_YOU_EARN = 'pay as you earn'
     REVISED_PAY_AS_YOU_EARN = 'revised pay as you earn'
     STANDARD = 'standard'
-    LESS_THAN_NIL_GREATER_THAN_ = '<nil>'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

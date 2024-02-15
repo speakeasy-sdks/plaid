@@ -40,7 +40,7 @@ s = plaid.Plaid(
 )
 
 req = components.AccountsBalanceGetRequest(
-    access_token='string',
+    access_token='<value>',
 )
 
 res = s.plaid.accounts_balance_get(req)
@@ -310,7 +310,7 @@ s = plaid.Plaid(
 )
 
 req = components.AccountsBalanceGetRequest(
-    access_token='string',
+    access_token='<value>',
 )
 
 res = None
@@ -355,7 +355,7 @@ s = plaid.Plaid(
 )
 
 req = components.AccountsBalanceGetRequest(
-    access_token='string',
+    access_token='<value>',
 )
 
 res = s.plaid.accounts_balance_get(req)
@@ -383,7 +383,7 @@ s = plaid.Plaid(
 )
 
 req = components.AccountsBalanceGetRequest(
-    access_token='string',
+    access_token='<value>',
 )
 
 res = s.plaid.accounts_balance_get(req)
@@ -437,7 +437,7 @@ s = plaid.Plaid(
 )
 
 req = components.AccountsBalanceGetRequest(
-    access_token='string',
+    access_token='<value>',
 )
 
 res = s.plaid.accounts_balance_get(req)

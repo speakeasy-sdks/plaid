@@ -5,10 +5,9 @@ The frequency at which the employee is paid. Possible values: `MONTHLY`, `BI-WEE
 
 ## Values
 
-| Name                          | Value                         |
-| ----------------------------- | ----------------------------- |
-| `MONTHLY`                     | MONTHLY                       |
-| `BI_WEEKLY`                   | BI-WEEKLY                     |
-| `WEEKLY`                      | WEEKLY                        |
-| `SEMI_MONTHLY`                | SEMI-MONTHLY                  |
-| `LESS_THAN_NIL_GREATER_THAN_` | <nil>                         |
+| Name           | Value          |
+| -------------- | -------------- |
+| `MONTHLY`      | MONTHLY        |
+| `BI_WEEKLY`    | BI-WEEKLY      |
+| `WEEKLY`       | WEEKLY         |
+| `SEMI_MONTHLY` | SEMI-MONTHLY   |

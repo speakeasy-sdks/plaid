@@ -27,9 +27,9 @@ class SDKConfiguration:
     server_idx: int = 0
     language: str = 'python'
     openapi_doc_version: str = '2020-09-14_1.421.0'
-    sdk_version: str = '0.6.1'
-    gen_version: str = '2.253.0'
-    user_agent: str = 'speakeasy-sdk/python 0.6.1 2.253.0 2020-09-14_1.421.0 plaid'
+    sdk_version: str = '0.6.2'
+    gen_version: str = '2.258.2'
+    user_agent: str = 'speakeasy-sdk/python 0.6.2 2.258.2 2020-09-14_1.421.0 plaid'
     retry_config: RetryConfig = None
 
     def get_server_details(self) -> Tuple[str, Dict[str, str]]:

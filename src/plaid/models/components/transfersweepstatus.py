@@ -12,7 +12,6 @@ class TransferSweepStatus(str, Enum):
     `return_swept`: The transfer was returned, funds were pulled back or pushed back to the sweep account.
     `null`: The transfer will never be swept (e.g. if the transfer is cancelled or returned before being swept)
     """
-    LESS_THAN_NIL_GREATER_THAN_ = '<nil>'
     UNSWEPT = 'unswept'
     SWEPT = 'swept'
     SWEPT_SETTLED = 'swept_settled'

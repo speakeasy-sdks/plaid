@@ -10,10 +10,9 @@ How an asset is owned.
 
 ## Values
 
-| Name                          | Value                         |
-| ----------------------------- | ----------------------------- |
-| `LESS_THAN_NIL_GREATER_THAN_` | <nil>                         |
-| `INDIVIDUAL`                  | individual                    |
-| `JOINT`                       | joint                         |
-| `ASSOCIATION`                 | association                   |
-| `TRUST`                       | trust                         |
+| Name          | Value         |
+| ------------- | ------------- |
+| `INDIVIDUAL`  | individual    |
+| `JOINT`       | joint         |
+| `ASSOCIATION` | association   |
+| `TRUST`       | trust         |

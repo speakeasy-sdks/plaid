@@ -17,4 +17,3 @@ class SweepStatus(str, Enum):
     SETTLED = 'settled'
     RETURNED = 'returned'
     FAILED = 'failed'
-    LESS_THAN_NIL_GREATER_THAN_ = '<nil>'

@@ -14,7 +14,6 @@ class PaymentScheme(str, Enum):
 
     `SEPA_CREDIT_TRANSFER_INSTANT`: Instant payment within the SEPA area. May involve additional fees and may not be available at some banks.
     """
-    LESS_THAN_NIL_GREATER_THAN_ = '<nil>'
     LOCAL_DEFAULT = 'LOCAL_DEFAULT'
     LOCAL_INSTANT = 'LOCAL_INSTANT'
     SEPA_CREDIT_TRANSFER = 'SEPA_CREDIT_TRANSFER'

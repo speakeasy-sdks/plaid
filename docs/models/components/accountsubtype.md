@@ -80,4 +80,3 @@ See the [Account type schema](https://plaid.com/docs/api/accounts/#account-type-
 | `SAFE_DEPOSIT`                     | safe deposit                       |
 | `SARSEP`                           | sarsep                             |
 | `PAYROLL`                          | payroll                            |
-| `LESS_THAN_NIL_GREATER_THAN_`      | <nil>                              |

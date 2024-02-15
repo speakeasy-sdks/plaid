@@ -11,7 +11,6 @@ class OwnershipType(str, Enum):
     `joint`: Joint ownership by multiple parties.
     `trust`: Ownership by a revocable or irrevocable trust.
     """
-    LESS_THAN_NIL_GREATER_THAN_ = '<nil>'
     INDIVIDUAL = 'individual'
     JOINT = 'joint'
     ASSOCIATION = 'association'

@@ -9,4 +9,3 @@ class PaystubPayFrequency(str, Enum):
     BI_WEEKLY = 'BI-WEEKLY'
     WEEKLY = 'WEEKLY'
     SEMI_MONTHLY = 'SEMI-MONTHLY'
-    LESS_THAN_NIL_GREATER_THAN_ = '<nil>'

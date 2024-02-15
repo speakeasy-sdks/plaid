@@ -21,4 +21,3 @@ class TotalCanonicalDescription(str, Enum):
     TAXES = 'TAXES'
     NOT_FOUND = 'NOT_FOUND'
     OTHER = 'OTHER'
-    LESS_THAN_NIL_GREATER_THAN_ = '<nil>'

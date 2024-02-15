@@ -13,7 +13,6 @@ The payment scheme used to execute this transaction. This is present only for tr
 
 | Name                           | Value                          |
 | ------------------------------ | ------------------------------ |
-| `LESS_THAN_NIL_GREATER_THAN_`  | <nil>                          |
 | `FASTER_PAYMENTS`              | FASTER_PAYMENTS                |
 | `SEPA_CREDIT_TRANSFER`         | SEPA_CREDIT_TRANSFER           |
 | `SEPA_CREDIT_TRANSFER_INSTANT` | SEPA_CREDIT_TRANSFER_INSTANT   |

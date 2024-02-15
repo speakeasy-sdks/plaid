@@ -16,4 +16,3 @@ Commonly used term to describe the earning line item.
 | `BASIC_ALLOWANCE_HOUSING`     | BASIC ALLOWANCE HOUSING       |
 | `BASIC_ALLOWANCE_SUBSISTENCE` | BASIC ALLOWANCE SUBSISTENCE   |
 | `OTHER`                       | OTHER                         |
-| `LESS_THAN_NIL_GREATER_THAN_` | <nil>                         |

@@ -36,7 +36,6 @@ class SwitchMethod(str, Enum):
     INSTANT = 'instant'
     MAIL = 'mail'
     PDF = 'pdf'
-    LESS_THAN_NIL_GREATER_THAN_ = '<nil>'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
