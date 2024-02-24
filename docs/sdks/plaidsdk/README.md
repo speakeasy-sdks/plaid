@@ -1600,13 +1600,7 @@ All implementations are recommended to use the newer `personal_finance_category`
 import plaid
 from plaid.models import components
 
-s = plaid.Plaid(
-    security=components.Security1(
-        client_id="<YOUR_API_KEY_HERE>",
-        plaid_version="<YOUR_API_KEY_HERE>",
-        secret="<YOUR_API_KEY_HERE>",
-    ),
-)
+s = plaid.Plaid()
 
 req = components.CategoriesGetRequest()
 
