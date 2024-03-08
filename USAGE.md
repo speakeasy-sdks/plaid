@@ -20,5 +20,6 @@ res = s.plaid.accounts_balance_get(req)
 if res.accounts_get_response is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->

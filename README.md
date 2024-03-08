@@ -48,6 +48,7 @@ res = s.plaid.accounts_balance_get(req)
 if res.accounts_get_response is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
 
@@ -323,6 +324,7 @@ except errors.SDKError as e:
 if res.accounts_get_response is not None:
     # handle response
     pass
+
 ```
 <!-- End Error Handling [errors] -->
 
@@ -363,6 +365,7 @@ res = s.plaid.accounts_balance_get(req)
 if res.accounts_get_response is not None:
     # handle response
     pass
+
 ```
 
 
@@ -391,6 +394,7 @@ res = s.plaid.accounts_balance_get(req)
 if res.accounts_get_response is not None:
     # handle response
     pass
+
 ```
 <!-- End Server Selection [server] -->
 
@@ -445,6 +449,7 @@ res = s.plaid.accounts_balance_get(req)
 if res.accounts_get_response is not None:
     # handle response
     pass
+
 ```
 <!-- End Authentication [security] -->
 
