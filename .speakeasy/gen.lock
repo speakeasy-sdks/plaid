@@ -3,10 +3,10 @@ id: 9f257e2f-f690-4a3d-a504-0fe37f4596a7
 management:
   docChecksum: d62b45f8252bcb7b88b01760791f410e
   docVersion: 2020-09-14_1.421.0
-  speakeasyVersion: 1.204.1
-  generationVersion: 2.279.1
-  releaseVersion: 0.8.0
-  configChecksum: 3369c1519c6c455d1eded874bd63180d
+  speakeasyVersion: 1.207.1
+  generationVersion: 2.280.6
+  releaseVersion: 0.8.1
+  configChecksum: 2ff4d9b9f819e3aa0684d83d4127e61c
   repoURL: https://github.com/speakeasy-sdks/plaid.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/plaid.git
@@ -18,7 +18,7 @@ features:
     deprecations: 2.81.1
     downloadStreams: 0.0.2
     globalSecurity: 2.83.4
-    globalServerURLs: 2.82.1
+    globalServerURLs: 2.82.2
     inputOutputModels: 2.83.1
     responseFormat: 0.1.0
 generatedFiles:
